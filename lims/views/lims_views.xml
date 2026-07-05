@@ -299,8 +299,8 @@
             <field name="arch" type="xml">
                 <search string="Search">
                     <filter string="Archived" name="archive" domain="[('active', '=', False)]"/>
-                    <filter string="Pending FOC approval" name="foc_approval" domain="[('invoicing_type', '=', 'foc'),('approved_foc','=',False)]"/>
-                    <filter string="FOC requests" name="foc_approval" domain="[('invoicing_type', '=', 'foc'),('approved_foc','=',True)]"/>
+                    <filter string="Pending FOC approval" name="foc_approval_pending" domain="[('invoicing_type', '=', 'foc'),('approved_foc','=',False)]"/>
+                    <filter string="FOC requests" name="foc_approval_done" domain="[('invoicing_type', '=', 'foc'),('approved_foc','=',True)]"/>
                     <filter string="PT requests" name="pt_approval" domain="[('invoicing_type', '=', 'pt')]"/>
                     <filter string="Draft" name="analysis_draft" domain="[('state', '=', 'draft')]"/>
                      <filter string="Confirmed" name="analysis_confirmed" domain="[('state', '=', 'confirm')]"/>
