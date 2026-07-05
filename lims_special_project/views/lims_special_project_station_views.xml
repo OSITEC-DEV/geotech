@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+    <record id="view_lims_special_project_station_tree" model="ir.ui.view">
+        <field name="name">lims.special.project.station.tree</field>
+        <field name="model">lims.special.project.station</field>
+        <field name="arch" type="xml">
+            <list string="Site Stations">
+                <field name="name"/>
+                <field name="permit_id"/>
+                <field name="location"/>
+                <field name="layer_count"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_lims_special_project_station_form" model="ir.ui.view">
+        <field name="name">lims.special.project.station.form</field>
+        <field name="model">lims.special.project.station</field>
+        <field name="arch" type="xml">
+            <form string="Site Station">
+                <sheet>
+                    <div class="oe_title">
+                        <h1><field name="name" placeholder="Station No."/></h1>
+                    </div>
+                    <group>
+                        <field name="permit_id"/>
+                        <field name="location"/>
+                    </group>
+                    <notebook>
+                        <page string="Layers">
+                            <field name="layer_ids">
+                                <list editable="bottom">
+                                    <field name="sequence"/>
+                                    <field name="name"/>
+                                    <field name="depth_from"/>
+                                    <field name="depth_to"/>
+                                    <field name="material_description"/>
+                                    <field name="analysis_id"/>
+                                    <field name="state"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Notes">
+                            <field name="notes"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_lims_special_project_station" model="ir.actions.act_window">
+        <field name="name">Site Stations</field>
+        <field name="res_model">lims.special.project.station</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    </data>
+</odoo>

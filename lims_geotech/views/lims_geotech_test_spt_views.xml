@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+    <record id="view_lims_geotech_test_spt_tree" model="ir.ui.view">
+        <field name="name">lims.geotech.test.spt.tree</field>
+        <field name="model">lims.geotech.test.spt</field>
+        <field name="arch" type="xml">
+            <list string="SPT Tests" decoration-danger="refusal == True">
+                <field name="name"/>
+                <field name="borehole_id"/>
+                <field name="depth_from"/>
+                <field name="depth_to"/>
+                <field name="n_value"/>
+                <field name="refusal"/>
+                <field name="state"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_lims_geotech_test_spt_form" model="ir.ui.view">
+        <field name="name">lims.geotech.test.spt.form</field>
+        <field name="model">lims.geotech.test.spt</field>
+        <field name="arch" type="xml">
+            <form string="Standard Penetration Test (SPT)">
+                <header>
+                    <button name="action_validate" string="Validate" type="object"
+                            class="oe_highlight" invisible="state == 'validated'"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,in_progress,done,validated"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1><field name="name" readonly="1"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="borehole_id"/>
+                            <field name="analysis_id"/>
+                            <field name="test_date"/>
+                            <field name="technician_id"/>
+                        </group>
+                        <group>
+                            <field name="depth_from"/>
+                            <field name="depth_to"/>
+                            <field name="casing_depth"/>
+                            <field name="groundwater_depth"/>
+                            <field name="soil_description"/>
+                        </group>
+                    </group>
+                    <group string="Sampler / Hammer">
+                        <group>
+                            <field name="sampler_type"/>
+                        </group>
+                        <group>
+                            <field name="hammer_weight"/>
+                            <field name="drop_height"/>
+                        </group>
+                    </group>
+                    <group string="Result">
+                        <field name="line_ids">
+                            <list editable="bottom">
+                                <field name="sequence"/>
+                                <field name="interval_label"/>
+                                <field name="is_seating"/>
+                                <field name="blows"/>
+                                <field name="remarks"/>
+                            </list>
+                        </field>
+                        <group>
+                            <field name="n_value"/>
+                            <field name="refusal"/>
+                        </group>
+                    </group>
+                    <group string="Validation" invisible="not validated_by">
+                        <field name="validated_by" readonly="1"/>
+                        <field name="validated_on" readonly="1"/>
+                    </group>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_lims_geotech_test_spt" model="ir.actions.act_window">
+        <field name="name">SPT Tests</field>
+        <field name="res_model">lims.geotech.test.spt</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+    <record id="view_lims_rig_schedule_tree" model="ir.ui.view">
+        <field name="name">lims.rig.schedule.tree</field>
+        <field name="model">lims.rig.schedule</field>
+        <field name="arch" type="xml">
+            <list string="Rig Schedules" decoration-muted="state == 'cancelled'"
+                  decoration-info="state == 'scheduled'" decoration-success="state == 'done'">
+                <field name="name"/>
+                <field name="rig_id"/>
+                <field name="partner_id"/>
+                <field name="job_location"/>
+                <field name="date_start"/>
+                <field name="date_end"/>
+                <field name="priority"/>
+                <field name="state"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_lims_rig_schedule_calendar" model="ir.ui.view">
+        <field name="name">lims.rig.schedule.calendar</field>
+        <field name="model">lims.rig.schedule</field>
+        <field name="arch" type="xml">
+            <calendar string="Rig Schedules" date_start="date_start" date_stop="date_end" color="rig_id" mode="month">
+                <field name="rig_id"/>
+                <field name="job_location"/>
+            </calendar>
+        </field>
+    </record>
+
+    <record id="view_lims_rig_schedule_form" model="ir.ui.view">
+        <field name="name">lims.rig.schedule.form</field>
+        <field name="model">lims.rig.schedule</field>
+        <field name="arch" type="xml">
+            <form string="Rig Schedule">
+                <header>
+                    <button name="action_mobilize" string="Mobilize" type="object" class="oe_highlight"
+                            invisible="state != 'scheduled'"/>
+                    <button name="action_start" string="Start" type="object" class="oe_highlight"
+                            invisible="state != 'mobilized'"/>
+                    <button name="action_demobilize" string="Demobilize" type="object"
+                            invisible="state != 'in_progress'"/>
+                    <button name="action_done" string="Done" type="object" class="oe_highlight"
+                            invisible="state != 'demobilized'"/>
+                    <button name="action_cancel" string="Cancel" type="object"
+                            invisible="state in ('done', 'cancelled')"/>
+                    <field name="state" widget="statusbar"
+                           statusbar_visible="draft,scheduled,mobilized,in_progress,demobilized,done"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1><field name="name" readonly="1"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="rig_id"/>
+                            <field name="partner_id"/>
+                            <field name="project_id"/>
+                            <field name="sale_order_id"/>
+                            <field name="job_location"/>
+                            <field name="priority"/>
+                        </group>
+                        <group>
+                            <field name="date_start"/>
+                            <field name="date_end"/>
+                            <field name="crew_size"/>
+                            <field name="operator_id"/>
+                            <field name="helper_ids" widget="many2many_tags"/>
+                        </group>
+                    </group>
+                    <group string="Mobilization">
+                        <group>
+                            <field name="origin_yard"/>
+                            <field name="mobilization_date"/>
+                            <field name="demobilization_date"/>
+                        </group>
+                        <group>
+                            <field name="boreholes_completed"/>
+                            <field name="depth_achieved"/>
+                            <field name="samples_collected"/>
+                            <field name="downtime_reason"/>
+                        </group>
+                    </group>
+                    <group string="Field Log">
+                        <field name="notes" nolabel="1"/>
+                    </group>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_lims_rig_schedule" model="ir.actions.act_window">
+        <field name="name">Rig Schedules</field>
+        <field name="res_model">lims.rig.schedule</field>
+        <field name="view_mode">calendar,list,form</field>
+    </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+    <menuitem id="menu_lims_geotech_root" name="Geotechnical" sequence="21"
+              groups="lims_geotech.group_lims_geotech_user"/>
+
+    <menuitem id="menu_lims_geotech_operations" name="Operations" parent="menu_lims_geotech_root" sequence="1"/>
+    <menuitem id="menu_lims_geotech_site" name="Sites" action="action_lims_geotech_site"
+              parent="menu_lims_geotech_operations" sequence="1"/>
+    <menuitem id="menu_lims_geotech_borehole" name="Boreholes" action="action_lims_geotech_borehole"
+              parent="menu_lims_geotech_operations" sequence="2"/>
+
+    <menuitem id="menu_lims_geotech_tests" name="Tests" parent="menu_lims_geotech_root" sequence="2"/>
+    <menuitem id="menu_lims_geotech_test_spt" name="SPT Tests" action="action_lims_geotech_test_spt"
+              parent="menu_lims_geotech_tests" sequence="1"/>
+
+    </data>
+</odoo>

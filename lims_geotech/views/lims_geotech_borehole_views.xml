@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+    <record id="view_lims_geotech_borehole_tree" model="ir.ui.view">
+        <field name="name">lims.geotech.borehole.tree</field>
+        <field name="model">lims.geotech.borehole</field>
+        <field name="arch" type="xml">
+            <list string="Boreholes">
+                <field name="name"/>
+                <field name="site_id"/>
+                <field name="partner_id"/>
+                <field name="drilling_method"/>
+                <field name="total_depth"/>
+                <field name="groundwater_depth"/>
+                <field name="state"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_lims_geotech_borehole_form" model="ir.ui.view">
+        <field name="name">lims.geotech.borehole.form</field>
+        <field name="model">lims.geotech.borehole</field>
+        <field name="arch" type="xml">
+            <form string="Borehole">
+                <header>
+                    <button name="action_start_drilling" string="Start Drilling" type="object"
+                            class="oe_highlight" invisible="state != 'draft'"/>
+                    <button name="action_complete" string="Mark Completed" type="object"
+                            class="oe_highlight" invisible="state != 'drilling'"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,drilling,completed"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_view_spt_tests" type="object" class="oe_stat_button" icon="fa-list-alt">
+                            <field name="spt_count" widget="statinfo" string="SPT Tests"/>
+                        </button>
+                    </div>
+                    <div class="oe_title">
+                        <h1><field name="name" readonly="1"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="site_id"/>
+                            <field name="partner_id" readonly="1"/>
+                            <field name="main_id"/>
+                            <field name="rig_schedule_id"/>
+                            <field name="technician_id"/>
+                        </group>
+                        <group>
+                            <field name="drilling_method"/>
+                            <field name="date_start"/>
+                            <field name="date_end"/>
+                            <field name="ground_level_elevation"/>
+                            <field name="total_depth"/>
+                            <field name="groundwater_depth"/>
+                        </group>
+                    </group>
+                    <group string="Coordinates">
+                        <field name="latitude"/>
+                        <field name="longitude"/>
+                    </group>
+                    <notebook>
+                        <page string="SPT Tests">
+                            <field name="spt_ids">
+                                <list editable="bottom">
+                                    <field name="name"/>
+                                    <field name="depth_from"/>
+                                    <field name="depth_to"/>
+                                    <field name="n_value"/>
+                                    <field name="refusal"/>
+                                    <field name="state"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Notes">
+                            <field name="notes"/>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_lims_geotech_borehole" model="ir.actions.act_window">
+        <field name="name">Boreholes</field>
+        <field name="res_model">lims.geotech.borehole</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    </data>
+</odoo>

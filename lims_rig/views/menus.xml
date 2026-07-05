@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+    <menuitem id="menu_lims_rig_root" name="RIG Management" sequence="20"
+              groups="lims_rig.group_lims_rig_user"/>
+
+    <menuitem id="menu_lims_rig_operations" name="Operations" parent="menu_lims_rig_root" sequence="1"/>
+    <menuitem id="menu_lims_rig_fleet" name="Rig Fleet" action="action_lims_rig"
+              parent="menu_lims_rig_operations" sequence="1"/>
+    <menuitem id="menu_lims_rig_schedule" name="Scheduling" action="action_lims_rig_schedule"
+              parent="menu_lims_rig_operations" sequence="2"/>
+
+    </data>
+</odoo>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+    <record id="view_lims_geotech_site_tree" model="ir.ui.view">
+        <field name="name">lims.geotech.site.tree</field>
+        <field name="model">lims.geotech.site</field>
+        <field name="arch" type="xml">
+            <list string="Sites">
+                <field name="name"/>
+                <field name="site_name"/>
+                <field name="partner_id"/>
+                <field name="project_id"/>
+                <field name="borehole_count"/>
+                <field name="state"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_lims_geotech_site_form" model="ir.ui.view">
+        <field name="name">lims.geotech.site.form</field>
+        <field name="model">lims.geotech.site</field>
+        <field name="arch" type="xml">
+            <form string="Geotechnical Site">
+                <header>
+                    <button name="action_view_boreholes" string="Boreholes" type="object"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,active,closed"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_view_boreholes" type="object" class="oe_stat_button" icon="fa-map-marker">
+                            <field name="borehole_count" widget="statinfo" string="Boreholes"/>
+                        </button>
+                    </div>
+                    <div class="oe_title">
+                        <h1><field name="site_name" placeholder="Site Name"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="name" readonly="1"/>
+                            <field name="partner_id"/>
+                            <field name="project_id"/>
+                            <field name="sale_order_id"/>
+                            <field name="laboratory_id"/>
+                        </group>
+                        <group>
+                            <field name="location"/>
+                            <field name="latitude"/>
+                            <field name="longitude"/>
+                            <field name="date_start"/>
+                            <field name="date_end"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Boreholes">
+                            <field name="borehole_ids">
+                                <list editable="bottom">
+                                    <field name="name"/>
+                                    <field name="drilling_method"/>
+                                    <field name="total_depth"/>
+                                    <field name="state"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Notes">
+                            <field name="notes"/>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_lims_geotech_site" model="ir.actions.act_window">
+        <field name="name">Sites</field>
+        <field name="res_model">lims.geotech.site</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_lims_geotech_site_user,lims.geotech.site.user,model_lims_geotech_site,group_lims_geotech_user,1,1,1,0
+access_lims_geotech_site_manager,lims.geotech.site.manager,model_lims_geotech_site,group_lims_geotech_manager,1,1,1,1
+access_lims_geotech_borehole_user,lims.geotech.borehole.user,model_lims_geotech_borehole,group_lims_geotech_user,1,1,1,0
+access_lims_geotech_borehole_manager,lims.geotech.borehole.manager,model_lims_geotech_borehole,group_lims_geotech_manager,1,1,1,1
+access_lims_geotech_test_spt_user,lims.geotech.test.spt.user,model_lims_geotech_test_spt,group_lims_geotech_user,1,1,1,0
+access_lims_geotech_test_spt_manager,lims.geotech.test.spt.manager,model_lims_geotech_test_spt,group_lims_geotech_manager,1,1,1,1
+access_lims_geotech_test_spt_line_user,lims.geotech.test.spt.line.user,model_lims_geotech_test_spt_line,group_lims_geotech_user,1,1,1,1
+access_lims_geotech_test_spt_line_manager,lims.geotech.test.spt.line.manager,model_lims_geotech_test_spt_line,group_lims_geotech_manager,1,1,1,1

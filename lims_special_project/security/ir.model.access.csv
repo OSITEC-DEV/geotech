@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_lims_special_project_permit_sample,lims.special.project.permit.sample,model_lims_special_project_permit,lims.group_lims_sample,1,1,1,0
+access_lims_special_project_permit_manager,lims.special.project.permit.manager,model_lims_special_project_permit,lims.group_lims_manager,1,1,1,1
+access_lims_special_project_station_sample,lims.special.project.station.sample,model_lims_special_project_station,lims.group_lims_sample,1,1,1,1
+access_lims_special_project_station_manager,lims.special.project.station.manager,model_lims_special_project_station,lims.group_lims_manager,1,1,1,1
+access_lims_special_project_layer_sample,lims.special.project.layer.sample,model_lims_special_project_layer,lims.group_lims_sample,1,1,1,1
+access_lims_special_project_layer_manager,lims.special.project.layer.manager,model_lims_special_project_layer,lims.group_lims_manager,1,1,1,1

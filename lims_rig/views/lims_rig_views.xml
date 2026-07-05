@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+    <record id="view_lims_rig_tree" model="ir.ui.view">
+        <field name="name">lims.rig.tree</field>
+        <field name="model">lims.rig</field>
+        <field name="arch" type="xml">
+            <list string="Rigs" decoration-success="state == 'available'"
+                  decoration-info="state == 'deployed'" decoration-warning="state in ('scheduled','maintenance')"
+                  decoration-danger="state == 'breakdown'">
+                <field name="name"/>
+                <field name="rig_name"/>
+                <field name="rig_type"/>
+                <field name="ownership_status"/>
+                <field name="operator_id"/>
+                <field name="current_location"/>
+                <field name="state"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_lims_rig_form" model="ir.ui.view">
+        <field name="name">lims.rig.form</field>
+        <field name="model">lims.rig</field>
+        <field name="arch" type="xml">
+            <form string="Rig">
+                <header>
+                    <button name="action_set_available" string="Set Available" type="object"
+                            class="oe_highlight" invisible="state == 'available'"/>
+                    <button name="action_set_maintenance" string="Send to Maintenance" type="object"
+                            invisible="state == 'maintenance'"/>
+                    <button name="action_set_breakdown" string="Report Breakdown" type="object"
+                            invisible="state == 'breakdown'"/>
+                    <field name="state" widget="statusbar" statusbar_visible="available,scheduled,deployed"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_view_schedules" type="object" class="oe_stat_button" icon="fa-calendar">
+                            <field name="schedule_count" widget="statinfo" string="Schedules"/>
+                        </button>
+                    </div>
+                    <div class="oe_title">
+                        <h1><field name="rig_name" placeholder="Rig Name"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="name" readonly="1"/>
+                            <field name="rig_type"/>
+                            <field name="manufacturer"/>
+                            <field name="model"/>
+                            <field name="drilling_capacity"/>
+                        </group>
+                        <group>
+                            <field name="ownership_status"/>
+                            <field name="purchase_date"/>
+                            <field name="warranty_end_date"/>
+                            <field name="current_location"/>
+                            <field name="usage_hours"/>
+                            <field name="maintenance_hours_interval"/>
+                        </group>
+                    </group>
+                    <group string="Assets">
+                        <field name="equipment_id"/>
+                        <field name="vehicle_id"/>
+                    </group>
+                    <group string="Crew">
+                        <field name="operator_id"/>
+                        <field name="supervisor_id"/>
+                        <field name="helper_ids" widget="many2many_tags"/>
+                    </group>
+                    <group string="Notes">
+                        <field name="notes" nolabel="1"/>
+                    </group>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_lims_rig_kanban" model="ir.ui.view">
+        <field name="name">lims.rig.kanban</field>
+        <field name="model">lims.rig</field>
+        <field name="arch" type="xml">
+            <kanban class="o_kanban_mobile">
+                <field name="state"/>
+                <templates>
+                    <t t-name="card">
+                        <div class="oe_kanban_global_click">
+                            <strong><field name="rig_name"/></strong>
+                            <div><field name="name"/> - <field name="rig_type"/></div>
+                            <div><field name="state" widget="badge"/></div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="action_lims_rig" model="ir.actions.act_window">
+        <field name="name">Rigs</field>
+        <field name="res_model">lims.rig</field>
+        <field name="view_mode">list,kanban,form</field>
+    </record>
+
+    </data>
+</odoo>

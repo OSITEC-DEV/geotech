@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+    <menuitem id="menu_lims_special_project_root" name="Special Projects (QC)" sequence="22"
+              groups="lims.group_lims_sample"/>
+
+    <menuitem id="menu_lims_special_project_permit" name="QC Permits" action="action_lims_special_project_permit"
+              parent="menu_lims_special_project_root" sequence="1"/>
+    <menuitem id="menu_lims_special_project_station" name="Site Stations" action="action_lims_special_project_station"
+              parent="menu_lims_special_project_root" sequence="2"/>
+
+    </data>
+</odoo>

@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_lims_rig_user,lims.rig.user,model_lims_rig,group_lims_rig_user,1,0,0,0
+access_lims_rig_manager,lims.rig.manager,model_lims_rig,group_lims_rig_manager,1,1,1,1
+access_lims_rig_schedule_user,lims.rig.schedule.user,model_lims_rig_schedule,group_lims_rig_user,1,1,1,0
+access_lims_rig_schedule_manager,lims.rig.schedule.manager,model_lims_rig_schedule,group_lims_rig_manager,1,1,1,1
