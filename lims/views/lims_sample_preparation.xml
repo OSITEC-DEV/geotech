@@ -80,7 +80,7 @@
                     <field name="subsample_ids" string="Sub-Code"/>
                     <field name="partner_id"/>
                     <field name="product_ids" string="Test"/>
-                    <group string="Group By">
+                    <group>
                         <filter name="sample" string="Type" context="{'group_by': 'sample'}"/>
                         <filter name="state" string="State" context="{'group_by': 'state'}"/>
                         <filter name="sample_date" string="Date" context="{'group_by': 'sample_date'}"/>

@@ -141,7 +141,7 @@
                     <field name="product_id"/>
                     <field name="print_group_id"/>
                     <field name="state"/>
-                    <group string="Group By">
+                    <group>
                         <filter name="state" string="State" context="{'group_by': 'state'}"/>
                         <filter name="date" string="Date" context="{'group_by': 'date'}"/>
                         <filter name="partner_id" string="Customer" context="{'group_by': 'partner_id'}"/>

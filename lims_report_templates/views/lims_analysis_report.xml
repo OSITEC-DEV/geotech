@@ -22,7 +22,7 @@
                     <field name="name"/>
                     <field name="product_ids" string="Parameter/Pack"/>
                     <field name="eng_text"/>
-                    <group string="Group By">
+                    <group>
                         <!--                        <filter name="product_ids" string="Parameter/Pack" context="{'group_by': 'product_ids'}"/>-->
                     </group>
                 </search>

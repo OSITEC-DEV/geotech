@@ -317,7 +317,7 @@
                     <field name="state"/>
                     <field name="tags"/>
                     <field name="sample_line_prepared" string="Analyte/Parameter"  filter_domain="[('sample_line_prepared.product_ids.name', 'ilike', self)]"/>
-                    <group string="Group By">
+                    <group>
                         <filter name="state" string="State" context="{'group_by': 'state'}"/>
                         <filter name="user" string="Responsible" context="{'group_by': 'user_id'}"/>
                         <filter name="company" string="Company" context="{'group_by': 'company_id'}"/>
