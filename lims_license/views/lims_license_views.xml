@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+    <record id="view_lims_license_tree" model="ir.ui.view">
+        <field name="name">lims.license.tree</field>
+        <field name="model">lims.license</field>
+        <field name="arch" type="xml">
+            <list string="Licenses" decoration-success="is_current and valid_signature"
+                  decoration-danger="not valid_signature">
+                <field name="name"/>
+                <field name="customer"/>
+                <field name="issued_date"/>
+                <field name="expiry_date"/>
+                <field name="is_current"/>
+                <field name="valid_signature"/>
+                <field name="last_checked"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_lims_license_form" model="ir.ui.view">
+        <field name="name">lims.license.form</field>
+        <field name="model">lims.license</field>
+        <field name="arch" type="xml">
+            <form string="License">
+                <header>
+                    <button name="action_check_now" string="Re-check Status" type="object" class="oe_highlight"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1><field name="name" readonly="1"/></h1>
+                    </div>
+                    <group>
+                        <group string="This Instance">
+                            <field name="current_db_uuid" readonly="1"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group string="Upload">
+                            <field name="license_file" filename="license_filename"/>
+                            <field name="license_filename" invisible="1"/>
+                        </group>
+                        <group string="Validation">
+                            <field name="is_current"/>
+                            <field name="valid_signature"/>
+                            <field name="db_uuid_match"/>
+                            <field name="last_checked"/>
+                        </group>
+                    </group>
+                    <group string="License Details" invisible="not valid_signature">
+                        <group>
+                            <field name="customer"/>
+                            <field name="modules_licensed"/>
+                            <field name="seats"/>
+                        </group>
+                        <group>
+                            <field name="issued_date"/>
+                            <field name="expiry_date"/>
+                            <field name="grace_days"/>
+                            <field name="key_version"/>
+                        </group>
+                    </group>
+                    <group string="Error" invisible="not error_message">
+                        <field name="error_message" nolabel="1"/>
+                    </group>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_lims_license" model="ir.actions.act_window">
+        <field name="name">Licenses</field>
+        <field name="res_model">lims.license</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Upload the .lic file provided by your vendor
+            </p>
+        </field>
+    </record>
+
+    </data>
+</odoo>

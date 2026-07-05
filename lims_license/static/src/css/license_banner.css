@@ -1,0 +1,13 @@
+.lims_license_banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2000;
+    background-color: #e67e22;
+    color: #fff;
+    text-align: center;
+    padding: 6px 12px;
+    font-size: 13px;
+    font-weight: 500;
+}

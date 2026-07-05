@@ -18,6 +18,7 @@
 
     'depends': [
         'lims',
+        'lims_license',
         'project',
     ],
     'data': [

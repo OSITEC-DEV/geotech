@@ -14,6 +14,7 @@
 
     'depends': [
         'lims',
+        'lims_license',
         'lims_rig',
         'project',
         'sale',

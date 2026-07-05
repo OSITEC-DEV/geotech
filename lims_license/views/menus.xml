@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+    <menuitem id="menu_lims_license" name="LIMS License" action="action_lims_license"
+              parent="base.menu_administration" groups="base.group_system" sequence="100"/>
+
+    </data>
+</odoo>
