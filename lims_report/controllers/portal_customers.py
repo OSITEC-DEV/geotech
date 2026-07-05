@@ -136,7 +136,7 @@ class CustomerPortalTest(CustomerPortal):
 
         try:
             report_sudo.sudo().write({'consultant_id': request.env.user,
-                                      'consultation_date': fields.datetime.now()})
+                                      'consultation_date': fields.Datetime.now()})
         except (TypeError, binascii.Error) as e:
             return {'error': _('Invalid signature data.')}
 

@@ -84,7 +84,7 @@ class LimsReport(models.Model):
         for record in self:
             if record.env.user.has_group('lims.group_lims_consultant'):
                 record.consultant_id = record.env.user.id
-                record.consultation_date = fields.datetime.now()
+                record.consultation_date = fields.Datetime.now()
                 record.signature_consult = record.env.user.signature_image
             else:
                 raise UserError("Oops, You are not allowed to sign as consultant")
@@ -94,7 +94,7 @@ class LimsReport(models.Model):
             if record.env.user.has_group('lims.group_lims_reporting'):
                 record.state = 'valid'
                 record.generate_qr_code()
-                record.date = fields.datetime.now()
+                record.date = fields.Datetime.now()
                 seq_date = fields.Datetime.now()
                 record.name = record.env['ir.sequence'].next_by_code('lims.report',
                                                                      sequence_date=seq_date) or _('New')
@@ -118,7 +118,7 @@ class LimsReport(models.Model):
     def do_ready(self):
         for record in self:
             record.state = 'ready'
-            record.date = fields.datetime.now()
+            record.date = fields.Datetime.now()
 
     def preview_analysis_report(self):
         self.ensure_one()

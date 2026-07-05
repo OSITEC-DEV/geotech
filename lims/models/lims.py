@@ -61,7 +61,7 @@ class Lims_sample(models.Model):
     user_id = fields.Many2one('res.users', 'Responsible', default=lambda self: self.env.user, tracking=True)
     origin = fields.Char('Origin', default="On-site")
     tags = fields.Many2many('crm.tag')
-    date = fields.Datetime('Registration Date', default=lambda self: fields.datetime.now(), tracking=True)
+    date = fields.Datetime('Registration Date', default=lambda self: fields.Datetime.now(), tracking=True)
     planned_date = fields.Datetime('Planned date', copy=False)
     receiving_date = fields.Datetime('Receiving date', copy=False)
     partner_id = fields.Many2one('res.partner', 'Customer', tracking=True, index=True)
@@ -178,7 +178,7 @@ class Lims_sample(models.Model):
         for record in self:
             if record.planned_date:
                 if not record.report_date:
-                    current_time = (fields.datetime.now() - record.planned_date)
+                    current_time = (fields.Datetime.now() - record.planned_date)
                     minutes = divmod(current_time.total_seconds(), 60)[0] / 60
                     record.diff_time = minutes
                     return current_time
@@ -197,8 +197,8 @@ class Lims_sample(models.Model):
 
     def send_sms(self):
         self.state = 'done'
-        self.report_date = fields.datetime.now()
-        deltatime = (fields.datetime.now() - self.planned_date)
+        self.report_date = fields.Datetime.now()
+        deltatime = (fields.Datetime.now() - self.planned_date)
         minutes = divmod(deltatime.total_seconds(), 60)[0] / 60
         self.delay_time = minutes if minutes else 0.0
         return {
@@ -267,7 +267,7 @@ class Lims_sample(models.Model):
     def _compute_analysis_done(self):
         for order in self:
             if order.analysis_ids and all(analysis.state == 'valid' for analysis in order.analysis_ids):
-                order.date_done = fields.datetime.now()
+                order.date_done = fields.Datetime.now()
                 order.analysis_done = True
             else:
                 order.analysis_done = False
@@ -384,7 +384,7 @@ class Lims_sample(models.Model):
         for s in self.sample_line_prepared:
             s.do_received()
         self.state = 'recieved'
-        self.receiving_date = fields.datetime.now()
+        self.receiving_date = fields.Datetime.now()
 
     def do_validate(self):
         for record in self:
@@ -552,7 +552,7 @@ class Lims_sample(models.Model):
     #         analysis_ids_vals = []
     #         pack = False
     #         for sample in sample_line_prepared:
-    #             # sample.sample_date = fields.datetime.now()
+    #             # sample.sample_date = fields.Datetime.now()
     #             for product in sample.product_ids:
     #                 if product not in self.analysis_ids.filtered(lambda a: a.state != 'cancel' and
     #                                                                        a.sample_line_id.id == sample.id).mapped(
@@ -564,7 +564,7 @@ class Lims_sample(models.Model):
     #                                 break
     #                     # pack = product.parent_pack if product.parent_pack and product.parent_pack.id in self.sample_line.mapped('product_ids').ids else False
     #                     analysis_ids_vals.append((0, 0, self._prepare_analysis_line(sample, product, pack)))
-    #                     sample.receiving_date = fields.datetime.now()
+    #                     sample.receiving_date = fields.Datetime.now()
     #         if analysis_ids_vals:
     #             return self.update({'analysis_ids': analysis_ids_vals,
     #                                 'state': 'progress'})
@@ -802,7 +802,7 @@ class Lims_sample_preparation(models.Model):
         self.state = 'recieved'
         self.lock = True,
         if not self.receiving_date:
-            self.receiving_date = fields.datetime.now()
+            self.receiving_date = fields.Datetime.now()
             # create analysis after accepting sample
         # self.create_analysis()
         if all(s.state == 'recieved' for s in self.main_id.sample_line_prepared):
@@ -910,7 +910,7 @@ class Lims_sample_preparation(models.Model):
     #                 # pack = product.parent_pack if product.parent_pack and product.parent_pack.id in self.sample_line.mapped('product_ids').ids else False
     #                 analysis_ids_vals.append((0, 0, main_id._prepare_analysis_line(sample, product, pack)))
     #         if analysis_ids_vals:
-    #             sample.receiving_date = fields.datetime.now()
+    #             sample.receiving_date = fields.Datetime.now()
     #             return main_id.update({'analysis_ids': analysis_ids_vals,
     #                                    'state': 'progress'})
 
@@ -956,7 +956,7 @@ class Lims_sub_sample_preparation(models.Model):
     sequence = fields.Char('Sequence', readonly=True)
     amount = fields.Float('Amount')
     uom_id = fields.Many2one('uom.uom', related='sample_id.uom_id')
-    date = fields.Datetime('Date', default=lambda self: fields.datetime.now())
+    date = fields.Datetime('Date', default=lambda self: fields.Datetime.now())
 
     def name_get(self):
         result = []

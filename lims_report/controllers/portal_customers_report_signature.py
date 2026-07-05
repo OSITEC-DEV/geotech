@@ -123,7 +123,7 @@ class CustomerPortalTestSignature(CustomerPortal):
 
         try:
             report_sudo.sudo().write({'consultant_id': request.env.user,
-                                      'consultation_date': fields.datetime.now(),
+                                      'consultation_date': fields.Datetime.now(),
                                       'signature_consult': request.env.user.signature_image or signature_image})
         except (TypeError, binascii.Error) as e:
             return {'error': _('Invalid signature_image data.')}

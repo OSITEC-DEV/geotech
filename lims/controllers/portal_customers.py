@@ -152,7 +152,7 @@ class CustomerPortalRequest(CustomerPortal):
                 try:
                     report.sudo().write({'state': 'sent',
                                          'consultant_id': request.session.uid,
-                                         'consultation_date': fields.datetime.now()})
+                                         'consultation_date': fields.Datetime.now()})
                 except (AccessError, MissingError):
                     return {'error': _('No report found')}
         except (TypeError, binascii.Error) as e:
