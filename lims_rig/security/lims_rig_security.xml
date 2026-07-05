@@ -10,14 +10,12 @@
 
     <record id="group_lims_rig_user" model="res.groups">
         <field name="name">Rig User</field>
-        <field name="category_id" ref="module_category_lims_rig"/>
         <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
         <field name="comment">The user can view and schedule rigs.</field>
     </record>
 
     <record id="group_lims_rig_manager" model="res.groups">
         <field name="name">Rig Manager</field>
-        <field name="category_id" ref="module_category_lims_rig"/>
         <field name="implied_ids" eval="[(4, ref('group_lims_rig_user'))]"/>
         <field name="comment">The user manages the rig fleet, maintenance, and scheduling approvals.</field>
     </record>
