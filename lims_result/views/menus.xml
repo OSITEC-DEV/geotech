@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="result_inputs_action" model="ir.actions.act_window">
+            <field name="name">Result Inputs</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">lims.result.input.type</field>
+            <field name="view_mode">list,form,kanban</field>
+            <!--  <field name="search_view_id" ref="stock_product_search_form_view"/> -->
+        </record>
+
+
+        <menuitem id="menu_lims_result_input_type" name="Result Inputs" action="result_inputs_action"
+                  parent="lims.menu_lims_config_encoding" sequence="2"/>
+
+
+    </data>
+</odoo>

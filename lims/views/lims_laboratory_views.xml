@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_lims_laboratory_list" model="ir.ui.view">
+            <field name="name">lims.laboratory.list</field>
+            <field name="model">lims.laboratory</field>
+            <field name="arch" type="xml">
+                <list>
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="company_id"/>
+                    <field name="manager_id"/>
+                    <field name="active"/>
+                </list>
+            </field>
+        </record>
+        
+        <record id="view_lims_laboratory_form" model="ir.ui.view">
+            <field name="name">lims.laboratory.form</field>
+            <field name="model">lims.laboratory</field>
+            <field name="arch" type="xml">
+                <form string="Laboratory">
+        
+                    <sheet>
+        
+                        <div class="oe_button_box" name="button_box">
+        
+                            <button type="object"
+                                    name="action_open_departments"
+                                    class="oe_stat_button"
+                                    icon="fa-sitemap">
+        
+                                <field name="department_count"
+                                       widget="statinfo"
+                                       string="Departments"/>
+                            </button>
+        
+                            <button type="object"
+                                    name="action_open_sequences"
+                                    class="oe_stat_button"
+                                    icon="fa-sort-numeric-asc">
+        
+                                <field name="sequence_count"
+                                       widget="statinfo"
+                                       string="Sequences"/>
+                            </button>
+        
+                        </div>
+        
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="code"/>
+                                <field name="company_id"/>
+                                <field name="manager_id"/>
+                                <field name="active"/>
+                            </group>
+        
+                            <group>
+                                <field name="partner_id"/>
+                                <field name="user_ids" widget="many2many_tags"/>
+                            </group>
+                        </group>
+        
+                        <notebook>
+        
+                            <page string="Departments">
+                                <field name="department_ids">
+                                    <list editable="bottom">
+                                        <field name="name"/>
+                                        <field name="manager_id"/>
+                                    </list>
+                                </field>
+                            </page>
+        
+                            <page string="Sequences">
+                                <field name="sequence_ids">
+                                    <list>
+                                        <field name="laboratory_id"/>
+                                        <field name="name"/>
+                                        <field name="code"/>
+                                        <field name="prefix"/>
+                                    </list>
+                                </field>
+                            </page>
+        
+                            <page string="Notes">
+                                <field name="notes"/>
+                            </page>
+        
+                        </notebook>
+        
+                    </sheet>
+        
+                    <chatter/>
+        
+                </form>
+            </field>
+    </record>
+    
+    </data>
+</odoo>

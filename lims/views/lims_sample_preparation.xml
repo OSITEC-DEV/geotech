@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="lims_sample_view_form" model="ir.ui.view">
+            <field name="name">lims.sample.preparation.form</field>
+            <field name="model">lims.sample.preparation</field>
+            <field name="arch" type="xml">
+                <form  create="false">
+                    <header>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <h1 class='oe_title'>
+                            <field name="name" readonly="True"/>
+                            <field name="qrcode" widget="image" class="oe_avatar" options='{"zoom": true}'/>
+                        </h1>
+                        <group name="sample_info_group" string="Sample Informations" col="4">
+                            <field name="sample"/>
+                            <field name="user_id"/>
+                            <field name="main_id" readonly='1'/>
+                            <field name="date" readonly='1'/>
+                            <field name="sample_date" readonly='1'/>
+                            <field name="partner_id" readonly="True" groups="lims.group_show_sample_information"/>
+                            <field name="note"/>
+                        </group>
+                        <button name="create_analysis" type="object" string="Create Analysis"
+                                class="oe_inline oe_highlight" confirm="PLease confirm this action"/>
+                        <group string="Analysis" name="analysis">
+                            <field name="analysis_ids" readonly="True"/>
+                        </group>
+                        <notebook>
+                            <page string="Sub-samples" name="subsamples">
+                                <button name="generate_sub_samples" type="object" string="Generate Sub-Samples"
+                                        class="oe_link" confirm="PLease confirm this action"/>
+                                <group string="Sub-Samples">
+                                    <field name="nb_sub" widget="integer"/>
+                                    <field name="subsample_ids">
+                                        <list>
+                                            <field name="sample_id"/>
+                                            <field name="name" invisible="1"/>
+                                            <field name="sequence"/>
+                                            <field name="amount"/>
+                                            <field name="uom_id"/>
+                                            <field name="date"/>
+                                            <button name="unlink" type="object" string="Delete" class="oe_link"
+                                                    confirm="PLease confirm this action"/>
+                                        </list>
+                                    </field>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="lims_sample_view_list" model="ir.ui.view">
+            <field name="name">lims.sample.preparation.list</field>
+            <field name="model">lims.sample.preparation</field>
+            <field name="arch" type="xml">
+                <list edit="false" create="false" default_order="name desc">
+                    <field name="name"/>
+                    <field name="sample"/>
+                    <field name="create_uid"/>
+                    <field name="main_id"/>
+                    <field name="date"/>
+                    <field name="partner_id" groups="lims.group_show_sample_information"/>
+                    <field name="note" optional="hide"/>
+                    <field name="state"/>
+                </list>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="lims_sample_preparation_search">
+            <field name="name">lims.sample.preparation.search</field>
+            <field name="model">lims.sample.preparation</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="name" width="250"/>
+                    <field name="subsample_ids" string="Sub-Code"/>
+                    <field name="partner_id"/>
+                    <field name="product_ids" string="Test"/>
+                    <filter name="sample_date" string="Date"/>
+                    <filter name="state" string="State"/>
+                    <group string="Group By">
+                        <filter name="sample" string="Type" context="{'group_by': 'sample'}"/>
+                        <filter name="state" string="State" context="{'group_by': 'state'}"/>
+                        <filter name="sample_date" string="Date" context="{'group_by': 'sample_date'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+    </data>
+</odoo>

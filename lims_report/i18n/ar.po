@@ -1,0 +1,1235 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* lims_report
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-20 23:24+0000\n"
+"PO-Revision-Date: 2025-10-20 23:24+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: lims_report
+#: model_terms:ir.ui.view,arch_db:lims_report.portal_my_reports_by_pending
+#: model_terms:ir.ui.view,arch_db:lims_report.portal_my_reports_by_test
+msgid "&amp;nbsp;"
+msgstr ""
+
+#. module: lims_report
+#: model_terms:ir.ui.view,arch_db:lims_report.medical_analysis_report_bytest_portal
+#: model_terms:ir.ui.view,arch_db:lims_report.portal_my_reports_by_pending
+#: model_terms:ir.ui.view,arch_db:lims_report.portal_my_reports_by_test
+msgid ""
+"<i class=\"fa fa-download\"/>\n"
+"                                            Download"
+msgstr ""
+"<i class=\"fa fa-download\"/>\n"
+"                                            تحميل"
+
+#. module: lims_report
+#: model_terms:ir.ui.view,arch_db:lims_report.portal_my_reports_by_pending
+#: model_terms:ir.ui.view,arch_db:lims_report.portal_my_reports_by_test
+msgid "<i class=\"fa fa-fw fa-check\" role=\"img\" aria-label=\"Done\" title=\"Done\"/>Done"
+msgstr "<i class=\"fa fa-fw fa-check\" role=\"img\" aria-label=\"Done\" title=\"Done\"/>مكتمل"
+
+#. module: lims_report
+#: model_terms:ir.ui.view,arch_db:lims_report.medical_analysis_report_bytest_portal
+msgid ""
+"<i class=\"fa fa-print\"/>\n"
+"                                            Print"
+msgstr ""
+"<i class=\"fa fa-print\"/>\n"
+"                                            طباعة"
+
+#. module: lims_report
+#: model_terms:ir.ui.view,arch_db:lims_report.portal_my_reports_by_pending
+#: model_terms:ir.ui.view,arch_db:lims_report.portal_my_reports_by_test
+msgid "<span class=\"d-none d-md-inline\">Accession Number #</span>"
+msgstr "<span class=\"d-none d-md-inline\">رقم الانضمام #</span>"
+
+#. module: lims_report
+#: model_terms:ir.ui.view,arch_db:lims_report.portal_my_reports_by_pending
+#: model_terms:ir.ui.view,arch_db:lims_report.portal_my_reports_by_test
+msgid "<span class=\"d-none d-md-inline\">Medical Report #</span>"
+msgstr "<span class=\"d-none d-md-inline\">التقرير الطبي #</span>"
+
+#. module: lims_report
+#: model_terms:ir.ui.view,arch_db:lims_report.lims_view_form_report
+msgid ""
+"<span class=\"o_stat_text\">Customer</span>\n"
+"                                    <span class=\"o_stat_text\">Preview</span>"
+msgstr ""
+"<span class=\"o_stat_text\">العميل</span>\n"
+"                                    <span class=\"o_stat_text\">معاينة</span>"
+
+#. module: lims_report
+#: model_terms:ir.ui.view,arch_db:lims_report.portal_my_reports_by_pending
+#: model_terms:ir.ui.view,arch_db:lims_report.portal_my_reports_by_test
+msgid "<span class=\"text-truncate\">: Customer</span>"
+msgstr "<span class=\"text-truncate\">: العميل</span>"
+
+#. module: lims_report
+#: model_terms:ir.ui.view,arch_db:lims_report.portal_my_reports_by_pending
+#: model_terms:ir.ui.view,arch_db:lims_report.portal_my_reports_by_test
+msgid "<span class=\"text-truncate\">Other Category</span>"
+msgstr "<span class=\"text-truncate\">فئة أخرى</span>"
+
+#. module: lims_report
+#: model_terms:ir.ui.view,arch_db:lims_report.medical_analysis_report_form_view_portal
+msgid "<strong class=\"text-left\">Reviewed by</strong>"
+msgstr "<strong class=\"text-left\">تمت المراجعة بواسطة</strong>"
+
+#. module: lims_report
+#: model_terms:ir.ui.view,arch_db:lims_report.medical_analysis_report_form_view_portal
+msgid "<strong>Report Information</strong>:"
+msgstr "<strong>معلومات التقرير</strong>:"
+
+#. module: lims_report
+#: model_terms:ir.ui.view,arch_db:lims_report.medical_analysis_report_form_view_portal
+msgid "<strong>Sample Information</strong>:"
+msgstr "<strong>معلومات العينة</strong>:"
+
+#. module: lims_report
+#: model_terms:ir.ui.view,arch_db:lims_report.medical_analysis_report_form_view_portal
+msgid "A draft report , not for official use"
+msgstr "تقرير مسودة، ليس للاستخدام الرسمي"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_report__access_warning
+msgid "Access warning"
+msgstr "تحذير الوصول"
+
+#. module: lims_report
+#: model_terms:ir.ui.view,arch_db:lims_report.medical_analysis_report_form_view_portal
+msgid "Accession N"
+msgstr "رقم الانضمام"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_report__message_needaction
+msgid "Action Needed"
+msgstr "إجراء مطلوب"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_report__activity_ids
+msgid "Activities"
+msgstr "الأنشطة"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_report__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "تزيين استثناء النشاط"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_report__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_report__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "أيقونة نوع النشاط"
+
+#. module: lims_report
+#: model_terms:ir.ui.view,arch_db:lims_report.medical_analysis_report_form_view_portal
+msgid "Add Comments"
+msgstr "إضافة تعليقات"
+
+#. module: lims_report
+#: model:ir.model,name:lims_report.model_add_reason_wizard
+msgid "Add reason wizard"
+msgstr "معالج إضافة السبب"
+
+#. module: lims_report
+#: model_terms:ir.ui.view,arch_db:lims_report.lims_view_form_report
+msgid "Add report title here..."
+msgstr "أضف عنوان التقرير هنا..."
+
+#. module: lims_report
+#: model_terms:ir.ui.view,arch_db:lims_report.medical_analysis_report_bytest_portal
+msgid "Age"
+msgstr "العمر"
+
+#. module: lims_report
+#: model_terms:ir.ui.view,arch_db:lims_report.lims_view_form_report
+msgid "Analysis"
+msgstr "التحليل"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_report__analysis_ids
+msgid "Analysis #"
+msgstr "التحليل #"
+
+#. module: lims_report
+#: model:ir.model,name:lims_report.model_lims_sample_main
+msgid "Analysis Request"
+msgstr "طلب التحليل"
+
+#. module: lims_report
+#: model:ir.model,name:lims_report.model_ir_attachment
+msgid "Attachment"
+msgstr "مرفق"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_report__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_department__auto_validate_report
+msgid "Auto-Validate Report"
+msgstr "التحقق التلقائي من التقرير"
+
+#. module: lims_report
+#: model:ir.model.fields,help:lims_report.field_lims_sample_main__report_only_index
+msgid "Avoid creating the family members analysis in a separate report"
+msgstr "تجنب إنشاء تحليل أفراد العائلة في تقرير منفصل"
+
+#. module: lims_report
+#: model:ir.model.fields.selection,name:lims_report.selection__lims_sample_main__group_by_report__package
+msgid "BY Pack"
+msgstr "حسب الحزمة"
+
+#. module: lims_report
+#: model:ir.model.fields.selection,name:lims_report.selection__lims_sample_main__group_by_report__print_group
+msgid "BY Print Group"
+msgstr "حسب مجموعة الطباعة"
+
+#. module: lims_report
+#: model_terms:ir.ui.view,arch_db:lims_report.medical_analysis_report_bytest_portal
+msgid ""
+"Blood\n"
+"                                                    Group"
+msgstr ""
+"فصيلة\n"
+"                                                    الدم"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_report__campaign_id
+msgid "Campaign"
+msgstr "الحملة"
+
+#. module: lims_report
+#: model_terms:ir.ui.view,arch_db:lims_report.lims_view_form_report
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: lims_report
+#: model:ir.model.fields.selection,name:lims_report.selection__lims_report__state__cancel
+msgid "Canceled"
+msgstr "ملغي"
+
+#. module: lims_report
+#. odoo-python
+#: code:addons/lims_report/controllers/portal_customers.py:0
+#: code:addons/lims_report/controllers/portal_customers_report_signature.py:0
+#: model_terms:ir.ui.view,arch_db:lims_report.medical_analysis_report_form_view_portal
+msgid "Category"
+msgstr "الفئة"
+
+#. module: lims_report
+#: model_terms:ir.ui.view,arch_db:lims_report.medical_analysis_report_form_view_portal
+msgid "Collected On"
+msgstr "تم الجمع في"
+
+#. module: lims_report
+#: model:ir.model,name:lims_report.model_res_company
+msgid "Companies"
+msgstr "الشركات"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_report__company_id
+msgid "Company"
+msgstr "الشركة"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_report__consultant_id
+#: model_terms:ir.ui.view,arch_db:lims_report.lims_view_search_report
+msgid "Consultant"
+msgstr "المستشار"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_report__consultant_note
+msgid "Consultant / Recommendations"
+msgstr "المستشار / التوصيات"
+
+#. module: lims_report
+#: model_terms:ir.ui.view,arch_db:lims_report.lims_view_form_report
+msgid "Consultant Section"
+msgstr "قسم المستشار"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_report__signature_consult
+#: model_terms:ir.ui.view,arch_db:lims_report.medical_analysis_report_form_view_portal
+msgid "Consultant Signature"
+msgstr "توقيع المستشار"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_report__consultation_date
+msgid "Consultation date"
+msgstr "تاريخ الاستشارة"
+
+#. module: lims_report
+#: model_terms:ir.ui.view,arch_db:lims_report.lims_view_form_report_inherit
+msgid "Create Report"
+msgstr "إنشاء تقرير"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_parameter_print__create_uid
+#: model:ir.model.fields,field_description:lims_report.field_lims_parameter_print_group__create_uid
+#: model:ir.model.fields,field_description:lims_report.field_lims_report__create_uid
+#: model:ir.model.fields,field_description:lims_report.field_lims_report_keys__create_uid
+#: model:ir.model.fields,field_description:lims_report.field_lims_report_keys_json__create_uid
+#: model:ir.model.fields,field_description:lims_report.field_lims_report_keys_lines__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_parameter_print__create_date
+#: model:ir.model.fields,field_description:lims_report.field_lims_parameter_print_group__create_date
+#: model:ir.model.fields,field_description:lims_report.field_lims_report__create_date
+#: model:ir.model.fields,field_description:lims_report.field_lims_report_keys__create_date
+#: model:ir.model.fields,field_description:lims_report.field_lims_report_keys_json__create_date
+#: model:ir.model.fields,field_description:lims_report.field_lims_report_keys_lines__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: lims_report
+#. odoo-python
+#: code:addons/lims_report/controllers/portal_customers.py:0
+#: code:addons/lims_report/controllers/portal_customers_report_signature.py:0
+#: model:ir.model.fields,field_description:lims_report.field_lims_report__partner_id
+#: model_terms:ir.ui.view,arch_db:lims_report.lims_view_search_report
+#: model_terms:ir.ui.view,arch_db:lims_report.portal_my_reports_by_pending
+#: model_terms:ir.ui.view,arch_db:lims_report.portal_my_reports_by_test
+msgid "Customer"
+msgstr "العميل"
+
+#. module: lims_report
+#: model:ir.model.fields,help:lims_report.field_lims_report__access_url
+msgid "Customer Portal URL"
+msgstr "رابط بوابة العميل"
+
+#. module: lims_report
+#: model_terms:ir.ui.view,arch_db:lims_report.lims_view_search_report
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_report__date
+msgid "Date report"
+msgstr "تاريخ التقرير"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_report__date_result
+msgid "Date result"
+msgstr "تاريخ النتيجة"
+
+#. module: lims_report
+#: model_terms:ir.ui.view,arch_db:lims_report.medical_analysis_report_bytest_portal
+msgid ""
+"Dear customer, your medical analysis results is under review, for more\n"
+"                                                inquiries, you can join us on WhatsApp"
+msgstr ""
+"عزيزنا العميل، نتائج التحاليل الطبية الخاصة بك قيد المراجعة، للمزيد\n"
+"                                                من الاستفسارات، يمكنكم التواصل معنا على الواتساب"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_department__text_in_report
+msgid "Default Note"
+msgstr "الملاحظة الافتراضية"
+
+#. module: lims_report
+#: model_terms:ir.ui.view,arch_db:lims_report.lims_view_form_report
+msgid "Default Print"
+msgstr "الطباعة الافتراضية"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_report_keys_json__name
+msgid "Description"
+msgstr "الوصف"
+
+#. module: lims_report
+#: model:ir.model,name:lims_report.model_lims_report_keys
+msgid "Dict of Keys for dynamic reports"
+msgstr "قاموس المفاتيح للتقارير الديناميكية"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_report_keys_json__dict_id
+#: model:ir.model.fields,field_description:lims_report.field_lims_report_keys_lines__dict_id
+msgid "Dictionary"
+msgstr "القاموس"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_report__signature_director
+msgid "Director Signature"
+msgstr "توقيع المدير"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_parameter_print__display_name
+#: model:ir.model.fields,field_description:lims_report.field_lims_parameter_print_group__display_name
+#: model:ir.model.fields,field_description:lims_report.field_lims_report__display_name
+#: model:ir.model.fields,field_description:lims_report.field_lims_report_keys__display_name
+#: model:ir.model.fields,field_description:lims_report.field_lims_report_keys_json__display_name
+#: model:ir.model.fields,field_description:lims_report.field_lims_report_keys_lines__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: lims_report
+#: model_terms:ir.ui.view,arch_db:lims_report.lims_view_form_report
+msgid "Do Approve"
+msgstr "الموافقة"
+
+#. module: lims_report
+#: model_terms:ir.ui.view,arch_db:lims_report.lims_view_form_report
+msgid "Do not select this option for routine tests"
+msgstr "لا تختار هذا الخيار للاختبارات الروتينية"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_report_keys_lines__domain_model
+msgid "Domain Model"
+msgstr "نموذج النطاق"
+
+#. module: lims_report
+#: model_terms:ir.ui.view,arch_db:lims_report.medical_analysis_report_bytest_portal
+#: model_terms:ir.ui.view,arch_db:lims_report.portal_my_reports_by_pending
+#: model_terms:ir.ui.view,arch_db:lims_report.portal_my_reports_by_test
+msgid "Download"
+msgstr "تحميل"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_sample_main__external_accession_number
+msgid "External Accession Number"
+msgstr "رقم الانضمام الخارجي"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_report_keys_lines__field_id
+msgid "Field"
+msgstr "الحقل"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_report_keys_lines__field_child
+msgid "Field child"
+msgstr "الحقل الفرعي"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_report__message_follower_ids
+msgid "Followers"
+msgstr "المتابعون"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_report__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (الشركاء)"
+
+#. module: lims_report
+#: model:ir.model.fields,help:lims_report.field_lims_report__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "أيقونة Font Awesome مثل fa-tasks"
+
+#. module: lims_report
+#: model_terms:ir.ui.view,arch_db:lims_report.medical_analysis_report_bytest_portal
+msgid ""
+"Full\n"
+"                                                    Name"
+msgstr ""
+"الاسم\n"
+"                                                    الكامل"
+
+#. module: lims_report
+#: model_terms:ir.ui.view,arch_db:lims_report.lims_view_search_report
+msgid "Group By"
+msgstr "تجميع حسب"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_sample_main__group_by_report
+msgid "Group By Report"
+msgstr "تجميع حسب التقرير"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_parameter_print_group__name
+msgid "Group Name"
+msgstr "اسم المجموعة"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_report__has_message
+msgid "Has Message"
+msgstr "لديه رسالة"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_department__default_hide_table
+msgid "Hide Table with references"
+msgstr "إخفاء الجدول مع المراجع"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_report__hide_table_result
+msgid "Hide result table"
+msgstr "إخفاء جدول النتائج"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_parameter_print__id
+#: model:ir.model.fields,field_description:lims_report.field_lims_parameter_print_group__id
+#: model:ir.model.fields,field_description:lims_report.field_lims_report__id
+#: model:ir.model.fields,field_description:lims_report.field_lims_report_keys__id
+#: model:ir.model.fields,field_description:lims_report.field_lims_report_keys_json__id
+#: model:ir.model.fields,field_description:lims_report.field_lims_report_keys_lines__id
+msgid "ID"
+msgstr "المعرف"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_report__activity_exception_icon
+msgid "Icon"
+msgstr "الأيقونة"
+
+#. module: lims_report
+#: model:ir.model.fields,help:lims_report.field_lims_report__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "أيقونة للإشارة إلى نشاط استثنائي."
+
+#. module: lims_report
+#: model:ir.model.fields,help:lims_report.field_lims_report__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "إذا تم تحديده، فالرسائل الجديدة تتطلب انتباهك."
+
+#. module: lims_report
+#: model:ir.model.fields,help:lims_report.field_lims_report__message_has_error
+#: model:ir.model.fields,help:lims_report.field_lims_report__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا تم تحديده، فبعض الرسائل بها خطأ في التسليم."
+
+#. module: lims_report
+#. odoo-python
+#: code:addons/lims_report/controllers/portal_customers.py:0
+#: code:addons/lims_report/controllers/portal_customers_report_signature.py:0
+msgid "Invalid request."
+msgstr "طلب غير صالح."
+
+#. module: lims_report
+#. odoo-python
+#: code:addons/lims_report/controllers/portal_customers.py:0
+#: code:addons/lims_report/controllers/portal_customers_report_signature.py:0
+msgid "Invalid signature data."
+msgstr "بيانات التوقيع غير صالحة."
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_report__message_is_follower
+msgid "Is Follower"
+msgstr "متابع"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_report_keys__dict_json_ids
+msgid "Json Keys"
+msgstr "مفاتيح JSON"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_report_keys_json__key
+#: model:ir.model.fields,field_description:lims_report.field_lims_report_keys_lines__key
+msgid "Key"
+msgstr "المفتاح"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_report_keys__dict_key_ids
+msgid "Keys"
+msgstr "المفاتيح"
+
+#. module: lims_report
+#: model:ir.model,name:lims_report.model_lims_report_keys_json
+msgid "Keys for Json reports"
+msgstr "مفاتيح تقارير JSON"
+
+#. module: lims_report
+#: model:ir.model,name:lims_report.model_lims_report_keys_lines
+msgid "Keys for dynamic reports"
+msgstr "مفاتيح التقارير الديناميكية"
+
+#. module: lims_report
+#: model_terms:ir.ui.view,arch_db:lims_report.medical_analysis_report_bytest_portal
+msgid "LABORATORY RESULTS"
+msgstr "نتائج المختبر"
+
+#. module: lims_report
+#: model:ir.model,name:lims_report.model_lims_department
+msgid "Laboratory department"
+msgstr "قسم المختبر"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_parameter_print__write_uid
+#: model:ir.model.fields,field_description:lims_report.field_lims_parameter_print_group__write_uid
+#: model:ir.model.fields,field_description:lims_report.field_lims_report__write_uid
+#: model:ir.model.fields,field_description:lims_report.field_lims_report_keys__write_uid
+#: model:ir.model.fields,field_description:lims_report.field_lims_report_keys_json__write_uid
+#: model:ir.model.fields,field_description:lims_report.field_lims_report_keys_lines__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_parameter_print__write_date
+#: model:ir.model.fields,field_description:lims_report.field_lims_parameter_print_group__write_date
+#: model:ir.model.fields,field_description:lims_report.field_lims_report__write_date
+#: model:ir.model.fields,field_description:lims_report.field_lims_report_keys__write_date
+#: model:ir.model.fields,field_description:lims_report.field_lims_report_keys_json__write_date
+#: model:ir.model.fields,field_description:lims_report.field_lims_report_keys_lines__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: lims_report
+#: model_terms:ir.ui.view,arch_db:lims_report.medical_analysis_report_bytest_portal
+#: model_terms:ir.ui.view,arch_db:lims_report.medical_analysis_report_form_view_portal
+msgid "Logo"
+msgstr "الشعار"
+
+#. module: lims_report
+#: model:ir.model,name:lims_report.model_lims_report
+msgid "Medical Analysis Report"
+msgstr "تقرير التحليل الطبي"
+
+#. module: lims_report
+#: model_terms:ir.ui.view,arch_db:lims_report.portal_breadcrumbs
+msgid "Medical Report"
+msgstr "التقرير الطبي"
+
+#. module: lims_report
+#: model_terms:ir.ui.view,arch_db:lims_report.medical_analysis_report_bytest_portal
+msgid "Medical Report Number"
+msgstr "رقم التقرير الطبي"
+
+#. module: lims_report
+#: model_terms:ir.ui.view,arch_db:lims_report.portal_my_home_medical_report_by_test
+#: model_terms:ir.ui.view,arch_db:lims_report.portal_my_reports_by_pending
+#: model_terms:ir.ui.view,arch_db:lims_report.portal_my_reports_by_test
+msgid "Medical Reports"
+msgstr "التقارير الطبية"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_report__medium_id
+msgid "Medium"
+msgstr "الوسيط"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_report__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسالة"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_report__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: lims_report
+#: model_terms:ir.ui.view,arch_db:lims_report.medical_analysis_report_bytest_portal
+msgid "Method"
+msgstr "الطريقة"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_report_keys__model_id
+msgid "Model"
+msgstr "النموذج"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_report__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "الموعد النهائي لنشاطي"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_parameter_print__name
+#: model:ir.model.fields,field_description:lims_report.field_lims_report_keys__name
+msgid "Name"
+msgstr "الاسم"
+
+#. module: lims_report
+#: model_terms:ir.ui.view,arch_db:lims_report.medical_analysis_report_bytest_portal
+msgid "National ID/Iqama"
+msgstr "الهوية الوطنية/الإقامة"
+
+#. module: lims_report
+#: model_terms:ir.ui.view,arch_db:lims_report.medical_analysis_report_bytest_portal
+msgid "Nationality"
+msgstr "الجنسية"
+
+#. module: lims_report
+#. odoo-python
+#: code:addons/lims_report/models/lims_report.py:0
+msgid "New"
+msgstr "جديد"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_report__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط التالي"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_report__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط التالي"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_report__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: lims_report
+#. odoo-python
+#: code:addons/lims_report/controllers/portal_customers.py:0
+#: code:addons/lims_report/controllers/portal_customers_report_signature.py:0
+msgid "None"
+msgstr "لا شيء"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_report__notes
+#: model_terms:ir.ui.view,arch_db:lims_report.lims_view_form_report
+msgid "Notes"
+msgstr "ملاحظات"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_report__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_report__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: lims_report
+#: model:ir.model.fields,help:lims_report.field_lims_report__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "عدد الرسائل التي تتطلب إجراء"
+
+#. module: lims_report
+#: model:ir.model.fields,help:lims_report.field_lims_report__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل ذات خطأ التسليم"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_sample_main__report_count
+msgid "Number of reports"
+msgstr "عدد التقارير"
+
+#. module: lims_report
+#: model:ir.model,name:lims_report.model_lims_parameter_print
+#: model:ir.model,name:lims_report.model_lims_parameter_print_group
+#: model:ir.model.fields,field_description:lims_report.field_product_product__parameter_print_id
+#: model:ir.model.fields,field_description:lims_report.field_product_template__parameter_print_id
+msgid "Parameter Print"
+msgstr "طباعة المعامل"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_analysis__parameter_print_id
+msgid "Parameter print"
+msgstr "طباعة المعامل"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_report__product_id
+#: model_terms:ir.ui.view,arch_db:lims_report.lims_view_search_report
+msgid "Parameter/Pack"
+msgstr "المعامل/الحزمة"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_parameter_print_group__parameter_print_ids
+msgid "Parameters"
+msgstr "المعاملات"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_parameter_print_group__parent_id
+msgid "Parent group"
+msgstr "المجموعة الأم"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_report__access_url
+msgid "Portal Access URL"
+msgstr "رابط الوصول للبوابة"
+
+#. module: lims_report
+#: model_terms:ir.ui.view,arch_db:lims_report.medical_analysis_report_bytest_portal
+msgid "Print"
+msgstr "طباعة"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_report__print_department
+msgid "Print Department"
+msgstr "قسم الطباعة"
+
+#. module: lims_report
+#: model:ir.actions.act_window,name:lims_report.print_group_action
+#: model:ir.model.fields,field_description:lims_report.field_lims_parameter_print__print_group_id
+#: model:ir.model.fields,field_description:lims_report.field_lims_report__print_group_id
+#: model:ir.ui.menu,name:lims_report.menu_print_group
+msgid "Print Group"
+msgstr "مجموعة الطباعة"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_report__print_method
+msgid "Print Method"
+msgstr "طريقة الطباعة"
+
+#. module: lims_report
+#: model_terms:ir.ui.view,arch_db:lims_report.lims_view_search_report
+msgid "Print group"
+msgstr "مجموعة الطباعة"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_parameter_print__print_name
+msgid "Print name"
+msgstr "اسم الطباعة"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_report__print_note
+#: model:ir.model.fields,help:lims_report.field_lims_report__print_note
+msgid "Print note"
+msgstr "ملاحظة الطباعة"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_report__print_old_result
+msgid "Print previous result"
+msgstr "طباعة النتيجة السابقة"
+
+#. module: lims_report
+#: model:ir.model.fields,help:lims_report.field_lims_department__subcontracting_note
+msgid "Print subcontracting note"
+msgstr "طباعة ملاحظة المقاولة من الباطن"
+
+#. module: lims_report
+#: model:ir.model,name:lims_report.model_product_template
+msgid "Product"
+msgstr "المنتج"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_report__signature_quality
+msgid "QA Signature"
+msgstr "توقيع ضمان الجودة"
+
+#. module: lims_report
+#: model_terms:ir.ui.view,arch_db:lims_report.medical_analysis_report_bytest_portal
+msgid "QR Code"
+msgstr "رمز QR"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_report__qrcode
+msgid "QRcode"
+msgstr "رمز QR"
+
+#. module: lims_report
+#: model_terms:ir.ui.view,arch_db:lims_report.medical_analysis_report_bytest_portal
+msgid "Range"
+msgstr "النطاق"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_reason_type__reason_type
+msgid "Reason Type"
+msgstr "نوع السبب"
+
+#. module: lims_report
+#. odoo-python
+#: code:addons/lims_report/models/lims_report.py:0
+msgid "Reason of resetting the report"
+msgstr "سبب إعادة تعيين التقرير"
+
+#. module: lims_report
+#: model:ir.model,name:lims_report.model_lims_reason_type
+msgid "Reasons"
+msgstr "الأسباب"
+
+#. module: lims_report
+#: model_terms:ir.ui.view,arch_db:lims_report.lims_view_form_report
+msgid "Recommendations"
+msgstr "التوصيات"
+
+#. module: lims_report
+#. odoo-python
+#: code:addons/lims_report/controllers/portal_customers.py:0
+#: code:addons/lims_report/controllers/portal_customers_report_signature.py:0
+msgid "Reference"
+msgstr "المرجع"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_add_reason_wizard__report_id
+#: model:ir.model.fields,field_description:lims_report.field_lims_analysis__report_id
+#: model:ir.model.fields.selection,name:lims_report.selection__lims_reason_type__reason_type__report
+msgid "Report"
+msgstr "التقرير"
+
+#. module: lims_report
+#. odoo-python
+#: code:addons/lims_report/models/lims_analysis.py:0
+msgid "Report Creation"
+msgstr "إنشاء التقرير"
+
+#. module: lims_report
+#. odoo-python
+#: code:addons/lims_report/controllers/portal_customers.py:0
+#: code:addons/lims_report/controllers/portal_customers_report_signature.py:0
+#: model_terms:ir.ui.view,arch_db:lims_report.medical_analysis_report_form_view_portal
+#: model_terms:ir.ui.view,arch_db:lims_report.portal_my_reports_by_pending
+#: model_terms:ir.ui.view,arch_db:lims_report.portal_my_reports_by_test
+msgid "Report Date"
+msgstr "تاريخ التقرير"
+
+#. module: lims_report
+#: model_terms:ir.ui.view,arch_db:lims_report.medical_analysis_report_bytest_portal
+msgid "Report Date:"
+msgstr "تاريخ التقرير:"
+
+#. module: lims_report
+#: model_terms:ir.ui.view,arch_db:lims_report.lims_view_form_report
+msgid "Report Information"
+msgstr "معلومات التقرير"
+
+#. module: lims_report
+#: model_terms:ir.ui.view,arch_db:lims_report.medical_analysis_report_form_view_portal
+msgid "Report N"
+msgstr "التقرير رقم"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_report__name
+msgid "Report Number"
+msgstr "رقم التقرير"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_report__sample_lines_display
+msgid "Samples"
+msgstr "العينات"
+
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_parameter_print_group__template_id
+msgid "Report Template"
+msgstr "قالب التقرير"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_sample_main__report_only_index
+msgid "Report only Index analysis"
+msgstr "تقرير تحليل الفهرس فقط"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_sale_order__report_done
+msgid "Reported"
+msgstr "تم الإبلاغ"
+
+#. module: lims_report
+#: model:ir.actions.act_window,name:lims_report.reports_action
+#: model:ir.model.fields,field_description:lims_report.field_lims_sample_main__report_ids
+#: model:ir.ui.menu,name:lims_report.menu_customers
+#: model:ir.ui.menu,name:lims_report.menu_lims_report_root
+#: model:ir.ui.menu,name:lims_report.menu_reports
+#: model:ir.ui.menu,name:lims_report.menu_reports_root
+#: model_terms:ir.ui.view,arch_db:lims_report.lims_department_view_inherit_form
+#: model_terms:ir.ui.view,arch_db:lims_report.lims_view_form_report_inherit
+msgid "Reports"
+msgstr "التقارير"
+
+#. module: lims_report
+#: model_terms:ir.ui.view,arch_db:lims_report.portal_my_home_medical_report_to_sign
+msgid "Reports To-Sign"
+msgstr "التقارير المطلوب توقيعها"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_report__main_id
+msgid "Request"
+msgstr "الطلب"
+
+#. module: lims_report
+#: model_terms:ir.ui.view,arch_db:lims_report.lims_view_form_report
+msgid "Reset"
+msgstr "إعادة تعيين"
+
+#. module: lims_report
+#: model_terms:ir.ui.view,arch_db:lims_report.lims_view_form_report
+msgid "Reset to draft"
+msgstr "إعادة تعيين إلى مسودة"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_report__activity_user_id
+msgid "Responsible User"
+msgstr "المستخدم المسؤول"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_report__result
+#: model_terms:ir.ui.view,arch_db:lims_report.medical_analysis_report_bytest_portal
+msgid "Result"
+msgstr "النتيجة"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_report__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ في تسليم الرسالة القصيرة"
+
+#. module: lims_report
+#: model:ir.model,name:lims_report.model_sale_order
+msgid "Sales Order"
+msgstr "أمر البيع"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_report__user_id
+msgid "Salesperson"
+msgstr "مندوب المبيعات"
+
+#. module: lims_report
+#: model_terms:ir.ui.view,arch_db:lims_report.medical_analysis_report_form_view_portal
+msgid "Sample Type"
+msgstr "نوع العينة"
+
+#. module: lims_report
+#: model_terms:ir.ui.view,arch_db:lims_report.medical_analysis_report_bytest_portal
+msgid "Sampling Date:"
+msgstr "تاريخ أخذ العينة:"
+
+#. module: lims_report
+#: model_terms:ir.ui.view,arch_db:lims_report.medical_analysis_report_bytest_portal
+msgid ""
+"Scan the QR code to\n"
+"                                                electronically check the report"
+msgstr ""
+"امسح رمز QR للتحقق\n"
+"                                                من التقرير إلكترونياً"
+
+#. module: lims_report
+#: model_terms:ir.ui.view,arch_db:lims_report.lims_view_search_report
+msgid "Search"
+msgstr "بحث"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_report__access_token
+msgid "Security Token"
+msgstr "رمز الأمان"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_parameter_print__sequence
+msgid "Sequence"
+msgstr "التسلسل"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_report__sequence_number
+msgid "Sequence Number"
+msgstr "الرقم التسلسلي"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_report__sequence_prefix
+msgid "Sequence Prefix"
+msgstr "بادئة التسلسل"
+
+#. module: lims_report
+#: model_terms:ir.ui.view,arch_db:lims_report.lims_view_form_report
+msgid "Sign&Validate Consultation"
+msgstr "التوقيع والتحقق من الاستشارة"
+
+#. module: lims_report
+#. odoo-python
+#: code:addons/lims_report/controllers/portal_customers.py:0
+#: code:addons/lims_report/controllers/portal_customers_report_signature.py:0
+msgid "Signature is missing."
+msgstr "التوقيع مفقود."
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_report__source_id
+msgid "Source"
+msgstr "المصدر"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_report__state
+#: model_terms:ir.ui.view,arch_db:lims_report.lims_view_search_report
+msgid "State"
+msgstr "الحالة"
+
+#. module: lims_report
+#: model_terms:ir.ui.view,arch_db:lims_report.portal_my_reports_by_pending
+#: model_terms:ir.ui.view,arch_db:lims_report.portal_my_reports_by_test
+msgid "Status"
+msgstr "الحالة"
+
+#. module: lims_report
+#: model:ir.model.fields,help:lims_report.field_lims_report__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"الحالة بناءً على الأنشطة\n"
+"متأخر: تاريخ الاستحقاق قد انقضى\n"
+"اليوم: تاريخ النشاط هو اليوم\n"
+"مخطط: الأنشطة المستقبلية."
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_department__subcontracting_note
+msgid "Subcontracting note"
+msgstr "ملاحظة المقاولة من الباطن"
+
+#. module: lims_report
+#: model:ir.model.fields,help:lims_report.field_lims_report_keys_lines__field_child
+msgid "Technical name of field child"
+msgstr "الاسم التقني للحقل الفرعي"
+
+#. module: lims_report
+#: model_terms:ir.ui.view,arch_db:lims_report.medical_analysis_report_bytest_portal
+msgid "Test"
+msgstr "الاختبار"
+
+#. module: lims_report
+#: model:ir.model,name:lims_report.model_lims_analysis
+msgid "Tests"
+msgstr "الاختبارات"
+
+#. module: lims_report
+#: model_terms:ir.ui.view,arch_db:lims_report.portal_my_reports_by_pending
+#: model_terms:ir.ui.view,arch_db:lims_report.portal_my_reports_by_test
+msgid "There are currently no reports for your account."
+msgstr "لا توجد تقارير لحسابك حالياً."
+
+#. module: lims_report
+#: model:ir.model.fields,help:lims_report.field_lims_report__campaign_id
+msgid ""
+"This is a name that helps you keep track of your different campaign efforts,"
+" e.g. Fall_Drive, Christmas_Special"
+msgstr ""
+"هذا اسم يساعدك في تتبع جهود حملاتك المختلفة، على سبيل المثال Fall_Drive، "
+"Christmas_Special"
+
+#. module: lims_report
+#: model:ir.model.fields,help:lims_report.field_lims_report__medium_id
+msgid "This is the method of delivery, e.g. Postcard, Email, or Banner Ad"
+msgstr ""
+"هذه هي طريقة التسليم، على سبيل المثال بطاقة بريدية، بريد إلكتروني، أو إعلان "
+"بانر"
+
+#. module: lims_report
+#: model:ir.model.fields,help:lims_report.field_lims_report__source_id
+msgid ""
+"This is the source of the link, e.g. Search Engine, another domain, or name "
+"of email list"
+msgstr ""
+"هذا هو مصدر الرابط، على سبيل المثال محرك البحث، نطاق آخر، أو اسم قائمة "
+"البريد الإلكتروني"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_report__title
+msgid "Title"
+msgstr "العنوان"
+
+#. module: lims_report
+#: model:ir.model.fields.selection,name:lims_report.selection__lims_report__state__ready
+msgid "To review"
+msgstr "للمراجعة"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_report__translation_template
+msgid "Translation Template"
+msgstr "قالب الترجمة"
+
+#. module: lims_report
+#: model:ir.model.fields,help:lims_report.field_lims_report__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع النشاط الاستثنائي في السجل."
+
+#. module: lims_report
+#: model:ir.model.fields,help:lims_report.field_lims_sample_main__external_accession_number
+msgid "Useful for report searching in portal"
+msgstr "مفيد للبحث عن التقارير في البوابة"
+
+#. module: lims_report
+#: model:ir.model.fields.selection,name:lims_report.selection__lims_report__state__valid
+msgid "Validated"
+msgstr "تم التحقق"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_report__version
+msgid "Version"
+msgstr "الإصدار"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_report__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع"
+
+#. module: lims_report
+#: model:ir.model.fields,help:lims_report.field_lims_report__website_message_ids
+msgid "Website communication history"
+msgstr "سجل التواصل عبر الموقع"
+
+#. module: lims_report
+#. odoo-python
+#: code:addons/lims_report/models/lims_report.py:0
+msgid "You can not delete a validated report. You must cancel it first."
+msgstr "لا يمكنك حذف تقرير تم التحقق منه. يجب إلغاؤه أولاً."
+
+#. module: lims_report
+#: model:ir.model.fields,help:lims_report.field_lims_department__text_in_report
+msgid "default note to add in the report"
+msgstr "الملاحظة الافتراضية لإضافتها في التقرير"
+
+#. module: lims_report
+#: model:ir.model.fields,field_description:lims_report.field_lims_report__rawdata_url
+msgid "raw-data URL"
+msgstr "رابط البيانات الخام"
+
+#. module: lims_report
+#: model_terms:ir.ui.view,arch_db:lims_report.medical_analysis_report_bytest_portal
+msgid ""
+"الاسم\n"
+"                                                    الكامل"
+msgstr ""
+
+#. module: lims_report
+#: model_terms:ir.ui.view,arch_db:lims_report.medical_analysis_report_bytest_portal
+msgid "الجنسية"
+msgstr ""
+
+#. module: lims_report
+#: model_terms:ir.ui.view,arch_db:lims_report.medical_analysis_report_bytest_portal
+msgid "العمر"
+msgstr ""
+
+#. module: lims_report
+#: model_terms:ir.ui.view,arch_db:lims_report.medical_analysis_report_bytest_portal
+msgid "تقرير نتائج التحاليل الطبية"
+msgstr ""
+
+#. module: lims_report
+#: model_terms:ir.ui.view,arch_db:lims_report.medical_analysis_report_bytest_portal
+msgid ""
+"رقم\n"
+"                                                    الملف الطبي"
+msgstr ""
+
+#. module: lims_report
+#: model_terms:ir.ui.view,arch_db:lims_report.medical_analysis_report_bytest_portal
+msgid ""
+"رقم\n"
+"                                                    الهوية/الاقامة"
+msgstr ""
+"رقم\n"
+"                                                    الهوية/الإقامة"
+
+#. module: lims_report
+#: model_terms:ir.ui.view,arch_db:lims_report.medical_analysis_report_bytest_portal
+msgid ""
+"عزيزنا العميل نتائج التحاليل الطبية الخاصة بك قيد الفحص و المراجعة ,\n"
+"                                                للمزيد من الاستفسار يمكنكم مراسلتنا على الواتساب"
+msgstr ""
+"عزيزنا العميل، نتائج التحاليل الطبية الخاصة بك قيد الفحص والمراجعة،\n"
+"                                                للمزيد من الاستفسارات يمكنكم مراسلتنا على الواتساب"
+
+#. module: lims_report
+#: model_terms:ir.ui.view,arch_db:lims_report.medical_analysis_report_bytest_portal
+msgid ""
+"فصيلة\n"
+"                                                    الدم"
+msgstr ""
+
+#. module: lims_report
+#: model_terms:ir.ui.view,arch_db:lims_report.medical_analysis_report_bytest_portal
+msgid ""
+"قم بمسح الباركود للتحقق من\n"
+"                                                التقرير إلكترونيا"
+msgstr ""
+"قم بمسح الرمز الشريطي للتحقق من\n"
+"                                                التقرير إلكترونياً"
+
+#. module: lims_report
+#: model_terms:ir.ui.view,arch_db:lims_report.medical_analysis_report_form_view_portal
+msgid "مسودة تقرير يمنع اعتمادها بصفة رسمية"
+msgstr ""

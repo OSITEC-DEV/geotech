@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- ── Method Reference wizard ──────────────────────────────────── -->
+        <record id="lims_method_reference_wizard_view_form" model="ir.ui.view">
+            <field name="name">lims.method.reference.wizard.form</field>
+            <field name="model">lims.method.reference.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Edit Method Reference">
+                    <group>
+                        <field name="product_name" readonly="1"/>
+                        <field name="technique_name" readonly="1"/>
+                        <field name="method_reference" autofocus="1"/>
+                    </group>
+                    <footer>
+                        <button name="action_save" type="object" string="Save" class="btn-primary"/>
+                        <button string="Discard" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="lims_view_form_report" model="ir.ui.view">
+            <field name="name">lims.report.form</field>
+            <field name="model">lims.report</field>
+            <field name="priority" eval="15"/>
+            <field name="arch" type="xml">
+                <form>
+
+                    <header>
+                        <field name="state" widget="statusbar"/>
+                        <button type='object' name="do_validate" string="Do Approve" groups="lims.group_lims_reporting"
+                                class="oe_highlight" invisible = "state != 'ready'"/>
+                        <button type='object' name="do_cancel" string="Cancel" groups="lims.group_lims_reporting"
+                                invisible = "state != 'valid'"/>
+                        <button type='object' name="sign_consultation" string="Sign&amp;Validate Consultation"
+                                invisible = "state not in ['ready','valid']"/>
+                        <button type='object' name="do_ready" string="Reset to draft" invisible = "state != 'cancel'"
+                                groups="lims.group_lims_reporting"/>
+
+                        <button type="object" name="reset_report" string="Reset"
+                                groups="lims.group_lims_reporting" class="oe_highlight" invisible = "state != 'sent'"/>
+                    </header>
+                    <sheet>
+                        <div name="button_box" position="inside" class='oe_button_box'>
+                            <button name="preview_analysis_report"
+                                    type="object"
+                                    class="oe_stat_button"
+                                    icon="fa-eye">
+                                <div class="o_field_widget o_stat_info">
+                                    <span class="o_stat_text">Customer</span>
+                                    <span class="o_stat_text">Preview</span>
+                                </div>
+                            </button>
+
+                        </div>
+                        <div class="oe_title">
+                            <h1 class="oe_edit_only">
+                                <field name="name"/>
+                            </h1>
+                            <h2>
+                                <field name="title" placeholder="Add report title here..." style="color:green;"/>
+                            </h2>
+                        </div>
+                        <group string="Report Information" name="report_info">
+                            <field name="partner_id" groups="lims.group_show_sample_information"/>
+                            <field name="version" style="color:blue;font-style:bold;"/>
+                            <field name="product_id" readonly = "state == 'valid'" invisible=" product_id == False"/>
+                            <field name="print_group_id" readonly = "state == 'valid'" invisible=" print_group_id == False"/>
+                            <field name="main_id"/>
+                        </group>
+                        <group string="Default Print" name="default_print">
+                            <field name="print_department"/>
+                            <field name="print_method"/>
+                            <field name="print_note"/>
+                            <field name="hide_table_result" help="Do not select this option for routine tests"/>
+                            <field name="print_old_result"/>
+
+                        </group>
+
+                        <notebook>
+                            <page string="Analysis" name="analysis">
+                                <field name="analysis_ids">
+                                    <list edit="false" create="false">
+                                        <field name="department_id"/>
+                                        <field name="product_id"/>
+                                        <field name="method_id"/>
+                                        <field name="technique_id" optional="show"/>
+                                        <field name="method_reference" string="Method Reference" optional="show"/>
+                                        <button name="action_edit_method_reference"
+                                                type="object"
+                                                icon="fa-pencil"
+                                                title="Edit Method Reference"
+                                                invisible="parent.state == 'valid'"/>
+                                        <field name="result_txt"/>
+                                        <field name="uom_id"/>
+                                        <field name="specification"
+                                               string="Limit &amp; Specification"
+                                               widget="report_spec_widget"
+                                               readonly="parent.state == 'valid'"/>
+                                    </list>
+                                </field>
+                            </page>
+                            <page string="Consultant Section" name="consultant_note">
+                                <group>
+                                    <field name="consultant_id"/>
+                                    <field name="consultation_date"/>
+                                    <field name="signature_consult" widget="signature" readonly="True"/>
+                                </group>
+                                <group string="Recommendations" name="recommendations">
+                                    <field name="consultant_note" widget="html"/>
+                                </group>
+                            </page>
+                            <page string="Notes" name="notes">
+                                <group>
+                                    <field name="rawdata_url"/>
+                                    <field name="notes"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    <chatter>
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </chatter>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="lims_view_search_report" model="ir.ui.view">
+            <field name="name">lims.report.search</field>
+            <field name="model">lims.report</field>
+            <field name="priority" eval="15"/>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="name"/>
+                    <field name="main_id"/>
+                    <field name="partner_id"/>
+                    <field name="product_id"/>
+                    <field name="print_group_id"/>
+                    <field name="state"/>
+                    <group string="Group By">
+                        <filter name="state" string="State" context="{'group_by': 'state'}"/>
+                        <filter name="date" string="Date" context="{'group_by': 'date'}"/>
+                        <filter name="partner_id" string="Customer" context="{'group_by': 'partner_id'}"/>
+                        <filter name="product_id" string="Parameter/Pack" context="{'group_by': 'product_id'}"/>
+                        <filter name="print_group_id" string="Print group" context="{'group_by': 'print_group_id'}"/>
+                        <filter name="consultant_id" string="Consultant" context="{'group_by': 'consultant_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="lims_view_list_report" model="ir.ui.view">
+            <field name="name">lims.report.search</field>
+            <field name="model">lims.report</field>
+            <field name="priority" eval="15"/>
+            <field name="arch" type="xml">
+                <list>
+                    <field name="name"/>
+                    <field name="sample_lines_display"/>
+                    <field name="main_id"/>
+                    <field name="partner_id" groups="lims.group_show_sample_information"/>
+                    <field name="state"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="lims_dictionary_form_report" model="ir.ui.view">
+            <field name="name">lims.report.keys.form</field>
+            <field name="model">lims.report.keys</field>
+            <field name="priority" eval="15"/>
+            <field name="arch" type="xml">
+                <form>
+                    <div class="oe_title">
+                        <h4>
+                            <span field="name"/>
+                        </h4>
+                    </div>
+                    <group>
+                        <field name="model_id"/>
+                        <field name="dict_key_ids">
+                            <list editable="bottom">
+                                <field name="domain_model" invisible="True"/>
+                                <field name="field_id" required="True" domain="domain_model"/>
+                                <field name="field_child"/>
+                                <field name="key" required="True"/>
+                                <field name="dict_id" invisible="True"/>
+
+                            </list>
+                        </field>
+                        <field name="dict_json_ids">
+                            <list editable="bottom">
+                                <field name="name"/>
+                                <field name="key" required="True"/>
+                                <field name="dict_id" invisible="True"/>
+
+                            </list>
+                        </field>
+                    </group>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

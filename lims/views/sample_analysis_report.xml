@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <template id="sample_analysis_report_document">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="web.basic_layout">
+                        <div dir="rtl" class="page">
+                            <dev class="head">
+                                <div class="row">
+                                    <div class="col-6" style="text-align:right;">
+                                        <img src="/medical_lab/static/img/weqaya.jpeg" style="width:150px;" alt="Logo"/>
+                                    </div>
+                                    <div class="col-6" style="text-align:left;">
+                                        <img t-att-src="image_data_uri(res_company.logo)" style="max-height: 45px;"
+                                             alt="Logo"/>
+                                    </div>
+                                </div>
+                            </dev>
+                            <div class="content">
+                                <div class="title">
+                                    <div class="text-center">
+                                        <h5 style="margin-bottom: 15px;"></h5>
+                                        <h5 style="margin-bottom: 15px;">MEDICAL TEST REPORT</h5>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <table style="width:100%">
+                                <tr>
+                                    <td style="text-align: right; width:50%; font-size: 17px">
+                                        <p style="margin-bottom: auto; font-weight: 700;">مختبر آجال السعودية</p>
+                                        <p style="text-align: justify; padding-left: 15px;">
+                                            بناء على النتائج المخبرية يشهد مختبر شركة آجال السعودية للخدمات الصحية- و أن
+                                            البيانات و المعلومات الواردة بهذا التقرير كاملة و صحيحة ودقيقة و تتحمل
+                                            المنشاة المسؤولية الكاملة إن ظهر خلاف ذلك.
+                                        </p>
+                                    </td>
+                                    <td style="text-align: left; width:50%;" dir="ltr">
+                                        <p style="margin-bottom: auto; font-weight: 700; font-size: 17px;">SaudiAjal
+                                            Lab
+                                        </p>
+                                        <p style="text-align: justify; padding-right: 15px;">
+                                            Based on the laboratory results, the laboratory of the Saudi Ajal Health
+                                            Services Company certifies that the data and information contained in this
+                                            report are complete, correct and accurate, and the facility bears full
+                                            responsibility if it appears otherwise.
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table class="table table-striped">
+                                <tbody>
+                                    <tr>
+                                        <td class="text-center"
+                                            style="width:25%; border: 1px solid #b4b4b4; padding:.30rem">رقم التقرير
+                                            التسلسلي
+                                        </td>
+                                        <td class="text-center"
+                                            style="width:50%; border: 1px solid #b4b4b4; padding:.30rem" colspan="2">
+                                            <span t-esc="o.main_id.name"/>
+                                        </td>
+                                        <td dir="ltr" class="text-center"
+                                            style="width:25%; border: 1px solid #b4b4b4; padding:.30rem">Report Serial
+                                            NO
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="text-center"
+                                            style="width:25%; border: 1px solid #b4b4b4; padding:.30rem">رقم
+                                            الهوية/الاقامة
+                                        </td>
+                                        <td class="text-center"
+                                            style="width:50%; border: 1px solid #b4b4b4; padding:.30rem" colspan="2">
+                                            <span t-if="o.partner_id.vat" t-esc="o.partner_id.vat"/>
+                                        </td>
+                                        <td dir="ltr" class="text-center"
+                                            style="width:25%; border: 1px solid #b4b4b4; padding:.30rem">National
+                                            ID/Iqama
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center"
+                                            style="width:25%; border: 1px solid #b4b4b4; padding:.30rem">الاسم رباعيا
+                                        </td>
+                                        <td class="text-center"
+                                            style="width:50%; border: 1px solid #b4b4b4; padding:.30rem" colspan="2">
+                                            <span t-esc="o.partner_id.name"/>
+                                        </td>
+
+                                        <td dir="ltr" class="text-center"
+                                            style="width:25%; border: 1px solid #b4b4b4; padding:.30rem">Full Name
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center"
+                                            style="width:25%; border: 1px solid #b4b4b4; padding:.30rem">الجنسية
+                                        </td>
+                                        <td class="text-center"
+                                            style="width:50%; border: 1px solid #b4b4b4; padding:.30rem" colspan="2">
+                                            <span t-esc="o.partner_id.country_id.name"/>
+                                        </td>
+
+                                        <td dir="ltr" class="text-center"
+                                            style="width:25%; border: 1px solid #b4b4b4; padding:.30rem">Nationality
+                                        </td>
+                                    </tr>
+                                    <!--        <t t-if="o.is_covid">
+                                               <tr style="background-color: #eb1130; color: white;">
+                                                   <td class="text-center" style="width:25%; border: 1px solid #b4b4b4; padding:.30rem">نتيجة الفحص</td>
+                                                   <td class="text-center" dir="ltr" style="width:50%; border: 1px solid #b4b4b4; padding:.30rem" colspan="2">
+                                                       <span t-if="not o.is_covid">(Not Infected / غير مصاب)</span>
+                                                       <span t-if="o.is_covid">(Infected / مصاب)</span></td>
+                                                   <td dir="ltr" class="text-center" style="width:25%; border: 1px solid #b4b4b4; padding:.30rem">Test Result</td>
+                                               </tr>
+                                           </t>
+                                           <t t-else="">
+                                               <tr style="background-color:#3c9f56; color: white;">
+                                                   <td class="text-center" style="width:25%; border: 1px solid #b4b4b4; padding:.30rem">نتيجة الفحص</td>
+                                                   <td class="text-center" dir="ltr" style="width:50%; border: 1px solid #b4b4b4; padding:.30rem" colspan="2">
+                                                       <span t-if="not o.is_covid">(Not Infected / غير مصاب)</span>
+                                                       <span t-if="o.is_covid">(Infected / مصاب)</span></td>
+                                                       <td class="text-center" style="width:25%; border: 1px solid #b4b4b4; padding:.30rem">-</td>
+                                                   <td dir="ltr" class="text-center" style="width:25%; border: 1px solid #b4b4b4; padding:.30rem">Test Result</td>
+                                               </tr>
+                                           </t>
+                                            <tr>
+                                               <td class="text-center" style="width:25%; border: 1px solid #b4b4b4; padding:.30rem">تاريخ الفحص</td>
+                                               <td class="text-center" style="width:50%; border: 1px solid #b4b4b4; padding:.30rem" colspan="2"><span t-esc="o.test_date_report"/></td>
+
+                                               <td dir="ltr" class="text-center" style="width:25%; border: 1px solid #b4b4b4; padding:.30rem">Test Date</td>
+                                           </tr>
+                                            <tr>
+                                               <td class="text-center" style="width:25%; border: 1px solid #b4b4b4; padding:.30rem">تاريخ نتيجة الفحص</td>
+                                               <td class="text-center" style="width:50%; border: 1px solid #b4b4b4; padding:.30rem" colspan="2"><span t-esc="o.result_date_report"/></td>
+
+                                               <td dir="ltr" class="text-center" style="width:25%; border: 1px solid #b4b4b4; padding:.30rem">Result Date</td>
+                                           </tr>
+         -->
+                                    <tr>
+                                        <td class="text-center"
+                                            style="width:25%; border: 1px solid #b4b4b4; padding:.30rem">اسم المؤسسة
+                                            الطبية
+                                        </td>
+                                        <td class="text-center"
+                                            style="width:50%; border: 1px solid #b4b4b4; padding:.30rem" colspan="2">
+                                            <span t-esc="o.main_id.company_id.name"/>
+                                        </td>
+
+                                        <td dir="ltr" class="text-center"
+                                            style="width:25%; border: 1px solid #b4b4b4; padding:.30rem">Medical Center
+                                            Name
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <br/>
+                            <!--                            <div class="ministry-of-health">
+                                                            <div class="row">
+                                                                <div class="col-6">
+                                                                    <div style="width:90%" class="text-center">
+                                                                        <div class="logo">
+                                                                            <img src="/medical_lab/static/img/ministry_of_Health_Logo.png" style="width: 110px;" alt="Logo"/>
+                                                                        </div>
+                                                                        <div>
+                                                                            <p>أحد المؤسسات المرخصة من وزارة الصحة السعودية</p>
+                                                                            <p>Accredited by saudi Ministry of Health</p>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                                <div class="col-6">
+                                                                    <p style="text-align:left">مختبر شركة آجال السعودية</p>
+                                                                    <div style="text-align: center;">
+                                                                        <img src="/medical_lab/static/img/seal.png" style="width:210px;" alt="Seal"/>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                       </div> -->
+                            <br/>
+                            <br/>
+                            <!--                            <div class="barcode">
+                                                           <div class="row">
+                                                               <div class="col-6" style="text-align:right;">قم بمسح الباركود للتحقق من التقرير الكترونيا</div>
+                                                               <div class="col-6" style="text-align:left;">Scan the QR code to electronically check the report</div>
+                                                           </div>
+                                                           <br/>
+                                                           <div class="text-center" >
+                                                               <img t-if="o.qr_code" t-att-src="image_data_uri(o.qr_code)" style="height: 150px;" alt="QR Code"/>
+                                                           </div>
+                                                       </div> -->
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+        <report
+                id="medical_lab_sample_analysis_report"
+                model="lims.sample.preparation"
+                report_type="qweb-pdf"
+                string="Analysis Report"
+                name="lims.sample_analysis_report_document"
+                file="lims.sample_analysis_report"
+                print_report_name="'Report - %s' % (object.partner_id.name or '',)"
+                paperformat="lims.paperformat_medical_lab_report"
+        />
+
+    </data>
+</odoo>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="res_partner_form_view_inherit_lims" model="ir.ui.view">
+        <field name="name">res.partner.form.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button name="action_view_reports"
+                        type="object"
+                        class="oe_stat_button"
+                        icon="fa-flask"
+                >
+                    Medical Reports
+                </button>
+            </xpath>
+
+            <!-- <xpath expr="//button[@name='create_company']" position="after">
+                <button name="create_new_request"
+                        type="object"
+                        class="oe_save_only btn-link"
+                        string="New request"
+                />
+            </xpath> -->
+        </field>
+    </record>
+
+    <record id="res_partner_search_view_inherit_lims" model="ir.ui.view">
+        <field name="name">res.partner.search.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="before">
+                <field name="partner_no"
+                       filter_domain="[('partner_no', 'ilike', self)]"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

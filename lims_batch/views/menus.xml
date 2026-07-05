@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    <record id="action_lims_batch" model="ir.actions.act_window">
+        <field name="name">LIMS Batches</field>
+        <field name="res_model">lims.batch</field>
+        <field name="view_mode">list,form</field>
+        <field name="view_id" ref="lims_batch.view_lims_batch_tree"/>
+    </record>
+
+    <menuitem id="lims_batch_menu" name="Batches"
+              parent="lims.menu_analysis_root" action="action_lims_batch"
+              groups="lims.group_lims_sample"/>
+
+    <menuitem id="lims_batch_menu2" name="Batches"
+              parent="lims.menu_lims_analysis_parent" action="action_lims_batch"
+              groups="lims.group_lims_sample"/>
+
+
+       <!-- Action to Open LIMS Batch Kit List -->
+    <record id="action_lims_batch_kit" model="ir.actions.act_window">
+        <field name="name">Batch Kits</field>
+        <field name="res_model">lims.batch.kit</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+
+    <!-- Menu for LIMS Batch Kit -->
+    <menuitem id="menu_lims_batch_kit" name="Batch Kits" parent="lims.menu_lims_config" action="action_lims_batch_kit"/>
+
+
+    </data>
+</odoo>

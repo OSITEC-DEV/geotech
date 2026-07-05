@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="product_template_form_view_inherit" model="ir.ui.view">
+        <field name="name">product.template.form.inherit</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="purchase.view_product_supplier_inherit"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='options']" position="inside">
+                <div name='is_parameter'>
+                    <field name="isParameter"/>
+                    <label for="isParameter"/>
+                </div>
+                <div name='is_pack'>
+                    <field name="isPack"/>
+                    <label for="isPack"/>
+                </div>
+                <div name='lab_validated'>
+                    <field name="lab_validated"/>
+                    <label for="lab_validated"/>
+                </div>
+                <div name='finance_validated'>
+                    <field name="finance_validated"/>
+                    <label for="finance_validated"/>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+
+    <record id="product_template_form_view_inherit2" model="ir.ui.view">
+        <field name="name">product.template.form.inherit2</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='inventory']" position="after">
+                <page string='Lims' name='lims'>
+                    <group name='Configurations' col='2'>
+                        <group string="Department">
+                            <field name='department_ids' style='width:auto;'
+                                   widget="many2many_tags"
+                                   required = "isParameter == True or isPack == True"/>
+                        </group>
+                        <group string="Package" name="package_group">
+                            <field name='parent_pack' widget='many2many_tags'/>
+                            <field name='child_ids' widget='many2many_tags'
+                                   invisible="isParameter == True"
+                                   domain="['|', ('isParameter', '=', True), ('isPack', '=', True)]"
+                                   context="{'default_isParameter': True}"/>
+                        </group>
+                        <group string="Instrument &amp; Methods" invisible = "isParameter  != True ">
+                            <field name='method_ids' widget='many2many_tags'
+                                   required = "isParameter == True "/>
+                        </group>
+                        <group string="Encoding results" invisible = "isParameter  != True ">
+                            <field name='type_result' required = "isParameter == True "/>
+                            <field name='se_results' invisible = "type_result  !=  'se' "
+                                   widget='many2many_tags'/>
+                        </group>
+                        <group name="qa_report" string="QA &amp; Reports" invisible = "isParameter  != True ">
+                            <field name='estimated_time' widget='float_time'
+                                   required = "isParameter == True "/>
+                            <field name='nb_decimal' style='width:auto;' help="Number of digits after decimal"
+                                   string="Decimal digits"/>
+                        </group>
+                        <group string="Sample Information" col="2" invisible = "isParameter  != True ">
+                            <field name='default_sample_type' style='width:auto;'
+                                   required = "isParameter == True "/>
+                            <field name='collection_tube' style='width:auto;'
+                                   required = "isParameter == True "/>
+                            <field name='optimum_volume' style='width:auto;'/>
+                        </group>
+
+                    </group>
+
+                    <group string='Range/levels'
+                           invisible = "type_result  == 'se' or  isPack == True">
+                        <field name='reference_ids'>
+                            <list create='false'>
+                                <field name='method_id'/>
+                                <field name='min_val'/>
+                                <field name='max_val'/>
+                                <field name='uom_id'/>
+                                <field name='factor_id'/>
+                                <field name='status'/>
+                            </list>
+                        </field>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+
+    <!--     <record id="product_template_search_view_inherit2" model="ir.ui.view">
+            <field name="name">product.template.form.inherit2</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_search_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[1]" position="inside">
+                    <filter string="Package" name="parent_pack" context="{'group_by':'parent_pack'}"/>
+                </xpath>
+            </field>
+        </record> -->
+
+
+</odoo>

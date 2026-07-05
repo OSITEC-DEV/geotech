@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_lims_batch,lims.batch,model_lims_batch,lims.group_lims_sample,1,1,1,0
+access_lims_batch_equipment,lims.batch.equipment,model_lims_batch_equipment,lims.group_lims_sample,1,1,1,1
+access_lims_batch_operators,lims.batch.equipment,model_lims_batch_operators,lims.group_lims_sample,1,1,1,1
+access_lims_reagents,lims.reagents,model_lims_reagents,lims.group_lims_sample,1,1,1,1
+access_lims_batch_kit,lims.batch.kit,model_lims_batch_kit,lims.group_lims_sample,1,1,1,1
+access_lims_lims_batch_kit_line,lims.batch.kit.line,model_lims_batch_kit_line,lims.group_lims_sample,1,1,1,1
+access_lims_batch_consumable_component,lims.batch.consumable.component,model_lims_batch_consumable_component,lims.group_lims_sample,1,1,1,1
+access_lims_batch_kit_operator,lims.batch.kit.operator,model_lims_batch_kit_operator,lims.group_lims_sample,1,1,1,1

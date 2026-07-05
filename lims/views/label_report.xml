@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <template id="label_report_document">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="web.basic_layout">
+                        <style>
+                            * { margin: 0px !important; padding: 0px !important; }
+                            .page { font-size: 13px; line-height: 1.3; }
+                        </style>
+                        <t t-set="_nb_unit_lines" t-value="[
+                            x for x in (o.main_id.request_config_line_ids or [])
+                            if x.sample_line_id
+                               and x.product_id
+                               and x.product_id in o.product_ids
+                               and x.product_id.allow_multi_unit
+                               and x.frequency
+                               and len(o.product_ids) == len(x.sample_line_id.product_ids)
+                        ]"/>
+                        <div class="page">
+                            <div class="row" style="flex-wrap:nowrap;">
+                                <div class="col-9" style="padding-right:2px;">
+                                    <div><strong>Sample ID:</strong> <span t-field="o.name"/></div>
+                                    <div t-if="o.sample_name"><strong>Sample name:</strong> <span t-field="o.sample_name"/></div>
+                                    <div t-if="o.sample"><strong>Sample type:</strong> <span t-field="o.sample"/></div>
+                                    <div><strong>Date received:</strong>
+                                        <span t-field="o.receiving_date" t-options='{"format": "dd/MM/yyyy"}'/>
+                                    </div>
+                                    <div><strong>Departments:</strong>
+                                        <span t-esc="', '.join(sorted(set([
+                                            x for x in o.product_ids.mapped('department_ids')
+                                            .filtered(lambda d: d.laboratory_id.id == o.laboratory_id.id)
+                                            .mapped('prefix_code') if x
+                                        ])))"/>
+                                    </div>
+                                    <div t-if="_nb_unit_lines">
+                                        <strong>Number of unit:</strong>
+                                        <span t-esc="'/'.join(str(x.frequency) for x in _nb_unit_lines)"/>
+                                    </div>
+                                    <t t-set="_stability_count" t-value="sum(
+                                        sl.timepoint_count for sl in {
+                                            x.sample_line_id.id: x.sample_line_id
+                                            for x in (o.main_id.request_config_line_ids or [])
+                                            if x.sample_line_id and x.sample_line_id.is_shelf_life
+                                               and x.product_id and x.product_id in o.product_ids
+                                        }.values()
+                                    )"/>
+                                    <div t-if="_stability_count">
+                                        <strong>Stability:</strong>
+                                        <span t-esc="_stability_count"/>
+                                    </div>
+                                </div>
+                                <div class="col-3" style="text-align:right; padding-left:0;">
+                                    <img t-if="o.qrcode"
+                                         t-att-src="'data:image/png;base64,%s' % (o.qrcode.decode() if isinstance(o.qrcode, bytes) else o.qrcode)"
+                                         style="width:50px; height:50px;"/>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+      <template id="label_report_all_document">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="web.basic_layout">
+                        <style>
+                            * { margin: 0px !important; padding: 0px !important; }
+                            .page { font-size: 13px; line-height: 1.3; }
+                        </style>
+                        <t t-foreach="o.sample_line_prepared" t-as="s" t-foreach-index="idx">
+                            <div t-att-style="'page-break-before: always;' if idx != 0 else ''">
+                                <t t-set="_nb_unit_lines" t-value="[
+                                    x for x in (s.main_id.request_config_line_ids or [])
+                                    if x.sample_line_id
+                                       and x.product_id
+                                       and x.product_id in s.product_ids
+                                       and x.product_id.allow_multi_unit
+                                       and x.frequency
+                                       and len(s.product_ids) == len(x.sample_line_id.product_ids)
+                                ]"/>
+                                <div class="page">
+                                    <div class="row" style="flex-wrap:nowrap;">
+                                        <div class="col-9" style="padding-right:2px;">
+                                            <div><strong>Sample ID:</strong> <span t-field="s.name"/></div>
+                                            <div t-if="s.sample_name"><strong>Sample name:</strong> <span t-field="s.sample_name"/></div>
+                                            <div t-if="s.sample"><strong>Sample type:</strong> <span t-field="s.sample"/></div>
+                                            <div><strong>Date received:</strong>
+                                                <span t-field="s.receiving_date" t-options='{"format": "dd/MM/yyyy"}'/>
+                                            </div>
+                                            <div><strong>Departments:</strong>
+                                                <span t-esc="', '.join(sorted(set([
+                                                    x for x in s.product_ids.mapped('department_ids')
+                                                    .filtered(lambda d: d.laboratory_id.id == s.laboratory_id.id)
+                                                    .mapped('prefix_code') if x
+                                                ])))"/>
+                                            </div>
+                                            <div t-if="_nb_unit_lines">
+                                                <strong>Number of unit:</strong>
+                                                <span t-esc="'/'.join(str(x.frequency) for x in _nb_unit_lines)"/>
+                                            </div>
+                                            <t t-set="_stability_count" t-value="sum(
+                                                sl.timepoint_count for sl in {
+                                                    x.sample_line_id.id: x.sample_line_id
+                                                    for x in (s.main_id.request_config_line_ids or [])
+                                                    if x.sample_line_id and x.sample_line_id.is_shelf_life
+                                                       and x.product_id and x.product_id in s.product_ids
+                                                }.values()
+                                            )"/>
+                                            <div t-if="_stability_count">
+                                                <strong>Stability:</strong>
+                                                <span t-esc="_stability_count"/>
+                                            </div>
+                                        </div>
+                                        <div class="col-3" style="text-align:right; padding-left:0;">
+                                            <img t-if="s.qrcode"
+                                                 t-att-src="'data:image/png;base64,%s' % (s.qrcode.decode() if isinstance(s.qrcode, bytes) else s.qrcode)"
+                                                 style="width:50px; height:50px;"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+        <record id="paperformat_medical_lab_labels" model="report.paperformat">
+            <field name="name">Label size</field>
+            <field name="default" eval="True"/>
+            <field name="format">custom</field>
+            <field name="page_height">40</field>
+            <field name="page_width">60</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">2</field>
+            <field name="margin_bottom">2</field>
+            <field name="margin_left">2</field>
+            <field name="margin_right">2</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">0</field>
+            <field name="dpi">90</field>
+        </record>
+
+        <record id="medical_lab_label_all" model="ir.actions.report">
+            <field name="name">All Labels</field>
+            <field name="model">lims.sample.main</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">lims.label_report_all_document</field>
+            <field name="report_file">lims.labels_all</field>
+            <field name="print_report_name">'Labels - %s' % (object.partner_id.name or '',)</field>
+            <field name="binding_type">report</field>
+            <field name="paperformat_id" ref="lims.paperformat_medical_lab_labels"/>
+        </record>
+
+        <record id="medical_lab_label" model="ir.actions.report">
+            <field name="name">Sample Label</field>
+            <field name="model">lims.sample.preparation</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">lims.label_report_document</field>
+            <field name="report_file">lims.labels</field>
+            <field name="print_report_name">'Labels - %s' % (object.partner_id.name or '',)</field>
+            <field name="binding_type">report</field>
+            <field name="paperformat_id" ref="lims.paperformat_medical_lab_labels"/>
+        </record>
+    </data>
+</odoo>

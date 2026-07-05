@@ -1,0 +1,11 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_lims_Lims_Result_Input,lims.result.input,model_lims_result_input,lims.group_lims_analysis,1,1,1,1
+access_lims_Lims_Result_InputType,lims.result.input.type,model_lims_result_input_type,lims.group_lims_analysis,1,1,1,1
+access_lims_Lims_Result_Input2,lims.result.input,model_lims_result_input,lims.group_lims_viewer,1,0,0,0
+access_lims_Lims_Result_InputType2,lims.result.input.type,model_lims_result_input_type,lims.group_lims_viewer,1,0,0,0
+access_lims__parameter_correspondence,lims.parameter.correspondence,model_lims_parameter_correspondence,lims.group_lims_analysis,1,1,1,0
+access_lims__parameter_correspondence2,lims.parameter.correspondence,model_lims_parameter_correspondence,lims.group_lims_viewer,1,0,0,0
+access_lims__parameter_correspondence3,lims.parameter.correspondence,model_lims_parameter_correspondence,lims.group_lims_sample,1,0,0,0
+access_lims_Lims_input_type_Manager,lims.result.input.type,model_lims_result_input_type,lims.group_lims_manager,1,1,1,1
+access_lims_Lims_Result_Input_Manager,lims.result.input,model_lims_result_input,lims.group_lims_manager,1,1,1,1
+access_lims_batch_analysis_Analyst,lims.batch.analysis,model_lims_batch_analysis,lims.group_lims_analysis,1,1,1,0

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+		<t t-name="ClientDetailsEdit" t-inherit="point_of_sale.ClientDetailsEdit" t-inherit-mode="extension" owl="1">
+
+
+			<xpath expr="//div[hasclass('client-details-right')]/div[4]" position="replace">
+			</xpath>
+
+            <xpath expr="//div[hasclass('client-details-right')]/div[5]" position="replace">
+			</xpath>
+
+
+            <xpath expr="//div[hasclass('client-details-right')]" position="inside">
+					<div class="client-detail">
+					<span class="label">ID</span>
+                        <input class="detail vat" name="partner_no"
+                               t-on-change="captureChange" t-att-value="props.partner.partner_no || ''"
+                               placeholder="National ID/Iqama Number"/>
+					</div>
+                <div class="client-detail">
+						<span class="label">Passport</span>
+                    <input class="detail vat" name="passport_no"
+                           t-on-change="captureChange" t-att-value="props.partner.passport_no || ''"
+                           placeholder="Passport ID"/>
+					</div>
+                <div class="client-detail">
+					<strong><span class="label">Taxes</span></strong>
+                    <select class="detail client-lang needsclick" name="property_account_position_id"
+                            t-on-change="captureChange">
+                            <t t-foreach="env.pos.fiscal_positions" t-as="fiscal" t-key="fiscal.id">
+                                <option t-att-value="fiscal.id"
+                                        t-att-selected="props.partner.property_account_position_id ? ((fiscal.country_id[0] === props.partner.country_id[0]) ? true : undefined) : undefined">
+                                    <t t-esc="fiscal.name"/>
+                                </option>
+                            </t>
+                    </select>
+                	</div>
+			</xpath>
+
+
+            <xpath expr="//div[hasclass('client-details-left')]" position="inside">
+						<div class="client-detail">
+							<span class="label">Gender</span>
+                            <select class="detail  needsclick" name="gender"
+                                    t-on-change="captureChange" t-att-value="props.partner.gender || ''">
+		                        	<option></option>
+                                <option>male</option>
+                                <option>female</option>
+		                        </select>
+							</div>
+
+                <div class="client-detail">
+								<span class="label">Age</span>
+                    <input class="detail vat" name="age"
+                           t-on-change="captureChange" t-att-value="props.partner.age || ''"
+                           placeholder="Age"/>
+								</div>
+
+                <div class="client-detail">
+									<span class="label">Blood</span>
+                    <input class="o_field_widget o_input" name="blood_group"
+                           t-on-change="captureChange" t-att-value="props.partner.blood_group || ''"
+                           placeholder="Blood Group..."/>
+									</div>
+								</xpath>
+
+							</t>
+						</templates>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="product_template_form_view_inherit3" model="ir.ui.view">
+            <field name="name">product.template.form.inherit2</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="lims.product_template_form_view_inherit2"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@name='qa_report']/field[@name='nb_decimal']" position="after">
+                    <field name="default_template"/>
+                </xpath>
+                <xpath expr="//group[@name='qa_report']" position="inside">
+                    <field name="disclaimer"/>
+                    <field name="limitations"/>
+            </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

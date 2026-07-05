@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Map View -->
+        <record id="lims_analysis_map_view" model="ir.ui.view">
+            <field name="name">lims.analysis.map.view</field>
+            <field name="model">lims.analysis</field>
+            <field name="arch" type="xml">
+                <map res_partner="partner_id" routing="True"/>
+
+            </field>
+        </record>
+
+        <record id="lims_analysis_view_form" model="ir.ui.view">
+            <field name="name">lims.analysis.form</field>
+            <field name="model">lims.analysis</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="do_confirm" type="object" string="Confirm" class="oe_inline oe_highlight" invisible=" state != 'draft' " groups="lims.group_lims_responsible,lims.group_lims_analysis"/>
+                        <button name="do_work" type="object" string="WIP" class="oe_inline oe_highlight" invisible=" state != 'todo' " groups="lims.group_lims_analysis"/>
+                        <button name="do_validate" type="object" string="Approve&amp;Validate" class="oe_inline oe_highlight" invisible=" state != 'done' " groups="lims.group_lims_responsible"/>
+                        <button name="do_rework" type="object" string="Rework" class="oe_inline oe_highlight" invisible=" state not in ['done','valid']" groups="lims.group_lims_responsible"/>
+                        <button name="do_done" type="object" string="Confirm" class="oe_inline oe_highlight" invisible=" state not in ['progress','rework']" groups="lims.group_lims_analysis"/>
+                        <button name="reset_to_draft" type="object" string="Reset to Draft" class="oe_inline oe_highlight" invisible=" state not in ['cancel']" groups="lims.group_lims_analysis"/>
+                        <button name="do_reject" type="object" string="Cancel" class="oe_inline oe_highlight" invisible=" state not in ['done','rework','progress']" groups="lims.group_lims_responsible"/>
+                        <button name="convert_to_subcontracted" type="object" string="To subcontract" class="oe_inline oe_highlight" groups="lims.group_lims_responsible" invisible="is_subcontracted  ==  True and                             state in ['draft','todo','progress','done','rework','valid','cancel'] or state in ['done','valid','cancel']"/>
+                        <button name="convert_inhouse" type="object" string="Todo In-house" class="oe_inline oe_highlight" groups="lims.group_lims_responsible" invisible="is_subcontracted  ==  False or state in ['done','valid','cancel']"/>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <h1 class="oe_title">
+                            <field name="name"/>
+                        </h1>
+                        <group string="Sample Informations" col="4" name="analysis_information">
+                            <field name="department_id"/>
+                            <field name="user_id"/>
+                            <field name="main_id"/>
+                            <field name="sample_line_id"/>
+                            <field name="sample"/>
+                            <field name="date" invisible="True"/>
+                            <field name="company_id" invisible="True"/>
+                        </group>
+                        <group col="4" string="Test Details">
+                                <field name="product_id" readonly="state != 'draft'" force_save="1"/>
+                                <field name="method_id" domain="domain_method" string="Instrument"/>
+                                <field name="date_result" invisible="state not in  ('progress','rework','done','valid')"/>
+                        </group>
+                        <!-- <group string="Results" col="4" name="results">
+                            <field name="type_result" invisible="True"/>
+                            <field name="date_result" invisible="state not in  ('progress','rework','done','valid')"/>
+                            <field name="result_se" invisible="type_result != 'se' or hide_result == True" readonly="state not in ['progress','rework']" widget="radio" domain="domain_result"/>
+                            <field name="result_num" invisible="type_result != 'num'  or hide_result == True" readonly="state not in ['progress','rework']"/>
+                            <field name="is_null" invisible="type_result != 'num'  or hide_result == True or result_num != 0.0"/>
+                            <field name="result_txt" invisible="type_result != 'txt'  or hide_result == True" readonly="state not in ['progress','rework']"/>
+                            <field name="uom_id" invisible="type_result != 'num'  or hide_result == True"/>
+                            <field name="note"/>
+                            <field name="reason_id" string="Rework reason"/>
+                            <field name="hide_result" invisible="True"/>
+                            <field name="domain_result" invisible="True"/>
+                            <field name="is_subcontracted" invisible="True"/>
+                            <field name="domain_method" invisible="True"/>
+                            <field name="state_result" invisible="date_result == False"/>
+                        </group> -->
+                    <group string="Results" col="4" name="results">
+                    <field name="type_result" invisible="True"/>
+                    <field name="note" placeholder="Add any notes"/>
+                    <field name="reason_id" string="Rework Reason"/>
+                    <field name="hide_result" invisible="True"/>
+                    <field name="domain_result" invisible="True"/>
+                    <field name="is_subcontracted" invisible="True"/>
+                    <field name="domain_method" invisible="True"/>
+                    <field name="state_result" invisible="date_result == False"/>
+                </group>
+                 <h3>Result Encoding</h3>
+                 <div class="o_form_label_inline" style="margin-top:10px;" name="result_encoding">
+                        <label for="result_se" string="Value" style="margin-left:10px" invisible="type_result != 'se' or hide_result == True" widget="radio"/>
+                        <field name="result_se" invisible="type_result != 'se' or hide_result == True" widget="radio" domain="domain_result"/>
+
+                        <label for="result_num" string="Value" style="margin-left:10px" invisible="type_result != 'num'  or hide_result == True"/>
+                        <field name="result_num" placeholder="Enter value" nolabel="1" style="width:100px" invisible="type_result != 'num'  or hide_result == True" readonly="state not in ['progress','rework']"/>
+                         <field name="is_null" invisible="type_result != 'num'  or hide_result == True or result_num != 0.0" help="Mark the result value as null"/>
+                        <label for="uom_id" string="Unit" style="margin-left:10px"/>
+                        <field name="uom_id" options="{'no_create': True}" nolabel="1" style="width:80px"/>
+
+                        <label for="result_txt" string="Result" style="margin-left:10px" invisible="type_result != 'txt'  or hide_result == True" readonly="state not in ['progress','rework']"/>
+                        <field name="result_txt" nolabel="1" style="width:200px" invisible="type_result != 'txt'  or hide_result == True" readonly="state not in ['progress','rework']"/>
+                    </div>
+                        <notebook>
+                            <page string="Result History" name="history">
+                                <field name="history_ids">
+                                    <list decoration-danger="1==1">
+                                        <field name="name"/>
+                                        <field name="method_id"/>
+                                        <field name="result"/>
+                                        <field name="user_id"/>
+                                        <field name="reason_id"/>
+                                        <field name="write_date"/>
+                                    </list>
+                                </field>
+                            </page>
+                            <page string="Validated by">
+                                <group>
+                                    <field name="validated_by" readonly="True"/>
+                                    <field name="validated_on" readonly="True"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <chatter>
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </chatter>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="lims_analysis_view_list" model="ir.ui.view">
+            <field name="name">lims.analysis.list</field>
+            <field name="model">lims.analysis</field>
+            <field name="arch" type="xml">
+                <list multi_edit="1" decoration-bf="state_result == 'default' and state == 'done'"
+                      decoration-danger="state_result == 'oor' and state == 'done'"
+                      decoration-success="state_result == 'normal' and state == 'done'">
+                    <field name="name"/>
+                    <field name="date"/>
+                    <field name="sample_line_id"/>
+                    <field name="sample"/>
+                    <field name="product_id"/>
+                    <field name="method_id" optional="show"/>
+                    <field name="result_txt" readonly='True'/>
+                    <field name="uom_id" readonly='True'/>
+                    <field name="user_id" optional="show"/>
+                    <field name="state" readonly="True" decoration-danger="state=='cancel'"
+                           decoration-success="state=='valid'" decoration-info="state=='done'"
+                           decoration-warning="state=='rework'" widget="badge" optional="show"/>
+                    <field name="state_result" optional='hide'/>
+                    <field name="company_id"/>
+                </list>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_lims_analysis_graph">
+            <field name="name">lims.analysis.graph</field>
+            <field name="model">lims.analysis</field>
+            <field name="arch" type="xml">
+                <graph string="Analysis" sample="1">
+                    <field name="partner_id"/>
+                    <field name="date"/>
+                    <field name="product_id" type="measure"/>
+                </graph>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_lims_analysis_pivot">
+            <field name="name">lims.analysis.pivot</field>
+            <field name="model">lims.analysis</field>
+            <field name="arch" type="xml">
+                <pivot string="Analysis" sample="1">
+                    <field name="sample_line_id" type="row"/>
+                    <field name="result_num" type="measure"/>
+                </pivot>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="lims_analysis_search">
+            <field name="name">Analysis / test</field>
+            <field name="model">lims.analysis</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="sample_line_id"/>
+                    <field name="product_id"/>
+                    <field name="name"/>
+                    <field name="user_id"/>
+                    <field name="state"/>
+                    <group string="Group By">
+<!--                        <filter string="My Analysis" name="my_analysis" domain="[('user_id', '=', uid)]"/>-->
+                        <filter string="My Analysis" name="my_analysis"/>
+                        <filter string="Analysis Date" name="date" date="date"/>
+                        <filter string="Draft" name="analysis_draft" domain="[('state', '=', 'draft')]"/>
+                        <filter string="ToDo" name="analysis_todo" domain="[('state', '=', 'todo')]"/>
+                        <filter string="In Progress" name="analysis_progress" domain="[('state', '=', 'progress')]"/>
+                        <filter string="Done" name="analysis_done" domain="[('state', '=', 'done')]"/>
+                        <filter string="Validated" name="analysis_valid" domain="[('state', '=', 'valid')]"/>
+                        <filter string="Numerical results" name="analysis_valid"
+                                domain="[('type_result', '=', 'num')]"/>
+                        <filter name="state" string="State" context="{'group_by': 'state'}"/>
+                        <filter name="state" string="Analyst" context="{'group_by': 'user_id'}"/>
+                        <filter name="sample_line_id" string="Sample" context="{'group_by': 'sample_line_id'}"/>
+                        <filter name="product_id" string="Test" context="{'group_by': 'product_id'}"/>
+                        <filter name="department_id" string="Department" context="{'group_by': 'department_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model='ir.ui.view' id='lims_analysis_kanban'>
+            <field name="name">Analysis</field>
+            <field name="model">lims.analysis</field>
+            <field name="arch" type="xml">
+                <kanban default_group_by="state" class="oe_background_grey o_kanban_dashboard o_account_kanban"
+                        records_draggable="0" group_create="0" group_delete="0" group_edit="0" quick_create="0"
+                        archivable="0" default_order="date desc">
+                    <field name="product_id"/>
+                    <field name="name"/>
+                    <field name="user_id"/>
+                    <field name="date"/>
+                    <field name="state"/>
+                    <progressbar field="state" colors='{"done": "success", "reject": "danger", "progress": "muted"}'/>
+                    <templates>
+                        <t t-name="card">
+                            <div t-attf-class="#{kanban_color(0)} oe_kanban_global_click">
+                                <h3>
+                                    <field name="product_id"/>
+                                </h3>
+                                <p>
+                                    <i>
+                                        <field name="date"/>
+                                    </i>
+                                    <br/>
+                                    <b>
+                                        <field name="name"/>
+                                    </b>
+                                    <br/>
+                                    <field name="sample"/>
+                                </p>
+                                <div class="o_kanban_record_bottom" t-if="!selection_mode">
+                                    <div class="oe_kanban_bottom_left">
+                                        <field name="activity_ids" widget="kanban_activity"/>
+                                    </div>
+                                    <div class="oe_kanban_bottom_right" t-if="!selection_mode">
+                                        <field name="state" widget="state_selection" groups="base.group_user"
+                                               invisible="context.get('fsm_mode', False)"/>
+                                        <img t-att-src="kanban_image('res.users', 'image_128', record.user_id.raw_value)"
+                                             t-att-title="record.user_id.value" t-att-alt="record.user_id.value"
+                                             class="oe_kanban_avatar"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <record id="lims_add_reason_view_form" model="ir.ui.view">
+            <field name="name">add.reason.wizard.form</field>
+            <field name="model">add.reason.wizard</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name='domain_reason_type' invisible="True"/>
+                        <field name='analysis_id'/>
+                        <field name='main_id'/>
+                        <field name='reason_id' domain="domain_reason_type"/>
+                    </group>
+                    <footer>
+                        <button name='do_confirm' type='object' string='Confirm' class="oe_inline oe_highlight"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="lims_convert_subcontracted_form" model="ir.ui.view">
+            <field name="name">Convert.subcontracted.wizard.form</field>
+            <field name="model">convert.subcontracted.wizard</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name='subcontractor_id'/>
+                        <field name='analysis_ids'>
+                            <list editable="top">
+                                <field name="name"/>
+                                <field name="product_id"/>
+                                <field name="department_id" readonly="False"/>
+                            </list>
+                        </field>
+                    </group>
+                    <footer>
+                        <button name='onchange_subcontractor' type='object' string='Confirm'
+                                class="oe_inline oe_highlight"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

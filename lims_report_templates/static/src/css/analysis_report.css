@@ -1,0 +1,286 @@
+                            .coa-report {
+                                color: #00205b;
+                                font-family: DejaVuSans !important;
+                            }
+                            h1 {
+                                background-color: #00205b;
+                                color: white;
+                                font-size: 18px;
+                                text-align: center;
+                                padding: 5px;
+                                margin-bottom: 15px;
+                            }
+                            h2 {
+                                font-weight: bold;
+                                text-align: center;
+                                font-size: 14px;
+                                margin: 5px 0;
+                            }
+                            table {
+                                width: 100%;
+                                border-collapse: collapse;
+                                margin: 10px 0;
+                            }
+                            th {
+                                background-color: #f2f2f2;
+                                font-weight: bold;
+                                padding: 5px;
+                                border: 1px solid #ddd;
+                            }
+                            td {
+                                padding: 5px;
+                                border: 1px solid #ddd;
+                            }
+                            .header-info {
+                                display: flex;
+                                justify-content: space-between;
+                                margin-bottom: 15px;
+                            }
+                            .footer {
+                                font-size: 10px;
+                                margin-top: 20px;
+                                border-top: 1px solid #00205b;
+                                padding-top: 10px;
+                            }
+                            .signature-section {
+                                margin-top: 50px;
+                                text-align: right;
+                            }
+                            .page-break {
+                                page-break-after: always;
+                            }
+
+                            .footer_txt {
+                                    color:#33478D;
+                                    }
+                                    .title_footer {
+                                    color:#8B4000;
+                                    }
+
+                            .report-header-table {
+                                width: 100%;
+                                border-collapse: separate;
+                                border-spacing: 0;
+                            }
+                            .report-header-table th {
+                                text-align: center;
+                                padding: 0px 12px;
+                                background-color: white;
+                                color: #F2914D; /* Orange color */
+                                font-weight: bold;
+                            }
+                            .report-header-table td {
+                                padding: 8px 12px;
+                                background-color: #f2f2f2; /* Grey background */
+                                text-align: center;
+                            }
+                            .report-header-table .empty {
+                                width: 40px;
+                                background-color: white;
+                            }
+                            .report-header-table .header-empty {
+                                width: 40px;
+                                background-color: white;
+                            }
+
+                            .combined-table {
+                                width: 100%;
+                                border-collapse: separate;
+                                border-spacing: 0;
+                            }
+
+                            .combined-table th {
+                                text-align: left;
+                                padding: 8px 12px;
+                                background-color: white;
+                                color: #F2914D; /* Orange color */
+                                font-weight: bold;
+                                white-space: nowrap; /* Prevent text wrap */
+                            }
+
+                            .combined-table td {
+                                padding: 8px 12px;
+                                background-color: #f2f2f2; /* Grey background */
+                            }
+
+                            .combined-table .empty {
+                                width: 20px;
+                                background-color: white;
+                            }
+
+                            .combined-table .section-header {
+                                background-color: #e0e0e0;
+                                font-weight: bold;
+                            }
+
+                            .combined-table tr th.title {
+                                background-color: white;
+                                color: #003883;
+                                width: 150px;
+                                min-width: 80px;
+                                max-width: 150px;
+                            }
+
+                            .combined-table .wide-header {
+                                width: 220px;
+                                white-space: nowrap;
+                            }
+
+                            .combined-table .wide-header + td {
+                                width: 250px;
+                            }
+
+                            /* White spacing between rows */
+                            .combined-table tr td {
+                                border-spacing: 0.5;
+                                margin-bottom: 1px;
+                                border-bottom: 5px solid white;
+                            }
+
+                            .report-result-table {
+                                width: 100%;
+                                border-collapse: separate;
+                                border-spacing: 0;
+                            }
+                            .report-result-table th {
+                                text-align: left;
+                                padding: 8px 12px;
+                                background-color:  #4D5F9B; /* Blue color */
+                                color: white;
+                                font-weight: bold;
+                            }
+                            .report-result-table td {
+                                padding: 8px 12px;
+                                background-color: #f2f2f2; /* Grey background */
+                                text-align: left;
+                            }
+                            .report-result-table .empty {
+                                width: 40px;
+                                background-color: white;
+                            }
+                            .report-result-table .header-empty {
+                                width: 40px;
+                                background-color: white;
+                            }
+
+                            .sample-photo-title {
+                                color: #F2914D;
+                                font-weight: bold;
+                                margin-bottom: 8px;
+                                text-align: left;
+                            }
+                            .photo-wrapper {
+                                text-align: center;
+                                margin-bottom: 10px;
+                            }
+                            .photo-wrapper img {
+                                max-height: 4cm;
+                                max-width: 100%;
+                                display: inline-block;
+                            }
+
+
+                            .coa-judgement-section {
+                                margin-top: 10px;
+                            }
+                            .coa-judgement-title {
+                                color: #F2914D;
+                                font-weight: bold;
+                                margin-bottom: 5px;
+                            }
+                            .coa-judgement-box {
+                                background-color: #f2f2f2;
+                                padding: 6px;
+                                margin-top: 5px;
+                            }
+                            .coa-ok {
+                                color: green;
+                                font-weight: bold;
+                            }
+                            .coa-nok {
+                                color: red;
+                                font-weight: bold;
+                            }
+
+                            .coa-general-section {
+                                margin-top: 10px;
+                            }
+                            .coa-general-box {
+                                background-color: #f2f2f2;
+                                padding: 6px;
+                            }
+
+                            .coa-signature-section {
+                                margin-top: 20px;
+                                page-break-inside: avoid;
+                                text-align: left;
+                            }
+
+                            .coa-signature-section img {
+                                height: 80px;
+                                display: block;
+                                margin-top: 5px;
+                            }
+
+
+                            .coa-general-title {
+                                font-weight: bold;
+                                color: #F2914D;
+                                margin-bottom: 5px;
+                            }
+
+                            .coa-signature-section {
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: flex-start;
+                                margin-top: 30px;
+                                page-break-inside: avoid;
+                                padding-left: 120px;
+                            }
+
+                            .coa-signature-block {
+                                text-align: left;
+                            }
+
+                            .coa-signature-images {
+                                text-align: right;
+                            }
+
+                            .coa-signature-images img {
+                                height: 80px;
+                                display: block;
+                                margin-bottom: 5px;
+                            }
+                            .coa-authorized-section {
+                                margin-top: 20px;
+                                page-break-inside: avoid;
+                            }
+                            .coa-signature-job {
+                                padding-left: 10px;
+                            }
+
+                            .coa-watermark {
+                                position: fixed;
+                                top: 180%;
+                                left: 50%;
+                                width: 100%;
+                                z-index: 9999;
+                                opacity: 0.10;
+                                pointer-events: none;
+                                transform: translate(-50%, 100%) rotate(-45deg);
+                                -webkit-transform: translate(-50%, 100%) rotate(-45deg);
+                            }
+
+                            .coa-watermark-text {
+                                text-align: center;
+                            }
+
+                            .coa-watermark-text span {
+                                font-size: 120px;
+                                font-weight: bold;
+                                color: red;
+                                letter-spacing: 20px;
+                                text-align: center;
+                                display: inline-block;
+                                line-height: 1;
+                            }

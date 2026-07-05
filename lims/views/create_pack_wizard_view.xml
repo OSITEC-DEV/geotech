@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_lims_create_pack_wizard_form" model="ir.ui.view">
+        <field name="name">lims.create.pack.wizard.form</field>
+        <field name="model">lims.create.pack.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Create Package">
+                <group>
+                    <field name="name" placeholder="Package name…"/>
+                    <field name="product_ids" widget="many2many_tags" readonly="1"/>
+                </group>
+                <footer>
+                    <button name="action_create_pack" type="object"
+                            string="Create Package" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action to open the wizard -->
+    <record id="action_lims_create_pack_wizard" model="ir.actions.act_window">
+        <field name="name">Create Package</field>
+        <field name="res_model">lims.create.pack.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <!-- Action server bound to product.product list view -->
+    <record id="action_server_create_pack_from_products" model="ir.actions.server">
+        <field name="name">Create Package</field>
+        <field name="model_id" ref="product.model_product_product"/>
+        <field name="binding_model_id" ref="product.model_product_product"/>
+        <field name="binding_view_types">list</field>
+        <field name="state">code</field>
+        <field name="code">
+action = {
+    'type': 'ir.actions.act_window',
+    'name': 'Create Package',
+    'res_model': 'lims.create.pack.wizard',
+    'view_mode': 'form',
+    'target': 'new',
+    'context': {'active_ids': env.context.get('active_ids', [])},
+}
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="lims_analysis_view_form_inherit2" model="ir.ui.view">
+            <field name="name">lims.analysis.inherit2.form</field>
+            <field name="model">lims.analysis</field>
+            <field name="inherit_id" ref="lims_method.lims_analysis_view_form_inherit"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[1]" position="after">
+                    <page string="Report Editor" invisible = "state in ['draft']">
+                        <div class="alert alert-info text-center" role="alert">
+                            <a class="close" data-dismiss="alert" href="#">x</a>
+                            <strong>Note:</strong>
+                            If you change either <strong>Test/parameter</strong> or the <strong>Report Template</strong> fields,
+                            both the arabic and english comments will be regenerated based on the
+                            <strong>
+                                <u>new</u>
+                            </strong>
+                            selected Report Template.
+                        </div>
+                        <group name="report_template">
+                            <group>
+                                <field name="domain_test" invisible="1"/>
+                                <field name="lim_ana_report" domain="domain_test"
+                                      readonly = "state == 'valid' "/>
+                            </group>
+                            <group string="Print Options">
+                                <field name="lang"/>
+                                <field name="parameter_print_id"/>
+                            </group>
+                        </group>
+                        <label for="eng_text" invisible= " lang != 'en_US' "/>
+                        <field name="eng_text"
+                               invisible=" lang != 'en_US' " readonly=" state == 'valid' "/>
+
+                        <label for="ar_text" invisible= " lang != 'ar_001' "/>
+                        <field name="ar_text"
+                               invisible= " lang != 'ar_001' " readonly="state == 'valid' "/>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

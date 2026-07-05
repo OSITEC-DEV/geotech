@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="report_saleorder_doc" inherit_id="sale.report_saleorder_document">
+        <xpath expr="//p[@t-if='doc.partner_id.vat']" position="replace">
+            <p t-if="doc.partner_id.partner_no">Customer ID :
+                <span t-field="doc.partner_id.partner_no"/>
+            </p>
+        </xpath>
+        <xpath expr="//div[@id='informations']" position="inside">
+            <div t-if="doc.commitment_date and doc.state not in ['draft','sent']" class="col-auto col-3 mw-100 mb-2">
+                <strong>Estimated Date Send:</strong>
+                <p class="m-0" t-field="doc.commitment_date"/>
+            </div>
+        </xpath>
+<!--        <xpath expr="//div[@t-if='doc.signature']" position="after">-->
+<!--            <div class="qrcode" t-if="doc.qrcode">-->
+<!--                <div class="row">-->
+<!--                    <div style="text-align:right;">يرجى الاطلاع على نتائج التحليل لاحقا من خلال الكيو آر كود أدناه-->
+<!--                        <div>-->
+<!--                            <div style="text-align:left;">Scan the QR Code to display your analysis results later</div>-->
+<!--                        </div>-->
+<!--                        <br/>-->
+<!--                        <div class="text-center">-->
+<!--                            <img t-if="doc.qrcode" t-att-src="image_data_uri(doc.qrcode)" style="height: 150px;"-->
+<!--                                 alt="QR Code"/>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--        </xpath>-->
+    </template>
+
+
+    <template id="report_saleorder">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="lims.report_saleorder_doc" t-lang="doc.partner_id.lang"/>
+            </t>
+        </t>
+    </template>
+
+
+</odoo>

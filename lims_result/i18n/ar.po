@@ -1,0 +1,498 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* lims_result
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-20 23:39+0000\n"
+"PO-Revision-Date: 2025-10-20 23:39+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: lims_result
+#: model_terms:ir.ui.view,arch_db:lims_result.product_template_form_view_inherit3
+msgid ""
+"<i>\n"
+"                                    It's highly recommended that you use only alphanumerical code for correspondences\n"
+"                                    (without special characters)\n"
+"                                    <br/>\n"
+"                                    Example :\n"
+"                                    <strong style=\"color:green;\">Sodium ==&gt; NA , Glucose ==&gt; Glu</strong>\n"
+"                                    <br/>\n"
+"                                    While typing the formula , use the parameter code with brackets ( don't put spaces )\n"
+"                                    <br/>\n"
+"                                    Use [age] , [weight] to take automatically the age and the weight of Patient\n"
+"                                    <br/>\n"
+"                                    <strong>Example of Osmolality Formula :</strong>\n"
+"                                    <br/>\n"
+"                                    <strong style=\"color:blue;\">2*[NA] + [Glu]/18 + [BUN]/2.8</strong>\n"
+"                                </i>"
+msgstr ""
+"<i>\n"
+"                                    يوصى بشدة باستخدام رمز أبجدي رقمي فقط للمراسلات\n"
+"                                    (بدون أحخاص خاصة)\n"
+"                                    <br/>\n"
+"                                    مثال :\n"
+"                                    <strong style=\"color:green;\">الصوديوم ==&gt; NA ، الجلوكوز ==&gt; Glu</strong>\n"
+"                                    <br/>\n"
+"                                    أثناء كتابة الصيغة، استخدم رمز المعلمة بين قوسين (لا تضع مسافات)\n"
+"                                    <br/>\n"
+"                                    استخدم [age] ، [weight] لأخذ عمر ووزن المريض تلقائيًا\n"
+"                                    <br/>\n"
+"                                    <strong>مثال على صيغة الأسمولالية:</strong>\n"
+"                                    <br/>\n"
+"                                    <strong style=\"color:blue;\">2*[NA] + [Glu]/18 + [BUN]/2.8</strong>\n"
+"                                </i>"
+
+#. module: lims_result
+#: model:ir.model.fields,field_description:lims_result.field_lims_analysis__action_todo
+msgid "Action todo"
+msgstr "إجراء مطلوب"
+
+#. module: lims_result
+#. odoo-javascript
+#: code:addons/lims_result/static/src/xml/Screens/ClientListScreen/pos.xml:0
+msgid "Age"
+msgstr "العمر"
+
+#. module: lims_result
+#: model:ir.model.fields,field_description:lims_result.field_lims_result_input__analysis_id
+#: model:ir.model.fields,field_description:lims_result.field_res_partner__analysis_ids
+#: model:ir.model.fields,field_description:lims_result.field_res_users__analysis_ids
+msgid "Analysis"
+msgstr "التحليل"
+
+#. module: lims_result
+#: model_terms:ir.ui.view,arch_db:lims_result.lims_batch_wizard_form
+msgid "Assign To"
+msgstr "تعيين إلى"
+
+#. module: lims_result
+#: model:ir.model.fields,field_description:lims_result.field_lims_batch_analysis__user_id
+msgid "Assinged To"
+msgstr "مُعين إلى"
+
+#. module: lims_result
+#: model_terms:ir.ui.view,arch_db:lims_result.product_template_form_view_inherit3
+msgid "Available Functions:"
+msgstr "الدوال المتاحة:"
+
+#. module: lims_result
+#: model:ir.actions.act_window,name:lims_result.batch_analysis_action
+#: model:ir.ui.menu,name:lims_result.menu_batch_analysis
+msgid "Batch Analysis"
+msgstr "تحليل الدُفعة"
+
+#. module: lims_result
+#. odoo-python
+#: code:addons/lims_result/models/lims_analysis.py:0
+#: model_terms:ir.ui.view,arch_db:lims_result.lims_analysis_view_list_inherit
+msgid "Batch Analysis Table"
+msgstr "جدول تحليل الدُفعة"
+
+#. module: lims_result
+#. odoo-javascript
+#: code:addons/lims_result/static/src/xml/Screens/ClientListScreen/pos.xml:0
+msgid "Blood"
+msgstr "الدم"
+
+#. module: lims_result
+#. odoo-javascript
+#: code:addons/lims_result/static/src/xml/Screens/ClientListScreen/pos.xml:0
+msgid "Blood Group..."
+msgstr "فصيلة الدم..."
+
+#. module: lims_result
+#: model:ir.model.fields,field_description:lims_result.field_product_product__is_calculated
+#: model:ir.model.fields,field_description:lims_result.field_product_template__is_calculated
+msgid "Calculated Result"
+msgstr "النتيجة المحسوبة"
+
+#. module: lims_result
+#: model_terms:ir.ui.view,arch_db:lims_result.product_template_form_view_inherit3
+msgid "Calculated parameter config"
+msgstr "تهيئة المعلمة المحسوبة"
+
+#. module: lims_result
+#: model:ir.model.fields,field_description:lims_result.field_lims_analysis__is_calculated
+msgid "Calculated test"
+msgstr "اختبار محسوب"
+
+#. module: lims_result
+#: model:ir.model.fields,field_description:lims_result.field_lims_result_input_type__code
+msgid "Code"
+msgstr "الكود"
+
+#. module: lims_result
+#: model:ir.model.fields,field_description:lims_result.field_lims_analysis__computed_result
+msgid "Computed result"
+msgstr "النتيجة المُحَسبَة"
+
+#. module: lims_result
+#: model:ir.model,name:lims_result.model_res_partner
+msgid "Contact"
+msgstr "جهة الاتصال"
+
+#. module: lims_result
+#: model:ir.model.fields,field_description:lims_result.field_lims_parameter_correspondence__code
+msgid "Correspondence code"
+msgstr "كود المراسلة"
+
+#. module: lims_result
+#: model:ir.model.fields,field_description:lims_result.field_lims_batch_analysis__create_uid
+#: model:ir.model.fields,field_description:lims_result.field_lims_parameter_correspondence__create_uid
+#: model:ir.model.fields,field_description:lims_result.field_lims_result_input__create_uid
+#: model:ir.model.fields,field_description:lims_result.field_lims_result_input_type__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: lims_result
+#: model:ir.model.fields,field_description:lims_result.field_lims_batch_analysis__create_date
+#: model:ir.model.fields,field_description:lims_result.field_lims_parameter_correspondence__create_date
+#: model:ir.model.fields,field_description:lims_result.field_lims_result_input__create_date
+#: model:ir.model.fields,field_description:lims_result.field_lims_result_input_type__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: lims_result
+#: model:ir.model.fields,field_description:lims_result.field_lims_result_range__max_critical
+msgid "Critical High"
+msgstr "حرج مرتفع"
+
+#. module: lims_result
+#: model:ir.model.fields,field_description:lims_result.field_lims_result_range__min_critical
+msgid "Critical Low"
+msgstr "حرج منخفض"
+
+#. module: lims_result
+#: model:ir.model.fields,field_description:lims_result.field_lims_batch_analysis__display_name
+#: model:ir.model.fields,field_description:lims_result.field_lims_parameter_correspondence__display_name
+#: model:ir.model.fields,field_description:lims_result.field_lims_result_input__display_name
+#: model:ir.model.fields,field_description:lims_result.field_lims_result_input_type__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: lims_result
+#: model_terms:ir.ui.view,arch_db:lims_result.lims_batch_wizard_form
+msgid "Do Assign"
+msgstr "تنفيذ التعيين"
+
+#. module: lims_result
+#: model:ir.model.fields,field_description:lims_result.field_product_product__do_generate_inputs
+#: model:ir.model.fields,field_description:lims_result.field_product_template__do_generate_inputs
+msgid "Do Generate Inputs"
+msgstr "قم بتوليد المدخلات"
+
+#. module: lims_result
+#: model_terms:ir.ui.view,arch_db:lims_result.lims_analysis_view_form_inherit
+msgid "Do Review"
+msgstr "تنفيذ المراجعة"
+
+#. module: lims_result
+#: model_terms:ir.ui.view,arch_db:lims_result.lims_analysis_view_form_inherit
+msgid "Do Review all result"
+msgstr "مراجعة جميع النتائج"
+
+#. module: lims_result
+#: model_terms:ir.ui.view,arch_db:lims_result.lims_batch_wizard_form
+msgid "Do WIP"
+msgstr "تعيين كقيد التنفيذ"
+
+#. module: lims_result
+#: model:ir.model.fields.selection,name:lims_result.selection__lims_result_input__state__draft
+msgid "Draft"
+msgstr "مسودة"
+
+#. module: lims_result
+#: model:ir.model.fields,field_description:lims_result.field_product_product__formula
+#: model:ir.model.fields,field_description:lims_result.field_product_template__formula
+msgid "Formula"
+msgstr "الصيغة"
+
+#. module: lims_result
+#. odoo-javascript
+#: code:addons/lims_result/static/src/xml/Screens/ClientListScreen/pos.xml:0
+msgid "Gender"
+msgstr "الجنس"
+
+#. module: lims_result
+#: model:ir.model.fields,help:lims_result.field_product_product__do_generate_inputs
+#: model:ir.model.fields,help:lims_result.field_product_template__do_generate_inputs
+msgid "Generate Inputs after make wip the analysis"
+msgstr "توليد المدخلات بعد تعيين التحليل كقيد التنفيذ"
+
+#. module: lims_result
+#. odoo-javascript
+#: code:addons/lims_result/static/src/xml/Screens/ClientListScreen/pos.xml:0
+#: model:ir.model.fields,field_description:lims_result.field_lims_batch_analysis__id
+#: model:ir.model.fields,field_description:lims_result.field_lims_parameter_correspondence__id
+#: model:ir.model.fields,field_description:lims_result.field_lims_result_input__id
+#: model:ir.model.fields,field_description:lims_result.field_lims_result_input_type__id
+msgid "ID"
+msgstr "المعرف"
+
+#. module: lims_result
+#: model:ir.model.fields,field_description:lims_result.field_lims_result_input_type__name
+msgid "Input result"
+msgstr "نتيجة الإدخال"
+
+#. module: lims_result
+#: model:ir.model.fields,field_description:lims_result.field_lims_analysis__input_result_ids
+msgid "Input results"
+msgstr "نتائج الإدخال"
+
+#. module: lims_result
+#: model:ir.model.fields,field_description:lims_result.field_product_product__input_result_ids
+#: model:ir.model.fields,field_description:lims_result.field_product_template__input_result_ids
+msgid "Input results type"
+msgstr "نوع نتائج الإدخال"
+
+#. module: lims_result
+#: model_terms:ir.ui.view,arch_db:lims_result.product_template_form_view_inherit3
+msgid "Instructions:"
+msgstr "التعليمات:"
+
+#. module: lims_result
+#: model:ir.model.fields,field_description:lims_result.field_lims_batch_analysis__method_id
+#: model_terms:ir.ui.view,arch_db:lims_result.lims_batch_wizard_form
+msgid "Instrument"
+msgstr "الأداة"
+
+#. module: lims_result
+#: model:ir.model.fields,field_description:lims_result.field_lims_analysis__is_critical
+msgid "Is Critical"
+msgstr "حرج"
+
+#. module: lims_result
+#: model:ir.model.fields,field_description:lims_result.field_lims_analysis__json_report
+msgid "Json Report"
+msgstr "تقرير JSON"
+
+#. module: lims_result
+#: model:ir.model.fields,field_description:lims_result.field_lims_batch_analysis__write_uid
+#: model:ir.model.fields,field_description:lims_result.field_lims_parameter_correspondence__write_uid
+#: model:ir.model.fields,field_description:lims_result.field_lims_result_input__write_uid
+#: model:ir.model.fields,field_description:lims_result.field_lims_result_input_type__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: lims_result
+#: model:ir.model.fields,field_description:lims_result.field_lims_batch_analysis__write_date
+#: model:ir.model.fields,field_description:lims_result.field_lims_parameter_correspondence__write_date
+#: model:ir.model.fields,field_description:lims_result.field_lims_result_input__write_date
+#: model:ir.model.fields,field_description:lims_result.field_lims_result_input_type__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: lims_result
+#: model:ir.model,name:lims_result.model_lims_result_input_type
+msgid "Lims Result Input Type"
+msgstr "نوع إدخال نتيجة نظام إدارة المختبر"
+
+#. module: lims_result
+#: model:ir.model,name:lims_result.model_lims_result_input
+msgid "Lims Result Multi Inputs"
+msgstr "مدخلات متعددة لنتيجة نظام إدارة المختبر"
+
+#. module: lims_result
+#: model:ir.model,name:lims_result.model_lims_result_range
+msgid "Lims references and ranges"
+msgstr "مراجع ونطاقات نظام إدارة المختبرات"
+
+#. module: lims_result
+#: model_terms:ir.ui.view,arch_db:lims_result.product_template_form_view_inherit3
+msgid "Logarithm : s.log( [A] , [B] )"
+msgstr "اللوغاريتم : s.log( [A] , [B] )"
+
+#. module: lims_result
+#: model_terms:ir.ui.view,arch_db:lims_result.product_template_form_view_inherit3
+msgid "Max : max([ [A] , [B] , [C]])"
+msgstr "القيمة العظمى : max([ [A] , [B] , [C]])"
+
+#. module: lims_result
+#: model_terms:ir.ui.view,arch_db:lims_result.product_template_form_view_inherit3
+msgid "Mean : s.mean([ [A] , [B] , [C]])"
+msgstr "المتوسط : s.mean([ [A] , [B] , [C]])"
+
+#. module: lims_result
+#: model_terms:ir.ui.view,arch_db:lims_result.product_template_form_view_inherit3
+msgid "Median : s.median([ [A] , [B] , [C]])"
+msgstr "الوسيط : s.median([ [A] , [B] , [C]])"
+
+#. module: lims_result
+#: model_terms:ir.ui.view,arch_db:lims_result.product_template_form_view_inherit3
+msgid "Min : max([ [A] , [B] , [C]])"
+msgstr "القيمة الدنيا : min([ [A] , [B] , [C]])"
+
+#. module: lims_result
+#: model:ir.model.fields,field_description:lims_result.field_lims_result_input__name
+msgid "Name"
+msgstr "الاسم"
+
+#. module: lims_result
+#. odoo-javascript
+#: code:addons/lims_result/static/src/xml/Screens/ClientListScreen/pos.xml:0
+msgid "National ID/Iqama Number"
+msgstr "الهوية الوطنية/رقم الإقامة"
+
+#. module: lims_result
+#: model:ir.model.fields,field_description:lims_result.field_lims_parameter_correspondence__parameter_id
+msgid "Parameter"
+msgstr "المعلمة"
+
+#. module: lims_result
+#: model:ir.model,name:lims_result.model_lims_parameter_correspondence
+msgid "Parameter Correspondence"
+msgstr "مراسلات المعلمة"
+
+#. module: lims_result
+#. odoo-javascript
+#: code:addons/lims_result/static/src/xml/Screens/ClientListScreen/pos.xml:0
+msgid "Passport"
+msgstr "جواز السفر"
+
+#. module: lims_result
+#. odoo-javascript
+#: code:addons/lims_result/static/src/xml/Screens/ClientListScreen/pos.xml:0
+msgid "Passport ID"
+msgstr "رقم جواز السفر"
+
+#. module: lims_result
+#: model:ir.model,name:lims_result.model_product_template
+#: model:ir.model.fields,field_description:lims_result.field_lims_parameter_correspondence__product_id
+msgid "Product"
+msgstr "المنتج"
+
+#. module: lims_result
+#: model:ir.model.fields,field_description:lims_result.field_lims_analysis__related_analysis
+msgid "Related analysis"
+msgstr "التحليل المرتبط"
+
+#. module: lims_result
+#: model:ir.model.fields,field_description:lims_result.field_lims_result_input__result
+msgid "Result"
+msgstr "النتيجة"
+
+#. module: lims_result
+#: model:ir.actions.act_window,name:lims_result.result_inputs_action
+#: model:ir.ui.menu,name:lims_result.menu_lims_result_input_type
+msgid "Result Inputs"
+msgstr "مدخلات النتائج"
+
+#. module: lims_result
+#: model_terms:ir.ui.view,arch_db:lims_result.lims_analysis_view_form_inherit
+msgid "Results input"
+msgstr "إدخال النتائج"
+
+#. module: lims_result
+#: model:ir.model.fields.selection,name:lims_result.selection__lims_result_input__state__reviewed
+msgid "Reviewed"
+msgstr "تمت المراجعة"
+
+#. module: lims_result
+#: model:ir.model.fields,field_description:lims_result.field_lims_batch_analysis__sample_ids
+msgid "Sample ID"
+msgstr "معرف العينة"
+
+#. module: lims_result
+#: model_terms:ir.ui.view,arch_db:lims_result.lims_batch_wizard_form
+msgid "Save"
+msgstr "حفظ"
+
+#. module: lims_result
+#: model_terms:ir.ui.view,arch_db:lims_result.product_template_form_view_inherit3
+msgid "Standard deviation : s.stdev([ [A] , [B] , [C]])"
+msgstr "الانحراف المعياري : s.stdev([ [A] , [B] , [C]])"
+
+#. module: lims_result
+#: model:ir.model.fields,field_description:lims_result.field_lims_result_input__state
+msgid "State"
+msgstr "الحالة"
+
+#. module: lims_result
+#: model_terms:ir.ui.view,arch_db:lims_result.lims_analysis_view_form_inherit
+msgid "TEST API"
+msgstr "اختبار واجهة برمجة التطبيقات"
+
+#. module: lims_result
+#: model:ir.model.fields,field_description:lims_result.field_product_product__correspondence_ids
+#: model:ir.model.fields,field_description:lims_result.field_product_template__correspondence_ids
+msgid "Table of correspondence"
+msgstr "جدول المراسلات"
+
+#. module: lims_result
+#. odoo-javascript
+#: code:addons/lims_result/static/src/xml/Screens/ClientListScreen/pos.xml:0
+msgid "Taxes"
+msgstr "الضرائب"
+
+#. module: lims_result
+#: model_terms:ir.ui.view,arch_db:lims_result.product_template_form_view_inherit3
+msgid "Test Formula"
+msgstr "اختبار الصيغة"
+
+#. module: lims_result
+#: model:ir.model.fields,field_description:lims_result.field_lims_parameter_correspondence__test_value
+msgid "Test Value"
+msgstr "قيمة الاختبار"
+
+#. module: lims_result
+#: model:ir.model,name:lims_result.model_lims_analysis
+#: model:ir.model.fields,field_description:lims_result.field_lims_batch_analysis__analysis_ids
+#: model_terms:ir.ui.view,arch_db:lims_result.res_partner_form_view_inherit_analysis
+msgid "Tests"
+msgstr "الاختبارات"
+
+#. module: lims_result
+#: model_terms:ir.ui.view,arch_db:lims_result.product_template_form_view_inherit3
+msgid "The default inputs results when we generate the analysis"
+msgstr "نتائج المدخلات الافتراضية عند إنشاء التحليل"
+
+#. module: lims_result
+#: model:ir.model.fields,field_description:lims_result.field_lims_result_input__reviewed_by
+msgid "Users"
+msgstr "المستخدمون"
+
+#. module: lims_result
+#: model_terms:ir.ui.view,arch_db:lims_result.lims_batch_wizard_form
+msgid "Validate"
+msgstr "اعتماد"
+
+#. module: lims_result
+#: model_terms:ir.ui.view,arch_db:lims_result.product_template_form_view_inherit3
+msgid "Variance : s.variance([ [A] , [B] , [C]])"
+msgstr "التباين : s.variance([ [A] , [B] , [C]])"
+
+#. module: lims_result
+#. odoo-python
+#: code:addons/lims_result/models/lims_analysis.py:0
+msgid "You can not delete a results of analysis test."
+msgstr "لا يمكنك حذف نتائج اختبار التحليل."
+
+#. module: lims_result
+#. odoo-javascript
+#: code:addons/lims_result/static/src/xml/Screens/ClientListScreen/pos.xml:0
+msgid "female"
+msgstr "أنثى"
+
+#. module: lims_result
+#: model:ir.model.fields,field_description:lims_result.field_lims_analysis__last_result
+msgid "last result"
+msgstr "آخر نتيجة"
+
+#. module: lims_result
+#: model:ir.model,name:lims_result.model_lims_batch_analysis
+msgid "lims batch Analysis Table"
+msgstr "جدول تحليل دفعة نظام إدارة المختبر"
+
+#. module: lims_result
+#. odoo-javascript
+#: code:addons/lims_result/static/src/xml/Screens/ClientListScreen/pos.xml:0
+msgid "male"
+msgstr "ذكر"

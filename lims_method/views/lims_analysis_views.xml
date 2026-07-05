@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="lims_analysis_view_form_inherit" model="ir.ui.view">
+            <field name="name">lims.analysis.inherit.form</field>
+            <field name="model">lims.analysis</field>
+            <field name="inherit_id" ref="lims.lims_analysis_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='method_id']" position="after">
+                    <field name="equipment_id"/>
+                    <field name="domain_technique" invisible="True"/>
+                    <field name="technique_id" domain="domain_technique"/>
+                </xpath>
+                <xpath expr="//form/sheet/notebook/page[@name='history']" position="before">
+                    <page string="Analysis Steps" name="steps" readonly="state == 'validated'">
+                        <field name="step_ids">
+                            <list editable='top'>
+                                <field name="step_id"/>
+                                <field name="domain_sample" column_invisible="True"/>
+                                <field name="domain_analysts" column_invisible="True"/>
+                                <field name="sub_sample_id" domain="domain_sample"/>
+                                <field name="user_id" domain="domain_analysts"/>
+                                <field name="attachment" widget="binary"/>
+                                <field name="equipment_id" help='Add the equipment used in this step'/>
+                                <field name="note"/>
+                                <field name="remarks"/>
+                                <field name="state" readonly="True"/>
+                                <field name="done_date" readonly="True" optional='hide'/>
+                                <field name="validate_date" readonly="True" optional='hide'/>
+                                <button name="do_done" type="object" class="oe_inline oe_link"
+                                        confirm="Please confirm this action" icon="fa-pencil" invisible= "state not in ['wip']"
+                                        string="Mark as done"/>
+
+                                <button name="do_validate" type="object" class="oe_inline oe_link"
+                                        confirm="Please confirm this action" icon="fa-pencil" invisible= "state not in ['done']"
+                                        string="Validate"/>
+                            </list>
+                        </field>
+                    </page>
+                </xpath>
+
+            </field>
+        </record>
+
+    </data>
+</odoo>

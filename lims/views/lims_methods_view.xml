@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="lims_method_view_form" model="ir.ui.view">
+            <field name="name">lims.method.main.form</field>
+            <field name="model">lims.method</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group string='Basic information' col='4'>
+                        <field name="name"/>
+                        <field name="active"/>
+                        <field name="default_uom"/>
+                        <field name="is_default"/>
+                    </group>
+                    <group string='Range/levels'>
+                        <field name='reference_ids'>
+                            <list editable='bottom'>
+                                <field name='type_range'/>
+                                <field name='product_id' required='True'/>
+                                <field name='min_val' invisible = "type_range == 'txt'"/>
+                                <field name='max_val' invisible = "type_range == 'txt'"/>
+                                <field name='uom_id'/>
+                                <field name='text_rang'  invisible="type_range == 'numeric' "/>
+                                <field name='status'/>
+                                <field name='factor_id'/>
+                            </list>
+                        </field>
+                    </group>
+                </form>
+            </field>
+        </record>
+        <record id="lims_references_view_form" model="ir.ui.view">
+            <field name="name">lims.result.range.form</field>
+            <field name="model">lims.result.range</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                    <group col="4">
+                        <field name="type_range"/>
+                        <field name="factor_id"/>
+                        <field name="status"/>
+                        <field name="product_id"/>
+                        <field name="type_range"/>
+                        <field name="method_id"/>
+                        <field name="min_val"/>
+                        <field name="max_val"/>
+                         <field name="uom_id"/>
+                    </group>
+                        <notebook>
+                            <page string="Text references">
+                                    <field name="text_rang"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="lims_references_view_list" model="ir.ui.view">
+            <field name="name">lims.result.range.list</field>
+            <field name="model">lims.result.range</field>
+            <field name="arch" type="xml">
+                <list>
+                    <field name="product_id"/>
+                    <field name="method_id"/>
+                    <field name="factor_id"/>
+                    <field name="min_val"/>
+                    <field name="max_val"/>
+                    <field name="uom_id"/>
+                </list>
+            </field>
+        </record>
+    </data>
+</odoo>

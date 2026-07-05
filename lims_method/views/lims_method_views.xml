@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="lims_method_view_form_inherit" model="ir.ui.view">
+            <field name="name">lims.method.inherit.form</field>
+            <field name="model">lims.method</field>
+            <field name="inherit_id" ref="lims.lims_method_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form" position="inside">
+                    <group string="Methods">
+                        <field name="method_technique_ids" widget="many2many_tags"/>
+                    </group>
+                    <group string="Default Equipment">
+                        <field name="equipment_id" style="width:auto;"/>
+                    </group>
+                </xpath>
+
+            </field>
+        </record>
+        <record id="lims_method_technique_view_form" model="ir.ui.view">
+            <field name="name">lims.method.technique.form</field>
+            <field name="model">lims.method.technique</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="code"/>
+                                <field name="instrument_id" options="{'no_create': True}"/>
+                                <field name="active"/>
+                                <field name="sop_documentation"/>
+                            </group>
+                            <group string="Detection Limits">
+                                <field name="loq"/>
+                                <field name="lod"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Steps">
+                                <field name="method_step_ids"/>
+                            </page>
+                            <page string="Description">
+                                <field name="description"/>
+                            </page>
+                            <page string="Linked Variants" name="linked_variants">
+                                <field name="variant_ids" readonly="1">
+                                    <list>
+                                        <field name="display_name" string="Variant"/>
+                                        <field name="product_tmpl_id" string="Template"/>
+                                        <field name="default_code" string="Internal Ref" optional="show"/>
+                                        <field name="active"/>
+                                    </list>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

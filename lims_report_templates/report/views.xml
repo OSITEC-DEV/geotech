@@ -1,0 +1,55 @@
+<odoo>
+    <record id="sale_report_custom" model="ir.actions.report">
+        <field name="name">Sale Report</field>
+        <field name="model">sale.order</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">sale_report_cutom.arabic_report1</field>
+        <field name="report_file">sale_report_cutom.arabic_report1</field>
+        <field name="binding_model_id" ref="sale.model_sale_order"/>
+        <field name="binding_type">report</field>
+    </record>
+    <template id="arabic_report1">
+        <t t-call="web.basic_layout">
+            <style>
+                .vertical {
+                border-left: 6px solid black;
+                height: 16px;
+                position:absolute;
+                }
+            </style>
+            <div class="page">
+                <div class="progress" style="max-width: 50%">
+                    <t t-set="minimum" t-value="0"/>
+                    <t t-set="minimum" t-value="minimum+20"/>
+                    <t t-set="maximum" t-value="0"/>
+                    <t t-set="maximum" t-value="maximum+80"/>
+                    <t t-set="value" t-value="0"/>
+                    <t t-set="value" t-value="value+70"/>
+                    <t t-set="range_min" t-value="0"/>
+                    <t t-set="range_min" t-value="range_min+(value-minimum)*100/(maximum-minimum)"/>
+                    <div class="progress-bar progress-bar-stripped" role="progressbar" aria-valuenow="40"
+                         aria-valuemin="0"
+                         aria-valuemax="100"
+                         t-attf-style="width:{{str(range_min) + '%'}};background-image: -webkit-linear-gradient(left, #ACBD4E, #EBDC09);">
+
+                    </div>
+                    <div class="vertical"/>
+                    <div class="progress-bar progress-bar-stripped" role="progressbar" aria-valuenow="30"
+                         aria-valuemin="0"
+                         aria-valuemax="100"
+                         t-attf-style="width:{{str(100 - range_min) + '%'}};background-image: -webkit-linear-gradient(left, #EBDC09, #9F2828);"/>
+
+                </div>
+                <div style="max-width: 50%" class="row">
+                    <span t-esc="minimum"/>
+                    <div t-attf-style="width:{{str(range_min) + '%'}};text-align:right;margin-left:27px;" class="col">
+                        <span t-esc="value"/>
+                    </div>
+                    <div t-attf-style="width:{{str(100-range_min) + '%'}};text-align:right;" class="col">
+                        <span t-esc="maximum"/>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>

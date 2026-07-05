@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="product_template_form_view_inherit3" model="ir.ui.view">
+            <field name="name">product.template.form.inherit</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="lims.product_template_form_view_inherit2"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='se_results']" position="after">
+                    <field name="input_result_ids" widget="many2many_tags"
+                           help="The default inputs results when we generate the analysis"/>
+                    <field name="do_generate_inputs" widget="boolean_toggle"/>
+                </xpath>
+                <xpath expr="//field[@name='type_result']" position="after">
+                    <field name="is_calculated"/>
+                </xpath>
+                <xpath expr="//page[@name='lims']" position="after">
+                    <page string="Calculated parameter config" invisible=" is_calculated == False">
+                        <div>
+                            <h4>Instructions:</h4>
+                            <p style="border: 1px solid black ; width:50%; padding: 5px;">
+                                <i>
+                                    It's highly recommended that you use only alphanumerical code for correspondences
+                                    (without special characters)
+                                    <br/>
+                                    Example :
+                                    <strong style="color:green;">Sodium ==> NA , Glucose ==> Glu</strong>
+                                    <br/>
+                                    While typing the formula , use the parameter code with brackets ( don't put spaces )
+                                    <br/>
+                                    Use [age] , [weight] to take automatically the age and the weight of Patient
+                                    <br/>
+                                    <strong>Example of Osmolality Formula :</strong>
+                                    <br/>
+                                    <strong style="color:blue;">2*[NA] + [Glu]/18 + [BUN]/2.8</strong>
+                                </i>
+                            </p>
+                            <h4>Available Functions:</h4>
+                            <p style="border: 1px solid black ; width:50%; padding: 5px;">
+                                <ul>
+                                    <li>Mean : s.mean([ [A] , [B] , [C]])</li>
+                                    <li>Median : s.median([ [A] , [B] , [C]])</li>
+                                    <li>Variance : s.variance([ [A] , [B] , [C]])</li>
+                                    <li>Max : max([ [A] , [B] , [C]])</li>
+                                    <li>Min : max([ [A] , [B] , [C]])</li>
+                                    <li>Logarithm : s.log( [A] , [B] )</li>
+                                    <li>Standard deviation : s.stdev([ [A] , [B] , [C]])</li>
+                                </ul>
+                            </p>
+                        </div>
+                        <field name="correspondence_ids"
+                              requried="is_calculated == True" invisible="is_calculated == False">
+                            <list editable="bottom">
+                                <field name="parameter_id" required="True"/>
+                                <field name="code" required="True"/>
+                                <field name="test_value"/>
+                            </list>
+                        </field>
+                        <field name="formula" style="width:100%;color:blue;"
+                              requried="is_calculated == True" invisible="is_calculated == False"/>
+                        <button name='test_formula' type='object' string='Test Formula'
+                                class="oe_inline oe_link"
+                                invisible=" is_calculated == False"/>
+                    </page>
+
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

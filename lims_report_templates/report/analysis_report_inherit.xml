@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="medical_analysis_report_inherit" inherit_id="lims_report_templates.lims_report_pdf">
+
+            <xpath expr="//td[@name='td_method']/span[@t-field='a.method_id']" position="replace">
+                <span t-field="a.technique_id"/>
+            </xpath>
+            <xpath expr="//td[@name='td_method_abn']/span[@t-field='a.method_id']" position="replace">
+                <span t-field="a.technique_id"/>
+            </xpath>
+        </template>
+
+    </data>
+</odoo>

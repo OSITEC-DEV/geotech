@@ -1,0 +1,103 @@
+<odoo>
+    <data>
+        <template id="medical_analysis_report_inherit" inherit_id="lims.analysis_report_document">
+
+            <!--            <xpath expr="//tr[@name='th_table']" position="replace">-->
+            <!--            </xpath>-->
+
+            <!--            <xpath expr="//tr[@name='analysis_info']" position="replace">-->
+            <!--                <t t-set="print_group" t-value=""/>-->
+            <!--                <tr t-foreach="o.analysis_ids.filtered(lambda a:a.state == 'valid').sorted(key=lambda x:(x.parameter_print_id.print_group_id,x.pack_selected))"-->
+            <!--                    t-as="a">-->
+            <!--                    <t t-if="sample.id==a.sample_line_id.id">-->
+            <!--                        &lt;!&ndash;                    <t t-if="print_group != a.parameter_print_id.print_group_id.name" t-set="print_group" t-value="a.parameter_print_id.print_group_id.name"/>&ndash;&gt;-->
+            <!--                        <tr t-if="print_group != a.parameter_print_id.print_group_id.name" dir="ltr">-->
+            <!--                            <t t-set='test_no' t-value='1'/>-->
+            <!--                            <th class="bg-light clearfix" colspan="4">-->
+            <!--                                <strong>-->
+            <!--                                    <u><span t-esc="a.parameter_print_id.print_group_id.name" style="font-size:16px;"/>:-->
+            <!--                                    </u>-->
+            <!--                                </strong>-->
+            <!--                            </th>-->
+            <!--                        </tr>-->
+            <!--                        <tr t-if="print_group != a.parameter_print_id.print_group_id.name">-->
+            <!--                            <th name="th_priceunit" class="text-left">-->
+            <!--                                <span t-field="o.translation_template.range_lims"-->
+            <!--                                      t-if="o.translation_template.range_lims"/>-->
+            <!--                                - Range - -->
+            <!--                            </th>-->
+            <!--                            <t t-if="o.print_method">-->
+            <!--                                <th name="th_priceunit" class="text-left">-->
+            <!--                                    <span t-field="o.translation_template.method" t-if="o.translation_template.method"/>-->
+            <!--                                    - Method - -->
+            <!--                                </th>-->
+            <!--                            </t>-->
+            <!--                            <th name="th_quantity" class="text-left">-->
+            <!--                                <span t-field="o.translation_template.result" t-if="o.translation_template.result"/>-->
+            <!--                                - Result - -->
+            <!--                            </th>-->
+            <!--                            <th name="th_description" class="text-left">-->
+            <!--                                <span t-field="o.translation_template.test_name"-->
+            <!--                                      t-if="o.translation_template.test_name"/>-->
+            <!--                                - Test - -->
+            <!--                            </th>-->
+            <!--                        </tr>-->
+            <!--                        <tr>-->
+            <!--                            <t t-if="a.state_result not in ('oor','hight','low')">-->
+            <!--                                <td name="td_range" class="text-left">-->
+            <!--                                    <div t-esc="a.return_range_txt()" style="font-size:10px;"/>-->
+            <!--                                </td>-->
+            <!--                                <t t-if="o.print_method">-->
+            <!--                                    <td name="td_result" class="text-left">-->
+            <!--                                        <span t-field="a.method_id"/>-->
+            <!--                                    </td>-->
+            <!--                                </t>-->
+            <!--                                <td name="td_result" dir="ltr" class="text-left">-->
+            <!--                                    <span t-field="a.result_txt"/>-->
+            <!--                                    <i>-->
+            <!--                                        <span t-if="a.last_old_result" style="color: red;">Old result:</span>-->
+            <!--                                        <span t-field="a.last_old_result" t-if="a.last_old_result"/>-->
+            <!--                                    </i>-->
+            <!--                                </td>-->
+            <!--                                <td name="td_result_name" class="text-left" dir="ltr">-->
+            <!--                                    <span style="font-size:12px;">-->
+            <!--                                        <span t-esc="test_no" t-options="{'widget': 'text'}"/>-->
+            <!--                                    </span>-->
+            <!--                                    |-->
+            <!--                                    <span t-if="a.parameter_print_id" t-field="a.parameter_print_id.print_name"/>-->
+            <!--                                </td>-->
+            <!--                            </t>-->
+            <!--                            <t t-else="">-->
+            <!--                                <td name="td_range">-->
+            <!--                                    <div t-esc="a.return_range_txt()" style="font-size:10px;" dir="rtl"/>-->
+            <!--                                </td>-->
+            <!--                                <t t-if="o.print_method">-->
+            <!--                                    <td name="td_result" class="text-left">-->
+            <!--                                        <span t-field="a.method_id"/>-->
+            <!--                                    </td>-->
+            <!--                                </t>-->
+            <!--                                <td name="td_result" dir="ltr" class="text-left">-->
+            <!--                                    <span t-field="a.result_txt" style="color: red;"/>-->
+            <!--                                    <span t-if="'hight' in a.state_result" style="color:red;">,High</span>-->
+            <!--                                    <span t-if="'low' in a.state_result" style="color:red;">,Low</span>-->
+            <!--                                    <span t-if="a.last_old_result">Old result:</span>-->
+            <!--                                    <span t-field="a.last_old_result" t-if="a.last_old_result" style="color: red;"/>-->
+            <!--                                </td>-->
+            <!--                                <td name="td_result_name" class="text-left" dir="ltr">-->
+            <!--                                    <span style="font-size:12px;">-->
+            <!--                                        <span t-esc="test_no" t-options="{'widget': 'text'}"/>-->
+            <!--                                    </span>-->
+            <!--                                    |-->
+            <!--                                    <span t-if="a.parameter_print_id" t-field="a.parameter_print_id.print_name"/>-->
+            <!--                                </td>-->
+            <!--                            </t>-->
+            <!--                        </tr>-->
+            <!--                        <t t-set='test_no' t-value='test_no+1'/>-->
+            <!--                        <t t-set="print_group" t-value="a.parameter_print_id.print_group_id.name"/>-->
+            <!--                    </t>-->
+            <!--                </tr>-->
+            <!--            </xpath>-->
+        </template>
+
+    </data>
+</odoo>

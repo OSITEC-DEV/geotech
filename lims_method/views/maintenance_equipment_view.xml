@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="lims_equipment_view_form_inherit" model="ir.ui.view">
+            <field name="name">lims.equipment.inherit.form</field>
+            <field name="model">maintenance.equipment</field>
+            <field name="inherit_id" ref="maintenance.hr_equipment_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='effective_date']" position="after">
+                    <field name="used_inlab" style="width:auto;"/>
+                    <field name="instrument_id" style="width:auto;"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="lims.module_category_root" model="ir.module.category">
+        <field name="description">Helps you handle your medical analysis and reports .</field>
+        <field name="name">Medical Laboratory</field>
+        <field name="sequence">5</field>
+    </record>
+
+    <record id="module_category_lims" model="ir.module.category">
+        <field name="description">Helps you handle your medical analysis and reports .</field>
+        <field name='parent_id' ref='lims.module_category_root'/>
+        <field name="name">Lims</field>
+        <field name="sequence">5</field>
+    </record>
+
+    <record id="group_lims_sample" model="res.groups">
+        <field name="name">Sampling</field>
+        <field name="category_id" ref="module_category_lims"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        <field name="comment">the user will have access to data in the lims application.</field>
+    </record>
+
+    <record id="group_show_sample_information" model="res.groups">
+        <field name="name">Show Only Sample Information</field>
+        <field name="category_id" ref="module_category_lims"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        <field name="comment">the user will have show only sample information.</field>
+    </record>
+
+
+    <record id="group_lims_responsible" model="res.groups">
+        <field name="name">Lab Responsible</field>
+        <field name="category_id" ref="module_category_lims"/>
+        <field name="implied_ids" eval="[(4, ref('lims.group_lims_sample'))]"/>
+        <field name="comment">the user will have access to all data of own department in the lims application.</field>
+    </record>
+
+    <record id="group_lims_manager" model="res.groups">
+        <field name="name">Manager</field>
+        <field name="category_id" ref="module_category_lims"/>
+        <field name="implied_ids" eval="[(4, ref('lims.group_lims_responsible'))]"/>
+        <field name="comment">the user will have access to all data in the lims application.</field>
+    </record>
+
+
+    <record id="group_lims_analysis" model="res.groups">
+        <field name="name">Analyst</field>
+        <field name="category_id" ref="module_category_lims"/>
+        <field name="implied_ids" eval="[(4, ref('lims.group_lims_sample'))]"/>
+        <field name="comment">the user will have access to own tests in the lims application.</field>
+    </record>
+
+    <record id="group_lims_reporting" model="res.groups">
+        <field name="name">Report validator</field>
+        <field name="category_id" ref="module_category_lims"/>
+        <field name="implied_ids" eval="[(4, ref('lims.group_lims_manager'))]"/>
+        <field name="comment">the user will have access to report the results.</field>
+    </record>
+
+    <record id="group_lims_unlock" model="res.groups">
+        <field name="name">Request unlock</field>
+        <field name="category_id" ref="module_category_lims"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        <field name="comment">the user will have access to unlock the requests locked.</field>
+    </record>
+
+    <record id="group_lims_viewer" model="res.groups">
+        <field name="name">Viewer</field>
+        <field name="category_id" ref="module_category_lims"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        <field name="comment">the user will have access to report the results.</field>
+    </record>
+
+    <record id="group_lims_consultant" model="res.groups">
+        <field name="name">Consultant</field>
+        <field name="category_id" ref="module_category_lims"/>
+        <field name="implied_ids" eval="[(4, ref('lims.group_lims_viewer'))]"/>
+        <field name="comment">the user will have access to report the results.</field>
+    </record>
+    <record id="group_lims_portal_consultant" model="res.groups">
+        <field name="name">Portal Consultant</field>
+        <field name="category_id" ref="module_category_lims"/>
+        <field name="comment">the user will have access to sign the analytical reports.</field>
+     </record>
+
+    <data noupdate="0">
+        <!-- Multi - Company Rules -->
+        <record model="ir.rule" id="lims_sample_main_comp_rule">
+            <field name="name">Sample main multi-company</field>
+            <field name="model_id" ref="model_lims_sample_main"/>
+            <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+        </record>
+
+        <record model="ir.rule" id="lims_analysis_comp_rule">
+            <field name="name">Analysis multi-company</field>
+            <field name="model_id" ref="model_lims_analysis"/>
+            <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+        </record>
+
+        <record model="ir.rule" id="lims_sample_preparation_comp_rule">
+            <field name="name">Analysis multi-company</field>
+            <field name="model_id" ref="model_lims_sample_preparation"/>
+            <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+        </record>
+
+        <!-- Manager: unrestricted -->
+        <record id="lims_analysis_all_rules" model="ir.rule">
+            <field name="name">Analysis: manager sees all</field>
+            <field name="model_id" ref="lims.model_lims_analysis"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+            <field name="groups" eval="[(4, ref('lims.group_lims_manager'))]"/>
+        </record>
+
+        <!-- Supervisor (Lab Responsible): full access scoped to own department -->
+        <record id="lims_analysis_own_department_rules" model="ir.rule">
+            <field name="name">Analysis: supervisor — own department</field>
+            <field name="model_id" ref="lims.model_lims_analysis"/>
+            <field name="domain_force">[('department_id','in',user.department_ids.ids)]</field>
+            <field name="perm_read"   eval="True"/>
+            <field name="perm_write"  eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_unlink" eval="False"/>
+            <field name="groups" eval="[(4, ref('lims.group_lims_responsible'))]"/>
+        </record>
+
+        <!-- Analyst: READ — can see all analyses in own department -->
+        <record id="lims_analysis_own_rules" model="ir.rule">
+            <field name="name">Analysis: analyst — read own department</field>
+            <field name="model_id" ref="lims.model_lims_analysis"/>
+            <field name="domain_force">[('department_id','in',user.department_ids.ids)]</field>
+            <field name="perm_read"   eval="True"/>
+            <field name="perm_write"  eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_unlink" eval="False"/>
+            <field name="groups" eval="[(4, ref('lims.group_lims_analysis'))]"/>
+        </record>
+
+        <!-- Analyst: WRITE — can encode results / do_work only on assigned analyses -->
+        <record id="lims_analysis_analyst_write_rule" model="ir.rule">
+            <field name="name">Analysis: analyst — write only if assigned</field>
+            <field name="model_id" ref="lims.model_lims_analysis"/>
+            <field name="domain_force">[('user_id','=',user.id)]</field>
+            <field name="perm_read"   eval="False"/>
+            <field name="perm_write"  eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_unlink" eval="False"/>
+            <field name="groups" eval="[(4, ref('lims.group_lims_analysis'))]"/>
+        </record>
+
+    </data>
+</odoo>

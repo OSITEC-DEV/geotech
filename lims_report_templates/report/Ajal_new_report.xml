@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <template name="Raport Header" id="report_header">
+            <div class="header coa-report">
+                <div class="row">
+                    <div class="col-8" style="padding-left:50px;">
+                        <img t-att-src="'/lims_report_templates/static/src/img/Ajal_PNG.png'" alt="Company Logo" style="width :250px; hight: auto;"/>
+                    </div>
+                    <div class="col-2">
+                        <img t-att-src="'/lims_report_templates/static/src/img/Ajal_arabic.png'" style="width :200px; hight: auto;"/>
+                    </div>
+                </div>
+
+                  <table style="width: 100%; table-layout: fixed; border-collapse: collapse; border-spacing: 0;" class="table table-borderless">
+                    <thead>
+                        <tr style="padding: 0; margin: 0;">
+                            <td style="width: 50%; padding: 0; margin: 0;">
+                                <div style="border-bottom: 10px solid #4D5F9B"></div>
+                                <div style="border-bottom: 2px solid #FFFFFF;"></div>
+                                <div style="border-bottom: 5px solid #F08338;"></div>
+                            </td>
+                            <td style="width: 35%; text-align: left;padding:0;padding-left:10pt;padding-right:5pt;line-height: 1.0;">
+                                <strong style="font-size: 20px; color: #003883; ">CERTIFICATE OF ANALYSIS</strong><br/>
+                                <strong style="font-size: 10px; color: #7F8CB7;">FORM CODE: F7 8-001-V03</strong>
+                            </td>
+                            <td style="width: 15%; padding: 0; margin: 0;">
+                                <div style="border-bottom: 10px solid #4D5F9B;"></div>
+                                <div style="border-bottom: 2px solid #FFFFFF;"></div>
+                                <div style="border-bottom: 5px solid #F08338;"></div>
+                            </td>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </template>
+
+        <template id="report_footer">
+             <div class="footer footer_txt" style="border-top: 1px inset #33478D;font-size:12px;">
+                <div class="row d-flex justify-content-left">
+                    <div class="col-4" style="margin-left:40px;">
+                        <t t-set="base_url" t-value="env['ir.config_parameter'].sudo().get_param('web.base.url')"/>
+                    <t t-set="qr_value" t-value="base_url + doc.access_url"/>
+                    <span t-esc="qr_value" t-options="{'widget':'barcode','symbology': 'QR','width': 60,'height': 60,'humanreadable': 0}"/>
+                    </div>
+                    <div class="col-7">
+                      <span style="text-align:left;font-size:13px;padding:1px;">
+                            <strong>Eurofins Ajal Laboratories CO.</strong>,
+                            <span t-field="res_company.state_id" t-if="res_company.state_id"/>,
+                            <span t-field="res_company.street" t-if="res_company.street"/>,
+                            <span t-field="res_company.zip" t-if="res_company.zip"/>,<br/>
+                            <strong>Phone: </strong>
+                            <span t-field="res_company.phone"/>,
+                            <strong>CR: </strong>
+                            <span t-field="res_company.company_registry"/>,
+                          <br/>
+                            <strong>Email: </strong>
+                            <span t-field="res_company.email"/>,
+                             <strong>Website: </strong>
+                            <span t-field="res_company.website"/>,
+                        </span>
+                    </div>
+                    <div class="col-1">
+                    <span style="text-align:right;font-weight:bold;color:003883;font-size:14px;padding:1px;">
+                        <strong>
+                            <span class="page"/>
+                            <span>/</span>
+                            <span class="topage"/>
+                        </strong>
+                    </span>
+                    </div>
+                </div>
+             </div>
+        </template>
+
+        <template id="ajal_report_body">
+               <t t-call="web.html_container">
+                     <t t-call="web.basic_layout">
+                                    <t t-foreach="docs" t-as="doc">
+                                         <t t-if="doc.state != 'valid'">
+                                            <div class="coa-watermark">
+                                                <div class="coa-watermark-text">
+                                                    <span>
+                                                        DRAFT REPORT
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </t>
+                                    <t t-set="samples" t-value="doc.analysis_ids.filtered(lambda a: a.state == 'valid').mapped('sample_line_id')"/>
+                                    <t t-foreach="samples" t-as="sample">
+                                        <t t-set="analyses" t-value="doc.analysis_ids.filtered(lambda a: a.state == 'valid' and a.sample_line_id == sample)"/>
+                                    <div class="page">
+
+                                     <div>
+                                    <t t-call="lims_report_templates.report_header"/>
+                                     </div>
+                                     <div style="height: 20px;"/>
+
+                                        <t t-set="first_a" t-value="analyses[:1] and analyses[0]"/>
+                                        <div class="report-header" style="margin-bottom: 20px;">
+                                            <table class="report-header-table table table-borderless">
+                                                <tr>
+                                                    <th>REPORT NUMBER</th>
+                                                    <th class="header-empty"/>
+                                                    <th>RECEIVING DATE</th>
+                                                    <th class="header-empty"/>
+                                                    <th>ANALYSIS STARTING DATE</th>
+                                                    <th class="header-empty"/>
+                                                    <th>REPORTING DATE</th>
+                                                </tr>
+                                                <tr>
+                                                    <td><span t-field="doc.name"/></td>
+                                                    <td class="empty"/>
+                                                    <td><span t-field="first_a.create_date" t-options="{'widget': 'date'}"/></td>
+                                                    <td class="empty"/>
+                                                    <td><span t-field="first_a.assign_date" t-options="{'widget': 'date'}"/></td>
+                                                    <td class="empty"/>
+                                                    <td><span t-field="doc.date" t-options="{'widget': 'date'}"/></td>
+                                                </tr>
+                                            </table>
+                                        </div>
+
+
+                                            <table class="combined-table table table-borderless">
+                                                <tr>
+                                                    <th colspan="3">CLIENT INFORMATION</th>
+                                                    <th class="empty"/>
+                                                    <th colspan="3">SAMPLE INFORMATION</th>
+                                                </tr>
+                                                <tr>
+                                                    <th class="title">Client name</th>
+                                                    <td><span t-field="sample.partner_id.name"/></td>
+                                                    <td class="empty"/>
+                                                    <td class="empty"/>
+                                                    <th class="title">Sample name</th>
+                                                    <td><span t-if="sample.sample_name" t-field="sample.sample_name"/>
+                                                        <span t-else="" style="text-align:center;">NA</span></td>
+                                                    <td class="empty"/>
+                                                </tr>
+                                                <tr>
+                                                    <th class="title">Contact name</th>
+                                                    <td><span t-if="sample.partner_id.name" t-field="sample.partner_id.name"/>
+                                                    <span t-else="" style="text-align:center;">NA</span></td>
+                                                    <td class="empty"/>
+                                                    <td class="empty"/>
+                                                    <th class="title">Sample code</th>
+                                                    <td><span t-field="sample.name"/></td>
+                                                    <td class="empty"/>
+                                                </tr>
+                                                <tr>
+                                                    <th class="title">Portal</th>
+                                                    <td><span t-if="sample.port_id" t-field="sample.port_id"/>
+                                                    <span t-else="" style="text-align:center;">NA</span>
+                                                    </td>
+                                                    <td class="empty"/>
+                                                    <td class="empty"/>
+                                                    <th class="title">Production date</th>
+                                                    <td><span t-if="sample.production_date" t-field="sample.production_date" t-options="{'format': 'dd/MM/yyyy'}"/>
+                                                             <span t-else="" style="text-align:center;">NA</span>
+                                                    </td>
+                                                    <td class="empty"/>
+                                                </tr>
+                                                <tr>
+                                                    <th class="title wide-header">Client code/LIMS</th>
+                                                    <td>
+                                                        <span t-field="sample.customer_ref"/>
+                                                        <t t-if="sample.sfdanumber and sample.customer_ref"> / </t>
+                                                        <span t-field="sample.sfdanumber"/>
+                                                         <span t-if="not sample.sfdanumber and not sample.customer_ref" style="text-align:center;">NA</span>
+                                                    </td>
+                                                    <td class="empty"/>
+                                                    <td class="empty"/>
+                                                    <th class="title">Expiry date</th>
+                                                    <td><span t-if="sample.expiry_date" t-field="sample.expiry_date" t-options="{'format': 'dd/MM/yyyy'}"/>
+                                                        <span t-else="" style="text-align:center;">NA</span>
+                                                    </td>
+                                                    <td class="empty"/>
+                                                </tr>
+                                                <tr>
+                                                    <th class="title">Bayan number</th>
+                                                    <td><span t-if="sample.bayan_number" t-field="sample.bayan_number"/>
+                                                    <span t-else="" style="text-align:center;">NA</span></td>
+                                                    <td class="empty"/>
+                                                    <td class="empty"/>
+                                                    <th class="title">Batch number</th>
+                                                    <td><span t-if="sample.batch_number" t-field="sample.batch_number"/>
+                                                    <span t-else="" style="text-align:center;">NA</span></td>
+                                                    <td class="empty"/>
+                                                </tr>
+                                                <tr>
+                                                    <th class="title">Note</th>
+                                                    <td><span t-if="sample.note" t-field="sample.note"/>
+                                                        <span t-else="" style="text-align:center;">NA</span>
+                                                    </td>
+                                                    <td class="empty"/>
+                                                    <td class="empty"/>
+                                                    <th class="title">Packaging</th>
+                                                    <td><span t-if="sample.packaging_id" t-field="sample.packaging_id"/>
+                                                    <span t-else="" style="text-align:center;">NA</span></td>
+                                                    <td class="empty"/>
+                                                </tr>
+                                            </table>
+
+                                      <t t-set="conclusions" t-value="[]"/>
+                                        <!-- Safe analyses -->
+                                        <t t-set="analyses_safe" t-value="analyses or []"/>
+                                        <!-- Flatten all parents once -->
+                                        <t t-set="all_parents"
+                                           t-value="list(p for a in analyses_safe for p in a)"/>
+                                        <!-- Unique groups -->
+                                        <t t-set="groups"
+                                           t-value="list({g.id: g for p in all_parents for g in [p.product_id.parameter_print_id.print_group_id] if g}.values())"/>
+                                        <!-- Loop groups ONCE -->
+                                        <t t-foreach="groups" t-as="group">
+                                            <br/>
+                                            <b style="color:#F2914D;">
+                                                <t t-esc="group.name"/>
+                                            </b>
+                                            <table class="report-result-table table table-borderless">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Parameter</th>
+                                                        <th>Method</th>
+                                                        <th>Result</th>
+                                                        <th>Specification</th>
+                                                        <th>LOQ</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <!-- Filter parents per group, sorted by technique_id -->
+                                                    <t t-set="parents"
+                                                       t-value="sorted(
+                                                           (p for p in all_parents
+                                                            if p.product_id.parameter_print_id.print_group_id.id == group.id),
+                                                           key=lambda p: (p.technique_id.name or '')
+                                                       )"/>
+                                                    <!-- Loop parents -->
+                                                    <t t-foreach="parents" t-as="parent">
+                                                        <!--  with components -->
+                                                        <t t-if="parent.component_ids">
+                                                            <t t-foreach="parent.component_ids" t-as="comp">
+                                                                <!-- conclusions logic -->
+                                                                <t t-if="comp.conformity">
+                                                                    <t t-set="c_reg" t-value="comp.regulation_id or comp.limit_id.regulation_id"/>
+                                                                    <t t-if="c_reg and (c_reg, comp.conformity) not in conclusions">
+                                                                        <t t-set="conclusions"
+                                                                           t-value="conclusions + [(c_reg, comp.conformity)]"/>
+                                                                    </t>
+                                                                </t>
+                                                                <tr>
+                                                                    <td><span t-esc="comp.product_id.parameter_print_id.print_name"/></td>
+                                                                    <td><span t-esc="comp.method_reference or comp.technique_id.name or ''"/></td>
+                                                                    <td>
+                                                                        <span t-if="comp.result_num != 0.00"
+                                                                              t-att-class="'text-danger fw-bold' if comp.conformity == 'non_conform' else ''"
+                                                                              t-esc="'Not Detected' if comp.is_null else comp.result_txt"/>
+                                                                        <span t-if="comp.result_num == 0.00">Not Detected</span>
+                                                                    </td>
+                                                                    <td><span t-esc="comp.specification"/></td>
+                                                                    <td><span t-esc="comp.loq"/></td>
+                                                                </tr>
+                                                            </t>
+                                                        </t>
+                                                        <t t-else="">
+
+                                                            <t t-if="parent.conformity">
+                                                                <t t-set="p_reg" t-value="parent.regulation_id or parent.limit_id.regulation_id"/>
+                                                                <t t-if="p_reg and (p_reg, parent.conformity) not in conclusions">
+                                                                    <t t-set="conclusions"
+                                                                       t-value="conclusions + [(p_reg, parent.conformity)]"/>
+                                                                </t>
+                                                            </t>
+                                                            <tr>
+                                                                <td><span t-esc="parent.product_id.parameter_print_id.print_name"/></td>
+                                                                <td><span t-esc="parent.method_reference or parent.technique_id.name or ''"/></td>
+                                                                <td>
+                                                                    <span t-if="parent.result_num != 0.00"
+                                                                          t-att-class="'text-danger fw-bold' if parent.conformity == 'non_conform' else ''"
+                                                                          t-esc="parent.result_txt"/>
+                                                                    <span t-if="parent.result_num == 0.00">Not Detected</span>
+                                                                </td>
+                                                                <td><span t-esc="parent.specification"/></td>
+                                                                <td><span t-esc="parent.loq"/></td>
+                                                            </tr>
+                                                        </t>
+                                                    </t>
+                                                </tbody>
+                                            </table>
+
+                                        </t>
+                                          <t t-if="not doc.partner_id.hide_conclusion">
+                                          <!-- Per regulation: non_conform wins over conform -->
+                                          <t t-set="final_conclusions" t-value="list({r.id: (r, c) for r, c in sorted(conclusions, key=lambda x: 1 if x[1] == 'non_conform' else 0)}.values())"/>
+                                          <div class="coa-judgement-section" style="page-break-inside:avoid;">
+                                            <div class="coa-judgement-title">
+                                                JUDGEMENT:
+                                            </div>
+                                            <t t-foreach="final_conclusions" t-as="c">
+                                                <div class="coa-judgement-box">
+                                                    Based on the results of the above analyses, the sample
+                                                    <t t-if="c[1] != 'non_conform'">
+                                                        <span class="coa-ok">(complies)</span>
+                                                    </t>
+                                                    <t t-else="">
+                                                        <span class="coa-nok">(not complies)</span>
+                                                    </t>
+                                                    in accordance with:
+                                                    <span t-esc="c[0].display_name"/>
+                                                </div>
+                                            </t>
+                                        </div>
+                                          </t>
+                                        <br/>
+                                        <div style="page-break-inside:avoid;">
+                                       <div class="sample-photo-title">
+                                            SAMPLE PHOTO
+                                        </div>
+                                        <div class="sample-photo">
+                                            <t t-set="images" t-value="env['ir.attachment'].search([('res_model', '=', 'lims.sample.preparation'),('res_id', '=', sample.id),('is_sample_image', '=', True)])"/>
+                                            <t t-if="images">
+                                                <t t-foreach="images" t-as="img">
+                                                    <div class="photo-wrapper">
+                                                        <img t-if="img.datas" t-att-src="image_data_uri(img.datas)"/>
+                                                    </div>
+                                                </t>
+                                            </t>
+                                        </div>
+                                        </div>
+                                        <div style="page-break-inside:avoid;">
+                                        <b>Sample Preliminary Visual Inspection: </b>
+                                        <t t-if="sample.sample_preliminary_inspection == 'not_comply' ">
+                                            <i><span t-field="sample.sample_preliminary_inspection" style="color:red;"/></i>
+                                        </t>
+                                        <t t-else="">
+                                            <span t-field="sample.sample_preliminary_inspection"/>
+                                        </t>
+                                        </div>
+                                       <div class="coa-general-section" style="page-break-inside:avoid;">
+                                        <div class="coa-general-title">
+                                            GENERAL INFORMATION:
+                                        </div>
+                                         <div class="coa-general-box">
+                                            <t t-if="doc.main_id.laboratory_id.notes">
+                                                <span t-field="doc.main_id.laboratory_id.notes"/>
+                                            </t>
+                                            <t t-else="">
+                                                The results of this test report relate only to the samples submitted for testing. It may not be reproduced, if not in its
+                                                entirety, without the written permission of the laboratory.
+                                                The description of the test methods, the references to the methods and the measurement uncertainties are available on
+                                                request.
+                                                The sample was analyzed as received.
+                                                All the information related to the sample are provided by the customer under his responsibility.
+                                                The measurement uncertainty cannot be used as an additional tolerance to the defined limit values.
+                                                The data in possession of the laboratory will not be disclosed without the client's consent unless required by the
+                                                competent authorities. In this case, unless prohibited by law, the client will be notified.
+                                                The uncertainty of measurements is not taking into account for the statement of conformity (shared risk approach
+                                                according to ILAC G8).
+                                                Tests are performed under Lab temperature range: (20-30) ° C
+                                                Level of risk is &lt; 50% PFA ( Probability of False Accept )
+                                            </t>
+                                        </div>
+                                        </div>
+
+                                        <div class="coa-authorized-section" style="page-break-inside:avoid;">
+                                            <t t-if="doc.signature_consult">
+                                            <div class="coa-general-title">
+                                                <br/>
+                                                AUTHORIZED BY
+                                            </div></t>
+                                            <div class="coa-signature-section">
+                                                <div class="coa-signature-block">
+                                                    <div t-esc="doc.consultant_id.name"/>
+                                                    <div class="coa-signature-job" t-esc="doc.consultant_id.employee_id.job_id.name"/>
+                                                </div>
+                                                <div class="coa-signature-images">
+                                                    <t t-if="doc.signature_consult"><img t-att-src="image_data_uri(doc.company_id.logo_quality)"/></t>
+                                                    <t t-if="doc.signature_consult">
+                                                        <img t-att-src="image_data_uri(doc.signature_consult)"/>
+                                                    </t>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+
+
+
+                                    <t t-call="lims_report_templates.report_footer"/>
+                                       </div>
+                                    </t>
+
+                                   </t>
+                                   </t>
+               </t>
+
+
+        </template>
+
+        <record id="lims_portal_report_pdf" model="ir.actions.report">
+            <field name="name">Analysis Report PDF</field>
+            <field name="model">lims.report</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">lims_report_templates.ajal_report_body</field>
+            <field name="report_file">lims_report_templates.ajal_report_body</field>
+            <field name="print_report_name">'Report_%s_%s'% (object.partner_id.name or '',str(object.create_date))
+            </field>
+            <field name="binding_type">report</field>
+            <field name="paperformat_id" ref="lims.paperformat_medical_lab_report"/>
+        </record>
+
+    </data>
+</odoo>

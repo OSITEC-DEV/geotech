@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+           <record id="lims_view_form_report" model="ir.ui.view">
+            <field name="name">lims.report.form.inherit2</field>
+            <field name="model">lims.report</field>
+            <field name="inherit_id" ref="lims_report.lims_view_form_report"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='print_old_result']" position="after">
+                    <field name="template_id"/>
+                </xpath>
+                <xpath expr="//field[@name='consultant_note']" position="after">
+                    <field name="disclaimer"/>
+                    <field name="limitations"/>
+                </xpath>
+            </field>
+           </record>
+    </data>
+</odoo>

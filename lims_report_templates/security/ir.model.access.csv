@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_lims_report,lims.analysis.report.template,model_lims_analysis_report,lims.group_lims_manager,1,1,1,1
+access_lims_report_sections,lims.analysis.report.sections,model_lims_report_section,lims.group_lims_manager,1,1,1,1

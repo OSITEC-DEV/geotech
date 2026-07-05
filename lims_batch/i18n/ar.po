@@ -1,0 +1,574 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* lims_batch
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-20 22:44+0000\n"
+"PO-Revision-Date: 2025-10-20 22:44+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: lims_batch
+#. odoo-javascript
+#: code:addons/lims_batch/static/src/xml/Screens/ClientListScreen/pos.xml:0
+msgid "Age"
+msgstr "العمر"
+
+#. module: lims_batch
+#: model_terms:ir.ui.view,arch_db:lims_batch.view_lims_batch_form
+msgid "Analyses"
+msgstr "التحاليل"
+
+#. module: lims_batch
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch__analysis_ids
+#: model_terms:ir.ui.view,arch_db:lims_batch.view_lims_batch_form
+msgid "Analysis"
+msgstr "التحليل"
+
+#. module: lims_batch
+#: model:ir.model.fields,field_description:lims_batch.field_lims_analysis__batch_id
+#: model:ir.model.fields,field_description:lims_batch.field_maintenance_equipment__batch_id
+#: model:ir.model.fields,field_description:lims_batch.field_stock_move_line__batch_id
+msgid "Batch"
+msgstr "الدفعة"
+
+#. module: lims_batch
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch__batch_component_ids
+#: model_terms:ir.ui.view,arch_db:lims_batch.view_lims_batch_form
+msgid "Batch Components"
+msgstr "مكونات الدفعة"
+
+#. module: lims_batch
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch__total_cost
+#: model_terms:ir.ui.view,arch_db:lims_batch.view_lims_batch_form
+msgid "Batch Cost"
+msgstr "تكلفة الدفعة"
+
+#. module: lims_batch
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch__batch_kit_id
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch_kit__kit_line
+#: model_terms:ir.ui.view,arch_db:lims_batch.view_lims_batch_kit_form
+msgid "Batch Kit"
+msgstr "مجموعة الدفعة"
+
+#. module: lims_batch
+#: model_terms:ir.ui.view,arch_db:lims_batch.view_lims_batch_kit_line_form
+msgid "Batch Kit Line"
+msgstr "بند مجموعة الدفعة"
+
+#. module: lims_batch
+#: model_terms:ir.ui.view,arch_db:lims_batch.view_lims_batch_kit_line_tree
+msgid "Batch Kit Lines"
+msgstr "بنود مجموعة الدفعة"
+
+#. module: lims_batch
+#: model:ir.actions.act_window,name:lims_batch.action_lims_batch_kit
+#: model:ir.ui.menu,name:lims_batch.menu_lims_batch_kit
+#: model_terms:ir.ui.view,arch_db:lims_batch.view_lims_batch_kit_tree
+msgid "Batch Kits"
+msgstr "مجموعات الدفعات"
+
+#. module: lims_batch
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch__name
+msgid "Batch Number"
+msgstr "رقم الدفعة"
+
+#. module: lims_batch
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch__date
+msgid "Batch date"
+msgstr "تاريخ الدفعة"
+
+#. module: lims_batch
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch_consumable_component__batch_id
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch_equipment__batch_id
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch_kit_operator__kit_id
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch_operators__batch_id
+#: model:ir.model.fields,field_description:lims_batch.field_lims_reagents__batch_id
+msgid "Batch number"
+msgstr "رقم الدفعة"
+
+#. module: lims_batch
+#: model:ir.ui.menu,name:lims_batch.lims_batch_menu
+#: model:ir.ui.menu,name:lims_batch.lims_batch_menu2
+msgid "Batches"
+msgstr "الدُفعات"
+
+#. module: lims_batch
+#. odoo-javascript
+#: code:addons/lims_batch/static/src/xml/Screens/ClientListScreen/pos.xml:0
+msgid "Blood"
+msgstr "الدم"
+
+#. module: lims_batch
+#. odoo-javascript
+#: code:addons/lims_batch/static/src/xml/Screens/ClientListScreen/pos.xml:0
+msgid "Blood Group..."
+msgstr "فصيلة الدم..."
+
+#. module: lims_batch
+#: model:ir.model.fields.selection,name:lims_batch.selection__lims_batch__state__cancel
+#: model_terms:ir.ui.view,arch_db:lims_batch.view_lims_batch_form
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: lims_batch
+#: model:ir.model,name:lims_batch.model_res_company
+msgid "Companies"
+msgstr "الشركات"
+
+#. module: lims_batch
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch__company_id
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch_equipment__company_id
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch_kit_operator__company_id
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch_operators__company_id
+#: model:ir.model.fields,field_description:lims_batch.field_lims_reagents__company_id
+msgid "Company"
+msgstr "الشركة"
+
+#. module: lims_batch
+#: model_terms:ir.ui.view,arch_db:lims_batch.view_lims_batch_kit_form
+msgid "Components"
+msgstr "المكونات"
+
+#. module: lims_batch
+#: model:ir.model.fields.selection,name:lims_batch.selection__lims_batch_consumable_component__type__consumable
+#: model:ir.model.fields.selection,name:lims_batch.selection__lims_batch_kit_line__type__consumable
+msgid "Consumable"
+msgstr "مستهلك"
+
+#. module: lims_batch
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch_consumable_component__is_consumed
+#: model:ir.model.fields,field_description:lims_batch.field_lims_reagents__is_consumed
+msgid "Consumed"
+msgstr "تم الاستهلاك"
+
+#. module: lims_batch
+#: model:stock.picking.type,name:lims_batch.picking_type_consumption
+msgid "Consumption"
+msgstr "الاستهلاك"
+
+#. module: lims_batch
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch__picking_id
+msgid "Consumption ID"
+msgstr "معرف الاستهلاك"
+
+#. module: lims_batch
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch_consumable_component__cost_per_unit
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch_kit_line__cost_per_unit
+msgid "Cost"
+msgstr "التكلفة"
+
+#. module: lims_batch
+#: model_terms:ir.ui.view,arch_db:lims_batch.lims_batch_wizard_inherited_form
+msgid "Create Batch"
+msgstr "إنشاء دفعة"
+
+#. module: lims_batch
+#: model_terms:ir.ui.view,arch_db:lims_batch.view_lims_batch_form
+msgid "Create stock move"
+msgstr "إنشاء حركة مخزون"
+
+#. module: lims_batch
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch__create_uid
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch_consumable_component__create_uid
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch_equipment__create_uid
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch_kit__create_uid
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch_kit_line__create_uid
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch_kit_operator__create_uid
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch_operators__create_uid
+#: model:ir.model.fields,field_description:lims_batch.field_lims_reagents__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: lims_batch
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch__create_date
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch_consumable_component__create_date
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch_equipment__create_date
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch_kit__create_date
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch_kit_line__create_date
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch_kit_operator__create_date
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch_operators__create_date
+#: model:ir.model.fields,field_description:lims_batch.field_lims_reagents__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: lims_batch
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch_equipment__date
+#: model:ir.model.fields,field_description:lims_batch.field_lims_reagents__date
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: lims_batch
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch__department_id
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch_kit__department_id
+msgid "Department"
+msgstr "القسم"
+
+#. module: lims_batch
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch__display_name
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch_consumable_component__display_name
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch_equipment__display_name
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch_kit__display_name
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch_kit_line__display_name
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch_kit_operator__display_name
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch_operators__display_name
+#: model:ir.model.fields,field_description:lims_batch.field_lims_reagents__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: lims_batch
+#: model:ir.model.fields.selection,name:lims_batch.selection__lims_batch__state__done
+msgid "Done"
+msgstr "مكتمل"
+
+#. module: lims_batch
+#: model:ir.model.fields.selection,name:lims_batch.selection__lims_batch__state__draft
+msgid "Draft"
+msgstr "مسودة"
+
+#. module: lims_batch
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch_kit_operator__duration
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch_operators__duration
+msgid "Duration"
+msgstr "المدة"
+
+#. module: lims_batch
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch_kit__duration
+msgid "Duration (Hours)"
+msgstr "المدة (ساعات)"
+
+#. module: lims_batch
+#: model:ir.model,name:lims_batch.model_hr_employee
+msgid "Employee"
+msgstr "الموظف"
+
+#. module: lims_batch
+#. odoo-javascript
+#: code:addons/lims_batch/static/src/xml/Screens/ClientListScreen/pos.xml:0
+msgid "Gender"
+msgstr "الجنس"
+
+#. module: lims_batch
+#. odoo-javascript
+#: code:addons/lims_batch/static/src/xml/Screens/ClientListScreen/pos.xml:0
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch__id
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch_consumable_component__id
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch_equipment__id
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch_kit__id
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch_kit_line__id
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch_kit_operator__id
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch_operators__id
+#: model:ir.model.fields,field_description:lims_batch.field_lims_reagents__id
+msgid "ID"
+msgstr "المعرف"
+
+#. module: lims_batch
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch_equipment__equipment_id
+#: model:ir.model.fields.selection,name:lims_batch.selection__lims_batch_consumable_component__type__instrument
+#: model:ir.model.fields.selection,name:lims_batch.selection__lims_batch_kit_line__type__instrument
+msgid "Instrument"
+msgstr "الأداة"
+
+#. module: lims_batch
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch__instrument_ids
+#: model_terms:ir.ui.view,arch_db:lims_batch.view_lims_batch_form
+msgid "Instruments"
+msgstr "الأدوات"
+
+#. module: lims_batch
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch_kit_line__kit_id
+msgid "KIT"
+msgstr "المجموعة"
+
+#. module: lims_batch
+#: model_terms:ir.ui.view,arch_db:lims_batch.view_lims_batch_form
+msgid "KIT Components"
+msgstr "مكونات المجموعة"
+
+#. module: lims_batch
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch_kit__name
+msgid "Kit name"
+msgstr "اسم المجموعة"
+
+#. module: lims_batch
+#: model_terms:ir.ui.view,arch_db:lims_batch.view_lims_batch_form
+msgid "LIMS Batch"
+msgstr "دفعة نظام إدارة المختبر"
+
+#. module: lims_batch
+#: model:ir.actions.act_window,name:lims_batch.action_lims_batch
+#: model_terms:ir.ui.view,arch_db:lims_batch.view_lims_batch_tree
+msgid "LIMS Batches"
+msgstr "دفعات نظام إدارة المختبر"
+
+#. module: lims_batch
+#: model:ir.model.fields.selection,name:lims_batch.selection__lims_batch_consumable_component__type__labor
+#: model:ir.model.fields.selection,name:lims_batch.selection__lims_batch_kit_line__type__labor
+msgid "Labor"
+msgstr "العمل"
+
+#. module: lims_batch
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch__labor_cost
+#: model_terms:ir.ui.view,arch_db:lims_batch.view_lims_batch_form
+msgid "Labor Cost"
+msgstr "تكلفة العمل"
+
+#. module: lims_batch
+#: model_terms:ir.ui.view,arch_db:lims_batch.view_employee_form_inherit_gross_salary
+msgid "Last Gross Salary"
+msgstr "آخر راتب إجمالي"
+
+#. module: lims_batch
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch__write_uid
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch_consumable_component__write_uid
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch_equipment__write_uid
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch_kit__write_uid
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch_kit_line__write_uid
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch_kit_operator__write_uid
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch_operators__write_uid
+#: model:ir.model.fields,field_description:lims_batch.field_lims_reagents__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: lims_batch
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch__write_date
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch_consumable_component__write_date
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch_equipment__write_date
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch_kit__write_date
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch_kit_line__write_date
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch_kit_operator__write_date
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch_operators__write_date
+#: model:ir.model.fields,field_description:lims_batch.field_lims_reagents__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: lims_batch
+#: model:ir.model.fields,field_description:lims_batch.field_hr_employee__gross_salary
+msgid "Latest gross salary"
+msgstr "آخر راتب إجمالي"
+
+#. module: lims_batch
+#: model:ir.model,name:lims_batch.model_lims_batch
+msgid "Lims Batch"
+msgstr "دفعة نظام إدارة المختبر"
+
+#. module: lims_batch
+#: model:ir.model,name:lims_batch.model_lims_batch_consumable_component
+msgid "Lims Batch Consumable Components"
+msgstr "مكونات دفعة نظام إدارة المختبر الاستهلاكية"
+
+#. module: lims_batch
+#: model:ir.model,name:lims_batch.model_lims_batch_equipment
+msgid "Lims Batch Equipment"
+msgstr "معدات دفعة نظام إدارة المختبر"
+
+#. module: lims_batch
+#: model:ir.model,name:lims_batch.model_lims_batch_kit_operator
+msgid "Lims Batch KIT Operators"
+msgstr "مشغلو مجموعة دفعة نظام إدارة المختبر"
+
+#. module: lims_batch
+#: model:ir.model,name:lims_batch.model_lims_batch_kit
+msgid "Lims Batch Kit"
+msgstr "مجموعة دفعة نظام إدارة المختبر"
+
+#. module: lims_batch
+#: model:ir.model,name:lims_batch.model_lims_batch_kit_line
+msgid "Lims Batch Kit Line"
+msgstr "بند مجموعة دفعة نظام إدارة المختبر"
+
+#. module: lims_batch
+#: model:ir.model,name:lims_batch.model_lims_batch_operators
+msgid "Lims Batch Operators"
+msgstr "مشغلو دفعة نظام إدارة المختبر"
+
+#. module: lims_batch
+#: model:ir.model,name:lims_batch.model_lims_reagents
+msgid "Lims Batch Reagents"
+msgstr "كاشفات دفعة نظام إدارة المختبر"
+
+#. module: lims_batch
+#: model:ir.model.fields,field_description:lims_batch.field_lims_reagents__lot_id
+msgid "Lot/Part number"
+msgstr "رقم الدفعة/القطعة"
+
+#. module: lims_batch
+#: model:ir.model,name:lims_batch.model_maintenance_equipment
+msgid "Maintenance Equipment"
+msgstr "معدات الصيانة"
+
+#. module: lims_batch
+#: model_terms:ir.ui.view,arch_db:lims_batch.view_lims_batch_form
+msgid "Mark as Done"
+msgstr "تعليم كمكتمل"
+
+#. module: lims_batch
+#. odoo-javascript
+#: code:addons/lims_batch/static/src/xml/Screens/ClientListScreen/pos.xml:0
+msgid "National ID/Iqama Number"
+msgstr "رقم الهوية الوطنية/الإقامة"
+
+#. module: lims_batch
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch_kit_operator__operator_id
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch_operators__operator_id
+msgid "Operator"
+msgstr "المشغل"
+
+#. module: lims_batch
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch__operator_ids
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch_kit__operators
+#: model_terms:ir.ui.view,arch_db:lims_batch.view_lims_batch_form
+#: model_terms:ir.ui.view,arch_db:lims_batch.view_lims_batch_kit_form
+msgid "Operators"
+msgstr "المشغلون"
+
+#. module: lims_batch
+#. odoo-javascript
+#: code:addons/lims_batch/static/src/xml/Screens/ClientListScreen/pos.xml:0
+msgid "Passport"
+msgstr "جواز السفر"
+
+#. module: lims_batch
+#. odoo-javascript
+#: code:addons/lims_batch/static/src/xml/Screens/ClientListScreen/pos.xml:0
+msgid "Passport ID"
+msgstr "رقم جواز السفر"
+
+#. module: lims_batch
+#: model_terms:ir.ui.view,arch_db:lims_batch.lims_batch_wizard_inherited_form
+msgid "Please ensure that all the selected analysis have the same department"
+msgstr "يرجى التأكد من أن جميع التحاليل المحددة تابعة لنفس القسم"
+
+#. module: lims_batch
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch_consumable_component__product_id
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch_kit_line__product_id
+msgid "Product"
+msgstr "المنتج"
+
+#. module: lims_batch
+#: model:ir.model,name:lims_batch.model_stock_move_line
+msgid "Product Moves (Stock Move Line)"
+msgstr "تحركات المنتج (بنود حركة المخزون)"
+
+#. module: lims_batch
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch_consumable_component__quantity
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch_kit_line__quantity
+msgid "Quantity"
+msgstr "الكمية"
+
+#. module: lims_batch
+#: model:ir.model.fields,field_description:lims_batch.field_lims_reagents__product_id
+#: model:ir.model.fields.selection,name:lims_batch.selection__lims_batch_consumable_component__type__reagent
+#: model:ir.model.fields.selection,name:lims_batch.selection__lims_batch_kit_line__type__reagent
+msgid "Reagent"
+msgstr "الكاشف"
+
+#. module: lims_batch
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch__reagents
+#: model_terms:ir.ui.view,arch_db:lims_batch.view_lims_batch_form
+msgid "Reagents"
+msgstr "الكواشف"
+
+#. module: lims_batch
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch__sample_ids
+msgid "Sample"
+msgstr "العينة"
+
+#. module: lims_batch
+#: model_terms:ir.ui.view,arch_db:lims_batch.view_lims_batch_form
+msgid "Samples"
+msgstr "العينات"
+
+#. module: lims_batch
+#: model_terms:ir.ui.view,arch_db:lims_batch.view_lims_batch_form
+msgid "Set to Draft"
+msgstr "تعيين كمسودة"
+
+#. module: lims_batch
+#: model_terms:ir.ui.view,arch_db:lims_batch.view_lims_batch_form
+msgid "Start WIP"
+msgstr "بدء العمل قيد التقدم"
+
+#. module: lims_batch
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch__state
+msgid "Status"
+msgstr "الحالة"
+
+#. module: lims_batch
+#: model_terms:ir.ui.view,arch_db:lims_batch.view_lims_batch_form
+msgid "Stock Moves"
+msgstr "حركات المخزون"
+
+#. module: lims_batch
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch__moves_ids
+msgid "Stock moves"
+msgstr "حركات المخزون"
+
+#. module: lims_batch
+#. odoo-javascript
+#: code:addons/lims_batch/static/src/xml/Screens/ClientListScreen/pos.xml:0
+msgid "Taxes"
+msgstr "الضرائب"
+
+#. module: lims_batch
+#: model:ir.model,name:lims_batch.model_lims_analysis
+msgid "Tests"
+msgstr "الاختبارات"
+
+#. module: lims_batch
+#: model_terms:ir.ui.view,arch_db:lims_batch.view_lims_batch_form
+#: model_terms:ir.ui.view,arch_db:lims_batch.view_lims_batch_kit_form
+msgid "Total"
+msgstr "الإجمالي"
+
+#. module: lims_batch
+#: model_terms:ir.ui.view,arch_db:lims_batch.view_lims_batch_form
+msgid "Total Cost"
+msgstr "التكلفة الإجمالية"
+
+#. module: lims_batch
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch_consumable_component__type
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch_kit_line__type
+msgid "Type"
+msgstr "النوع"
+
+#. module: lims_batch
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch_consumable_component__uom_id
+#: model:ir.model.fields,field_description:lims_batch.field_lims_batch_kit_line__uom_id
+msgid "Unit of Measure"
+msgstr "وحدة القياس"
+
+#. module: lims_batch
+#: model:ir.model.fields.selection,name:lims_batch.selection__lims_batch_consumable_component__type__utility
+#: model:ir.model.fields.selection,name:lims_batch.selection__lims_batch_kit_line__type__utility
+msgid "Utility"
+msgstr "الأدوات المساعدة"
+
+#. module: lims_batch
+#: model:ir.model.fields.selection,name:lims_batch.selection__lims_batch__state__progress
+msgid "WIP"
+msgstr "قيد التقدم"
+
+#. module: lims_batch
+#. odoo-javascript
+#: code:addons/lims_batch/static/src/xml/Screens/ClientListScreen/pos.xml:0
+msgid "female"
+msgstr "أنثى"
+
+#. module: lims_batch
+#: model:ir.model,name:lims_batch.model_lims_batch_analysis
+msgid "lims batch Analysis Table"
+msgstr "جدول تحليل دفعة نظام إدارة المختبر"
+
+#. module: lims_batch
+#. odoo-javascript
+#: code:addons/lims_batch/static/src/xml/Screens/ClientListScreen/pos.xml:0
+msgid "male"
+msgstr "ذكر"

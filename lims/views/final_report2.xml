@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <template id="analysis_report_document">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="web.basic_layout">
+                        <div dir="rtl" class="page">
+                            <dev class="head">
+                                <div class="row">
+                                    <div class="col-6" style="text-align:right;" t-if="o.company_id.logo_iso">
+                                        <img t-att-src="image_data_uri(o.company_id.logo_iso)" style="max-height:100px;"
+                                             alt="Logo"/>
+                                    </div>
+                                    <div class="col-6" style="text-align:left;" t-if="o.company_id.logo">
+                                        <img t-att-src="image_data_uri(o.company_id.logo)" style="max-height: 100px;"
+                                             alt="Logo"/>
+                                    </div>
+                                </div>
+                            </dev>
+
+                            <div class="content">
+                                <div class="title">
+                                    <div class="text-center">
+                                        <h4 style="margin-bottom: 15px;">
+                                            <span t-field="o.translation_template.title"/>
+                                        </h4>
+                                        <h4 style="margin-bottom: 15px;">LABORATORY RESULTS</h4>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <div class="text-left">
+                                <strong>Report Date:
+                                    <span t-field="o.report_date"/>
+                                </strong>
+                            </div>
+                            <table class="table table-striped">
+                                <tbody>
+                                    <tr>
+                                        <td class="text-center"
+                                            style="width:25%; border: 1px solid #b4b4b4; padding:.30rem">
+                                            <span t-field="o.translation_template.medical_name"/>
+                                        </td>
+                                        <td class="text-center"
+                                            style="width:50%; border: 1px solid #b4b4b4; padding:.30rem" colspan="2">
+                                            <span t-if="o.name" t-esc="o.name"/>
+                                        </td>
+                                        <td dir="ltr" class="text-center"
+                                            style="width:25%; border: 1px solid #b4b4b4; padding:.30rem">Medical Report
+                                            Number
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="text-center"
+                                            style="width:25%; border: 1px solid #b4b4b4; padding:.30rem">
+                                            <span t-field="o.translation_template.national_id"/>
+                                        </td>
+                                        <td class="text-center"
+                                            style="width:50%; border: 1px solid #b4b4b4; padding:.30rem" colspan="2">
+                                            <span t-if="o.partner_id.partner_no" t-esc="o.partner_id.partner_no"/>
+                                        </td>
+                                        <td dir="ltr" class="text-center"
+                                            style="width:25%; border: 1px solid #b4b4b4; padding:.30rem">National
+                                            ID/Iqama
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center"
+                                            style="width:25%; border: 1px solid #b4b4b4; padding:.30rem">
+                                            <span t-field="o.translation_template.full_name"/>
+                                        </td>
+                                        <td class="text-center"
+                                            style="width:50%; border: 1px solid #b4b4b4; padding:.30rem" colspan="2">
+                                            <span t-if="o.partner_id.name" t-esc="o.partner_id.name"/>
+                                        </td>
+
+                                        <td dir="ltr" class="text-center"
+                                            style="width:25%; border: 1px solid #b4b4b4; padding:.30rem">Full Name
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center"
+                                            style="width:25%; border: 1px solid #b4b4b4; padding:.30rem">
+                                            <span t-field="o.translation_template.nationality"/>
+                                        </td>
+                                        <td class="text-center"
+                                            style="width:50%; border: 1px solid #b4b4b4; padding:.30rem" colspan="2">
+                                            <span t-if="o.partner_id.country_id" t-esc="o.partner_id.country_id.name"/>
+                                        </td>
+
+                                        <td dir="ltr" class="text-center"
+                                            style="width:25%; border: 1px solid #b4b4b4; padding:.30rem">Nationality
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="text-center"
+                                            style="width:25%; border: 1px solid #b4b4b4; padding:.30rem">
+                                            <span t-field="o.translation_template.age"/>
+                                        </td>
+                                        <td class="text-center"
+                                            style="width:50%; border: 1px solid #b4b4b4; padding:.30rem" colspan="2">
+                                            <span t-if="o.partner_id.age" t-esc="o.partner_id.age"/>
+                                        </td>
+
+                                        <td dir="ltr" class="text-center"
+                                            style="width:25%; border: 1px solid #b4b4b4; padding:.30rem">Age
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center"
+                                            style="width:25%; border: 1px solid #b4b4b4; padding:.30rem">
+                                            <span t-field="o.translation_template.blood_group"/>
+                                        </td>
+                                        <td class="text-center"
+                                            style="width:50%; border: 1px solid #b4b4b4; padding:.30rem" colspan="2">
+                                            <span t-if="o.partner_id.blood_group" t-field="o.partner_id.blood_group"/>
+                                        </td>
+
+                                        <td dir="ltr" class="text-center"
+                                            style="width:25%; border: 1px solid #b4b4b4; padding:.30rem">Blood Group
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <br/>
+                            <t t-if="o.state == 'done' ">
+
+                                <table class="table table-sm o_main_table">
+                                    <!-- In case we want to repeat the header, remove "display: table-row-group" -->
+
+                                    <tr t-foreach="o.sample_line_prepared" t-as="sample">
+                                        <tr>
+                                            <th name="th_sample_date" class="text-left" colspan='99'>
+                                                <strong>Sampling Date:
+                                                    <span t-field="sample.date"/>
+                                                </strong>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th name="th_priceunit" class="text-left">Range</th>
+                                            <th name="th_quantity" class="text-left">Result</th>
+                                            <th name="th_description" class="text-left">Test</th>
+
+                                        </tr>
+                                        <!--                         <tr>
+                                                                   <th name="sample" class="text-left" colspan="99">Sample Code: <strong t-esc="sample.name"/></th>
+                                                                </tr> -->
+                                        <tr t-foreach="o.analysis_ids.sorted(key=lambda x:(x.department_id,x.pack_selected))"
+                                            t-as="a">
+                                            <t t-if="sample.id==a.sample_line_id.id">
+
+                                                <t t-if="a.state_result != 'oor'">
+                                                    <td name="td_range" class="text-left">
+                                                        <strong t-esc="a.return_range_txt()"/>
+                                                    </td>
+                                                    <td name="td_result" class="text-left">
+                                                        <span t-field="a.result_txt"/>
+                                                    </td>
+                                                    <td name="td_result_name" class="text-left">
+                                                        <span t-field="a.product_id.name"/>
+                                                    </td>
+                                                </t>
+                                                <t t-else="">
+                                                    <td name="td_range" class="text-left">
+                                                        <strong t-esc="a.return_range_txt()"/>
+                                                    </td>
+                                                    <td name="td_result" class="text-left">
+                                                        <span t-field="a.result_txt" style="color: red;"/>
+                                                    </td>
+                                                    <td name="td_result_name" class="text-left">
+                                                        <span t-field="a.product_id.name"/>
+                                                    </td>
+                                                </t>
+                                            </t>
+                                        </tr>
+
+                                    </tr>
+                                </table>
+                            </t>
+                            <t t-else="">
+                                <div>
+                                    <p>عزيزنا العميل نتائج التحاليل الطبية الخاصة بك قيد الفحص و المراجعة , للمزيد من
+                                        الاستفسار يمكنكم مراسلتنا على الواتساب
+                                    </p>
+                                    <p>Dear customer, your medical analysis results is under review, for more inquiries,
+                                        you can join us on WhatsApp
+                                    </p>
+                                </div>
+                            </t>
+
+                            <!--                                     <t t-foreach="o.sample_line_prepared" t-as="sample">
+
+                                                                    <div><strong t-esc="sample.name"/>, <strong t-esc="sample.sample.name"/></div>
+
+                                                                    <t t-foreach="o.analysis_ids.sorted(key=lambda x:x.department_id)" t-as="a">
+
+                                                                        <t t-if="sample.id==a.sample_line_id.id">
+                                                                            <div><span t-field="a.name"/></div>
+                                                                            <div><span t-field="a.product_id.name"/></div>
+                                                                            <div><span t-field="a.result_num"/></div>
+                                                                        </t>
+
+                                                                    </t>
+
+                                                                </t> -->
+                            <div class="ministry-of-health">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div style="width:60%" class="text-center">
+                                            <div class="logo" t-if="o.company_id.logo_gov">
+                                                <img t-att-src="image_data_uri(o.company_id.logo_gov)"
+                                                     style="max-height: 100px;" alt="Logo"/>
+                                            </div>
+                                            <div>
+                                                <p style="font-size:10px;">
+                                                    <span t-if="o.translation_template.description"
+                                                          t-esc="o.translation_template.description"/>
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <br/>
+                            <br/>
+                            <div class="barcode">
+                                <!--                                <div class="row">
+                                                                   <div class="col-6" style="text-align:left;">Scan the QR code to electronically check the report</div>
+                                                               </div>
+                                                               <br/>
+                                                               <div class="text-center" >
+                                                                   <img t-if="o.qrcode" t-att-src="image_data_uri(o.qrcode)" style="height: 150px;" alt="QR Code"/>
+                                                               </div> -->
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+        <record id="paperformat_medical_lab_report" model="report.paperformat">
+            <field name="name">Analysis Report A4</field>
+            <field name="default" eval="True"/>
+            <field name="format">A4</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">60</field>
+            <field name="margin_bottom">20</field>
+            <field name="margin_left">5</field>
+            <field name="margin_right">5</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">15</field>
+            <field name="dpi">90</field>
+        </record>
+
+<!--        <report-->
+<!--                id="medical_lab_analysis_report"-->
+<!--                model="lims.sample.main"-->
+<!--                report_type="qweb-pdf"-->
+<!--                string="Analysis Report"-->
+<!--                name="lims.analysis_report_document"-->
+<!--                file="lims.analysis_report"-->
+<!--                print_report_name="'Report - %s' % (object.partner_id.name or '',)"-->
+<!--                paperformat="lims.paperformat_medical_lab_report"-->
+<!--        />-->
+
+    </data>
+</odoo>

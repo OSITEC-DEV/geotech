@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="lims_view_form_report_inherit" model="ir.ui.view">
+            <field name="name">lims.sample.main.form.report.inherited</field>
+            <field name="model">lims.sample.main</field>
+            <field name="priority" eval="15"/>
+            <field name="inherit_id" ref="lims.lims_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@name='button_box']" position="inside">
+                    <button name="action_view_reports"
+                            type="object"
+                            class="oe_stat_button"
+                            icon="fa-folder-open"
+                            invisible= "report_count == 0">
+                        <field name="report_count" widget="statinfo" string="Reports"/>
+                    </button>
+                </xpath>
+
+                <xpath expr="//header" position="inside">
+                    <button name='create_report' type='object' string='Create Report' class="oe_inline oe_highlight"
+                            invisible= " state not in ['progress','tosend','done']" groups="lims.group_lims_manager"/>
+                </xpath>
+
+                <xpath expr="//field[@name='print_method']" position="after">
+                    <field name="group_by_report"/>
+                    <field name="report_only_index"/>
+                    <field name="external_accession_number"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

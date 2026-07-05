@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="receiving_samples_action" model="ir.actions.act_window">
+            <field name="name">Registration</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">lims.sample.main</field>
+            <field name="view_mode">list,form</field>
+            <!--  <field name="search_view_id" ref="stock_product_search_form_view"/> -->
+        </record>
+
+
+        <record id="customers_action" model="ir.actions.act_window">
+            <field name="name">Customers</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_mode">kanban,list,form</field>
+            <!--  <field name="search_view_id" ref="stock_product_search_form_view"/> -->
+        </record>
+
+        <record id="analysis_action" model="ir.actions.act_window">
+            <field name="name">Analysis</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">lims.analysis</field>
+            <field name="view_mode">list,form,search,kanban,pivot,graph,map</field>
+            <field name="search_view_id" ref="lims.lims_analysis_search"/>
+            <field name="context">{'search_default_my_analysis': 1 }</field>
+        </record>
+
+        <record id="lims_department_action" model="ir.actions.act_window">
+            <field name="name">Departments</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">lims.department</field>
+            <field name="view_mode">list,form,kanban</field>
+            <!--  <field name="search_view_id" ref="stock_product_search_form_view"/> -->
+        </record>
+        <record id="lims_laboratories_action" model="ir.actions.act_window">
+            <field name="name">Laboratories</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">lims.laboratory</field>
+            <field name="view_mode">list,form,kanban</field>
+            <!--  <field name="search_view_id" ref="stock_product_search_form_view"/> -->
+        </record>
+
+        <record id="lims_method_action" model="ir.actions.act_window">
+            <field name="name">Instrument</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">lims.method</field>
+            <field name="view_mode">list,form,kanban</field>
+            <!--  <field name="search_view_id" ref="stock_product_search_form_view"/> -->
+        </record>
+
+        <record id="lims_translate_template_action" model="ir.actions.act_window">
+            <field name="name">Translate Template</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">lims.translate.titles</field>
+            <field name="view_mode">list,form,kanban</field>
+            <!--  <field name="search_view_id" ref="stock_product_search_form_view"/> -->
+        </record>
+
+
+        <record id="lims_result_state_action" model="ir.actions.act_window">
+            <field name="name">Result ranges</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">lims.result.state</field>
+            <field name="view_mode">list,form,kanban</field>
+            <!--  <field name="search_view_id" ref="stock_product_search_form_view"/> -->
+        </record>
+
+        <record id="lims_results_action" model="ir.actions.act_window">
+            <field name="name">Results</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">lims.result</field>
+            <field name="view_mode">list,form,kanban</field>
+            <!--  <field name="search_view_id" ref="stock_product_search_form_view"/> -->
+        </record>
+
+        <record id="lims_parameters_action" model="ir.actions.act_window">
+            <field name="name">Parameter Tests</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">product.template</field>
+            <field name="view_mode">list,form,kanban</field>
+            <field name="context">{'default_isParameter': True,'default_sale_ok': True, 'default_purchase_ok':False,
+                'default_type':'service'}
+            </field>
+            <field name="domain">[('isParameter','=','True'),('sale_ok','=','True'),('type','=','service')]</field>
+            <!-- <field name="search_view_id" ref="view_sales_order_filter"/> -->
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No parameters found
+                </p>
+                <p>
+
+                </p>
+            </field>
+        </record>
+
+        <record id="lims_pack_action" model="ir.actions.act_window">
+            <field name="name">Pack of Tests</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">product.template</field>
+            <field name="view_mode">list,form,kanban</field>
+            <field name="context">{'default_isPack': True,'default_sale_ok': True, 'default_purchase_ok':False,
+                'default_type':'service'}
+            </field>
+            <field name="domain">[('isPack','=','True'),('sale_ok','=','True'),('type','=','service')]</field>
+            <!-- <field name="search_view_id" ref="view_sales_order_filter"/> -->
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No packs found
+                </p>
+                <p>
+
+                </p>
+            </field>
+        </record>
+
+
+        <record id="sample_type_action" model="ir.actions.act_window">
+            <field name="name">Sample Types</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">lims.sample.type</field>
+            <field name="view_mode">list,form,kanban</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No Sample type found
+                </p>
+                <p>
+
+                </p>
+            </field>
+        </record>
+
+        <record id="lims_sample_history_action" model="ir.actions.act_window">
+            <field name="name">Samples</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">lims.sample.preparation</field>
+            <field name="view_mode">list,form</field>
+            <field name="context">{'create':'false','edit':'false'}</field>
+        </record>
+
+        <record id="lims_range_factor_action" model="ir.actions.act_window">
+            <field name="name">Factor of range</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">lims.rang.factor</field>
+            <field name="view_mode">list,form</field>
+        </record>
+
+        <record id="lims_range_collection_tube_action" model="ir.actions.act_window">
+            <field name="name">Collection Tube</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">lims.sample.tube</field>
+            <field name="view_mode">list,form</field>
+        </record>
+
+
+        <record id="patient_action" model="ir.actions.act_window">
+            <field name="name">Customers</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner</field>
+            <field name="domain">[('company_type','!=','company')]</field>
+            <field name="view_mode">kanban,list,form</field>
+        </record>
+
+        <record id="references_action" model="ir.actions.act_window">
+            <field name="name">References / ranges</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">lims.result.range</field>
+            <field name="view_mode">list,form</field>
+        </record>
+        <record id="physician_action" model="ir.actions.act_window">
+            <field name="name">Customers</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner</field>
+            <field name="domain">[('is_physician','=',True)]</field>
+            <field name="view_mode">kanban,list,form</field>
+        </record>
+
+
+        <menuitem id="menu_analysis_root" name="Analysis" sequence="3" web_icon="lims,static/description/analysis_icon.png"
+                  groups="lims.group_lims_sample"/>
+                <menuitem id="menu_analysis_main" name="Analysis" action="analysis_action"
+                  parent="menu_analysis_root" sequence="1"/>
+
+        <menuitem id="menu_lims_root" name="LIMS" sequence="1" web_icon="lims,static/description/icon.png"
+                  groups="lims.group_lims_sample"/>
+
+
+        <menuitem id="menu_lims_main" name="Data Entry" parent="menu_lims_root" sequence="1"/>
+        <menuitem id="menu_sampling" name="Registration" action="receiving_samples_action"
+                  parent="menu_lims_main" sequence="1"/>
+
+        <menuitem id="menu_customers" name="Customers" action="customers_action"
+                  parent="menu_lims_main" sequence="2" groups="lims.group_show_sample_information"/>
+
+        <menuitem id="sample_tracking_id" name="Samples" action="lims_sample_history_action"
+                  parent="menu_lims_main" sequence="3"/>
+        <menuitem id="menu_lims_analysis_parent" name="Analysis" parent="menu_lims_root" sequence="2"/>
+        <menuitem id="menu_analysis" name="Analysis" action="analysis_action"
+                  parent="menu_lims_analysis_parent" sequence="1"/>
+
+
+        <menuitem id="menu_lims_config" name="Master data" parent="menu_lims_root" sequence="3"/>
+
+        <menuitem id="menu_lims_laboratories" name="Laboratories" action="lims_laboratories_action"
+                  parent="menu_lims_config" sequence="0"/>
+        <menuitem id="menu_lims_department" name="Departments" action="lims_department_action"
+                  parent="menu_lims_config" sequence="1"/>
+        <menuitem id="menu_lims_tests" name="Parameters/Tests" action="lims_parameters_action"
+                  parent="menu_lims_config" sequence="2"/>
+        <menuitem id="menu_lims_pack" name="Pack of Tests" action="lims_pack_action"
+                  parent="menu_lims_config" sequence="3"/>
+        <menuitem id="menu_lims_methods" name="Instruments" action="lims_method_action"
+                  parent="menu_lims_config" sequence="4"/>
+
+        <menuitem id="menu_lims_config_2" name="Configurations" parent="menu_lims_root" sequence="3"/>
+
+        <menuitem id="menu_lims_sample_config" name="Sample config"
+                  parent="menu_lims_config_2" sequence="1"/>
+
+
+        <menuitem id="menu_sample_type" name="Sample types" action="sample_type_action"
+                  parent="menu_lims_sample_config" sequence="1"/>
+
+        <menuitem id="menu_sample_tube" name="Sample Tube" action="lims_range_collection_tube_action"
+                  parent="menu_lims_sample_config" sequence="2"/>
+
+
+        <menuitem id="menu_lims_ranges" name="Ranges / References"
+                  parent="menu_lims_config_2" sequence="2"/>
+
+        <menuitem id="menu_references_ranges" name="References" action="references_action"
+                  parent="menu_lims_ranges" sequence="0"/>
+        <menuitem id="menu_result_state" name="Result Status" action="lims_result_state_action"
+                  parent="menu_lims_ranges" sequence="1"/>
+
+        <menuitem id="menu_factor" name="Factor (Regulations)" action="lims_range_factor_action"
+                  parent="menu_lims_ranges" sequence="2"/>
+
+        <menuitem id="menu_lims_config_encoding" name="Encoding config"
+                  parent="menu_lims_config_2" sequence="3"/>
+
+
+        <menuitem id="menu_result" name="Result types" action="lims_results_action"
+                  parent="menu_lims_config_encoding" sequence="1"/>
+
+
+        <menuitem id="menu_lims_config_report" name="Report config"
+                  parent="menu_lims_config_2" sequence="4"/>
+
+        <menuitem id="menu_lims_translate_titles" name="Translate Template" action="lims_translate_template_action"
+                  parent="menu_lims_config_report" sequence="1"/>
+
+    </data>
+</odoo>
+

@@ -1,0 +1,2972 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* lims
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-20 22:19+0000\n"
+"PO-Revision-Date: 2025-10-20 22:19+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_sample_main__diff_time
+msgid " Delta(hours)"
+msgstr " دلتا (ساعات)"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.portal_my_reports
+msgid "&amp;nbsp;"
+msgstr ""
+
+#. module: lims
+#: model:ir.actions.report,print_report_name:lims.medical_lab_label
+#: model:ir.actions.report,print_report_name:lims.medical_lab_label_all
+msgid "'Labels - %s' % (object.partner_id.name or '',)"
+msgstr "'ملصقات - %s' % (object.partner_id.name or '',)"
+
+#. module: lims
+#: model:ir.actions.report,print_report_name:lims.medical_lab_analysis_report
+msgid "'Report - %s' % (object.partner_id.name or '',)"
+msgstr "'تقرير - %s' % (object.partner_id.name or '',)"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.analysis_report_document
+msgid "- Sample specimen type :"
+msgstr "- نوع عينة العينة :"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.analysis_report_document
+msgid "-High-"
+msgstr "-مرتفع-"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.analysis_report_document
+msgid "-Low-"
+msgstr "-منخفض-"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.medical_analysis_report_portal_content
+msgid ""
+"<i class=\"fa fa-download\"/>\n"
+"                                            Download"
+msgstr ""
+"<i class=\"fa fa-download\"/>\n"
+"                                            تحميل"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.portal_my_reports
+msgid "<i class=\"fa fa-fw fa-check\" role=\"img\" aria-label=\"Done\" title=\"Done\"/>Done"
+msgstr "<i class=\"fa fa-fw fa-check\" role=\"img\" aria-label=\"تم\" title=\"تم\"/>تم"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.medical_analysis_report_portal_content
+msgid ""
+"<i class=\"fa fa-print\"/>\n"
+"                                            Print"
+msgstr ""
+"<i class=\"fa fa-print\"/>\n"
+"                                            طباعة"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.portal_my_reports
+msgid ""
+"<span class=\"d-none d-md-inline\">Medical Report #</span>\n"
+"                                <span class=\"d-block d-md-none\">Ref.</span>"
+msgstr ""
+"<span class=\"d-none d-md-inline\">تقرير طبي #</span>\n"
+"                                <span class=\"d-block d-md-none\">مرجع.</span>"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.res_config_settings_form_view_inherit_lims
+msgid "<span class=\"o_form_label\">Sample code:</span>"
+msgstr "<span class=\"o_form_label\">كود العينة:</span>"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.lims_view_form
+#: model_terms:ir.ui.view,arch_db:lims.res_config_settings_form_view_inherit_lims
+msgid "<span class=\"o_form_label\">Signatures:</span>"
+msgstr "<span class=\"o_form_label\">التوقيعات:</span>"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.res_config_settings_form_view_inherit_lims
+msgid "<span class=\"o_form_label\">Translation Template</span>"
+msgstr "<span class=\"o_form_label\">قالب الترجمة</span>"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.lims_view_form
+msgid ""
+"<span class=\"o_stat_text\">Customer</span>\n"
+"                                    <span class=\"o_stat_text\">Preview</span>"
+msgstr ""
+"<span class=\"o_stat_text\">العميل</span>\n"
+"                                    <span class=\"o_stat_text\">معاينة</span>"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.analysis_report_document
+msgid ""
+"<span style=\"text-align:left;\">\n"
+"                                        <strong>Page:</strong>\n"
+"                                        <span class=\"page\"/>\n"
+"                                        of\n"
+"                                        <span class=\"topage\"/>\n"
+"                                    </span>"
+msgstr ""
+"<span style=\"text-align:left;\">\n"
+"                                        <strong>الصفحة:</strong>\n"
+"                                        <span class=\"page\"/>\n"
+"                                        من\n"
+"                                        <span class=\"topage\"/>\n"
+"                                    </span>"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.analysis_report_document
+msgid "<strong class=\"text-left\">Reviewed by</strong>"
+msgstr "<strong class=\"text-left\">تمت المراجعة بواسطة</strong>"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.analysis_report_document
+msgid "<strong>Address:</strong>"
+msgstr "<strong>العنوان:</strong>"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.analysis_report_document
+msgid "<strong>CR:</strong>"
+msgstr "<strong>س.ت:</strong>"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.analysis_report_document
+msgid "<strong>Collected:</strong>"
+msgstr "<strong>تم الجمع:</strong>"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.analysis_report_document
+msgid "<strong>Email:</strong>"
+msgstr "<strong>البريد الإلكتروني:</strong>"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.report_saleorder_doc
+msgid "<strong>Estimated Date Send:</strong>"
+msgstr "<strong>تاريخ الإرسال المقدر:</strong>"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.analysis_report_document
+msgid "<strong>Phone:</strong>"
+msgstr "<strong>الهاتف:</strong>"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.analysis_report_document
+msgid "<strong>Received:</strong>"
+msgstr "<strong>مستلم:</strong>"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.analysis_report_document
+msgid "<strong>Registered:</strong>"
+msgstr "<strong>مسجل:</strong>"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.analysis_report_document
+msgid "<strong>Report Date</strong>:"
+msgstr "<strong>تاريخ التقرير</strong>:"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.analysis_report_document
+msgid "<strong>Report No</strong>:"
+msgstr "<strong>رقم التقرير</strong>:"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.analysis_report_document
+msgid "<strong>Source:</strong>"
+msgstr "<strong>المصدر:</strong>"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.analysis_report_document
+msgid "<strong>Website:</strong>"
+msgstr "<strong>الموقع الإلكتروني:</strong>"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.analysis_report_document
+msgid "A draft report , not for official use"
+msgstr "تقرير مسودة، غير مخصص للاستخدام الرسمي"
+
+#. module: lims
+#. odoo-python
+#: code:addons/lims/models/lims.py:0
+#: model_terms:ir.ui.view,arch_db:lims.lims_view_form
+msgid "ADD PARAMETERS"
+msgstr "إضافة معايير"
+
+#. module: lims
+#: model:ir.model.fields.selection,name:lims.selection__lims_sample_main__logistic_company__ajex
+msgid "AJEX"
+msgstr ""
+
+#. module: lims
+#: model:ir.model.fields.selection,name:lims.selection__lims_sample_main__logistic_company__aramex
+msgid "ARAMEX"
+msgstr ""
+
+#. module: lims
+#: model:ir.model.fields.selection,name:lims.selection__lims_analysis__state_result__oor
+msgid "Abnormal"
+msgstr "غير طبيعي"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.lims_view_form
+msgid "Accept Sample"
+msgstr "قبول العينة"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.lims_view_form
+msgid "Accept All Samples"
+msgstr "قبول جميع العينات"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_analysis__access_warning
+#: model:ir.model.fields,field_description:lims.field_lims_sample_main__access_warning
+#: model:ir.model.fields,field_description:lims.field_lims_sample_preparation__access_warning
+msgid "Access warning"
+msgstr "تحذير الوصول"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_analysis__message_needaction
+#: model:ir.model.fields,field_description:lims.field_lims_sample_main__message_needaction
+#: model:ir.model.fields,field_description:lims.field_lims_sample_preparation__message_needaction
+msgid "Action Needed"
+msgstr "إجراء مطلوب"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_department__active
+#: model:ir.model.fields,field_description:lims.field_lims_method__active
+#: model:ir.model.fields,field_description:lims.field_lims_reason_type__active
+#: model:ir.model.fields,field_description:lims.field_lims_result__active
+#: model:ir.model.fields,field_description:lims.field_lims_sample_main__active
+msgid "Active"
+msgstr "نشط"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_analysis__activity_ids
+#: model:ir.model.fields,field_description:lims.field_lims_sample_main__activity_ids
+#: model:ir.model.fields,field_description:lims.field_lims_sample_preparation__activity_ids
+msgid "Activities"
+msgstr "الأنشطة"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_analysis__activity_exception_decoration
+#: model:ir.model.fields,field_description:lims.field_lims_sample_main__activity_exception_decoration
+#: model:ir.model.fields,field_description:lims.field_lims_sample_preparation__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "تزيين استثناء النشاط"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_analysis__activity_state
+#: model:ir.model.fields,field_description:lims.field_lims_sample_main__activity_state
+#: model:ir.model.fields,field_description:lims.field_lims_sample_preparation__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_analysis__activity_type_icon
+#: model:ir.model.fields,field_description:lims.field_lims_sample_main__activity_type_icon
+#: model:ir.model.fields,field_description:lims.field_lims_sample_preparation__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "أيقونة نوع النشاط"
+
+#. module: lims
+#: model:ir.model,name:lims.model_add_parameters_wizard
+msgid "Add Parameter"
+msgstr "إضافة معيار"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.res_company_form_view_inherit_lims
+msgid "Add Quality Logo to the report result"
+msgstr "إضافة شعار الجودة إلى نتيجة التقرير"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.lims_view_form
+msgid "Add all remarks, observations , recommendation to print in report"
+msgstr "إضافة جميع الملاحظات والمراقبات والتوصيات للطباعة في التقرير"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.res_company_form_view_inherit_lims
+msgid "Add iso logo to the report result"
+msgstr "إضافة شعار الأيزو إلى نتيجة التقرير"
+
+#. module: lims
+#: model:ir.model,name:lims.model_add_reason_wizard
+msgid "Add reason wizard"
+msgstr "معالج إضافة السبب"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.res_company_form_view_inherit_lims
+msgid "Add signature of government to the report result"
+msgstr "إضافة توقيع الحكومة إلى نتيجة التقرير"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_translate_titles__age
+#: model_terms:ir.ui.view,arch_db:lims.medical_analysis_report_portal_content
+msgid "Age"
+msgstr "العمر"
+
+#. module: lims
+#: model:ir.actions.report,name:lims.medical_lab_label_all
+msgid "All Labels"
+msgstr "جميع الملصقات"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_sample_main__partner_ids
+msgid "All customer"
+msgstr "جميع العملاء"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.lims_view_form
+msgid ""
+"All the selected tests/Packages in this line ,"
+"                                             must be performed on this "
+"sample type ,Keep it empty to use the default sample type of each test"
+msgstr ""
+"جميع الاختبارات/الحزم المحددة في هذا الخط، يجب إجراؤها على نوع العينة هذا، "
+"اتركه فارغًا لاستخدام نوع العينة الافتراضي لكل اختبار"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_sub_sample_preparation__amount
+msgid "Amount"
+msgstr "المبلغ"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_sample_main__amount_total
+msgid "Amount Total"
+msgstr "المبلغ الإجمالي"
+
+#. module: lims
+#: model:ir.actions.act_window,name:lims.analysis_action
+#: model:ir.model.fields,field_description:lims.field_convert_subcontracted_wizard__analysis_ids
+#: model:ir.model.fields,field_description:lims.field_lims_sample_main__analysis_ids
+#: model:ir.model.fields,field_description:lims.field_lims_sample_preparation__analysis_ids
+#: model:ir.model.fields.selection,name:lims.selection__lims_reason_type__reason_type__analysis
+#: model:ir.ui.menu,name:lims.menu_analysis
+#: model:ir.ui.menu,name:lims.menu_analysis_main
+#: model:ir.ui.menu,name:lims.menu_analysis_root
+#: model:ir.ui.menu,name:lims.menu_lims_analysis_parent
+#: model_terms:ir.ui.view,arch_db:lims.lims_sample_view_form
+#: model_terms:ir.ui.view,arch_db:lims.view_lims_analysis_graph
+#: model_terms:ir.ui.view,arch_db:lims.view_lims_analysis_pivot
+msgid "Analysis"
+msgstr "التحليل"
+
+#. module: lims
+#. odoo-python
+#: code:addons/lims/models/lims_analysis.py:0
+msgid "Analysis %s has been Validated"
+msgstr "تم التحقق من صحة التحليل %s"
+
+#. module: lims
+#. odoo-python
+#: code:addons/lims/models/lims_analysis.py:0
+msgid "Analysis %s has been done"
+msgstr "تم إجراء التحليل %s"
+
+#. module: lims
+#: model:mail.activity.type,name:lims.activity_analysis
+msgid "Analysis Confirmed"
+msgstr "تم تأكيد التحليل"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.lims_analysis_search
+msgid "Analysis Date"
+msgstr "تاريخ التحليل"
+
+#. module: lims
+#: model:mail.activity.type,name:lims.activity_analysis_done
+msgid "Analysis Done"
+msgstr "تم التحليل"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.lims_analysis_view_form
+msgid "Analysis Informations"
+msgstr "معلومات التحليل"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_analysis__name
+msgid "Analysis Number"
+msgstr "رقم التحليل"
+
+#. module: lims
+#: model:ir.actions.report,name:lims.medical_lab_analysis_report
+msgid "Analysis Report"
+msgstr "تقرير التحليل"
+
+#. module: lims
+#: model:ir.model,name:lims.model_lims_sample_main
+msgid "Analysis Request"
+msgstr "طلب التحليل"
+
+#. module: lims
+#. odoo-python
+#: code:addons/lims/models/lims_analysis.py:0
+msgid "Analysis to validate"
+msgstr "تحليل للتحقق"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_result_history__user_id
+#: model:res.groups,name:lims.group_lims_analysis
+#: model_terms:ir.ui.view,arch_db:lims.lims_analysis_search
+msgid "Analyst"
+msgstr "محلل"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.lims_analysis_view_form
+msgid "Approve&Validate"
+msgstr "الموافقة والتحقق"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_analysis__message_attachment_count
+#: model:ir.model.fields,field_description:lims.field_lims_sample_main__message_attachment_count
+#: model:ir.model.fields,field_description:lims.field_lims_sample_preparation__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: lims
+#: model:ir.model.fields.selection,name:lims.selection__res_partner__partner_no_category__other
+msgid "Autres"
+msgstr "أخرى"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_sample_type__available_on_portal
+msgid "Available on Portal"
+msgstr "متاح على البوابة"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.lims_department_view_form
+#: model_terms:ir.ui.view,arch_db:lims.lims_method_view_form
+msgid "Basic information"
+msgstr "المعلومات الأساسية"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.medical_analysis_report_portal_content
+msgid ""
+"Blood\n"
+"                                                    Group"
+msgstr ""
+"فصيلة\n"
+"                                                    الدم"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_translate_titles__blood_group
+msgid "Blood Group"
+msgstr "فصيلة الدم"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.lims_view_form
+msgid "By confirming this action, all tests will be canceled"
+msgstr "بتأكيد هذا الإجراء، سيتم إلغاء جميع الاختبارات"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_sample_main__campaign_id
+#: model:ir.model.fields,field_description:lims.field_lims_sample_preparation__campaign_id
+msgid "Campaign"
+msgstr "حملة"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.lims_analysis_view_form
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: lims
+#: model:ir.model.fields.selection,name:lims.selection__lims_analysis__state__cancel
+#: model:ir.model.fields.selection,name:lims.selection__lims_sample_preparation__state__cancel
+msgid "Canceled"
+msgstr "ملغى"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_res_partner__partner_no_category
+#: model:ir.model.fields,field_description:lims.field_res_users__partner_no_category
+msgid "Category"
+msgstr "فئة"
+
+#. module: lims
+#: model:mail.activity.type,name:lims.activity_analysis_report
+msgid "Check and report"
+msgstr "التحقق والإبلاغ"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.lims_view_form
+msgid "Check if you need to mention the method in customer report"
+msgstr "تحقق إذا كنت بحاجة إلى ذكر الطريقة في تقرير العميل"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_product_product__child_ids
+#: model:ir.model.fields,field_description:lims.field_product_template__child_ids
+msgid "Child"
+msgstr "فرعي"
+
+#. module: lims
+#: model:ir.model.fields,help:lims.field_lims_sample_main__sale_id
+msgid "Clic generate quotation button"
+msgstr "انقر على زر إنشاء عرض سعر"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_result_state__code
+#: model:ir.model.fields,field_description:lims.field_lims_sub_sample_preparation__name
+msgid "Code"
+msgstr "الكود"
+
+#. module: lims
+#: model:ir.model.fields.selection,name:lims.selection__lims_sample_preparation__state__recieved
+msgid "Collected"
+msgstr "تم الجمع"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_sample_preparation__sample_date
+msgid "Collected Sample Date"
+msgstr "تاريخ جمع العينة"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.lims_view_form
+msgid "Collected on"
+msgstr "تم الجمع في"
+
+#. module: lims
+#: model:ir.actions.act_window,name:lims.lims_range_collection_tube_action
+msgid "Collection Tube"
+msgstr "أنبوب الجمع"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_sample_preparation__user_id
+msgid "Collector"
+msgstr "جامع"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.label_report_all_document
+#: model_terms:ir.ui.view,arch_db:lims.label_report_document
+msgid "Collector:"
+msgstr "الجامع:"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_result_state__color
+msgid "Color"
+msgstr "اللون"
+
+#. module: lims
+#: model:ir.model,name:lims.model_res_company
+msgid "Companies"
+msgstr "الشركات"
+
+#. module: lims
+#: model:ir.model.fields.selection,name:lims.selection__lims_sample_main__source__hospital
+#: model_terms:ir.ui.view,arch_db:lims.lims_sample_main_search
+msgid "Company"
+msgstr "الشركة"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_sample_main__analysis_done
+msgid "Completed Tests"
+msgstr "الاختبارات المكتملة"
+
+#. module: lims
+#: model:ir.model,name:lims.model_res_config_settings
+msgid "Config Settings"
+msgstr "تهيئة الإعدادات "
+
+#. module: lims
+#: model:ir.ui.menu,name:lims.menu_lims_config_2
+msgid "Configurations"
+msgstr "التكوينات"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.lims_add_reason_view_form
+#: model_terms:ir.ui.view,arch_db:lims.lims_analysis_view_form
+#: model_terms:ir.ui.view,arch_db:lims.lims_convert_subcontracted_form
+#: model_terms:ir.ui.view,arch_db:lims.lims_view_form
+msgid "Confirm"
+msgstr "تأكيد"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.lims_view_form
+msgid "Confirm the recieving sample please"
+msgstr "يرجى تأكيد استلام العينة"
+
+#. module: lims
+#: model:ir.model.fields.selection,name:lims.selection__lims_sample_main__state__confirm
+msgid "Confirmed"
+msgstr "تم التأكيد"
+
+#. module: lims
+#: model:res.groups,name:lims.group_lims_consultant
+msgid "Consultant"
+msgstr "مستشار"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.lims_view_form
+msgid "Consultant Notes"
+msgstr "ملاحظات المستشار"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_sample_main__signature_consult
+#: model:ir.model.fields,field_description:lims.field_res_company__signature_consult
+#: model:ir.model.fields,field_description:lims.field_res_config_settings__signature_consult
+#: model_terms:ir.ui.view,arch_db:lims.analysis_report_document
+msgid "Consultant Signature"
+msgstr "توقيع المستشار"
+
+#. module: lims
+#: model:ir.model,name:lims.model_res_partner
+msgid "Contact"
+msgstr "جهة الاتصال"
+
+#. module: lims
+#: model:ir.model,name:lims.model_convert_subcontracted_wizard
+msgid "Convert in-house test to subcontracted"
+msgstr "تحويل الاختبار الداخلي إلى مختبر خارجي"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.lims_add_parameters_view_form
+#: model_terms:ir.ui.view,arch_db:lims.lims_sample_view_form
+#: model_terms:ir.ui.view,arch_db:lims.lims_view_form
+msgid "Create Analysis"
+msgstr "إنشاء تحليل"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.lims_view_form
+msgid "Create Invoice"
+msgstr "إنشاء فاتورة"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.lims_view_form
+msgid "Create Quotation"
+msgstr "إنشاء عرض سعر"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_add_parameters_wizard__create_uid
+#: model:ir.model.fields,field_description:lims.field_add_reason_wizard__create_uid
+#: model:ir.model.fields,field_description:lims.field_convert_subcontracted_wizard__create_uid
+#: model:ir.model.fields,field_description:lims.field_lims_analysis__create_uid
+#: model:ir.model.fields,field_description:lims.field_lims_department__create_uid
+#: model:ir.model.fields,field_description:lims.field_lims_method__create_uid
+#: model:ir.model.fields,field_description:lims.field_lims_rang_factor__create_uid
+#: model:ir.model.fields,field_description:lims.field_lims_reason_type__create_uid
+#: model:ir.model.fields,field_description:lims.field_lims_result__create_uid
+#: model:ir.model.fields,field_description:lims.field_lims_result_history__create_uid
+#: model:ir.model.fields,field_description:lims.field_lims_result_range__create_uid
+#: model:ir.model.fields,field_description:lims.field_lims_result_state__create_uid
+#: model:ir.model.fields,field_description:lims.field_lims_sample_line__create_uid
+#: model:ir.model.fields,field_description:lims.field_lims_sample_main__create_uid
+#: model:ir.model.fields,field_description:lims.field_lims_sample_preparation__create_uid
+#: model:ir.model.fields,field_description:lims.field_lims_sample_tube__create_uid
+#: model:ir.model.fields,field_description:lims.field_lims_sample_type__create_uid
+#: model:ir.model.fields,field_description:lims.field_lims_sub_sample_preparation__create_uid
+#: model:ir.model.fields,field_description:lims.field_lims_translate_titles__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_add_parameters_wizard__create_date
+#: model:ir.model.fields,field_description:lims.field_add_reason_wizard__create_date
+#: model:ir.model.fields,field_description:lims.field_convert_subcontracted_wizard__create_date
+#: model:ir.model.fields,field_description:lims.field_lims_analysis__create_date
+#: model:ir.model.fields,field_description:lims.field_lims_department__create_date
+#: model:ir.model.fields,field_description:lims.field_lims_method__create_date
+#: model:ir.model.fields,field_description:lims.field_lims_rang_factor__create_date
+#: model:ir.model.fields,field_description:lims.field_lims_reason_type__create_date
+#: model:ir.model.fields,field_description:lims.field_lims_result__create_date
+#: model:ir.model.fields,field_description:lims.field_lims_result_history__create_date
+#: model:ir.model.fields,field_description:lims.field_lims_result_range__create_date
+#: model:ir.model.fields,field_description:lims.field_lims_result_state__create_date
+#: model:ir.model.fields,field_description:lims.field_lims_sample_line__create_date
+#: model:ir.model.fields,field_description:lims.field_lims_sample_main__create_date
+#: model:ir.model.fields,field_description:lims.field_lims_sample_preparation__create_date
+#: model:ir.model.fields,field_description:lims.field_lims_sample_tube__create_date
+#: model:ir.model.fields,field_description:lims.field_lims_sample_type__create_date
+#: model:ir.model.fields,field_description:lims.field_lims_sub_sample_preparation__create_date
+#: model:ir.model.fields,field_description:lims.field_lims_translate_titles__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: lims
+#. odoo-python
+#: code:addons/lims/controllers/portal_customers.py:0
+#: model:ir.model.fields,field_description:lims.field_lims_analysis__partner_id
+#: model:ir.model.fields,field_description:lims.field_lims_sample_line__partner_id
+#: model:ir.model.fields,field_description:lims.field_lims_sample_main__partner_id
+#: model:ir.model.fields,field_description:lims.field_lims_sample_preparation__partner_id
+#: model_terms:ir.ui.view,arch_db:lims.lims_sample_main_search
+msgid "Customer"
+msgstr "السجل الزراعي"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.report_saleorder_doc
+msgid "Customer ID :"
+msgstr "هوية العميل :"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.lims_view_form
+msgid "Customer Information"
+msgstr "معلومات العميل"
+
+#. module: lims
+#: model:ir.model.fields,help:lims.field_lims_analysis__access_url
+#: model:ir.model.fields,help:lims.field_lims_sample_main__access_url
+#: model:ir.model.fields,help:lims.field_lims_sample_preparation__access_url
+msgid "Customer Portal URL"
+msgstr "رابط بوابة العميل"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_sample_main__source
+msgid "Customer source"
+msgstr "مصدر العميل"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.label_report_document
+msgid "Customer:"
+msgstr "العميل:"
+
+#. module: lims
+#: model:ir.actions.act_window,name:lims.customers_action
+#: model:ir.actions.act_window,name:lims.patient_action
+#: model:ir.actions.act_window,name:lims.physician_action
+#: model:ir.ui.menu,name:lims.menu_customers
+msgid "Customers"
+msgstr "العملاء"
+
+#. module: lims
+#: model:ir.model.fields.selection,name:lims.selection__lims_sample_main__logistic_company__dhl
+msgid "DHL"
+msgstr ""
+
+#. module: lims
+#: model:ir.ui.menu,name:lims.menu_lims_main
+msgid "Data Entry"
+msgstr "إدخال البيانات"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_sample_line__date
+#: model:ir.model.fields,field_description:lims.field_lims_sample_preparation__date
+#: model:ir.model.fields,field_description:lims.field_lims_sub_sample_preparation__date
+#: model_terms:ir.ui.view,arch_db:lims.lims_sample_preparation_search
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_sample_main__date_done
+msgid "Date done"
+msgstr "تاريخ الإنجاز"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_analysis__date_result
+msgid "Date result"
+msgstr "تاريخ النتيجة"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_analysis__date
+msgid "Date start"
+msgstr "تاريخ البدء"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.label_report_all_document
+#: model_terms:ir.ui.view,arch_db:lims.label_report_document
+msgid "Date-Time:"
+msgstr "التاريخ والوقت:"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.medical_analysis_report_portal_content
+msgid ""
+"Dear customer, your medical analysis results is under review, for more\n"
+"                                                inquiries, you can join us on WhatsApp"
+msgstr ""
+"عزيزنا العميل، نتائج التحاليل الطبية الخاصة بك قيد المراجعة، لمزيد\n"
+"                                                من الاستفسارات، يمكنك التواصل معنا على الواتساب"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.product_template_form_view_inherit2
+msgid "Decimal digits"
+msgstr "الأرقام العشرية"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_sample_main__delay_time
+msgid "Delay"
+msgstr "تأخير"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.lims_sample_view_form
+msgid "Delete"
+msgstr "حذف"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.lims_view_form
+msgid "Delta between the planned date and date of report sending"
+msgstr "الفرق بين التاريخ المخطط وتاريخ إرسال التقرير"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_analysis__department_id
+#: model:ir.model.fields,field_description:lims.field_lims_department__name
+#: model:ir.model.fields,field_description:lims.field_product_product__department_id
+#: model:ir.model.fields,field_description:lims.field_product_template__department_id
+#: model_terms:ir.ui.view,arch_db:lims.lims_analysis_search
+#: model_terms:ir.ui.view,arch_db:lims.product_template_form_view_inherit2
+msgid "Department"
+msgstr "القسم"
+
+#. module: lims
+#: model:ir.actions.act_window,name:lims.lims_department_action
+#: model:ir.model.fields,field_description:lims.field_res_users__department_ids
+#: model:ir.ui.menu,name:lims.menu_lims_department
+msgid "Departments"
+msgstr "الأقسام"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_sample_line__description
+msgid "Description"
+msgstr "الوصف"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_rang_factor__description
+msgid "Description of Factor"
+msgstr "وصف العامل"
+
+#. module: lims
+#: model:ir.model,name:lims.model_lims_translate_titles
+msgid "Dictionary Translator"
+msgstr "مترجم القاموس"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_sample_main__signature_director
+#: model:ir.model.fields,field_description:lims.field_res_company__signature_director
+#: model:ir.model.fields,field_description:lims.field_res_config_settings__signature_director
+msgid "Director Signature"
+msgstr "توقيع المدير"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_add_parameters_wizard__display_name
+#: model:ir.model.fields,field_description:lims.field_add_reason_wizard__display_name
+#: model:ir.model.fields,field_description:lims.field_convert_subcontracted_wizard__display_name
+#: model:ir.model.fields,field_description:lims.field_lims_analysis__display_name
+#: model:ir.model.fields,field_description:lims.field_lims_department__display_name
+#: model:ir.model.fields,field_description:lims.field_lims_method__display_name
+#: model:ir.model.fields,field_description:lims.field_lims_rang_factor__display_name
+#: model:ir.model.fields,field_description:lims.field_lims_reason_type__display_name
+#: model:ir.model.fields,field_description:lims.field_lims_result__display_name
+#: model:ir.model.fields,field_description:lims.field_lims_result_history__display_name
+#: model:ir.model.fields,field_description:lims.field_lims_result_range__display_name
+#: model:ir.model.fields,field_description:lims.field_lims_result_state__display_name
+#: model:ir.model.fields,field_description:lims.field_lims_sample_line__display_name
+#: model:ir.model.fields,field_description:lims.field_lims_sample_main__display_name
+#: model:ir.model.fields,field_description:lims.field_lims_sample_tube__display_name
+#: model:ir.model.fields,field_description:lims.field_lims_sample_type__display_name
+#: model:ir.model.fields,field_description:lims.field_lims_sub_sample_preparation__display_name
+#: model:ir.model.fields,field_description:lims.field_lims_translate_titles__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: lims
+#: model:ir.actions.server,name:lims.model_sale_order_action_confirm
+msgid "Do confirm"
+msgstr "قم بالتأكيد"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_analysis__domain_method
+msgid "Domain Method"
+msgstr "نطاق الطريقة"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_add_parameters_wizard__domain_products
+msgid "Domain Products"
+msgstr "نطاق المنتجات"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_add_reason_wizard__domain_reason_type
+msgid "Domain Reason Type"
+msgstr "نوع سبب النطاق"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_analysis__domain_result
+msgid "Domain Result"
+msgstr "نطاق النتيجة"
+
+#. module: lims
+#: model:ir.model.fields.selection,name:lims.selection__lims_analysis__state__done
+#: model:ir.model.fields.selection,name:lims.selection__lims_sample_main__state__done
+#: model_terms:ir.ui.view,arch_db:lims.lims_analysis_search
+msgid "Done"
+msgstr "تم"
+
+#. module: lims
+#: model:ir.model.fields.selection,name:lims.selection__res_partner__partner_no_category__customs
+msgid "Douane"
+msgstr "الجمركة"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.medical_analysis_report_portal_content
+msgid "Download"
+msgstr "تحميل"
+
+#. module: lims
+#: model:ir.model.fields.selection,name:lims.selection__lims_analysis__state__draft
+#: model:ir.model.fields.selection,name:lims.selection__lims_sample_main__state__draft
+#: model_terms:ir.ui.view,arch_db:lims.lims_analysis_search
+msgid "Draft"
+msgstr "مسودة"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_res_users__signature
+msgid "E-signature"
+msgstr "توقيع البريد الإلكتروني"
+
+#. module: lims
+#: model:ir.ui.menu,name:lims.menu_lims_config_encoding
+msgid "Encoding config"
+msgstr "تهيئة الترميز"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.product_template_form_view_inherit2
+msgid "Encoding results"
+msgstr "نتائج الترميز"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_product_product__estimated_time
+#: model:ir.model.fields,field_description:lims.field_product_template__estimated_time
+msgid "Estimated Time (Hours)"
+msgstr "الوقت المقدر (ساعات)"
+
+#. module: lims
+#: model:ir.model.fields,help:lims.field_lims_sample_line__external_sample_collected_on
+msgid "External sample collected on"
+msgstr "تم جمع العينة الخارجية في"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_analysis__factor_id
+#: model:ir.model.fields,field_description:lims.field_lims_result_range__factor_id
+msgid "Factor"
+msgstr "العامل"
+
+#. module: lims
+#: model:ir.ui.menu,name:lims.menu_factor
+msgid "Factor (Regulations)"
+msgstr "العامل (اللوائح)"
+
+#. module: lims
+#: model:ir.actions.act_window,name:lims.lims_range_factor_action
+msgid "Factor of range"
+msgstr "عامل النطاق"
+
+#. module: lims
+#: model:ir.model,name:lims.model_lims_rang_factor
+msgid "Factors of rang"
+msgstr "عوامل النطاق"
+
+#. module: lims
+#: model:ir.model.fields.selection,name:lims.selection__lims_reason_type__reason_type__file
+msgid "File"
+msgstr "ملف"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_add_reason_wizard__main_id
+msgid "File number"
+msgstr "رقم الملف"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_analysis__message_follower_ids
+#: model:ir.model.fields,field_description:lims.field_lims_sample_main__message_follower_ids
+#: model:ir.model.fields,field_description:lims.field_lims_sample_preparation__message_follower_ids
+msgid "Followers"
+msgstr "المتابعون"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_analysis__message_partner_ids
+#: model:ir.model.fields,field_description:lims.field_lims_sample_main__message_partner_ids
+#: model:ir.model.fields,field_description:lims.field_lims_sample_preparation__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (الشركاء)"
+
+#. module: lims
+#: model:ir.model.fields,help:lims.field_lims_analysis__activity_type_icon
+#: model:ir.model.fields,help:lims.field_lims_sample_main__activity_type_icon
+#: model:ir.model.fields,help:lims.field_lims_sample_preparation__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "أيقونة Font Awesome مثل fa-tasks"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.medical_analysis_report_portal_content
+msgid ""
+"Full\n"
+"                                                    Name"
+msgstr ""
+"الاسم\n"
+"                                                    الكامل"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_translate_titles__full_name
+msgid "FullName"
+msgstr "الاسم الكامل"
+
+#. module: lims
+#: model:ir.model.fields.selection,name:lims.selection__res_partner__partner_no_category__gendarmerie
+msgid "Gendarmerie"
+msgstr "الدرك"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_translate_titles__gender
+msgid "Gender"
+msgstr "الجنس"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.lims_view_form
+msgid "Generate Samples"
+msgstr "إنشاء عينات"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.lims_sample_view_form
+#: model_terms:ir.ui.view,arch_db:lims.lims_view_form
+msgid "Generate Sub-Samples"
+msgstr "إنشاء عينات فرعية"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.lims_analysis_search
+#: model_terms:ir.ui.view,arch_db:lims.lims_sample_main_search
+#: model_terms:ir.ui.view,arch_db:lims.lims_sample_preparation_search
+msgid "Group By"
+msgstr "تجميع حسب"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_analysis__has_message
+#: model:ir.model.fields,field_description:lims.field_lims_sample_main__has_message
+#: model:ir.model.fields,field_description:lims.field_lims_sample_preparation__has_message
+msgid "Has Message"
+msgstr "لديه رسالة"
+
+#. module: lims
+#: model:ir.module.category,description:lims.module_category_lims
+#: model:ir.module.category,description:lims.module_category_root
+msgid "Helps you handle your medical analysis and reports ."
+msgstr "يساعدك في إدارة تحليلاتك الطبية وتقاريرك."
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_analysis__hide_result
+msgid "Hide result"
+msgstr "إخفاء النتيجة"
+
+#. module: lims
+#: model:ir.model.fields.selection,name:lims.selection__lims_analysis__state_result__hight
+#: model:ir.model.fields.selection,name:lims.selection__lims_sample_main__priority__high
+msgid "High"
+msgstr "مرتفع"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_add_parameters_wizard__id
+#: model:ir.model.fields,field_description:lims.field_add_reason_wizard__id
+#: model:ir.model.fields,field_description:lims.field_convert_subcontracted_wizard__id
+#: model:ir.model.fields,field_description:lims.field_lims_analysis__id
+#: model:ir.model.fields,field_description:lims.field_lims_department__id
+#: model:ir.model.fields,field_description:lims.field_lims_method__id
+#: model:ir.model.fields,field_description:lims.field_lims_rang_factor__id
+#: model:ir.model.fields,field_description:lims.field_lims_reason_type__id
+#: model:ir.model.fields,field_description:lims.field_lims_result__id
+#: model:ir.model.fields,field_description:lims.field_lims_result_history__id
+#: model:ir.model.fields,field_description:lims.field_lims_result_range__id
+#: model:ir.model.fields,field_description:lims.field_lims_result_state__id
+#: model:ir.model.fields,field_description:lims.field_lims_sample_line__id
+#: model:ir.model.fields,field_description:lims.field_lims_sample_main__id
+#: model:ir.model.fields,field_description:lims.field_lims_sample_preparation__id
+#: model:ir.model.fields,field_description:lims.field_lims_sample_tube__id
+#: model:ir.model.fields,field_description:lims.field_lims_sample_type__id
+#: model:ir.model.fields,field_description:lims.field_lims_sub_sample_preparation__id
+#: model:ir.model.fields,field_description:lims.field_lims_translate_titles__id
+msgid "ID"
+msgstr "المعرف"
+
+#. module: lims
+#: model:ir.model.fields.selection,name:lims.selection__res_partner__partner_no_category__national_id
+msgid "ID national"
+msgstr "الهوية الوطنية"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_res_partner__partner_no
+#: model:ir.model.fields,field_description:lims.field_res_users__partner_no
+msgid "ID number"
+msgstr "رقم الهوية"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.label_report_all_document
+#: model_terms:ir.ui.view,arch_db:lims.label_report_document
+msgid "ID:"
+msgstr "المعرف:"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_analysis__activity_exception_icon
+#: model:ir.model.fields,field_description:lims.field_lims_sample_main__activity_exception_icon
+#: model:ir.model.fields,field_description:lims.field_lims_sample_preparation__activity_exception_icon
+msgid "Icon"
+msgstr "الأيقونة"
+
+#. module: lims
+#: model:ir.model.fields,help:lims.field_lims_analysis__activity_exception_icon
+#: model:ir.model.fields,help:lims.field_lims_sample_main__activity_exception_icon
+#: model:ir.model.fields,help:lims.field_lims_sample_preparation__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "أيقونة للإشارة إلى نشاط استثنائي."
+
+#. module: lims
+#: model:ir.model.fields,help:lims.field_lims_analysis__message_needaction
+#: model:ir.model.fields,help:lims.field_lims_sample_main__message_needaction
+#: model:ir.model.fields,help:lims.field_lims_sample_preparation__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "إذا تم تحديده، فالرسائل الجديدة تتطلب انتباهك."
+
+#. module: lims
+#: model:ir.model.fields,help:lims.field_lims_analysis__message_has_error
+#: model:ir.model.fields,help:lims.field_lims_analysis__message_has_sms_error
+#: model:ir.model.fields,help:lims.field_lims_sample_main__message_has_error
+#: model:ir.model.fields,help:lims.field_lims_sample_main__message_has_sms_error
+#: model:ir.model.fields,help:lims.field_lims_sample_preparation__message_has_error
+#: model:ir.model.fields,help:lims.field_lims_sample_preparation__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا تم تحديده، فبعض الرسائل بها خطأ في التسليم."
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.lims_analysis_search
+msgid "In Progress"
+msgstr "قيد التقدم"
+
+#. module: lims
+#: model:ir.model.fields.selection,name:lims.selection__lims_analysis__state__progress
+#: model:ir.model.fields.selection,name:lims.selection__lims_sample_main__state__progress
+msgid "In progress"
+msgstr "قيد التقدم"
+
+#. module: lims
+#: model:ir.model.fields.selection,name:lims.selection__lims_analysis__state_result__default
+msgid "Inconclusive"
+msgstr "غير حاسم"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_analysis__index_analysis
+msgid "Index Analysis"
+msgstr "تحليل الفهرس"
+
+#. module: lims
+#: model:ir.model.fields.selection,name:lims.selection__lims_sample_main__source__individual
+msgid "Individual"
+msgstr "فرد"
+
+#. module: lims
+#: model:ir.actions.act_window,name:lims.lims_method_action
+#: model:ir.model.fields,field_description:lims.field_lims_method__name
+#: model_terms:ir.ui.view,arch_db:lims.lims_analysis_view_form
+msgid "Instrument"
+msgstr "الأداة"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.product_template_form_view_inherit2
+msgid "Instrument & Methods"
+msgstr "الأداة والطرق"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_product_product__method_ids
+#: model:ir.model.fields,field_description:lims.field_product_template__method_ids
+#: model:ir.ui.menu,name:lims.menu_lims_methods
+msgid "Instruments"
+msgstr "الأدوات"
+
+#. module: lims
+#: model:ir.model,name:lims.model_lims_method
+msgid "Instruments (used before as : Method Model)"
+msgstr "الأدوات (مستخدمة سابقًا ك: نموذج الطريقة)"
+
+#. module: lims
+#. odoo-python
+#: code:addons/lims/controllers/portal_customers.py:0
+msgid "Invalid request."
+msgstr "طلب غير صالح."
+
+#. module: lims
+#. odoo-python
+#: code:addons/lims/controllers/portal_customers.py:0
+msgid "Invalid signature data."
+msgstr "بيانات التوقيع غير صالحة."
+
+#. module: lims
+#: model:ir.model.fields.selection,name:lims.selection__lims_sample_main__invoicing_type__invoice
+msgid "Invoice"
+msgstr "الفاتورة"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_sample_main__invoice_ids
+#: model_terms:ir.ui.view,arch_db:lims.lims_view_form
+msgid "Invoices"
+msgstr "الفواتير"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_sample_main__invoicing_type
+msgid "Invoicing Type"
+msgstr "نوع الفوترة"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_analysis__message_is_follower
+#: model:ir.model.fields,field_description:lims.field_lims_sample_main__message_is_follower
+#: model:ir.model.fields,field_description:lims.field_lims_sample_preparation__message_is_follower
+msgid "Is Follower"
+msgstr "متابع"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_analysis__is_null
+msgid "Is Null"
+msgstr "هو فارغ"
+
+#. module: lims
+#: model:ir.model,name:lims.model_account_move
+msgid "Journal Entry"
+msgstr "قيد اليومية"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_translate_titles__title
+#: model_terms:ir.ui.view,arch_db:lims.medical_analysis_report_portal_content
+msgid "LABORATORY RESULTS"
+msgstr "نتائج المختبر"
+
+#. module: lims
+#: model:ir.ui.menu,name:lims.menu_lims_root
+msgid "LIMS"
+msgstr "نظام إدارة المختبرات"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_res_company__sequence_ids
+#: model_terms:ir.ui.view,arch_db:lims.res_company_form_view_inherit_lims
+msgid "LIMS Sequences"
+msgstr "تسلسلات نظام إدارة المختبرات"
+
+#. module: lims
+#: model:res.groups,name:lims.group_lims_responsible
+msgid "Lab Responsible"
+msgstr "مسؤول المختبر"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_sample_preparation__display_name
+msgid "Label Code"
+msgstr "كود الملصق"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.lims_view_form
+msgid "Laboratory Information"
+msgstr "معلومات المختبر"
+
+#. module: lims
+#: model:ir.model,name:lims.model_lims_department
+msgid "Laboratory department"
+msgstr "قسم المختبر"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_add_parameters_wizard__write_uid
+#: model:ir.model.fields,field_description:lims.field_add_reason_wizard__write_uid
+#: model:ir.model.fields,field_description:lims.field_convert_subcontracted_wizard__write_uid
+#: model:ir.model.fields,field_description:lims.field_lims_analysis__write_uid
+#: model:ir.model.fields,field_description:lims.field_lims_department__write_uid
+#: model:ir.model.fields,field_description:lims.field_lims_method__write_uid
+#: model:ir.model.fields,field_description:lims.field_lims_rang_factor__write_uid
+#: model:ir.model.fields,field_description:lims.field_lims_reason_type__write_uid
+#: model:ir.model.fields,field_description:lims.field_lims_result__write_uid
+#: model:ir.model.fields,field_description:lims.field_lims_result_history__write_uid
+#: model:ir.model.fields,field_description:lims.field_lims_result_range__write_uid
+#: model:ir.model.fields,field_description:lims.field_lims_result_state__write_uid
+#: model:ir.model.fields,field_description:lims.field_lims_sample_line__write_uid
+#: model:ir.model.fields,field_description:lims.field_lims_sample_main__write_uid
+#: model:ir.model.fields,field_description:lims.field_lims_sample_preparation__write_uid
+#: model:ir.model.fields,field_description:lims.field_lims_sample_tube__write_uid
+#: model:ir.model.fields,field_description:lims.field_lims_sample_type__write_uid
+#: model:ir.model.fields,field_description:lims.field_lims_sub_sample_preparation__write_uid
+#: model:ir.model.fields,field_description:lims.field_lims_translate_titles__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_add_parameters_wizard__write_date
+#: model:ir.model.fields,field_description:lims.field_add_reason_wizard__write_date
+#: model:ir.model.fields,field_description:lims.field_convert_subcontracted_wizard__write_date
+#: model:ir.model.fields,field_description:lims.field_lims_analysis__write_date
+#: model:ir.model.fields,field_description:lims.field_lims_department__write_date
+#: model:ir.model.fields,field_description:lims.field_lims_method__write_date
+#: model:ir.model.fields,field_description:lims.field_lims_rang_factor__write_date
+#: model:ir.model.fields,field_description:lims.field_lims_reason_type__write_date
+#: model:ir.model.fields,field_description:lims.field_lims_result__write_date
+#: model:ir.model.fields,field_description:lims.field_lims_result_history__write_date
+#: model:ir.model.fields,field_description:lims.field_lims_result_range__write_date
+#: model:ir.model.fields,field_description:lims.field_lims_result_state__write_date
+#: model:ir.model.fields,field_description:lims.field_lims_sample_line__write_date
+#: model:ir.model.fields,field_description:lims.field_lims_sample_main__write_date
+#: model:ir.model.fields,field_description:lims.field_lims_sample_preparation__write_date
+#: model:ir.model.fields,field_description:lims.field_lims_sample_tube__write_date
+#: model:ir.model.fields,field_description:lims.field_lims_sample_type__write_date
+#: model:ir.model.fields,field_description:lims.field_lims_sub_sample_preparation__write_date
+#: model:ir.model.fields,field_description:lims.field_lims_translate_titles__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_analysis__latitude
+msgid "Latitude"
+msgstr "خط العرض"
+
+#. module: lims
+#: model:ir.module.category,name:lims.module_category_lims
+#: model_terms:ir.ui.view,arch_db:lims.product_template_form_view_inherit2
+#: model_terms:ir.ui.view,arch_db:lims.res_company_form_view_inherit_lims
+#: model_terms:ir.ui.view,arch_db:lims.res_config_settings_form_view_inherit_lims
+#: model_terms:ir.ui.view,arch_db:lims.res_users_form_view_inherit_lims
+msgid "Lims"
+msgstr "نظام إدارة المختبرات"
+
+#. module: lims
+#: model:ir.model,name:lims.model_lims_result
+msgid "Lims Result Type"
+msgstr "نوع نتيجة نظام إدارة المختبرات"
+
+#. module: lims
+#: model:ir.model,name:lims.model_lims_result_range
+msgid "Lims references and ranges"
+msgstr "مراجع ونطاقات نظام إدارة المختبرات"
+
+#. module: lims
+#: model:ir.model,name:lims.model_lims_result_state
+msgid "Lims result status"
+msgstr "حالة نتيجة نظام إدارة المختبرات"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_sample_main__logistic_company
+msgid "Logistic Company"
+msgstr "شركة الخدمات اللوجستية"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.analysis_report_document
+#: model_terms:ir.ui.view,arch_db:lims.medical_analysis_report_portal_content
+#: model_terms:ir.ui.view,arch_db:lims.res_company_form_view_inherit_lims
+msgid "Logo"
+msgstr "الشعار"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_res_config_settings__logo_gov
+msgid "Logo Gov"
+msgstr "شعار الحكومة"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_analysis__longitude
+msgid "Longitude"
+msgstr "خط الطول"
+
+#. module: lims
+#: model:ir.model.fields.selection,name:lims.selection__lims_analysis__state_result__low
+#: model:ir.model.fields.selection,name:lims.selection__lims_sample_main__priority__low
+msgid "Low"
+msgstr "منخفض"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_sub_sample_preparation__sample_id
+msgid "Main Sample"
+msgstr "العينة الرئيسية"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_department__manager_id
+#: model:res.groups,name:lims.group_lims_manager
+msgid "Manager"
+msgstr "المدير"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_res_company__auto_done
+#: model:ir.model.fields,field_description:lims.field_res_config_settings__auto_done
+msgid "Mark the result as done after click on save"
+msgstr "تعليم النتيجة كمكتملة بعد النقر على حفظ"
+
+#. module: lims
+#: model:ir.ui.menu,name:lims.menu_lims_config
+msgid "Master data"
+msgstr "البيانات الأساسية"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_result_range__max_val
+msgid "Max value"
+msgstr "القيمة القصوى"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.analysis_report_document
+msgid "Medical Analysis Report"
+msgstr "تقرير التحليل الطبي"
+
+#. module: lims
+#: model:ir.module.category,name:lims.module_category_root
+msgid "Medical Laboratory"
+msgstr "المختبر الطبي"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.portal_my_home_medical_report
+msgid "Medical Report"
+msgstr "تقرير طبي"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_translate_titles__medical_name
+#: model_terms:ir.ui.view,arch_db:lims.medical_analysis_report_portal_content
+msgid "Medical Report Number"
+msgstr "رقم التقرير الطبي"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.portal_my_reports
+#: model_terms:ir.ui.view,arch_db:lims.res_partner_form_view_inherit_lims
+msgid "Medical Reports"
+msgstr "التقارير الطبية"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_sample_main__medium_id
+#: model:ir.model.fields,field_description:lims.field_lims_sample_preparation__medium_id
+msgid "Medium"
+msgstr "الوسيط"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_analysis__message_has_error
+#: model:ir.model.fields,field_description:lims.field_lims_sample_main__message_has_error
+#: model:ir.model.fields,field_description:lims.field_lims_sample_preparation__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسالة"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_analysis__message_ids
+#: model:ir.model.fields,field_description:lims.field_lims_sample_main__message_ids
+#: model:ir.model.fields,field_description:lims.field_lims_sample_preparation__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_analysis__method_id
+#: model:ir.model.fields,field_description:lims.field_lims_result_history__method_id
+#: model:ir.model.fields,field_description:lims.field_lims_result_range__method_id
+#: model:ir.model.fields,field_description:lims.field_lims_translate_titles__method
+#: model_terms:ir.ui.view,arch_db:lims.analysis_report_document
+msgid "Method"
+msgstr "الطريقة"
+
+#. module: lims
+#: model:ir.model.fields.selection,name:lims.selection__res_partner__partner_no_category__military
+msgid "Militaire"
+msgstr "عسكري"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_result_range__min_val
+msgid "Min value"
+msgstr "القيمة الدنيا"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_analysis__my_activity_date_deadline
+#: model:ir.model.fields,field_description:lims.field_lims_sample_main__my_activity_date_deadline
+#: model:ir.model.fields,field_description:lims.field_lims_sample_preparation__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "الموعد النهائي لنشاطي"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.lims_analysis_search
+msgid "My Analysis"
+msgstr "تحليلاتي"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_translate_titles__national_id
+msgid "National ID"
+msgstr "الهوية الوطنية"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.medical_analysis_report_portal_content
+msgid "National ID/Iqama"
+msgstr "الهوية الوطنية/الإقامة"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_translate_titles__nationality
+#: model_terms:ir.ui.view,arch_db:lims.medical_analysis_report_portal_content
+msgid "Nationality"
+msgstr "الجنسية"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_sample_preparation__nb_sub
+msgid "Nb Sub-samples"
+msgstr "عدد العينات الفرعية"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_product_product__nb_decimal
+#: model:ir.model.fields,field_description:lims.field_product_template__nb_decimal
+msgid "Nb decimal"
+msgstr "عدد الكسور العشرية"
+
+#. module: lims
+#. odoo-python
+#: code:addons/lims/models/lims.py:0
+#: code:addons/lims/models/lims_analysis.py:0
+msgid "New"
+msgstr "جديد"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_add_parameters_wizard__product_ids
+msgid "New Parameters"
+msgstr "معايير جديدة"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.res_partner_form_view_inherit_lims
+msgid "New request"
+msgstr "طلب جديد"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_analysis__activity_date_deadline
+#: model:ir.model.fields,field_description:lims.field_lims_sample_main__activity_date_deadline
+#: model:ir.model.fields,field_description:lims.field_lims_sample_preparation__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط التالي"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_analysis__activity_summary
+#: model:ir.model.fields,field_description:lims.field_lims_sample_main__activity_summary
+#: model:ir.model.fields,field_description:lims.field_lims_sample_preparation__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط التالي"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_analysis__activity_type_id
+#: model:ir.model.fields,field_description:lims.field_lims_sample_main__activity_type_id
+#: model:ir.model.fields,field_description:lims.field_lims_sample_preparation__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: lims
+#: model_terms:ir.actions.act_window,help:lims.sample_type_action
+msgid "No Sample type found"
+msgstr "لم يتم العثور على نوع عينة"
+
+#. module: lims
+#: model_terms:ir.actions.act_window,help:lims.lims_pack_action
+msgid "No packs found"
+msgstr "لم يتم العثور على حزم"
+
+#. module: lims
+#: model_terms:ir.actions.act_window,help:lims.lims_parameters_action
+msgid "No parameters found"
+msgstr "لم يتم العثور على معايير"
+
+#. module: lims
+#. odoo-python
+#: code:addons/lims/controllers/portal_customers.py:0
+msgid "No report found"
+msgstr "لم يتم العثور على تقرير"
+
+#. module: lims
+#: model:ir.model.fields.selection,name:lims.selection__lims_analysis__state_result__normal
+#: model:ir.model.fields.selection,name:lims.selection__lims_sample_main__priority__normal
+msgid "Normal"
+msgstr "عادي"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_analysis__note
+#: model:ir.model.fields,field_description:lims.field_lims_sample_line__note
+#: model:ir.model.fields,field_description:lims.field_lims_sample_preparation__note
+msgid "Note"
+msgstr "ملاحظة"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_sample_main__notes
+msgid "Notes"
+msgstr "ملاحظات"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_sample_main__name
+msgid "Number"
+msgstr "الرقم"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_analysis__message_needaction_counter
+#: model:ir.model.fields,field_description:lims.field_lims_sample_main__message_needaction_counter
+#: model:ir.model.fields,field_description:lims.field_lims_sample_preparation__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.product_template_form_view_inherit2
+msgid "Number of digits after decimal"
+msgstr "عدد الأرقام بعد الفاصلة العشرية"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_analysis__message_has_error_counter
+#: model:ir.model.fields,field_description:lims.field_lims_sample_main__message_has_error_counter
+#: model:ir.model.fields,field_description:lims.field_lims_sample_preparation__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: lims
+#: model:ir.model.fields,help:lims.field_lims_analysis__message_needaction_counter
+#: model:ir.model.fields,help:lims.field_lims_sample_main__message_needaction_counter
+#: model:ir.model.fields,help:lims.field_lims_sample_preparation__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "عدد الرسائل التي تتطلب إجراء"
+
+#. module: lims
+#: model:ir.model.fields,help:lims.field_lims_analysis__message_has_error_counter
+#: model:ir.model.fields,help:lims.field_lims_sample_main__message_has_error_counter
+#: model:ir.model.fields,help:lims.field_lims_sample_preparation__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل ذات خطأ التسليم"
+
+#. module: lims
+#: model:ir.model.fields.selection,name:lims.selection__product_template__type_result__num
+msgid "Numeric"
+msgstr "رقمي"
+
+#. module: lims
+#: model:ir.model.fields.selection,name:lims.selection__lims_result_range__type_range__numeric
+msgid "Numerical"
+msgstr "عددي"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_analysis__result_num
+msgid "Numerical Result"
+msgstr "النتيجة العددية"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.lims_analysis_search
+msgid "Numerical results"
+msgstr "النتائج العددية"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.analysis_report_document
+msgid ""
+"Old\n"
+"                                                                result:"
+msgstr ""
+"النتيجة\n"
+"                                                                القديمة:"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.analysis_report_document
+msgid ""
+"Old\n"
+"                                                            result:"
+msgstr ""
+"النتيجة\n"
+"                                                            القديمة:"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_result_history__result
+msgid "Old result"
+msgstr "النتيجة القديمة"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_sample_preparation__optimum_volume
+msgid "Optimum Volume"
+msgstr "الحجم الأمثل"
+
+#. module: lims
+#. odoo-python
+#: code:addons/lims/models/lims_result.py:0
+msgid "Optimum state does not exist, please add this state first"
+msgstr "الحالة المثلى غير موجودة، يرجى إضافة هذه الحالة أولاً"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_product_product__optimum_volume
+#: model:ir.model.fields,field_description:lims.field_product_template__optimum_volume
+msgid "Optimum volume"
+msgstr "الحجم الأمثل"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.lims_view_form
+msgid "Optional..."
+msgstr "اختياري..."
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_sample_main__origin
+msgid "Origin"
+msgstr "المصدر"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.lims_view_form
+msgid "Other Information"
+msgstr "معلومات أخرى"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_translate_titles__description
+msgid "Other note"
+msgstr "ملاحظة أخرى"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.lims_sample_view_form
+#: model_terms:ir.ui.view,arch_db:lims.lims_view_form
+msgid "PLease confirm this action"
+msgstr "يرجى تأكيد هذا الإجراء"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_analysis__pack_selected
+msgid "Pack Selected"
+msgstr "الحزمة المحددة"
+
+#. module: lims
+#: model:ir.actions.act_window,name:lims.lims_pack_action
+#: model:ir.ui.menu,name:lims.menu_lims_pack
+msgid "Pack of Tests"
+msgstr "حزمة الاختبارات"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_product_product__isPack
+#: model:ir.model.fields,field_description:lims.field_product_template__isPack
+msgid "Pack/Group of tests"
+msgstr "حزمة/مجموعة اختبارات"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_sample_tube__name
+#: model_terms:ir.ui.view,arch_db:lims.product_template_form_view_inherit2
+msgid "Package"
+msgstr "الحزمة"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_product_product__collection_tube
+#: model:ir.model.fields,field_description:lims.field_product_template__collection_tube
+msgid "Packaging"
+msgstr "التغليف"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_result_history__name
+#: model:ir.model.fields,field_description:lims.field_lims_result_range__product_id
+msgid "Parameter"
+msgstr "المعيار"
+
+#. module: lims
+#: model:ir.actions.act_window,name:lims.lims_parameters_action
+msgid "Parameter Tests"
+msgstr "اختبارات المعايير"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_product_product__isParameter
+#: model:ir.model.fields,field_description:lims.field_product_template__isParameter
+msgid "Parameter/Test"
+msgstr "معيار/اختبار"
+
+#. module: lims
+#: model:ir.ui.menu,name:lims.menu_lims_tests
+msgid "Parameters/Tests"
+msgstr "المعايير/الاختبارات"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_product_product__parent_pack
+#: model:ir.model.fields,field_description:lims.field_product_template__parent_pack
+msgid "Parent Pack"
+msgstr "الحزمة الأم"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_department__partner_id
+msgid "Partner"
+msgstr "الشريك"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.label_report_all_document
+#: model_terms:ir.ui.view,arch_db:lims.label_report_document
+msgid "Patient:"
+msgstr "العميل:"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_translate_titles__perso_info
+msgid "Personal Info"
+msgstr "المعلومات الشخصية"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_sample_main__planned_date
+msgid "Planned date"
+msgstr "التاريخ المخطط"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.lims_view_form
+msgid "Please confirm this operation"
+msgstr "يرجى تأكيد هذه العملية"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.lims_view_form
+msgid "Are you sure you want to accept all samples?"
+msgstr "يرجى تأكيد هذه العملية"
+
+#. module: lims
+#. odoo-python
+#: code:addons/lims/models/lims.py:0
+msgid "Please do generate sale order for this analysis request"
+msgstr "يرجى إنشاء أمر بيع لطلب التحليل هذا"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.lims_view_form
+msgid "Please don't forget to update the sale order if necessary"
+msgstr "يرجى عدم نسيان تحديث أمر البيع إذا لزم الأمر"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.lims_add_parameters_view_form
+msgid "Please don't forget to update the sale order if necessary !"
+msgstr "يرجى عدم نسيان تحديث أمر البيع إذا لزم الأمر!"
+
+#. module: lims
+#: model:ir.model.fields,help:lims.field_lims_result_state__color
+msgid "Please enter here your code rbg color !"
+msgstr "يرجى إدخال لون RGB للكود هنا!"
+
+#. module: lims
+#. odoo-python
+#: code:addons/lims/models/lims.py:0
+msgid "Please fill your request line, then clic generate quotation"
+msgstr "يرجى ملء سطر الطلب الخاص بك، ثم انقر على إنشاء عرض سعر"
+
+#. module: lims
+#. odoo-python
+#: code:addons/lims/models/lims_analysis.py:0
+msgid "Please insert the result before confirming"
+msgstr "يرجى إدخال النتيجة قبل التأكيد"
+
+#. module: lims
+#. odoo-python
+#: code:addons/lims/models/lims_analysis.py:0
+msgid "Please rework this Analysis %s "
+msgstr "يرجى إعادة عمل هذا التحليل %s"
+
+#. module: lims
+#: model:ir.model.fields.selection,name:lims.selection__res_partner__partner_no_category__police
+msgid "Police"
+msgstr "الشرطة"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_analysis__access_url
+#: model:ir.model.fields,field_description:lims.field_lims_sample_main__access_url
+#: model:ir.model.fields,field_description:lims.field_lims_sample_preparation__access_url
+msgid "Portal Access URL"
+msgstr "رابط الوصول إلى البوابة"
+
+#. module: lims
+#: model:res.groups,name:lims.group_lims_portal_consultant
+msgid "Portal Consultant"
+msgstr "مستشار البوابة"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_department__prefix_code
+#: model:ir.model.fields,field_description:lims.field_lims_sample_preparation__prefix
+msgid "Prefix code"
+msgstr "كود البادئة"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_add_parameters_wizard__line_id
+msgid "Preparation line"
+msgstr "سطر التحضير"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_analysis__last_old_result
+msgid "Previous Result"
+msgstr "النتيجة السابقة"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.medical_analysis_report_portal_content
+msgid "Print"
+msgstr "طباعة"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_sample_main__print_method
+msgid "Print Method"
+msgstr "طريقة الطباعة"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.lims_view_form
+msgid "Print Order"
+msgstr "أمر الطباعة"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.lims_view_form
+msgid "Print label"
+msgstr "طباعة الملصق"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.lims_view_form
+msgid "Print report"
+msgstr "طباعة التقرير"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_sample_main__priority
+msgid "Priority"
+msgstr "الأولوية"
+
+#. module: lims
+#: model:ir.model,name:lims.model_product_template
+msgid "Product"
+msgstr "المنتج"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.product_template_form_view_inherit2
+msgid "QA & Reports"
+msgstr "ضمان الجودة والتقارير"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_sample_main__signature_quality
+#: model:ir.model.fields,field_description:lims.field_res_company__signature_quality
+#: model:ir.model.fields,field_description:lims.field_res_config_settings__signature_quality
+msgid "QA Signature"
+msgstr "توقيع ضمان الجودة"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.analysis_report_document
+#: model_terms:ir.ui.view,arch_db:lims.label_report_document
+#: model_terms:ir.ui.view,arch_db:lims.medical_analysis_report_portal_content
+msgid "QR Code"
+msgstr "كود QR"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_sample_main__qrcode
+#: model:ir.model.fields,field_description:lims.field_lims_sample_preparation__qrcode
+#: model:ir.model.fields,field_description:lims.field_sale_order__qrcode
+msgid "QRcode"
+msgstr "كود QR"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_sample_line__quantity
+msgid "Quantity"
+msgstr "عدد العينات"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_sample_main__sale_id
+msgid "Quotation"
+msgstr "عرض السعر"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_translate_titles__range_lims
+#: model_terms:ir.ui.view,arch_db:lims.analysis_report_document
+#: model_terms:ir.ui.view,arch_db:lims.medical_analysis_report_portal_content
+msgid "Range"
+msgstr "النطاق"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_method__reference_ids
+#: model:ir.model.fields,field_description:lims.field_product_product__reference_ids
+#: model:ir.model.fields,field_description:lims.field_product_template__reference_ids
+msgid "Range/Reference"
+msgstr "النطاق/المرجع"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.lims_method_view_form
+#: model_terms:ir.ui.view,arch_db:lims.product_template_form_view_inherit2
+msgid "Range/levels"
+msgstr "النطاق/المستويات"
+
+#. module: lims
+#: model:ir.ui.menu,name:lims.menu_lims_ranges
+msgid "Ranges / References"
+msgstr "النطاقات / المراجع"
+
+#. module: lims
+#. odoo-python
+#: code:addons/lims/models/lims.py:0
+#: code:addons/lims/models/lims_analysis.py:0
+#: model:ir.model.fields,field_description:lims.field_add_reason_wizard__reason_id
+#: model:ir.model.fields,field_description:lims.field_lims_analysis__reason_id
+#: model:ir.model.fields,field_description:lims.field_lims_reason_type__name
+#: model:ir.model.fields,field_description:lims.field_lims_result_history__reason_id
+#: model:ir.model.fields,field_description:lims.field_lims_sample_main__reason_id
+msgid "Reason"
+msgstr "السبب"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_reason_type__reason_type
+msgid "Reason Type"
+msgstr "نوع السبب"
+
+#. module: lims
+#: model:ir.model,name:lims.model_lims_reason_type
+msgid "Reasons"
+msgstr "الأسباب"
+
+#. module: lims
+#: model:ir.model.fields.selection,name:lims.selection__lims_sample_main__state__recieved
+msgid "Received"
+msgstr "مستلم"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_sample_preparation__receiving_date
+msgid "Received on"
+msgstr "تم الاستلام في"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.lims_view_form
+msgid "Receiving Date"
+msgstr "تاريخ الاستلام"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_sample_main__receiving_date
+msgid "Receiving date"
+msgstr "تاريخ الاستلام"
+
+#. module: lims
+#: model:ir.ui.menu,name:lims.menu_references_ranges
+msgid "References"
+msgstr "المراجع"
+
+#. module: lims
+#: model:ir.actions.act_window,name:lims.references_action
+msgid "References / ranges"
+msgstr "المراجع / النطاقات"
+
+#. module: lims
+#: model:ir.actions.act_window,name:lims.receiving_samples_action
+#: model:ir.ui.menu,name:lims.menu_sampling
+msgid "Registration"
+msgstr "التسجيل"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_sample_main__date
+#: model_terms:ir.ui.view,arch_db:lims.lims_view_form
+msgid "Registration Date"
+msgstr "تاريخ التسجيل"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.lims_view_form
+msgid "Reject"
+msgstr "رفض"
+
+#. module: lims
+#: model:ir.model.fields.selection,name:lims.selection__lims_sample_main__state__reject
+msgid "Rejected"
+msgstr "مرفوض"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.portal_my_reports
+msgid "Report Date"
+msgstr "تاريخ التقرير"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.medical_analysis_report_portal_content
+msgid "Report Date:"
+msgstr "تاريخ التقرير:"
+
+#. module: lims
+#: model:ir.ui.menu,name:lims.menu_lims_config_report
+msgid "Report config"
+msgstr "تهيئة التقرير"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_sample_main__report_date
+msgid "Report date"
+msgstr "تاريخ التقرير"
+
+#. module: lims
+#: model:res.groups,name:lims.group_lims_reporting
+msgid "Report validator"
+msgstr "التحقق من التقرير"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_res_partner__main_ids
+#: model:ir.model.fields,field_description:lims.field_res_users__main_ids
+#: model_terms:ir.ui.view,arch_db:lims.lims_view_form
+msgid "Reports"
+msgstr "التقارير"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_account_bank_statement_line__main_id
+#: model:ir.model.fields,field_description:lims.field_account_move__main_id
+#: model:ir.model.fields,field_description:lims.field_lims_analysis__main_id
+#: model:ir.model.fields,field_description:lims.field_lims_sample_line__main_id
+#: model:ir.model.fields,field_description:lims.field_lims_sample_preparation__main_id
+msgid "Request"
+msgstr "الطلب"
+
+#. module: lims
+#. odoo-python
+#: code:addons/lims/controllers/portal_customers.py:0
+msgid "Request Date"
+msgstr "تاريخ الطلب"
+
+#. module: lims
+#. odoo-python
+#: code:addons/lims/controllers/portal_customers.py:0
+msgid "Request N"
+msgstr "طلب رقم"
+
+#. module: lims
+#. odoo-python
+#: code:addons/lims/controllers/portal_customers.py:0
+msgid "Request viewed by customer %s"
+msgstr "تم عرض الطلب من قبل العميل %s"
+
+#. module: lims
+#: model:ir.model,name:lims.model_lims_sample_line
+msgid "Requested Tests"
+msgstr "الاختبارات المطلوبة"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_sample_main__sample_line
+msgid "Requests"
+msgstr "الطلبات"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.lims_view_form
+msgid "Required Tests"
+msgstr "الاختبارات المطلوبة"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.lims_analysis_view_form
+#: model_terms:ir.ui.view,arch_db:lims.lims_view_form
+msgid "Reset to Draft"
+msgstr "إعادة إلى المسودة"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_analysis__user_id
+#: model:ir.model.fields,field_description:lims.field_lims_sample_main__user_id
+#: model_terms:ir.ui.view,arch_db:lims.lims_sample_main_search
+msgid "Responsible"
+msgstr "المسؤول"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_analysis__activity_user_id
+#: model:ir.model.fields,field_description:lims.field_lims_sample_main__activity_user_id
+#: model:ir.model.fields,field_description:lims.field_lims_sample_preparation__activity_user_id
+msgid "Responsible User"
+msgstr "المستخدم المسؤول"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_analysis__result_txt
+#: model:ir.model.fields,field_description:lims.field_lims_translate_titles__result
+#: model_terms:ir.ui.view,arch_db:lims.analysis_report_document
+#: model_terms:ir.ui.view,arch_db:lims.medical_analysis_report_portal_content
+msgid "Result"
+msgstr "النتيجة"
+
+#. module: lims
+#: model:ir.model,name:lims.model_lims_result_history
+#: model_terms:ir.ui.view,arch_db:lims.lims_analysis_view_form
+msgid "Result History"
+msgstr "سجل النتائج"
+
+#. module: lims
+#: model:ir.ui.menu,name:lims.menu_result_state
+msgid "Result Status"
+msgstr "حالة النتيجة"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_analysis__type_result
+msgid "Result Type"
+msgstr "نوع النتيجة"
+
+#. module: lims
+#: model:ir.actions.act_window,name:lims.lims_result_state_action
+msgid "Result ranges"
+msgstr "نطاقات النتائج"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_result__name
+msgid "Result type"
+msgstr "نوع النتيجة"
+
+#. module: lims
+#: model:ir.ui.menu,name:lims.menu_result
+msgid "Result types"
+msgstr "أنواع النتائج"
+
+#. module: lims
+#: model:ir.actions.act_window,name:lims.lims_results_action
+#: model_terms:ir.ui.view,arch_db:lims.lims_analysis_view_form
+msgid "Results"
+msgstr "النتائج"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_analysis__history_ids
+msgid "Results History"
+msgstr "سجل النتائج"
+
+#. module: lims
+#: model:ir.model.fields.selection,name:lims.selection__lims_analysis__state__rework
+#: model_terms:ir.ui.view,arch_db:lims.lims_analysis_view_form
+msgid "Rework"
+msgstr "إعادة العمل"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.lims_analysis_view_form
+msgid "Rework reason"
+msgstr "سبب إعادة العمل"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_analysis__message_has_sms_error
+#: model:ir.model.fields,field_description:lims.field_lims_sample_main__message_has_sms_error
+#: model:ir.model.fields,field_description:lims.field_lims_sample_preparation__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ في تسليم الرسائل القصيرة"
+
+#. module: lims
+#: model:ir.model.fields.selection,name:lims.selection__lims_sample_main__invoicing_type__quot
+#: model_terms:ir.ui.view,arch_db:lims.lims_view_form
+msgid "Sale Order"
+msgstr "أمر البيع"
+
+#. module: lims
+#: model:ir.model,name:lims.model_sale_order
+msgid "Sales Order"
+msgstr "أمر البيع"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_add_reason_wizard__sample_id
+#: model:ir.model.fields,field_description:lims.field_lims_analysis__sample_line_id
+#: model:ir.model.fields,field_description:lims.field_lims_sample_preparation__sample
+#: model:ir.model.fields.selection,name:lims.selection__lims_reason_type__reason_type__sample
+#: model_terms:ir.ui.view,arch_db:lims.lims_analysis_search
+msgid "Sample"
+msgstr "العينة"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_sample_line__name
+msgid "Sample Code"
+msgstr "كود العينة"
+
+#. module: lims
+#: model:ir.actions.act_window,name:lims.lims_sample_history_action
+msgid "Sample History"
+msgstr "سجل العينات"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.product_template_form_view_inherit2
+msgid "Sample Information"
+msgstr "معلومات العينة"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.lims_sample_view_form
+msgid "Sample Informations"
+msgstr "معلومات العينة"
+
+#. module: lims
+#: model:ir.actions.report,name:lims.medical_lab_label
+msgid "Sample Label"
+msgstr "ملصق العينة"
+
+#. module: lims
+#: model:ir.model,name:lims.model_lims_sample_tube
+msgid "Sample Packaging"
+msgstr "تغليف العينة"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_sample_preparation__sending_date
+#: model_terms:ir.ui.view,arch_db:lims.lims_view_form
+msgid "Sample Sending Date"
+msgstr "تاريخ إرسال العينة"
+
+#. module: lims
+#: model:ir.ui.menu,name:lims.menu_sample_tube
+msgid "Sample Tube"
+msgstr "أنبوب العينة"
+
+#. module: lims
+#: model:ir.model,name:lims.model_lims_sample_type
+#: model:ir.model.fields,field_description:lims.field_product_product__default_sample_type
+#: model:ir.model.fields,field_description:lims.field_product_template__default_sample_type
+msgid "Sample Type"
+msgstr "نوع العينة"
+
+#. module: lims
+#: model:ir.actions.act_window,name:lims.sample_type_action
+msgid "Sample Types"
+msgstr "أنواع العينات"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_sample_preparation__name
+msgid "Sample code"
+msgstr "كود العينة"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_sample_line__external_sample_collected_on
+msgid "Sample collected on"
+msgstr "تم جمع العينة في"
+
+#. module: lims
+#: model:ir.ui.menu,name:lims.menu_lims_sample_config
+msgid "Sample config"
+msgstr "تهيئة العينة"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.res_config_settings_form_view_inherit_lims
+msgid "Sample registration"
+msgstr "تسجيل العينة"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_analysis__sample
+#: model:ir.model.fields,field_description:lims.field_lims_sample_line__sample
+msgid "Sample type"
+msgstr "نوع العينة"
+
+#. module: lims
+#: model:ir.ui.menu,name:lims.menu_sample_type
+msgid "Sample types"
+msgstr "أنواع العينات"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.label_report_all_document
+#: model_terms:ir.ui.view,arch_db:lims.label_report_document
+msgid "Sample:"
+msgstr "العينة:"
+
+#. module: lims
+#: model:ir.model,name:lims.model_lims_sub_sample_preparation
+#: model:ir.model.fields,field_description:lims.field_lims_sample_main__sample_line_prepared
+msgid "Samples"
+msgstr "العينات"
+
+#. module: lims
+#: model:ir.ui.menu,name:lims.sample_tracking_id
+msgid "Samples History"
+msgstr "سجل العينات"
+
+#. module: lims
+#: model:ir.model,name:lims.model_lims_sample_preparation
+msgid "Samples Information"
+msgstr "معلومات العينات"
+
+#. module: lims
+#: model:res.groups,name:lims.group_lims_sample
+msgid "Sampling"
+msgstr "أخذ العينات"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_translate_titles__sampling_date
+msgid "Sampling Date"
+msgstr "تاريخ أخذ العينات"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.medical_analysis_report_portal_content
+msgid "Sampling Date:"
+msgstr "تاريخ أخذ العينات:"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.medical_analysis_report_portal_content
+msgid ""
+"Scan the QR code to\n"
+"                                                electronically check the report"
+msgstr ""
+"امسح كود QR\n"
+"                                                للتحقق من التقرير إلكترونيًا"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.lims_analysis_search
+#: model_terms:ir.ui.view,arch_db:lims.lims_sample_main_search
+#: model_terms:ir.ui.view,arch_db:lims.lims_sample_preparation_search
+msgid "Search"
+msgstr "بحث"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_analysis__access_token
+#: model:ir.model.fields,field_description:lims.field_lims_sample_main__access_token
+#: model:ir.model.fields,field_description:lims.field_lims_sample_preparation__access_token
+msgid "Security Token"
+msgstr "رمز الأمان"
+
+#. module: lims
+#: model:ir.model.fields.selection,name:lims.selection__res_partner__partner_no_category__social_security
+msgid "Securité Sociale"
+msgstr "التأمين الاجتماعي"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_analysis__result_se
+msgid "Selection Result"
+msgstr "نتيجة الاختيار"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_reason_type__send_sms
+msgid "Send Sms"
+msgstr "إرسال رسالة نصية"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_sub_sample_preparation__sequence
+msgid "Sequence"
+msgstr "التسلسل"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_analysis__sequence_number
+#: model:ir.model.fields,field_description:lims.field_lims_sample_main__sequence_number
+#: model:ir.model.fields,field_description:lims.field_lims_sample_preparation__sequence_number
+msgid "Sequence Number"
+msgstr "رقم التسلسل"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_analysis__sequence_prefix
+#: model:ir.model.fields,field_description:lims.field_lims_sample_main__sequence_prefix
+#: model:ir.model.fields,field_description:lims.field_lims_sample_preparation__sequence_prefix
+msgid "Sequence Prefix"
+msgstr "بادئة التسلسل"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.lims_view_form
+msgid "Shipping information"
+msgstr "معلومات الشحن"
+
+#. module: lims
+#. odoo-python
+#: code:addons/lims/controllers/portal_customers.py:0
+msgid "Signature is missing."
+msgstr "التوقيع مفقود."
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.lims_view_form
+#: model_terms:ir.ui.view,arch_db:lims.res_config_settings_form_view_inherit_lims
+msgid "Signatures"
+msgstr "التوقيعات"
+
+#. module: lims
+#. odoo-python
+#: code:addons/lims/models/lims.py:0
+msgid "Sorry,all tests must be completed"
+msgstr "عذرًا، يجب إكمال جميع الاختبارات"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_sample_main__source_id
+#: model:ir.model.fields,field_description:lims.field_lims_sample_preparation__source_id
+msgid "Source"
+msgstr "المصدر"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_sample_type__split_by_department
+msgid "Split Sample code by department"
+msgstr "تقسيم كود العينة حسب القسم"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_res_config_settings__split_sample_by_department
+msgid "Split Samples by department"
+msgstr "تقسيم العينات حسب القسم"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_res_company__split_sample_by_department
+msgid "Split samples by department"
+msgstr "تقسيم العينات حسب القسم"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_analysis__state
+#: model:ir.model.fields,field_description:lims.field_lims_result__state
+#: model:ir.model.fields,field_description:lims.field_lims_result_state__name
+#: model:ir.model.fields,field_description:lims.field_lims_sample_main__state
+#: model:ir.model.fields,field_description:lims.field_lims_sample_preparation__state
+#: model_terms:ir.ui.view,arch_db:lims.lims_analysis_search
+#: model_terms:ir.ui.view,arch_db:lims.lims_sample_main_search
+#: model_terms:ir.ui.view,arch_db:lims.lims_sample_preparation_search
+msgid "State"
+msgstr "الحالة"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_analysis__state_result
+msgid "State Result"
+msgstr "حالة النتيجة"
+
+#. module: lims
+#: model:ir.model.fields,help:lims.field_lims_analysis__activity_state
+#: model:ir.model.fields,help:lims.field_lims_sample_main__activity_state
+#: model:ir.model.fields,help:lims.field_lims_sample_preparation__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"الحالة بناءً على الأنشطة\n"
+"متأخر: تاريخ الاستحقاق قد مضى\n"
+"اليوم: تاريخ النشاط هو اليوم\n"
+"مخطط: أنشطة مستقبلية."
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.lims_sample_preparation_search
+msgid "Sub-Code"
+msgstr "الكود الفرعي"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_sample_preparation__subsample_ids
+#: model_terms:ir.ui.view,arch_db:lims.lims_sample_view_form
+msgid "Sub-Samples"
+msgstr "العينات الفرعية"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.lims_sample_view_form
+msgid "Sub-samples"
+msgstr "العينات الفرعية"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_analysis__is_subcontracted
+msgid "Subcontracted Test"
+msgstr "اختبار مرسل لمختبر خارجي"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_convert_subcontracted_wizard__subcontractor_id
+#: model:ir.model.fields,field_description:lims.field_lims_department__is_subcontractor
+msgid "Subcontractor"
+msgstr "التحويل الى مختبر خارجي"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_product_product__se_results
+#: model:ir.model.fields,field_description:lims.field_product_template__se_results
+msgid "Suggested results"
+msgstr "النتائج المقترحة"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_sample_main__tat
+#: model_terms:ir.ui.view,arch_db:lims.lims_view_form
+msgid "TAT"
+msgstr ""
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_sample_main__tags
+msgid "Tags"
+msgstr "العلامات"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_translate_titles__name
+msgid "Template"
+msgstr "القالب"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_result_history__analysis_id
+#: model:ir.model.fields,field_description:lims.field_lims_translate_titles__test_name
+#: model_terms:ir.ui.view,arch_db:lims.analysis_report_document
+#: model_terms:ir.ui.view,arch_db:lims.lims_analysis_search
+#: model_terms:ir.ui.view,arch_db:lims.lims_sample_preparation_search
+#: model_terms:ir.ui.view,arch_db:lims.medical_analysis_report_portal_content
+msgid "Test"
+msgstr "الاختبار"
+
+#. module: lims
+#: model:ir.model.constraint,message:lims.constraint_product_template_default_code
+msgid "Test Code number must be unique"
+msgstr "يجب أن يكون رقم كود الاختبار فريدًا"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_analysis__product_id
+#: model:ir.model.fields,field_description:lims.field_lims_sample_line__product_ids
+#: model:ir.model.fields,field_description:lims.field_lims_sample_preparation__product_ids
+msgid "Test/Parameter"
+msgstr "الاختبار/المعيار"
+
+#. module: lims
+#: model:ir.model,name:lims.model_lims_analysis
+#: model_terms:ir.ui.view,arch_db:lims.lims_view_form
+msgid "Tests"
+msgstr "الاختبارات"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_sample_main__analysis_count
+msgid "Tests Count"
+msgstr "عدد الاختبارات"
+
+#. module: lims
+#. odoo-python
+#: code:addons/lims/models/lims_analysis.py:0
+msgid "Tests to subcontract"
+msgstr "الاختبارات للتحويل الخارجي"
+
+#. module: lims
+#: model:ir.model.fields.selection,name:lims.selection__lims_result_range__type_range__txt
+#: model:ir.model.fields.selection,name:lims.selection__product_template__type_result__txt
+msgid "Text"
+msgstr "نص"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.lims_references_view_form
+msgid "Text references"
+msgstr "مراجع النص"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.lims_view_form
+msgid "The delay in sending report by Hours and minutes if exists"
+msgstr "التأخير في إرسال التقرير بالساعات والدقائق إن وجد"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.portal_my_reports
+msgid "There are currently no reports for your account."
+msgstr "لا توجد تقارير لحسابك حاليًا."
+
+#. module: lims
+#: model:ir.model.fields,help:lims.field_lims_sample_main__campaign_id
+#: model:ir.model.fields,help:lims.field_lims_sample_preparation__campaign_id
+msgid ""
+"This is a name that helps you keep track of your different campaign efforts,"
+" e.g. Fall_Drive, Christmas_Special"
+msgstr ""
+"هذا اسم يساعدك في تتبع جهود حملاتك المختلفة، على سبيل المثال Fall_Drive، "
+"Christmas_Special"
+
+#. module: lims
+#: model:ir.model.fields,help:lims.field_lims_sample_main__medium_id
+#: model:ir.model.fields,help:lims.field_lims_sample_preparation__medium_id
+msgid "This is the method of delivery, e.g. Postcard, Email, or Banner Ad"
+msgstr ""
+"هذه هي طريقة التسليم، على سبيل المثال بطاقة بريدية، بريد إلكتروني، أو إعلان "
+"بانر"
+
+#. module: lims
+#: model:ir.model.fields,help:lims.field_lims_sample_main__source_id
+#: model:ir.model.fields,help:lims.field_lims_sample_preparation__source_id
+msgid ""
+"This is the source of the link, e.g. Search Engine, another domain, or name "
+"of email list"
+msgstr ""
+"هذا هو مصدر الرابط، على سبيل المثال محرك البحث، نطاق آخر، أو اسم قائمة "
+"البريد الإلكتروني"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.res_config_settings_form_view_inherit_lims
+msgid ""
+"This template help you to select your titles report with the your propre "
+"translation"
+msgstr "يساعدك هذا القالب في اختيار عناوين تقريرك بترجمتك الخاصة"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_rang_factor__name
+msgid "Title"
+msgstr "العنوان"
+
+#. module: lims
+#: model:ir.model.fields.selection,name:lims.selection__lims_sample_main__state__tosend
+msgid "To Send"
+msgstr "للإرسال"
+
+#. module: lims
+#: model:ir.model.fields.selection,name:lims.selection__lims_sample_preparation__state__todo
+#: model_terms:ir.ui.view,arch_db:lims.lims_view_form
+msgid "To collect"
+msgstr "للجمع"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.lims_analysis_view_form
+msgid "To subcontract"
+msgstr "التحويل الى مختبر خارجي"
+
+#. module: lims
+#: model:ir.model.fields.selection,name:lims.selection__lims_analysis__state__todo
+#: model_terms:ir.ui.view,arch_db:lims.lims_analysis_search
+msgid "ToDo"
+msgstr "المهام"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.lims_analysis_view_form
+msgid "Todo In-house"
+msgstr "مهام داخلية"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.portal_my_reports
+msgid "Total"
+msgstr "الإجمالي"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_sample_main__tracking_number
+msgid "Tracking N"
+msgstr "رقم التتبع"
+
+#. module: lims
+#: model:ir.actions.act_window,name:lims.lims_translate_template_action
+#: model:ir.ui.menu,name:lims.menu_lims_translate_titles
+msgid "Translate Template"
+msgstr "ترجمة القالب"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.res_config_settings_form_view_inherit_lims
+msgid "Translate Titles in the report results"
+msgstr "ترجمة العناوين في نتائج التقرير"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_sample_main__translation_template
+#: model:ir.model.fields,field_description:lims.field_res_company__translation_template
+#: model:ir.model.fields,field_description:lims.field_res_config_settings__translation_template
+msgid "Translation Template"
+msgstr "قالب الترجمة"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_sample_type__name
+#: model_terms:ir.ui.view,arch_db:lims.lims_sample_preparation_search
+msgid "Type"
+msgstr "النوع"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.label_report_all_document
+#: model_terms:ir.ui.view,arch_db:lims.label_report_document
+msgid "Type :"
+msgstr "النوع :"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_result_range__type_range
+msgid "Type Range"
+msgstr "نطاق النوع"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_product_product__type_result
+#: model:ir.model.fields,field_description:lims.field_product_template__type_result
+msgid "Type Result"
+msgstr "نوع النتيجة"
+
+#. module: lims
+#: model:ir.model.fields,help:lims.field_lims_analysis__activity_exception_decoration
+#: model:ir.model.fields,help:lims.field_lims_sample_main__activity_exception_decoration
+#: model:ir.model.fields,help:lims.field_lims_sample_preparation__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع النشاط الاستثنائي المسجل."
+
+#. module: lims
+#: model:ir.model.fields.selection,name:lims.selection__lims_sample_main__logistic_company__ups
+msgid "UPS"
+msgstr ""
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_analysis__uom_id
+#: model:ir.model.fields,field_description:lims.field_lims_method__default_uom
+#: model:ir.model.fields,field_description:lims.field_lims_result_range__uom_id
+#: model:ir.model.fields,field_description:lims.field_lims_sample_line__uom_id
+#: model:ir.model.fields,field_description:lims.field_lims_sample_preparation__uom_id
+#: model:ir.model.fields,field_description:lims.field_lims_sample_type__uom_id
+#: model:ir.model.fields,field_description:lims.field_lims_sub_sample_preparation__uom_id
+msgid "Uom"
+msgstr "وحدة القياس"
+
+#. module: lims
+#: model:ir.model.fields.selection,name:lims.selection__lims_sample_main__priority__urgent
+msgid "Urgent"
+msgstr "عاجل"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_method__is_default
+msgid "Use by default"
+msgstr "استخدام افتراضي"
+
+#. module: lims
+#: model:ir.model,name:lims.model_res_users
+msgid "User"
+msgstr "المستخدم"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.lims_view_form
+msgid "Validate"
+msgstr "تحقق"
+
+#. module: lims
+#: model:ir.model.fields.selection,name:lims.selection__lims_analysis__state__valid
+#: model_terms:ir.ui.view,arch_db:lims.lims_analysis_search
+msgid "Validated"
+msgstr "تم التحقق"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_analysis__validated_by
+#: model_terms:ir.ui.view,arch_db:lims.lims_analysis_view_form
+msgid "Validated by"
+msgstr "تم التحقق بواسطة"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_analysis__validated_on
+msgid "Validation Date"
+msgstr "تاريخ التحقق"
+
+#. module: lims
+#: model:res.groups,name:lims.group_lims_viewer
+msgid "Viewer"
+msgstr "عارض"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.lims_analysis_view_form
+msgid "WIP"
+msgstr "قيد العمل"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_analysis__website_message_ids
+#: model:ir.model.fields,field_description:lims.field_lims_sample_main__website_message_ids
+#: model:ir.model.fields,field_description:lims.field_lims_sample_preparation__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع"
+
+#. module: lims
+#: model:ir.model.fields,help:lims.field_lims_analysis__website_message_ids
+#: model:ir.model.fields,help:lims.field_lims_sample_main__website_message_ids
+#: model:ir.model.fields,help:lims.field_lims_sample_preparation__website_message_ids
+msgid "Website communication history"
+msgstr "سجل اتصالات الموقع"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_sample_line__check
+#: model:ir.model.fields,field_description:lims.field_lims_sample_preparation__check
+msgid "Well recieved"
+msgstr "تم الاستلام بشكل جيد"
+
+#. module: lims
+#. odoo-python
+#: code:addons/lims/models/lims.py:0
+msgid ""
+"You can not delete a confirmed analysis folder. You must cancel it first."
+msgstr "لا يمكنك حذف مجلد تحليل مؤكد. يجب إلغاؤه أولاً."
+
+#. module: lims
+#. odoo-python
+#: code:addons/lims/models/lims_analysis.py:0
+msgid ""
+"You can not delete a confirmed analysis test. You must first cancel it."
+msgstr "لا يمكنك حذف اختبار تحليل مؤكد. يجب إلغاؤه أولاً."
+
+#. module: lims
+#. odoo-python
+#: code:addons/lims/models/lims_analysis.py:0
+msgid "You must select the responsible for this analysis"
+msgstr "يجب عليك تحديد المسؤول عن هذا التحليل"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_sample_tube__active
+msgid "active"
+msgstr "نشط"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_add_reason_wizard__analysis_id
+msgid "analysis"
+msgstr "تحليل"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_analysis__company_id
+#: model:ir.model.fields,field_description:lims.field_lims_sample_main__company_id
+#: model:ir.model.fields,field_description:lims.field_lims_sample_preparation__company_id
+msgid "company"
+msgstr "الشركة"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_res_company__logo_iso
+#: model:ir.model.fields,field_description:lims.field_res_config_settings__logo_iso
+msgid "logo ISO"
+msgstr "شعار ISO"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_res_company__logo_quality
+#: model:ir.model.fields,field_description:lims.field_res_config_settings__logo_quality
+msgid "logo Quality"
+msgstr "شعار الجودة"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_res_company__logo_gov
+msgid "logo gov"
+msgstr "شعار الحكومة"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_result_range__text_rang
+msgid "range...."
+msgstr "النطاق...."
+
+#. module: lims
+#: model:ir.model.fields.selection,name:lims.selection__product_template__type_result__se
+msgid "selection"
+msgstr "اختيار"
+
+#. module: lims
+#: model:ir.model.fields,field_description:lims.field_lims_result_range__status
+msgid "state"
+msgstr "الحالة"
+
+#. module: lims
+#: model:res.groups,comment:lims.group_lims_manager
+msgid "the user will have access to all data in the lims application."
+msgstr ""
+"سيتمكن المستخدم من الوصول إلى جميع البيانات في تطبيق نظام إدارة المختبرات."
+
+#. module: lims
+#: model:res.groups,comment:lims.group_lims_responsible
+msgid ""
+"the user will have access to all data of own department in the lims "
+"application."
+msgstr ""
+"سيتمكن المستخدم من الوصول إلى جميع بيانات قسمه في تطبيق نظام إدارة "
+"المختبرات."
+
+#. module: lims
+#: model:res.groups,comment:lims.group_lims_sample
+msgid "the user will have access to data in the lims application."
+msgstr "سيتمكن المستخدم من الوصول إلى البيانات في تطبيق نظام إدارة المختبرات."
+
+#. module: lims
+#: model:res.groups,comment:lims.group_lims_analysis
+msgid "the user will have access to own tests in the lims application."
+msgstr ""
+"سيتمكن المستخدم من الوصول إلى اختباراته في تطبيق نظام إدارة المختبرات."
+
+#. module: lims
+#: model:res.groups,comment:lims.group_lims_consultant
+#: model:res.groups,comment:lims.group_lims_reporting
+#: model:res.groups,comment:lims.group_lims_viewer
+msgid "the user will have access to report the results."
+msgstr "سيتمكن المستخدم من الوصول للإبلاغ عن النتائج."
+
+#. module: lims
+#: model:res.groups,comment:lims.group_lims_portal_consultant
+msgid "the user will have access to sign the analytical reports."
+msgstr "سيتمكن المستخدم من الوصول لتوقيع التقارير التحليلية."
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.medical_analysis_report_portal_content
+msgid ""
+"الاسم\n"
+"                                                    الكامل"
+msgstr ""
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.medical_analysis_report_portal_content
+msgid "الجنسية"
+msgstr ""
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.medical_analysis_report_portal_content
+msgid "العمر"
+msgstr ""
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.medical_analysis_report_portal_content
+msgid "تقرير نتائج التحاليل الطبية"
+msgstr ""
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.medical_analysis_report_portal_content
+msgid ""
+"رقم\n"
+"                                                    الملف الطبي"
+msgstr ""
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.medical_analysis_report_portal_content
+msgid ""
+"رقم\n"
+"                                                    الهوية/الاقامة"
+msgstr ""
+"رقم\n"
+"                                                    الهوية/الإقامة"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.medical_analysis_report_portal_content
+msgid ""
+"عزيزنا العميل نتائج التحاليل الطبية الخاصة بك قيد الفحص و المراجعة ,\n"
+"                                                للمزيد من الاستفسار يمكنكم مراسلتنا على الواتساب"
+msgstr ""
+"عزيزنا العميل، نتائج التحاليل الطبية الخاصة بك قيد الفحص والمراجعة،\n"
+"                                                للمزيد من الاستفسارات يمكنكم مراسلتنا على الواتساب"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.medical_analysis_report_portal_content
+msgid ""
+"فصيلة\n"
+"                                                    الدم"
+msgstr ""
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.medical_analysis_report_portal_content
+msgid ""
+"قم بمسح الباركود للتحقق من\n"
+"                                                التقرير إلكترونيا"
+msgstr ""
+"قم بمسح الباركود للتحقق من\n"
+"                                                التقرير إلكترونيًا"
+
+#. module: lims
+#: model_terms:ir.ui.view,arch_db:lims.analysis_report_document
+msgid "مسودة تقرير يمنع اعتمادها بصفة رسمية"
+msgstr ""
+
+#. module: lims
+#. odoo-python
+#: code:addons/lims/models/lims.py:0
+msgid "Please add sample line first"
+msgstr "يرجى إدخال بيانات العينة أولا !"
+
+#. module: lims
+#. odoo-python
+#: code:addons/lims/models/lims_analysis.py:0
+msgid "You cannot confirm this analysis because the result is 'Detected', Please add pesticide components before confirming."
+msgstr "لا يمكنك تأكيد هذا التحليل لأن النتيجة هي تم الاكتشاف. يرجى إضافة مكونات المبيد قبل التأكيد."
+
+#. module: lims
+#. odoo-python
+#: code:addons/lims/models/lims_analysis.py:0
+msgid "You have not access to rework a test\nPlease contact your administrator"
+msgstr "ليس لديك صلاحية لإعادة العمل على هذا الاختبار.\nيرجى التواصل مع مدير النظام."

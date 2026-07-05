@@ -1,0 +1,10 @@
+<odoo>
+    <data>
+        <template id="medical_analysis_report_inherit" inherit_id="lims.analysis_report_document">
+
+            <!--        <xpath expr="//tr[@name='th_table']" position="replace">-->
+            <!--        </xpath>-->
+        </template>
+
+    </data>
+</odoo>

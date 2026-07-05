@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+  <template id="my_own_layout_header">
+        <div class="header" style="padding:10px 0; page-break-inside: avoid;text-align:right;">
+                <!-- Left Logo -->
+                    <t t-if="doc.company_id.logo">
+                        <img t-att-src="image_data_uri(doc.company_id.logo)" style="max-height: 60px; object-fit: contain;" alt="Company Logo"/>
+                    </t>
+            </div>
+    </template>
+     <template id="my_report_footer">
+        <div class="footer" style="width:100%;">
+            <span style="font-size:15px; text-align:center; display:block; direction: rtl;">
+                الصفحة <span class="page"/> من <span class="topage"/>
+            </span>
+        </div>
+    </template>
+
+
+        <!--  lims_report_pdf-->
+<!--   <template id="lims_report_pdf">-->
+<!--            <t t-call="web.html_container">-->
+<!--            <t t-call="web.basic_layout">-->
+<!--                <t t-foreach="docs" t-as="doc">-->
+<!--                <t t-set="doc" t-value="doc.with_context(lang=doc.partner_id.lang)"/>-->
+<!--                <t t-call="lims_report_templates.my_own_layout_header"/>-->
+
+<!--                <br/>-->
+<!--                <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&amp;family=Noto+Naskh+Arabic:wght@400;600&amp;family=IBM+Plex+Sans+Arabic:wght@400;600;700&amp;family=Amiri&amp;display=swap" rel="stylesheet"/>-->
+<!--          <t t-foreach="doc.analysis_ids.filtered(lambda a: a.state == 'valid').sorted(key=lambda x: (x.sample_line_id.id, x.pack_selected.id, x.method_id.id))" t-as="a">-->
+<!--          <div class="page" style="font-family: 'Cairo', 'Noto Naskh Arabic', 'Arial', sans-serif;">-->
+<!--        <style>.hdr-bg th {background-color:#163a5f ; color: #ffffff}</style>-->
+<!--                <h3 class="text-center mb-4">-->
+<!--                    تقرير نتيجة تحليل عينة-->
+<!--                    <br/><span style="font-size:14px;">Form: V0.1-2025</span>-->
+<!--                </h3>-->
+
+<!--                &lt;!&ndash; General Info &ndash;&gt;-->
+<!--                <table class="table table-bordered small">-->
+<!--                    <tr class="bg-light hdr-bg">-->
+<!--                        <th>مختبر</th>-->
+<!--                        <th>منطقة</th>-->
+<!--                        <th>حالة نتيجة التقرير</th>-->
+<!--                        <th>نسبة الرطوبة %</th>-->
+<!--                        <th>درجة الحرارة °C</th>-->
+<!--                    </tr>-->
+<!--                    <tr>-->
+<!--                        <td>تحليل متبقيات المبيدات</td>-->
+<!--                        <td t-esc="doc.company_id.state_id.name"/>-->
+<!--                        <td><t t-if="doc.state == 'valid'">نهائي</t><t t-else="">مسودة</t></td>-->
+<!--                        <td/>-->
+<!--                        <td/>-->
+<!--                    </tr>-->
+<!--                </table>-->
+
+<!--                &lt;!&ndash; Sample Info &ndash;&gt;-->
+<!--                <h5 class="mt-4 text-center">بيانات العينة</h5>-->
+<!--                <table class="table table-bordered small">-->
+<!--                    <tr class="hdr-bg">-->
+<!--                        <th>الجهة المرسلة</th>-->
+<!--                        <td t-esc="doc.partner_id.name"/>-->
+<!--                        <th>الوزن الكلي</th>-->
+<!--                        <td><span t-field="a.sample_line_id.weight"/></td>-->
+<!--                    </tr>-->
+<!--                    <tr class="hdr-bg">-->
+<!--                        <th>تاريخ الاستلام</th>-->
+<!--                        <td><span t-field="a.sample_line_id.sample_date"/></td>-->
+<!--                        <th>نوع الفحص</th>-->
+<!--                        <td> متبقيات المبيدات</td>-->
+<!--                    </tr>-->
+<!--                    <tr class="hdr-bg">-->
+<!--                        <th>رقم السجل</th>-->
+<!--                        <td t-esc="doc.partner_id.ar_number"/>-->
+<!--                        <th>رقم التواصل</th>-->
+<!--                        <td><span dir="ltr" t-field="doc.partner_id.phone"/></td>-->
+<!--                    </tr>-->
+<!--                </table>-->
+
+<!--                &lt;!&ndash; Analysis Result Summary &ndash;&gt;-->
+<!--                <h5 class="mt-4 text-center">نتيجة التحليل</h5>-->
+<!--                <table class="table table-bordered small text-center" style="text-align:center;">-->
+<!--                    <thead class="bg-light" style="text-align:center;">-->
+<!--                        <tr class="hdr-bg">-->
+<!--                            <th>كود العينة</th>-->
+<!--                            <th>الصنف</th>-->
+<!--                            <th>اسم العينة</th>-->
+<!--                            <th>نتيجة التحليل</th>-->
+<!--                            <th>المواصفات القياسية</th>-->
+<!--                        </tr>-->
+<!--                    </thead>-->
+<!--                    <tbody>-->
+<!--                        <tr>-->
+<!--                            <td><span t-field="a.sample_line_id"/></td>-->
+<!--                            <td><span t-field="a.sample_line_id.sample_category_id"/></td>-->
+<!--                            <td><span t-field="a.sample_line_id.sample"/><t t-if="a.sample_line_id.sample_name">- -->
+<!--                                <span t-field="a.sample_line_id.sample_name"/></t></td>-->
+<!--                            <td>-->
+<!--                                <t t-if="a.sample_status == 'comply'"><span t-field="a.sample_status" style="color : green;" t-field-options="{'widget': 'selection'}"/></t>-->
+<!--                                <t t-if="a.sample_status == 'not_comply'"><span t-field="a.sample_status" style="color : red;" t-field-options="{'widget': 'selection'}"/></t>-->
+<!--                            </td>-->
+<!--                            <td><span t-esc="a.component_ids.mapped('regulation_id').mapped('name')[0] or 'SFDA'"/></td>-->
+<!--                        </tr>-->
+<!--                    </tbody>-->
+<!--                </table>-->
+
+<!--                &lt;!&ndash; Non-Conformance Details &ndash;&gt;-->
+<!--                <h5 class="mt-4 text-center">بيان عدم تطابق العينة للمواصفات القياسية</h5>-->
+<!--                <table class="table table-bordered small text-center" style="text-align:center;">-->
+<!--                    <thead class="bg-light">-->
+<!--                        <tr class="hdr-bg">-->
+<!--                            <th>كود العينة</th>-->
+<!--                            <th>اسم المبيد</th>-->
+<!--                            <th>التركيز (mg/kg)</th>-->
+<!--                            <th>Dilution factor</th>-->
+<!--                            <th><span dir="ltr">MRL  (Mg/Kg)</span></th>-->
+<!--                            <th>QC Recovery</th>-->
+<!--                            <th>LOD</th>-->
+<!--                            <th>LOQ</th>-->
+<!--                            <th><span dir="ltr">Uncertainty  %</span></th>-->
+<!--                        </tr>-->
+<!--                    </thead>-->
+<!--                    <tbody>-->
+<!--                        <t t-foreach="a.component_ids" t-as="comp">-->
+<!--                        <tr>-->
+<!--                            <td class="text-nowrap"><span t-field="a.sample_line_id"/></td>-->
+<!--                            <td class="text-nowrap"><span t-field="comp.product_id"/></td>-->
+<!--                            <td>-->
+<!--                                <span t-if="a.sample_status == 'not_comply'" style="color:red;font-style:bold;" t-esc="('%.2f' % comp.result_num) if comp.result_num is not None else ''"/>-->
+<!--                                <span t-else="" t-esc="('%.2f' % comp.result_num) if comp.result_num is not None else ''"/>-->
+<!--                            </td>-->
+<!--                            <td><span t-field="comp.dilution_factor"/></td>-->
+<!--                            <td><span t-field="comp.mrl"/></td>-->
+<!--                            <td><span t-field="comp.qc_recovery"/></td>-->
+<!--                            <td><span t-field="comp.lod"/></td>-->
+<!--                            <td><span t-field="comp.loq"/></td>-->
+<!--                            <td><span t-field="comp.uncertainty"/></td>-->
+<!--                        </tr>-->
+<!--                        </t>-->
+<!--                    </tbody>-->
+<!--                </table>-->
+
+<!--                &lt;!&ndash; Notes &ndash;&gt;-->
+<!--                <div class="mt-3 small">-->
+<!--                    <p>-->
+<!--                        <strong>ملاحظة:</strong>-->
+<!--                        نتيجة العينة تمثل نفسها التي تم إرسالها بدون أدنى مسؤولية على المختبر-->
+<!--                        بالنسبة لمطابقة مصدر العينة وطريقة جمع العينة.-->
+<!--                    </p>-->
+<!--                    <p style="text-align: left; direction: ltr;">* MRL: Maximum Residue Limit</p>-->
+<!--                    <p style="text-align: left; direction: ltr;">• AOAC Official Method 2007.01</p>-->
+<!--                    <p>-->
+<!--                        نتيجة الفحص: العينات مطابقة / غير مطابقة-->
+<!--                        لمواصفة الهيئة العامة للغذاء والدواء السعودية-->
+<!--                        ومنظمة الكودكس والاتحاد الأوروبي و طبقاً للمبيدات-->
+<!--                        المعرفة على الجهاز.-->
+<!--                    </p>-->
+<!--                </div>-->
+
+<!--                &lt;!&ndash; Signatures &ndash;&gt;-->
+<!--                <table class="table table-borderless text-center">-->
+<!--                    <tr>-->
+<!--                        <td>محلل المختبر</td>-->
+<!--                        <td>مراجع فني</td>-->
+<!--                        <td>مدير المختبر</td>-->
+<!--                    </tr>-->
+<!--                </table>-->
+<!--          </div>-->
+<!--          </t>-->
+<!--                </t>-->
+<!--            </t>-->
+<!--        </t>-->
+<!--        </template>-->
+
+
+    <template id="report_analysis">
+        <t t-call="web.html_container">
+            <t t-call="web.basic_layout">
+                <t t-foreach="docs" t-as="doc">
+                <t t-set="doc" t-value="doc.with_context(lang=doc.partner_id.lang)"/>
+                <t t-call="lims_report_templates.my_own_layout_header"/>
+
+                <br/>
+                <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&amp;family=Noto+Naskh+Arabic:wght@400;600&amp;family=IBM+Plex+Sans+Arabic:wght@400;600;700&amp;family=Amiri&amp;display=swap" rel="stylesheet"/>
+          <t t-foreach="doc.analysis_ids.filtered(lambda a: a.state == 'valid').sorted(key=lambda x: (x.sample_line_id.id, x.pack_selected.id, x.method_id.id))" t-as="a">
+          <div class="page" style="font-family: 'Cairo', 'Noto Naskh Arabic', 'Arial', sans-serif; break-after: page; page-break-inside: avoid; break-inside: avoid;}">
+        <style>.hdr-bg th {background-color:#163a5f ; color: #ffffff}</style>
+                <h3 class="text-center mb-4">
+                    تقرير نتيجة تحليل عينة
+                    <br/><span style="font-size:14px;">F 7.8-001,V-01</span>
+                </h3>
+
+                <!-- General Info -->
+              <div style="width:100%; overflow: hidden; margin-bottom: 10px;">
+
+                    <div style="float:left; width:50%; text-align:left;">
+                        <strong>تاريخ التقرير : </strong>
+                        <span t-esc="doc.date.strftime('%d/%m/%Y')"/>
+                    </div>
+
+                    <div style="float:right; width:50%; text-align:right;">
+                        <strong>رقم التقرير : </strong>
+                        <span t-field="doc.name"/>
+                    </div>
+
+                </div>
+                <div style="clear:both;"></div>
+                <table class="table table-bordered small">
+                    <tr class="bg-light hdr-bg">
+                        <th>مختبر</th>
+                        <th>منطقة</th>
+                        <th>حالة نتيجة التقرير</th>
+                        <th>نسبة الرطوبة %</th>
+                        <th>درجة الحرارة °C</th>
+                    </tr>
+                    <tr>
+                        <td>تحليل متبقيات المبيدات</td>
+                        <td t-esc="doc.company_id.state_id.name"/>
+                        <td><t t-if="doc.state == 'valid'">نهائي</t><t t-else="">مسودة</t></td>
+                        <td><span t-esc="(a.component_ids[:1].rh) if a.component_ids else ''"/></td>
+                        <td><span t-esc="(a.component_ids[:1].temp) if a.component_ids else ''"/></td>
+                    </tr>
+                </table>
+
+                <!-- Sample Info -->
+                <h5 class="mt-4 text-center">بيانات العينة</h5>
+                <table class="table table-bordered small">
+                    <tr class="hdr-bg">
+                        <th>الجهة المرسلة</th>
+                        <td t-esc="doc.partner_id.name"/>
+                        <th>الوزن الكلي</th>
+                        <td><span t-field="a.sample_line_id.weight"/></td>
+                    </tr>
+                    <tr class="hdr-bg">
+                        <th>تاريخ الاستلام</th>
+                        <td><span t-field="a.sample_line_id.sample_date"/></td>
+                        <th>نوع الفحص</th>
+                        <td> متبقيات المبيدات</td>
+                    </tr>
+                    <tr class="hdr-bg">
+                        <th>رقم السجل</th>
+                        <td t-esc="doc.partner_id.ar_number"/>
+                        <th>رقم التواصل</th>
+                        <td><span dir="ltr" t-field="doc.partner_id.phone"/></td>
+                    </tr>
+                </table>
+
+                <!-- Analysis Result Summary -->
+                <h5 class="mt-4 text-center">نتيجة التحليل</h5>
+                <table class="table table-bordered small text-center" style="text-align:center;">
+                    <thead class="bg-light" style="text-align:center;">
+                        <tr class="hdr-bg">
+                            <th>كود العينة</th>
+                            <th>الصنف</th>
+                            <th>اسم العينة</th>
+                            <th>نتيجة التحليل</th>
+                            <th>المواصفات القياسية</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span t-field="a.sample_line_id"/></td>
+                            <td><span t-field="a.sample_line_id.sample_category_id"/></td>
+                            <td><span t-field="a.sample_line_id.sample"/><t t-if="a.sample_line_id.sample_name">-
+                                <span t-field="a.sample_line_id.sample_name"/></t></td>
+                            <td>
+                                <t t-if="a.sample_status == 'comply'"><span t-field="a.sample_status"
+                                                                          style="color : green;" t-field-options="{'widget': 'selection'}"/></t>
+                                <t t-if="a.sample_status == 'not_comply'"><span t-field="a.sample_status"
+                                                                             style="color : red;" t-field-options="{'widget': 'selection'}"/></t>
+                            </td>
+                            <td><span t-esc="','.join(a.component_ids.mapped('regulation_id').mapped('name') or ['ND'])"/>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h5 class="mt-4 text-center">بيان تطابق/عدم تطابق العينة للمواصفات القياسية</h5>
+
+                <table class="table table-bordered small text-center" style="text-align:center;">
+                  <thead class="bg-light">
+                    <tr class="hdr-bg">
+                      <th>كود العينة</th>
+                      <th>اسم المبيد</th>
+                      <th>التركيز (mg/kg)</th>
+                      <th>Dilution factor</th>
+                      <th><span dir="ltr">MRL&#160;&#160;(Mg/Kg)</span></th>
+                      <th>QC Recovery</th>
+                      <th>LOD</th>
+                      <th>LOQ</th>
+                      <th><span dir="ltr">Uncertainty&#160;&#160;%</span></th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    <t t-if="a.component_ids">
+                      <t t-foreach="a.component_ids" t-as="comp">
+                        <tr>
+                          <td class="text-nowrap"><span t-field="a.sample_line_id"/></td>
+                          <td class="text-nowrap"><span t-field="comp.product_id"/></td>
+                          <td>
+                            <span t-if="comp.component_judgment == 'above_mrl'" style="color:red;font-style:bold;"
+                              t-esc="('%.3f' % comp.result_num) if comp.result_num is not None else ''"/>
+                            <span t-else=""
+                              t-esc="('%.3f' % comp.result_num) if comp.result_num is not None else ''"/>
+                          </td>
+                          <td><span t-field="comp.dilution_factor"/></td>
+                          <td><span t-field="comp.mrl"/></td>
+                          <td><span t-field="comp.qc_recovery"/></td>
+                          <td><span t-field="comp.lod"/></td>
+                          <td><span t-field="comp.loq"/></td>
+                          <td><span t-field="comp.uncertainty"/></td>
+                        </tr>
+                      </t>
+                    </t>
+                    <t t-else="">
+                      <tr>
+                        <td class="text-nowrap"><span t-field="a.sample_line_id"/></td>
+                        <td>ND</td>
+                        <td>ND</td>
+                        <td>ND</td>
+                        <td>ND</td>
+                        <td>ND</td>
+                        <td>ND</td>
+                        <td>ND</td>
+                        <td>ND</td>
+                      </tr>
+                    </t>
+                  </tbody>
+                </table>
+                          <style>
+                      .decision-rules p {
+                      line-height: 1.25;
+                      margin-bottom: 4px;
+                    } </style>
+                <!-- Notes -->
+                <div class="mt-3 small">
+
+                    <p>
+                        <strong>ملاحظة:</strong>
+                        نتيجة العينة تمثل نفسها التي تم إرسالها بدون أدنى مسؤولية على المختبر
+                        بالنسبة لمطابقة مصدر العينة وطريقة جمع العينة.
+                    </p>
+                    <div class="decision-rules">
+                        <p>تم تطبيق قاعدة القرار التالية لإتخاد قرار المطابقة من عدمه :</p>
+                        <p>مطابق: النتائج +/- عدم اليقين الموسع ضمن الحدود / المواصفات.</p>
+                        <p>مطابق : النتائج ضمن الحدود / المواصفات و لكنها تتداخل عند أخد عدم اليقين الموسع في الاعتبار.</p>
+                        <p>غير مطابق : +/- عدم اليقين الموسع تتجاوز الحدود / المواصفات.</p>
+                        <p>غير مطابق : تتجاوز النتائج الحدود / المواصفات و لكنها تتداخل عند أخد عدم اليقين الموسع في الاعتبار.</p>
+                        <p>يُحدَّد مستوى المخاطر على أنه أقل من 50% من احتمال القبول الخاطئ (PFA – Probability of False Accept).</p>
+                    </div>
+                    <p style="text-align: left; direction: ltr;">* MRL: Maximum Residue Limit</p>
+                    <p style="text-align: left; direction: ltr;">• AOAC Official Method 2007.01</p>
+                    <p style="text-align: left; direction: ltr;">• EN - 15662-2018</p>
+                </div>
+
+                <!-- Signatures -->
+                <table class="table table-borderless text-center">
+                    <tr>
+                        <td>محلل المختبر</td>
+                        <td>مراجع فني</td>
+                        <td>المدير الفني </td>
+                    </tr>
+                </table>
+              <br/><br/>
+              <p> مرفق: قائمة المبيدات </p>
+
+          </div>
+          </t>
+                </t>
+                <t t-call="lims_report_templates.my_report_footer"/>
+            </t>
+        </t>
+    </template>
+
+        <record id="lims_portal_report_pdf" model="ir.actions.report">
+            <field name="name">Analysis Report PDF</field>
+            <field name="model">lims.report</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">lims_report_templates.report_analysis</field>
+            <field name="report_file">lims_report_templates.report_analysis</field>
+            <field name="print_report_name">'Report_%s_%s'% (object.partner_id.name or '',str(object.create_date))
+            </field>
+            <field name="binding_type">report</field>
+            <field name="paperformat_id" ref="lims.paperformat_medical_lab_report"/>
+        </record>
+
+
+
+    </data>
+</odoo>

@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--******Stylesheet*****-->
+
+        <!--***********************-->
+        <!-- Arabic Template-->
+
+        <template id="analysis_report_arabic">
+            <t t-call="web.basic_layout" t-lang="o.lang">
+                <t t-set="o" t-value="o.with_context(lang=o.lang)"/>
+                <t t-if="o.lang and o.lang=='ar_001'" t-set="direction" t-value="'rtl'"/>
+                <t t-if="o.lang and o.lang=='en_US'" t-set="direction" t-value="'ltr'"/>
+                <div dir="rtl" class="page">
+                    <div class="content">
+                        <div class="title">
+                            <div class="text-center">
+                                <h2>Department of
+                                    <span t-if="o.department_id" t-field="o.department_id.name"/>
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="display: flex;
+  flex-wrap: wrap;line-height: 1.5;">
+                        <div style="flex: 0 0 50%;">
+                            <strong>MRN:</strong>
+                            <span t-field="o.date"/>
+                            <br/>
+                            <strong>Customer Name:</strong>
+                            <span t-field="o.date"/>
+                            <br/>
+                            <strong>Family Name:</strong>
+                            <span t-field="o.date"/>
+                            <br/>
+                            <strong>Age/Sex:</strong>
+                            <span t-field="o.date"/>
+                            <br/>
+                            <strong>Status:</strong>
+                            <span t-field="o.date"/>
+                            <br/>
+                            <strong>Specimen:</strong>
+                            <span t-field="o.date"/>
+
+
+                        </div>
+
+                        <div style="flex: 0 0 50%;">
+                            <strong>Order Number:</strong>
+                            <span t-field="o.date"/>
+                            <br/>
+                            <strong>Order Priority:</strong>
+                            <span t-field="o.date"/>
+                            <br/>
+                            <strong>Issued from:</strong>
+                            <span t-field="o.date"/>
+                            <br/>
+                            <strong>Order Date:</strong>
+                            <span t-field="o.date"/>
+                            <br/>
+                            <strong>Collection Date/Time:</strong>
+                            <span t-field="o.date"/>
+
+                        </div>
+                    </div>
+
+                    <div style="margin-top:20px;">
+                        <span t-if="o.lang and o.lang=='ar_001'" t-raw="o.ar_text"/>
+                    </div>
+                    <div style="display: flex;
+  flex-wrap: wrap;line-height: 1.5;text-align:center;">
+                        <div style="flex: 0 0 50%;">
+                            <div>توقيع الاستشاري</div>
+                            <div class="logo" t-if="o.main_id and o.main_id.signature_consult">
+                                <img t-att-src="image_data_uri(o.main_id.signature_consult)" style="max-height: 70px;"
+                                     alt="Logo"/>
+                            </div>
+                        </div>
+                        <div style="flex: 0 0 50%;">
+                            <div>توقيع مدير المختبر:</div>
+                            <div class="logo" t-if="o.main_id and o.main_id.signature_director">
+                                <img t-att-src="image_data_uri(o.main_id.signature_director)" style="max-height: 70px;"
+                                     alt="Logo"/>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </t>
+
+        </template>
+
+
+        <!-- English Template-->
+        <template id="analysis_report_english">
+
+
+            <t t-call="web.basic_layout" t-lang="o.lang">
+                <t t-set="o" t-value="o.with_context(lang=o.lang)"/>
+                <t t-if="o.lang and o.lang=='ar_001'" t-set="direction" t-value="'rtl'"/>
+                <t t-if="o.lang and o.lang=='en_US'" t-set="direction" t-value="'ltr'"/>
+                <div dir="ltr" class="page">
+
+
+                    <div class="content">
+                        <div class="title">
+                            <div class="text-center">
+                                <h2>Department of
+                                    <span t-if="o.department_id" t-field="o.department_id.name"/>
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="display: flex;
+  flex-wrap: wrap;line-height: 1.5;">
+                        <div style="flex: 0 0 50%;">
+                            <strong>MRN:</strong>
+                            <span t-field="o.date"/>
+                            <br/>
+                            <strong>Customer Name:</strong>
+                            <span t-field="o.date"/>
+                            <br/>
+                            <strong>Family Name:</strong>
+                            <span t-field="o.date"/>
+                            <br/>
+                            <strong>Age/Sex:</strong>
+                            <span t-field="o.date"/>
+                            <br/>
+                            <strong>Status:</strong>
+                            <span t-field="o.date"/>
+                            <br/>
+                            <strong>Specimen:</strong>
+                            <span t-field="o.date"/>
+
+
+                        </div>
+
+                        <div style="flex: 0 0 50%;">
+                            <strong>Order Number:</strong>
+                            <span t-field="o.date"/>
+                            <br/>
+                            <strong>Order Priority:</strong>
+                            <span t-field="o.date"/>
+                            <br/>
+                            <strong>Issued from:</strong>
+                            <span t-field="o.date"/>
+                            <br/>
+                            <strong>Order Date:</strong>
+                            <span t-field="o.date"/>
+                            <br/>
+                            <strong>Collection Date/Time:</strong>
+                            <span t-field="o.date"/>
+
+                        </div>
+                    </div>
+
+                    <div style="margin-top:20px;">
+
+                        <span t-if="o.lang and o.lang=='en_US'" t-raw="o.eng_text"/>
+
+                    </div>
+                    <div style="display: flex;
+  flex-wrap: wrap;line-height: 1.5;text-align:center;">
+                        <div style="flex: 0 0 50%;">
+                            <div>Consultant signature:</div>
+                            <div class="logo" t-if="o.main_id and o.main_id.signature_consult">
+                                <img t-att-src="image_data_uri(o.main_id.signature_consult)" style="max-height: 70px;"
+                                     alt="Logo"/>
+                            </div>
+                        </div>
+                        <div style="flex: 0 0 50%;">
+                            <div>Lab Manger Signature:</div>
+                            <div class="logo" t-if="o.main_id and o.main_id.signature_director">
+                                <img t-att-src="image_data_uri(o.main_id.signature_director)" style="max-height: 70px;"
+                                     alt="Logo"/>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </t>
+
+        </template>
+        <!-- Call template-->
+        <template id="analysis_report">
+
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+
+
+                    <t t-if="o.lang and o.lang=='ar_001'" t-call="lims_report_templates.analysis_report_arabic"
+                       t-lang="o.lang"/>
+                    <t t-if="o.lang and o.lang=='en_US'" t-call="lims_report_templates.analysis_report_english"
+                       t-lang="o.lang"/>
+
+
+                </t>
+            </t>
+        </template>
+
+
+        <!--        <report-->
+        <!--                id="medical_lab_analysis_report"-->
+        <!--                model="lims.analysis"-->
+        <!--                report_type="qweb-pdf"-->
+        <!--                string="Analysis Report"-->
+        <!--                name="lims_report_templates.analysis_report"-->
+        <!--                file="lims_report_templates.analysis_report"-->
+        <!--                print_report_name="'Report_%s_%s_%s'% (object.partner_id.name or '',str(object.create_date),object.lang)"-->
+
+        <!--        />-->
+        <record id="medical_lab_analysis_report" model="ir.actions.report">
+            <field name="name">Analysis Report</field>
+            <field name="model">lims.analysis</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">lims_report_templates.analysis_report</field>
+            <field name="report_file">lims_report_templates.analysis_report</field>
+            <field name="print_report_name">'Report_%s_%s_%s'% (object.partner_id.name or
+                '',str(object.create_date),object.lang)
+            </field>
+            <field name="binding_type">report</field>
+        </record>
+
+    </data>
+</odoo>

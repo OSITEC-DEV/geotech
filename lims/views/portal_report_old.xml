@@ -1,0 +1,390 @@
+<odoo>
+    <data>
+
+        <template id="medical_analysis_report_portal_content" name="Medical Test Report">
+            <!-- Intro -->
+            <t t-call="web.frontend_layout">
+                <t t-set="breadcrumbs_searchbar" t-value="True"/>
+                <div style="background-color: #ECECEC;">
+                    <div t-attf-class="container mt-3">
+                        <div t-attf-class="row">
+                            <div t-attf-class="col-md-2 col-sm-12">
+                                <div class="text-center" style="background: #fff; padding: 10px;">
+                                    <div class="btn-group flex-grow-1 mr-1 mb-1" style="width:100%">
+                                        <a class="btn btn-secondary btn-block o_download_btn"
+                                           t-att-href="report.get_portal_url(report_type='pdf', download=True)"
+                                           title="Download">
+                                            <i class="fa fa-download"/>
+                                            Download
+                                        </a>
+                                    </div>
+                                    <br/>
+                                    <div class="btn-group flex-grow-1 mb-1" style="width:100%">
+                                        <a class="btn btn-secondary btn-block o_print_btn o_portal_invoice_print"
+                                           t-att-href="report.get_portal_url(report_type='pdf')"
+                                           id="print_invoice_report" title="Print" target="_blank">
+                                            <i class="fa fa-print"/>
+                                            Print
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div dir="rtl" t-attf-class="col-md-8 col-lg-8 col-sm-12" style="background-color: #fff;">
+
+                                <div id="introduction"
+                                     t-attf-class="pb-2 pt-3 #{'card-header bg-white' if report_type == 'html' else ''}">
+                                    <h2 class="my-0 text-center">
+                                        <t t-if="report.partner_id" t-esc="report.partner_id.name"/>
+                                    </h2>
+                                </div>
+                                <br/>
+                                <div t-attf-class="report-content">
+                                    <!--                                   <dev class="head">
+                                                                         <div class="row">
+                                                                             <div class="col-6" style="text-align:right;">
+                                                                                 <img src="/medical_lab/static/img/weqaya.jpeg" style="width:35%;" alt="Logo"/>
+                                                                             </div>
+                                                                             <div class="col-6" style="text-align:left;">
+                                                                                 <img t-att-src="'/logreport.png?company=%s' % res_company.id" t-att-alt="'Logo of %s' % res_company.name" style="max-height: 45px;" t-att-title="res_company.name"/>
+                                                                             </div>
+                                                                         </div>
+                                                                     </dev> -->
+                                    <div class="content">
+                                        <div class="title">
+                                            <div class="text-center">
+                                                <h5 style="margin-bottom: 15px;">تقرير نتائج التحاليل الطبية</h5>
+                                                <h5 style="margin-bottom: 15px;">LABORATORY RESULTS</h5>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="text-center" colspan='99'>
+                                        <strong>Report Date:
+                                            <span t-field="report.report_date"/>
+                                        </strong>
+                                    </div>
+
+                                    <table class="table table-striped">
+                                        <tbody>
+                                            <tr>
+                                                <td class="text-center"
+                                                    style="width:25%; breport: 1px solid #b4b4b4; padding:.30rem">رقم
+                                                    الملف الطبي
+                                                </td>
+                                                <td class="text-center"
+                                                    style="width:50%; breport: 1px solid #b4b4b4; padding:.30rem"
+                                                    colspan="2">
+                                                    <span t-if="report.name" t-esc="report.name"/>
+                                                </td>
+                                                <td dir="ltr" class="text-center"
+                                                    style="width:25%; breport: 1px solid #b4b4b4; padding:.30rem">
+                                                    Medical Report Number
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td class="text-center"
+                                                    style="width:25%; breport: 1px solid #b4b4b4; padding:.30rem">رقم
+                                                    الهوية/الاقامة
+                                                </td>
+                                                <td class="text-center"
+                                                    style="width:50%; breport: 1px solid #b4b4b4; padding:.30rem"
+                                                    colspan="2">
+                                                    <span t-if="report.partner_id.partner_no"
+                                                          t-esc="report.partner_id.partner_no"/>
+                                                </td>
+                                                <td dir="ltr" class="text-center"
+                                                    style="width:25%; breport: 1px solid #b4b4b4; padding:.30rem">
+                                                    National ID/Iqama
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center"
+                                                    style="width:25%; breport: 1px solid #b4b4b4; padding:.30rem">الاسم
+                                                    الكامل
+                                                </td>
+                                                <td class="text-center"
+                                                    style="width:50%; breport: 1px solid #b4b4b4; padding:.30rem"
+                                                    colspan="2">
+                                                    <span t-if="report.partner_id.name" t-esc="report.partner_id.name"/>
+                                                </td>
+                                                <!--                                               <td class="text-center" style="width:25%; breport: 1px solid #b4b4b4; padding:.30rem"><span t-esc="report.partner_id.name"/></td>-->
+                                                <td dir="ltr" class="text-center"
+                                                    style="width:25%; breport: 1px solid #b4b4b4; padding:.30rem">Full
+                                                    Name
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center"
+                                                    style="width:25%; breport: 1px solid #b4b4b4; padding:.30rem">
+                                                    الجنسية
+                                                </td>
+                                                <td class="text-center"
+                                                    style="width:50%; breport: 1px solid #b4b4b4; padding:.30rem"
+                                                    colspan="2">
+                                                    <span t-if="report.partner_id.country_id"
+                                                          t-esc="report.partner_id.country_id.name"/>
+                                                </td>
+
+                                                <td dir="ltr" class="text-center"
+                                                    style="width:25%; breport: 1px solid #b4b4b4; padding:.30rem">
+                                                    Nationality
+                                                </td>
+                                            </tr>
+                                            <!--                                            <t t-if="report.is_covid">
+                                                                                           <tr style="background-color: #eb1130; color: white;">
+                                                                                               <td class="text-center" style="width:25%; breport: 1px solid #b4b4b4; padding:.30rem">نتيجة الفحص</td>
+                                                                                               <td class="text-center" dir="ltr" style="width:50%; breport: 1px solid #b4b4b4; padding:.30rem" colspan="2">
+                                                                                                   <span t-if="not report.is_covid">(Not Infected / غير مصاب)</span>
+                                                                                                   <span t-if="report.is_covid">(Infected / مصاب)</span></td>
+
+                                                                                               <td dir="ltr" class="text-center" style="width:25%; breport: 1px solid #b4b4b4; padding:.30rem">Test Result</td>
+                                                                                           </tr>
+                                                                                       </t>
+                                                                                       <t t-else="">
+                                                                                           <tr style="background-color:#3c9f56; color: white;">
+                                                                                               <td class="text-center" style="width:25%; breport: 1px solid #b4b4b4; padding:.30rem">نتيجة الفحص</td>
+                                                                                               <td class="text-center" dir="ltr" style="width:50%; breport: 1px solid #b4b4b4; padding:.30rem" colspan="2">
+                                                                                                   <span t-if="not report.is_covid">(Not Infected / غير مصاب)</span>
+                                                                                                   <span t-if="report.is_covid">(Infected / مصاب)</span></td>
+
+                                                                                               <td dir="ltr" class="text-center" style="width:25%; breport: 1px solid #b4b4b4; padding:.30rem">Test Result</td>
+                                                                                           </tr>
+                                                                                       </t>-->
+                                            <!--  <tr>
+                                                <td class="text-center" style="width:25%; breport: 1px solid #b4b4b4; padding:.30rem">تاريخ الفحص</td>
+                                                <td class="text-center" style="width:50%; breport: 1px solid #b4b4b4; padding:.30rem" colspan="2"><span t-if="report.test_date" t-esc="report.test_date_report"/></td>
+
+                                                <td dir="ltr" class="text-center" style="width:25%; breport: 1px solid #b4b4b4; padding:.30rem">Test Date</td>
+                                            </tr>
+                                             <tr>
+                                                <td class="text-center" style="width:25%; breport: 1px solid #b4b4b4; padding:.30rem">تاريخ نتيجة الفحص</td>
+                                                <td class="text-center" style="width:50%; breport: 1px solid #b4b4b4; padding:.30rem" colspan="2"><span t-if="report.result_date" t-esc="report.result_date_report"/></td>
+
+                                                <td dir="ltr" class="text-center" style="width:25%; breport: 1px solid #b4b4b4; padding:.30rem">Result Date</td>
+                                            </tr>
+  -->
+                                            <tr>
+                                                <td class="text-center"
+                                                    style="width:25%; breport: 1px solid #b4b4b4; padding:.30rem">العمر
+                                                </td>
+                                                <td class="text-center"
+                                                    style="width:50%; breport: 1px solid #b4b4b4; padding:.30rem"
+                                                    colspan="2">
+                                                    <span t-if="report.partner_id.age" t-esc="report.partner_id.age"/>
+                                                </td>
+
+                                                <td dir="ltr" class="text-center"
+                                                    style="width:25%; breport: 1px solid #b4b4b4; padding:.30rem">Age
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center"
+                                                    style="width:25%; breport: 1px solid #b4b4b4; padding:.30rem">فصيلة
+                                                    الدم
+                                                </td>
+                                                <td class="text-center"
+                                                    style="width:50%; breport: 1px solid #b4b4b4; padding:.30rem"
+                                                    colspan="2">
+                                                    <span t-if="report.partner_id.blood_group"
+                                                          t-field="report.partner_id.blood_group"/>
+                                                </td>
+
+                                                <td dir="ltr" class="text-center"
+                                                    style="width:25%; breport: 1px solid #b4b4b4; padding:.30rem">Blood
+                                                    Group
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <br/>
+                                    <t t-if="report.state == 'done' ">
+                                        <table class="table table-sm o_main_table">
+                                            <!-- In case we want to repeat the header, remove "display: table-row-group" -->
+
+                                            <tr t-foreach="report.sample_line_prepared" t-as="sample">
+                                                <tr>
+                                                    <th name="th_sample_date" class="text-left" colspan='99'>
+                                                        <strong>Sampling Date:
+                                                            <span t-field="sample.date"/>
+                                                        </strong>
+                                                    </th>
+                                                </tr>
+                                                <tr>
+                                                    <th name="th_priceunit" class="text-left">Range</th>
+                                                    <th name="th_quantity" class="text-left">Result</th>
+                                                    <th name="th_description" class="text-left">Test</th>
+
+                                                </tr>
+                                                <!--                         <tr>
+                                                                           <th name="sample" class="text-left" colspan="99">Sample Code: <strong t-esc="sample.name"/></th>
+                                                                        </tr> -->
+                                                <tr t-foreach="report.analysis_ids.sorted(key=lambda x:(x.department_id,x.pack_selected))"
+                                                    t-as="a">
+                                                    <t t-if="sample.id==a.sample_line_id.id">
+
+                                                        <t t-if="a.state_result != 'oor'">
+                                                            <td name="td_range" class="text-left">
+                                                                <i>
+                                                                    <span t-esc="a.return_range_txt()"
+                                                                          style="font-size:12px;"/>
+                                                                </i>
+                                                            </td>
+                                                            <td name="td_result" class="text-left">
+                                                                <span t-field="a.result_txt"/>
+                                                            </td>
+                                                            <td name="td_result_name" class="text-left">
+                                                                <span t-field="a.product_id.name"/>
+                                                            </td>
+                                                        </t>
+                                                        <t t-else="">
+                                                            <td name="td_range" class="text-left">
+                                                                <strong t-esc="a.return_range_txt()"/>
+                                                            </td>
+                                                            <td name="td_result" class="text-left">
+                                                                <span t-field="a.result_txt" style="color: red;"/>
+                                                            </td>
+                                                            <td name="td_result_name" class="text-left">
+                                                                <span t-field="a.product_id.name"/>
+                                                            </td>
+                                                        </t>
+                                                    </t>
+                                                </tr>
+
+                                            </tr>
+                                        </table>
+                                    </t>
+                                    <t t-else="">
+                                        <div>
+                                            <p>عزيزنا العميل نتائج التحاليل الطبية الخاصة بك قيد الفحص و المراجعة ,
+                                                للمزيد من الاستفسار يمكنكم مراسلتنا على الواتساب
+                                            </p>
+                                            <p>Dear customer, your medical analysis results is under review, for more
+                                                inquiries, you can join us on WhatsApp
+                                            </p>
+                                        </div>
+                                    </t>
+                                    <div class="text-right" t-if="report.notes">
+                                        <span t-raw="report.notes"/>
+                                    </div>
+                                    <div class="ministry-of-health">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <div style="width:90%" class="text-center">
+                                                    <div class="logo">
+                                                        <img t-att-src="image_data_uri(res_company.logo_gov)"
+                                                             style="max-height: 45px;" alt="Logo"/>
+                                                    </div>
+                                                    <div>
+                                                        <p style="font-size:10px;">
+                                                            <span t-if="report.translation_template.description"
+                                                                  t-esc="report.translation_template.description"/>
+                                                        </p>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="col-6">
+                                                <p style="text-align:left">
+                                                    <span t-esc="res_company.name"/>
+                                                </p>
+                                                <div style="text-align: center;">
+                                                    <img t-att-src="image_data_uri(res_company.logo)"
+                                                         style="max-height: 45px;" alt="Logo"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br/>
+                                    <br/>
+                                    <div class="barcode" t-if="report.state == 'done' ">
+                                        <div class="row">
+                                            <div class="col-6" style="text-align:right;">قم بمسح الباركود للتحقق من
+                                                التقرير إلكترونيا
+                                            </div>
+                                            <div class="col-6" style="text-align:left;">Scan the QR code to
+                                                electronically check the report
+                                            </div>
+                                        </div>
+                                        <br/>
+                                        <div class="text-center">
+                                            <img t-if="report.qrcode" t-att-src="image_data_uri(report.qrcode)"
+                                                 style="height: 150px;" alt="QR Code"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br/>
+                                <br/>
+                            </div>
+                        </div>
+                    </div>
+                    <br/>
+                    <br/>
+                </div>
+            </t>
+
+
+        </template>
+
+
+        <template id="portal_my_home_medical_report" name="Show Medical Reports" customize_show="True"
+                  inherit_id="portal.portal_my_home" priority="20">
+            <xpath expr="//div[hasclass('o_portal_docs')]" position="inside">
+                <t t-call="portal.portal_docs_entry">
+                    <t t-set="title">Medical Report</t>
+                    <t t-set="url" t-value="'/my/reports'"/>
+                    <t t-set="placeholder_count" t-value="'report_count'"/>
+                </t>
+            </xpath>
+        </template>
+
+
+        <template id="portal_my_reports" name="My Medical Reports">
+            <t t-call="portal.portal_layout">
+                <t t-set="breadcrumbs_searchbar" t-value="True"/>
+
+                <t t-call="portal.portal_searchbar">
+                    <t t-set="title">Medical Reports</t>
+                </t>
+                <t t-if="not reports">
+                    <p>There are currently no reports for your account.</p>
+                </t>
+                <t t-if="reports" t-call="portal.portal_table">
+                    <thead>
+                        <tr class="active">
+                            <th>
+                                <span class='d-none d-md-inline'>Medical Report #</span>
+                                <span class='d-block d-md-none'>Ref.</span>
+                            </th>
+                            <th class="text-right">Report Date</th>
+                            <th class="text-center"/>
+                            <th class="text-right">Total</th>
+                        </tr>
+                    </thead>
+                    <t t-foreach="reports" t-as="report">
+                        <tr>
+                            <td>
+                                <a t-att-href="report.get_portal_url()">
+                                    <t t-esc="report.name"/>
+                                </a>
+                            </td>
+                            <td class="text-right">
+                                <span t-field="report.report_date" t-options="{'widget': 'date'}"/>&amp;nbsp;
+                                <span class='d-none d-md-inline' t-field="report.report_date"
+                                      t-options="{'time_only': True}"/>
+                            </td>
+                            <td class="text-center">
+                                <span t-if="report.state == 'done'" class="badge badge-pill badge-success">
+                                    <i class="fa fa-fw fa-check" role="img" aria-label="Done" title="Done"/>Done
+                                </span>
+                            </td>
+                            <!--  <td class="text-right"><span t-field="report.amount_total"/></td> -->
+                        </tr>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+
+    </data>
+</odoo>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="lims_batch_wizard_form" model="ir.ui.view">
+            <field name="name">lims.batch.analysis.form</field>
+            <field name="model">lims.batch.analysis</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name='sample_ids' widget="many2many_tags"/>
+                        <field name="method_id" style='width=auto;'/>
+                        <field name="user_id" string="Assign To" style='width=auto;'/>
+                        <field name='analysis_ids'>
+                            <list editable="top" decoration-success="state == 'done'"
+                                  decoration-info="state == 'progress'"
+                                  decoration-primary="state == 'draft'">
+                                <field name="is_calculated" invisible="True"/>
+                                <field name="sample_line_id"/>
+                                <field name="method_id" string="Instrument"/>
+                                <field name="user_id" readonly="state in ['done','valid']"/>
+                                <field name="product_id" readonly="True"/>
+                                <field name="result_num" readonly="is_calculated == True"/>
+                                <field name="uom_id"/>
+                                <field name="state_result" readonly="True"/>
+                                <field name="state" invisible="True"/>
+                                <field name="partner_id" readonly="True" groups="lims.group_show_sample_information"/>
+                            </list>
+                        </field>
+                    </group>
+                    <footer>
+                        <button string="Save" name="save_close" class="oe_highlight" type="object"/>
+                        <button string="Do Assign" name="do_assign" class="oe_highlight" type="object"/>
+                        <button string="Do WIP" name="do_wip" class="oe_highlight" type="object"/>
+                        <button string="Validate" name="do_validate" class="oe_highlight" type="object"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="batch_analysis_action" model="ir.actions.act_window">
+            <field name="name">Batch Analysis</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">lims.batch.analysis</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+            <!--  <field name="search_view_id" ref="stock_product_search_form_view"/> -->
+        </record>
+
+        <menuitem id="menu_batch_analysis" name="Batch Analysis" action="batch_analysis_action"
+                  parent="lims.menu_analysis_root" sequence="2"/>
+
+    </data>
+</odoo>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="lims_analysis_view_form_inherit" model="ir.ui.view">
+            <field name="name">lims.analysis.form.inherit</field>
+            <field name="model">lims.analysis</field>
+            <field name="inherit_id" ref="lims.lims_analysis_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form/sheet/notebook/page[@name='history']" position="before">
+                    <page string="Results input" readonly="state == 'validated' " invisible=" state in ['draft','todo']">
+                        <button name="do_review_all_result_input" string="Do Review all result" type="object" class="fa fa-eye"
+                                        invisible=" state not in ['todo','progress','rework','done','valid']"/>
+                        <field name="input_result_ids" readonly="state == 'validated' ">
+                            <list editable='top' create="false" decoration-success="state=='reviewed'">
+                                <field name="name"/>
+                                <field name="result"/>
+                                <field name="state" readonly="True"/>
+                                <button name="reviewed" string="Do Review" type="object" class="fa fa-eye"
+                                        invisible=" state not in ['draft']"/>
+                            </list>
+                        </field>
+                        <group name="JSON report">
+                            <button name="send_analysis_result" string="TEST API" type="object" class="fa fa-eye"
+                                        invisible=" state not in ['todo','progress','rework','done','valid']"/>
+                            <field name="json_report"/>
+                        </group>
+                    </page>
+                </xpath>
+
+                <xpath expr="//field[@name='date_result']" position="after">
+                    <field name="is_calculated" invisible="True"/>
+                    <field name="computed_result" invisible=" is_calculated == False"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="lims_analysis_view_list_inherit" model="ir.ui.view">
+            <field name="name">lims.analysis.list.inherit</field>
+            <field name="model">lims.analysis</field>
+            <field name="inherit_id" ref="lims.lims_analysis_view_list"/>
+            <field name="arch" type="xml">
+                <xpath expr="//list" position="inside">
+                    <header>
+                        <button name="open_batch_analysis" string="Batch Analysis Table" type="object"
+                                class="oe_highlight"/>
+                    </header>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

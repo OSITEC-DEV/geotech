@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="res_config_settings_form_view_inherit_lims" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.employee.dept</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="15"/>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form[hasclass('oe_form_configuration')]" position="inside">
+                <div class="app_settings_block" data-string="Lims" string="Lims" data-key="lims">
+                    <h2>Translate Titles in the report results</h2>
+                    <div class="row mt16 o_settings_container">
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_left_pane"/>
+                            <div class="o_setting_right_pane">
+                                <span class="o_form_label">Translation Template</span>
+                                <div class="text-muted content-group mt16">
+                                    <field name="translation_template" class="text-center oe_inline"
+                                           help="This template help you to select your titles report with the your propre translation"/>
+                                </div>
+                                <group>
+                                    <field name="logo_gov" widget="image"/>
+
+
+                                    <field name="logo_quality" widget="image"/>
+
+
+                                    <field name="logo_iso" widget="image"/>
+                                </group>
+                            </div>
+                        </div>
+                    </div>
+                    <h2>Signatures</h2>
+                    <div class="row mt16 o_settings_container">
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="text-muted content-group mt16">
+                                <div class="o_setting_left_pane"/>
+                                <div class="o_setting_right_pane">
+                                    <span class="o_form_label">Signatures:</span>
+                                    <group>
+                                        <field name="signature_consult" widget="signature"/>
+                                        <field name="signature_quality" widget="signature"/>
+                                        <field name="signature_director" widget="signature"/>
+                                    </group>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h2>Sample registration</h2>
+                    <div class="row mt16 o_settings_container">
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="text-muted content-group mt16">
+                                <div class="o_setting_left_pane"/>
+                                <div class="o_setting_right_pane">
+                                    <span class="o_form_label">Sample code:</span>
+                                    <group>
+                                        <field name="split_sample_by_department"/>
+                                    </group>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="lims_translate_titles_form_view" model="ir.ui.view">
+        <field name="name">lims.translate.titles.view.form.inherit.employee.dept</field>
+        <field name="model">lims.translate.titles</field>
+        <field name="arch" type="xml">
+            <form>
+                <div class="oe_title">
+                    <h1>
+                        <field name="name"/>
+                    </h1>
+                </div>
+                <group col='4'>
+                    <field name="national_id"/>
+                    <field name="nationality"/>
+                    <field name="medical_name"/>
+                    <field name="full_name"/>
+                    <field name="title"/>
+                    <field name="age"/>
+                    <field name="blood_group"/>
+                    <field name="description"/>
+                    <field name="sampling_date"/>
+                    <field name="test_name"/>
+                    <field name="result"/>
+                    <field name="gender"/>
+                    <field name="perso_info"/>
+                    <field name="range_lims"/>
+                    <field name="method"/>
+                </group>
+            </form>
+
+        </field>
+    </record>
+
+</odoo>

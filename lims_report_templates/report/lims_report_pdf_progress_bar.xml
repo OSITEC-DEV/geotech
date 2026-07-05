@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--  lims_report_pdf-->
+        <template id="lims_report_pb_pdf">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="web.basic_layout">
+                        <t t-call="lims_report_templates.my_own_layout_header"/>
+                        <t t-raw="0"/>
+                        <br/>
+                        <br/>
+                        <div class="page" style="font-family:Times New Roman, Times, sans serif;">
+                            <div class="title">
+                                <!--border-bottom: 1px solid #b4b4b4;background-color: #F6F6F6;-->
+                                <div class="text-center"
+                                     style="margin-bottom: 5px;padding: 5px 5px 5px;">
+                                    <strong>
+                                        <h4 style="color:#084897;font-weight: bold;">Medical Analysis Report</h4>
+                                    </strong>
+                                    <strong t-if="o.title" style="font-size:15px;color:#576eaf;">
+                                        <i>“<span t-field="o.title"/>“
+                                        </i>
+                                    </strong>
+
+                                </div>
+                            </div>
+                            <div class="d-inline p-4;">
+                                <div class="pull-left">
+                                    <strong style="color:#084897;">Reported</strong>:
+                                    <span t-field="o.date" t-options='{"format": "dd/MM/yyyy H:mm"}'/>
+                                </div>
+                                <div class="pull-right">
+                                    <strong style="color:#084897;">Report Number</strong>:
+                                    <span t-field="o.name"/>
+                                </div>
+                            </div>
+                            <br/>
+                            <br/>
+                            <table class="table table-striped">
+                                <tbody>
+                                    <tr>
+                                        <td class="text-center bg-light clearfix"
+                                            style="width:50%;padding:.0rem;font-size:13px;"
+                                            colspan="2">
+                                            <table class="table table-borderless"
+                                                   style="border-top-style: none;border-left-style: none;border-right-style: none;border-bottom-style: none;">
+                                                <tr>
+                                                    <td class="text-left" colspan="2"
+                                                        style="width:50%; padding:.15rem">
+                                                        <strong>
+                                                            Full name:
+                                                        </strong>
+                                                        <span t-if="o.partner_id.name"
+                                                              t-field="o.partner_id.name"/>
+                                                    </td>
+                                                    <td class="text-left" style="width:25%;padding:.15rem">
+                                                        <strong>Age:</strong>
+                                                        <span t-if="o.partner_id.age_text"
+                                                              t-field="o.partner_id.age_text"/>
+                                                    </td>
+                                                    <td class="text-left" style="width:25%;padding:.15rem">
+                                                        <strong>Gender:</strong>
+                                                        <span t-if="o.partner_id.gender" t-field="o.partner_id.gender"/>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+
+                                                    <td class="text-left" style="width:25%;padding:.15rem">
+                                                        <strong>ID:</strong>
+                                                        <span t-if="o.partner_id.partner_no"
+                                                              t-field="o.partner_id.partner_no"/>
+                                                    </td>
+                                                    <td class="text-left" style="width:0%;padding:.15rem"
+                                                        t-if="not o.partner_id.blood_group">
+                                                    </td>
+                                                    <td class="text-left" style="width:0%;padding:.15rem"
+                                                        t-if="not o.partner_id.blood_group">
+                                                        <strong>MRN:</strong>
+                                                        <span
+                                                                t-field="o.partner_id.ref"/>
+                                                    </td>
+                                                    <td class="text-left" style="width:50%;padding:.15rem"
+                                                        t-if="o.partner_id.blood_group">
+                                                        <strong>Blood-Group:</strong>
+                                                        <span t-if="o.partner_id.blood_group"
+                                                              t-field="o.partner_id.blood_group"/>
+                                                    </td>
+                                                </tr>
+                                                <br/>
+                                                <div style="page-break-inside:always;"/>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <style>
+                                table.print-friendly tr td , table-print-friendly tr th {
+                                page-break-inside: avoid !important;
+                                }
+                            </style>
+                            <div>
+                                <table class="table table-sm o_main_table"
+                                       style="width: 100%;font-size:14px;">
+                                    <!-- In case we want to repeat the header, remove "display: table-row-group" -->
+                                    <t t-set="sample_id" t-value=""/>
+                                    <t t-set='test_no' t-value='1'/>
+                                    <t t-set='iter' t-value='1'/>
+                                    <thead>
+                                        <tr t-if="o.print_group_id">
+                                            <th class="bg-light clearfix" style="width:100%;" colspan="4">
+                                                <strong>
+                                                    <u>
+                                                        <span t-field="o.print_group_id.name"
+                                                              style="font-size:16px;color:#084897;"
+                                                              t-if="o.print_group_id"/>
+                                                        <span t-field="o.product_id.name"
+                                                              style="font-size:16px;color:#084897;"
+                                                              t-if="not o.print_group_id and o.product_id"/>
+                                                    </u>
+                                                </strong>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr id="analysis"
+                                            t-foreach="o.analysis_ids.filtered(lambda a:a.state == 'valid').sorted(key=lambda x:(x.sample_line_id.id,x.pack_selected.id,x.method_id.id))"
+                                            t-as="a" name="analysis_info">
+                                            <t t-if="sample_id !=a.sample_line_id.id">
+                                                <t t-set="sample_id" t-value="a.sample_line_id.id"/>
+                                                <tr name="th_table" style="font-size:12px;">
+                                                    <th class="text-left" colspan="2">
+                                                        <strong><span t-esc="iter"/>- Sample specimen type :
+                                                        </strong>
+                                                        <span t-field="a.sample_line_id.sample"/>
+
+                                                    </th>
+                                                    <th class="text-left">
+                                                        <div/>
+                                                    </th>
+                                                    <th class="text-left" colspan="2">
+                                                        <strong>Source:
+                                                            <span t-field="a.main_id.origin" t-if="a.main_id.origin"/>
+                                                        </strong>
+                                                    </th>
+                                                    <th class="text-left">
+                                                        <span/>
+                                                    </th>
+                                                </tr>
+                                                <tr name="th_table" style="font-size:12px;">
+                                                    <th name="th_sample_date" class="text-left" colspan="2">
+                                                        <strong style="color:#084897;">Registered:</strong>
+                                                        <strong>
+                                                            <span t-field="a.sample_line_id.date"
+                                                                  t-options='{"format": "dd/MM/yyyy H:mm"}'/>
+                                                        </strong>
+                                                    </th>
+                                                    <th name="th_sample_date" class="text-left">
+                                                        <strong style="color:#084897;">Collected:</strong>
+                                                        <strong>
+                                                            <span t-field="a.sample_line_id.sample_date"
+                                                                  t-options='{"format": "dd/MM/yyyy H:mm"}'/>
+                                                        </strong>
+                                                    </th>
+                                                    <th name="th_sample_date" class="text-left" colspan="2">
+                                                        <strong style="color:#084897;">Received:</strong>
+                                                        <strong>
+                                                            <span t-field="a.sample_line_id.receiving_date"
+                                                                  t-options='{"format": "dd/MM/yyyy H:mm"}'/>
+                                                        </strong>
+                                                    </th>
+                                                </tr>
+
+                                                <tr name="th_table" style="font-size:12px;"
+                                                    t-if="not o.hide_table_result">
+
+                                                    <th name="th_description" class="text-left"
+                                                        style="font-size:12px;color:#576eaf;">
+                                                        Test
+                                                    </th>
+                                                    <th name="th_quantity" class="text-left"
+                                                        style="font-size:12px;color:#576eaf;">
+                                                        Result
+                                                    </th>
+                                                    <t t-if="o.print_method">
+                                                        <th name="th_priceunit" class="text-left"
+                                                            style="font-size:12px;color:#576eaf;">
+                                                            Method
+                                                        </th>
+                                                    </t>
+                                                    <t t-if="not o.print_method">
+                                                        <th name="th_priceunit" class="text-left"
+                                                            style="font-size:12px;visibility: hidden;color:#f8a464;">
+                                                        </th>
+                                                        <span/>
+                                                    </t>
+                                                    <th name="th_priceunit" class="text-left" colspan="2"
+                                                        style="font-size:12px;color:#576eaf;">
+                                                        Range
+                                                    </th>
+                                                </tr>
+                                            </t>
+                                            <tr
+                                                    t-if="not o.hide_table_result and a.parameter_print_id.print_name">
+                                                <t t-if="a.state_result not in ('oor','hight','low')">
+                                                    <td name="td_result_name" class="text-left"
+                                                        style="font-size:12px;">
+                                                        <span style="font-size:12px;">
+                                                            <span t-esc="test_no" t-options="{'widget': 'text'}"/>
+                                                        </span>
+                                                        |
+                                                        <span t-if="a.parameter_print_id"
+                                                              t-field="a.parameter_print_id.print_name"/>
+                                                    </td>
+
+                                                    <td name="td_result" class="text-left table-active"
+                                                        style="font-size:12px;">
+                                                        <strong>
+                                                            <div class="progress" style="max-width: 50%">
+                                                                <t t-set="minimum"
+                                                                   t-value="a.get_min_max_references()['min']"/>
+                                                                <t t-set="minimum" t-value="minimum+20"/>
+                                                                <t t-set="maximum"
+                                                                   t-value="a.get_min_max_references()['max']"/>
+                                                                <t t-set="maximum" t-value="maximum+80"/>
+                                                                <t t-set="value" t-value="a.result_num"/>
+                                                                <t t-set="value" t-value="value+80"/>
+                                                                <t t-set="range_min" t-value="0"/>
+                                                                <t t-set="range_min"
+                                                                   t-value="range_min+(value-minimum)*100/(maximum-minimum)"/>
+                                                                <div class="progress-bar progress-bar-stripped"
+                                                                     role="progressbar" aria-valuenow="40"
+                                                                     aria-valuemin="0"
+                                                                     aria-valuemax="100"
+                                                                     t-attf-style="width:{{str(range_min) + '%'}};background-image: -webkit-linear-gradient(left, #ACBD4E, #EBDC09);">
+
+                                                                </div>
+                                                                <div class="vertical"/>
+                                                                <div class="progress-bar progress-bar-stripped"
+                                                                     role="progressbar" aria-valuenow="30"
+                                                                     aria-valuemin="0"
+                                                                     aria-valuemax="100"
+                                                                     t-attf-style="width:{{str(100 - range_min) + '%'}};background-image: -webkit-linear-gradient(left, #EBDC09, #9F2828);"/>
+
+                                                            </div>
+                                                            <div style="max-width: 50%" class="row">
+                                                                <span t-esc="minimum"/>
+                                                                <div t-attf-style="width:{{str(range_min) + '%'}};text-align:right;margin-left:27px;color:blue;"
+                                                                     class="col">
+                                                                    <span t-esc="value"/>
+                                                                </div>
+                                                                <div t-attf-style="width:{{str(100-range_min) + '%'}};text-align:right;"
+                                                                     class="col">
+                                                                    <span t-esc="maximum"/>
+                                                                </div>
+                                                            </div>
+                                                        </strong>
+                                                        <strong>
+                                                            <span t-field="a.result_se" t-if="a.result_se"/>
+                                                        </strong>
+                                                        <strong>
+                                                            <span t-field="a.result_txt"
+                                                                  t-if="a.result_txt and a.result_num == 0.0 and not a.result_se"/>
+                                                        </strong>
+                                                        <span t-field="a.uom_id" style="font-size:9px;"
+                                                              t-if="a.result_num"/>
+                                                        <i t-if="o.print_old_result">
+                                                            <span t-if="a.last_old_result" style="color: red;">Old
+                                                                result:
+                                                            </span>
+                                                            <span t-field="a.last_old_result" t-if="a.last_old_result"/>
+                                                        </i>
+                                                    </td>
+                                                    <t t-if="o.print_method">
+                                                        <td name="td_method" class="text-left"
+                                                            style="font-size:12px;">
+                                                            <span t-field="a.method_id"/>
+                                                        </td>
+                                                    </t>
+                                                    <t t-if="not o.print_method">
+                                                        <td name="th_priceunit" class="text-left"
+                                                            style="font-size:12px;">
+                                                        </td>
+                                                        <span/>
+                                                    </t>
+                                                    <td name="td_range" colspan="2" class="text-left">
+                                                        <div class='inline-flex' t-raw="a.return_range_txt()"
+                                                             style="font-size:11px;"/>
+                                                    </td>
+                                                </t>
+                                                <t t-else="">
+                                                    <td name="td_result_name"
+                                                        style="font-size:12px;"
+                                                        class="text-left">
+                                                        <span style="font-size:12px;">
+                                                            <span t-esc="test_no" t-options="{'widget': 'text'}"/>
+                                                        </span>
+                                                        |
+                                                        <span t-if="a.parameter_print_id"
+                                                              t-field="a.parameter_print_id.print_name"/>
+                                                    </td>
+                                                    <td name="td_result" class="text-left table-active"
+                                                        style="font-size:12px;">
+                                                        <span t-field="a.result_num" style="color: red;"
+                                                              t-if="a.result_num"/>
+                                                        <span t-field="a.result_se" style="color: red;"
+                                                              t-if="a.result_se"/>
+                                                        <span t-field="a.result_txt" style="color: red;"
+                                                              t-if="a.result_txt and a.result_num == 0.0 and not a.result_se"/>
+                                                        <span t-field="a.uom_id" style="font-size:9px;"
+                                                              t-if="a.uom_id"/>
+                                                        <span t-if="'hight' in a.state_result" style="color:red;">-High-
+                                                        </span>
+                                                        <span t-if="'low' in a.state_result" style="color:red;">-Low-
+                                                        </span>
+                                                        <span t-if="a.last_old_result and o.print_old_result">Old
+                                                            result:
+                                                        </span>
+                                                        <span t-field="a.last_old_result"
+                                                              t-if="a.last_old_result and o.print_old_result"
+                                                              style="color: red;"/>
+                                                    </td>
+                                                    <t t-if="o.print_method">
+                                                        <td name="td_method_abn" class="text-left"
+                                                            style="font-size:12px;">
+                                                            <span t-field="a.method_id"/>
+                                                        </td>
+                                                    </t>
+                                                    <t t-if="not o.print_method">
+                                                        <td name="th_priceunit" class="text-left"
+                                                            style="font-size:12px;">
+                                                        </td>
+                                                        <span/>
+                                                    </t>
+                                                    <td name="td_range" class="text-left" colspan="2"
+                                                        style="font-size:11px;">
+                                                        <div class='inline-flex' t-raw="a.return_range_txt()"/>
+                                                    </td>
+                                                </t>
+                                            </tr>
+                                            <t t-if="a.eng_text != '&lt;p&gt;&lt;br&gt;&lt;/p&gt;' ">
+                                                <tr style="page-break-inside: auto !important;">
+                                                    <td colspan="99">
+                                                        <span t-raw="a.eng_text"/>
+                                                    </td>
+                                                </tr>
+                                            </t>
+                                            <t t-set='test_no' t-value='test_no+1'/>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <div class="notes" t-if="o.consultant_note">
+                                    <span t-raw="o.consultant_note"/>
+                                </div>
+                                <div
+                                        style="display: flex;flex-wrap: wrap;line-height: 1.5;text-align:center;border-spacing: 10px;"
+                                        class="container">
+                                    <div class="row" style="position:center;">
+                                        <div class="col" style="width: 70%;">
+                                            <t t-set="validators"
+                                               t-value="o.analysis_ids.filtered(lambda a:a.validated_by != 'False').mapped('validated_by')"/>
+                                            <table class="print-friendly "
+                                                   style="font-size:14px;">
+                                                <tr style="border: 1pt solid black;" t-foreach="set(validators)"
+                                                    t-as="s"
+                                                    t-if="validators.mapped('signature_image')">
+                                                    <t t-set="a" t-value="1"/>
+                                                    <tr t-if="s.signature_image and a == 1">
+                                                        <th colspan="3" style="color:#576eaf;">
+                                                            <strong class="text-left">Reviewed by</strong>
+                                                        </th>
+                                                    </tr>
+                                                    <tr colspan="99" t-if="s.signature_image">
+                                                        <tr width="50%" style="text-align:center;">
+                                                            <td>
+                                                                <span t-field="s.name"/>
+                                                            </td>
+
+                                                        </tr>
+                                                        <tr width="50%" style="text-align:center;">
+                                                            <td>
+                                                                <span t-esc="s.get_job_id()"/>
+                                                            </td>
+
+                                                        </tr>
+                                                        <tr style="text-align:left;">
+                                                            <td style="text-align:left;">
+                                                                <img t-att-src="image_data_uri(s.signature_image)"
+                                                                     style="max-height: 70px;" alt="Logo"/>
+                                                            </td>
+
+                                                        </tr>
+                                                    </tr>
+                                                    <t t-set="a" t-value="2"/>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                        <div name="column" style="width: 30%;" class="text-right"
+                                             t-if="o.consultation_date">
+                                            <table class="print-friendly"
+                                                   style="font-size:14px;text-align:center;">
+
+                                                <tr>
+                                                    <th style="color:#576eaf;">Consultant Signature</th>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span t-field="o.consultant_id.name"/>
+                                                    </td>
+                                                </tr>
+                                                <tr style="text-align:left;">
+                                                    <td style="text-align:left;">
+                                                        <img t-att-src="image_data_uri(o.consultant_id.signature_image)"
+                                                             style="max-height: 70px;" alt="Logo"/>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <t t-if="o.state not in ['valid','sent']">
+                                <center style="font-size:16px;color:red;position:center;">
+                                    <p>مسودة تقرير يمنع اعتمادها بصفة رسمية</p>
+                                    <p>A draft report , not for official use</p>
+                                </center>
+                            </t>
+                            <t t-if="o.notes">
+                                <center style="font-size:14px;color:red;position:center;">
+                                    <span t-raw="o.notes"/>
+                                </center>
+                            </t>
+                            <center t-if="o.state in ['valid','sent']">
+                                <!--                                <div class="col-4" style="text-align:left;" t-if="o.company_id.logo_iso">-->
+                                <!--                                    <img t-att-src="image_data_uri(o.company_id.logo_iso)" style="max-height:70px;"-->
+                                <!--                                         alt="Logo"/>-->
+                                <!--                                </div>-->
+                                <img t-att-src="image_data_uri(res_company.signature_director)"
+                                     t-if="res_company.signature_director"
+                                     style="max-height: 110px;"
+                                     alt="Logo"
+                                />
+                            </center>
+
+                            <div class="footer" style="border-top: 1px solid grey;font-size:12px;;">
+                                <br/>
+                                <div class="row d-flex justify-content-center justify-content-center">
+                                    <div class="col-6">
+                                        <strong>Address:</strong>
+                                        <span t-field="res_company.street" t-if="res_company.street"/>,
+                                        <span t-field="res_company.state_id" t-if="res_company.state_id"/>,
+                                        <span t-field="res_company.country_id" t-if="res_company.country_id"/>
+
+                                        <span style="text-align:center;" t-if="res_company.company_registry">
+                                            <strong>CR:</strong>
+                                            <span t-field="res_company.company_registry"/>
+                                        </span>
+                                    </div>
+                                    <div class="col-4">
+                                        <span style="text-align:center;" t-if="res_company.phone">
+                                            <strong>Phone:</strong>
+                                            <span t-field="res_company.phone"/>
+                                        </span>
+
+                                        <span style="text-align:center;" t-if="res_company.email">
+                                            <strong>Email:</strong>
+                                            <span t-field="res_company.email"/>
+                                        </span>
+                                        <span style="text-align:center;" t-if="res_company.email">
+                                            <strong>Website:</strong>
+                                            <span t-field="res_company.website"/>
+                                        </span>
+                                    </div>
+
+                                    <div class="col-2">
+                                        <span style="width:50%;text-align:left;">
+                                            <img t-if="o.qrcode" t-att-src="image_data_uri(o.qrcode)"
+                                                 style="height: 70px;" alt="QR Code"/>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            </t>
+
+        </template>
+
+        <record id="lims_portal_report_pb_pdf" model="ir.actions.report">
+            <field name="name">Report,Graphic results PDF</field>
+            <field name="model">lims.report</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">lims_report_templates.lims_report_pb_pdf</field>
+            <field name="report_file">lims_report_templates.lims_report_pb_pdf</field>
+            <field name="print_report_name">'Report_%s_%s'% (object.partner_id.name or '',str(object.create_date))
+            </field>
+            <field name="binding_type">report</field>
+            <field name="paperformat_id" ref="lims.paperformat_medical_lab_report"/>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="lims_method_view_form_inherit" model="ir.ui.view">
+            <field name="name">lims.mehtod.form.inherit</field>
+            <field name="model">lims.method</field>
+            <field name="inherit_id" ref="lims.lims_method_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='max_val']" position="after">
+                    <field name="min_critical"/>
+                    <field name="max_critical"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

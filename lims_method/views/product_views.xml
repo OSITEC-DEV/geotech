@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="product_template_form_view_inherit3" model="ir.ui.view">
+        <field name="name">product.template.form.inherit</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="lims.product_template_form_view_inherit2"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='method_ids']" position="after">
+                <field name="required_method" help="Mandatory to select the instrument in each test"/>
+                <field name="default_method_id" help="The method / Technique" style="width:auto;" force_save="True"/>
+
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

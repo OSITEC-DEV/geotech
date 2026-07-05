@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="lims_view_form" model="ir.ui.view">
+            <field name="name">lims.sample.main.form</field>
+            <field name="model">lims.sample.main</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+
+                        <!-- <button name='action_sale_order_print' type='object' string='Print Order' class="oe_inline"
+                                invisible = "state ==  'draft' " groups="lims.group_lims_sample"/> -->
+                    <button name="action_lock" class="oe_highlight"
+                            string="Lock" type="object"
+                            help="Lock your request"
+                            invisible="lock"
+                            groups="lims.group_lims_unlock"
+                    />
+                    <button name="action_to_unlock" class="oe_highlight"
+                            string="Unlock" type="object"
+                            help="Unlock your request"
+                            invisible="not lock"
+                            groups="lims.group_lims_unlock"
+                    />
+
+                        <button name="action_report_print" type="object" string="Print report" class="oe_inline oe_highlight" invisible="True" groups="lims.group_lims_sample"/>
+
+                        <button name="do_validate" type="object" string="Validate" class="oe_inline oe_highlight" invisible="True" groups="lims.group_lims_manager"/>
+
+
+                        <button name="reset_to_draft" type="object" string="Reset to Draft" class="oe_inline oe_highlight" invisible="state !=  'reject' " groups="lims.group_lims_sample"/>
+
+                        <button name="action_reject" type="object" string="Reject" class="oe_inline oe_highlight" invisible="state in ('draft','reject')" confirm="By confirming this action, all tests will be canceled" groups="lims.group_lims_manager"/>
+
+
+                        <button name="generate_sale_order" type="object" string="Create Invoice" class="oe_inline oe_highlight oe_save_only" invisible="invoicing_type != 'invoice'"/>
+
+
+                        <button name="generate_sale_order" type="object" string="Trigger Sale" class="oe_inline oe_highlight oe_save_only" invisible="invoicing_type != 'quot'"/>
+
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <h1 class="oe_title">
+                            <field name="name"/>
+                        </h1>
+
+                        <field name="analysis_done" invisible="True"/>
+                        <div name="button_box" position="inside" class="oe_button_box">
+                            <button name="action_view_sale_order" type="object" class="oe_stat_button" icon="fa-dollar"
+                                    groups="lims.group_show_sample_information"
+                                    invisible="not sale_id">
+                                <field name="sale_id" widget="statinfo" string="Sale Order" readonly="True"/>
+                            </button>
+
+                            <button name="action_view_invoice" type="object" class="oe_stat_button" icon="fa-dollar"
+                                    groups="lims.group_show_sample_information"
+                                    invisible="amount_total == 0.0">
+                                <field name="amount_total" widget="statinfo" string="Invoices" readonly="True"/>
+                            </button>
+
+                            <button name="action_view_analysis" type="object" class="oe_stat_button" icon="fa-flask" invisible="analysis_count == 0">
+                                <field name="analysis_count" widget="statinfo" string="Tests"/>
+                            </button>
+                            <button name="preview_analysis_report" type="object" class="oe_stat_button" icon="fa-globe icon" invisible="True">
+                                <div class="o_field_widget o_stat_info">
+                                    <span class="o_stat_text">Customer</span>
+                                    <span class="o_stat_text">Preview</span>
+                                </div>
+                            </button>
+                        </div>
+                        <div class="oe_right" invisible="analysis_done == False">
+                            <widget name="web_ribbon" text="COMPLETED TESTS"/>
+                        </div>
+                        <group col="2">
+
+                            <group
+                                   name="customer_information"
+                                   groups="lims.group_show_sample_information"
+                                   col="1">
+
+                                <field name="partner_id" required="True" readonly="lock"/>
+                                <field name="origin" readonly="lock" invisible="True"/>
+                                <field name="invoicing_type" widget="radio" readonly="lock"/>
+                                <field name="sale_id" invisible="True"/>
+                                <field name="company_id" invisible="True"/>
+
+
+                            </group>
+
+                            <group col="1">
+
+                                <field name="date" readonly="lock"/>
+                                <field name="priority" widget="priority" readonly="lock"/>
+                                <field name="source" widget="radio" readonly="lock"/>
+                                <field name="approved_foc" readonly="lock"/>
+                                <field name="laboratory_id" readonly="lock"/>
+
+                            </group>
+
+                        </group>
+                        <notebook>
+                            <page string="Required Tests">
+                                <button name="generate_samples" type="object" string="Generate Samples" class="oe_inline oe_link oe_save_only" invisible="sample_line_prepared or state == 'draft'" confirm="Confirm the recieving sample please"/>
+
+                                <button name="action_confirm" type="object" string="Confirm" class="oe_inline oe_highlight" invisible="state !=  'draft' or invoicing_type in ['quot','invoice'] " groups="lims.group_lims_sample"/>
+
+                                <field name="sample_line" required="True" readonly=" state != 'draft' ">
+                                        <list editable="top" decoration-it="1 &gt; 0" decoration-bf="1 &gt; 0">
+                                            <field name="product_ids" widget="many2many_tags" readonly="lock"/>
+                                            <field name="uom_id" column_invisible="True"/>
+                                            <field name="sample" readonly="lock" help="All the selected tests/Packages in this line ,                                             must be performed on this sample type ,Keep it empty to use the default sample type of each test"/>
+                                            <field name="quantity" readonly="lock"/>
+                                            <field name="description" readonly="lock" placeholder="Optional..." column_invisible="True"/>
+                                            <field name="note" optional="hide" readonly="lock"/>
+                                            <field name="partner_id" optional="hide" readonly="lock"/>
+                                            <field name="external_sample_collected_on" optional="hide" readonly="lock"/>
+                                        </list>
+                                    </field>
+
+                                <button name="generate_analysis" type="object" string="Create Analysis" class="oe_inline oe_highlight oe_save_only" invisible="state in ['draft','confirm']"/>
+
+                                <div style="display:flex; justify-content:flex-end; gap:10px; margin-bottom:5px;">
+                                        <button name="action_accept_all"
+                                                type="object"
+                                                string="Accept All Samples"
+                                                class="oe_highlight"
+                                                invisible="not has_samples_to_receive"
+                                                confirm="Are you sure you want to accept all samples?"/>
+
+                                        <button name="action_report_print_all_label"
+                                                type="object"
+                                                string="Print All Labels"
+                                                class="btn btn-primary"
+                                                invisible="not sample_line_prepared"/>
+                                    </div>
+
+
+                                <field name="sample_line_prepared">
+
+                                    <list create="False" editable="bottom" decoration-success="state == 'recieved'">
+                                        <field name="name" readonly="True"/>
+                                        <field name="partner_id" optional="hide" readonly="lock"/>
+                                        <field name="sample" readonly="lock" />
+                                        <field name="product_ids" widget="many2many_tags" readonly="lock" options="{'color_field': 'color'}"/>
+                                        <field name="uom_id" column_invisible="True"/>
+                                        <field name="date" string="Registration Date" readonly="lock" optional="hide"/>
+                                        <field name="sample_date" string="Collected on" optional="hide" readonly="lock"/>
+                                        <field name="receiving_date" string="Receiving Date" optional="show" readonly="lock"/>
+                                        <field name="sending_date" string="Sample Sending Date" optional="hide" readonly="lock"/>
+                                        <field name="note" optional="hide" readonly="lock"/>
+                                        <field name="nb_sub" optional="hide" column_invisible="True" readonly="lock"/>
+                                        <field name="state" optional="show" readonly="lock"/>
+
+                                        <button name="generate_sub_samples" type="object" string="Generate Sub-Samples" class="oe_link" confirm="PLease confirm this action" invisible="True"/>
+                                        <button name="action_report_print" type="object" string="Print label" class="oe_inline oe_highlight" invisible=" parent.state in ['tosend','done'] "/>
+                                        <button name="do_received" type="object" string="Accept Sample" class="oe_inline oe_link" invisible="state != 'todo' " confirm="Please confirm this operation"/>
+                                        <button name="do_cancel" type="object" string="Reject" class="oe_inline oe_highlight" invisible=" state == 'cancel' " confirm="Please confirm this operation"/>
+                                        <button name="reset_todo" type="object" string="To collect" class="oe_inline oe_highlight" invisible=" state != 'cancel'  " confirm="Please confirm this operation"/>
+                                        <button name="add_parameters" type="object" string="ADD PARAMETERS" class="oe_inline oe_highlight" confirm="Please don't forget to update the sale order if necessary"/>
+                                    </list>
+
+                                </field>
+                            </page>
+                            <page string="Other Information">
+                                <group string="Laboratory Information" class="oe_left">
+                                    <field name="user_id" readonly="lock"/>
+                                    <field name="salesperson" readonly="lock"/>
+                                    <field name="company_id" readonly="lock"/>
+                                    <field name="tags" widget="many2many_tags" readonly="lock"/>
+                                </group>
+                                <group string="TAT">
+                                    <field name="planned_date" readonly="lock" style="color:#00D100;"/>
+                                    <field name="tat" widget="float_time" readonly="lock"/>
+                                    <field name="diff_time" widget="float_time" invisible=" diff_time  &lt;  0 and state == 'draft'  " style="color:red;" help="Delta between the planned date and date of report sending"/>
+                                    <field name="delay_time" widget="float_time" invisible=" diff_time  &lt;  0 and state == 'draft'  " style="color:red;" help="The delay in sending report by Hours and minutes if exists"/>
+                                </group>
+                                <group string="Reports">
+                                    <field name="translation_template" invisible="True" readonly="lock"/>
+                                    <field name="print_method" readonly="lock" help="Check if you need to mention the method in customer report"/>
+                                </group>
+                                <group string="Shipping information">
+                                       <field name="tracking_number" readonly="lock"/>
+                                        <field name="logistic_company" readonly="lock"/>
+                                </group>
+                            </page>
+                            <page string="Notes">
+                                <field name="notes" readonly="lock" widget="html" placeholder="Add all remarks, observations , recommendation to print in report"/>
+                            </page>
+                            <page string="Traceability" name="traceability">
+                                <group>
+                                    <field name="create_uid"/>
+                                    <field name="create_date"/>
+                                    <field name="write_uid"/>
+                                    <field name="write_date"/>
+                                </group>
+                            </page>
+                            <page string="Signatures">
+                                <div class="row mt16 o_settings_container">
+                                    <div class="col-12 col-lg-6 o_setting_box">
+                                        <div class="text-muted content-group mt16">
+                                            <div class="o_setting_left_pane"/>
+                                            <div class="o_setting_right_pane">
+                                                <span class="o_form_label">Signatures:</span>
+                                                <group>
+                                                    <field name="signature_consult" widget="signature"/>
+                                                    <field name="signature_quality" widget="signature"/>
+                                                    <field name="signature_director" widget="signature"/>
+                                                </group>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </page>
+
+                        </notebook>
+                    </sheet>
+                    <chatter>
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </chatter>
+                </form>
+            </field>
+        </record>
+
+
+        <record model='ir.ui.view' id='lims_sample_main_kanban'>
+            <field name="name">Analysis folder</field>
+            <field name="model">lims.sample.main</field>
+            <field name="arch" type="xml">
+                <kanban default_group_by="state" class="oe_background_grey o_kanban_dashboard o_account_kanban"
+                        records_draggable="0" group_create="0" group_delete="0" group_edit="0" quick_create="0"
+                        archivable="0" default_order="name desc">
+                    <field name="name"/>
+                    <field name="partner_id"/>
+                    <field name="user_id"/>
+                    <field name="date"/>
+                    <field name="state"/>
+                    <progressbar field="state" colors='{"done": "success", "reject": "danger", "progress": "muted"}'/>
+                    <templates>
+                        <t t-name="card">
+                            <div t-attf-class="#{kanban_color(0)} oe_kanban_global_click">
+                                <h3>
+                                    <field name="name"/>
+                                </h3>
+                                <p>
+                                    <i>
+                                        <field name="tags"/>
+                                    </i>
+                                    <br/>
+                                    <b>
+                                        <field name="partner_id"/>
+                                    </b>
+                                    <br/>
+                                    <field name="planned_date"/>
+                                </p>
+                                <div class="o_kanban_record_bottom" t-if="!selection_mode">
+                                    <div class="oe_kanban_bottom_left">
+                                        <field name="activity_ids" widget="kanban_activity"/>
+                                    </div>
+                                    <div class="oe_kanban_bottom_right" t-if="!selection_mode">
+                                        <field name="state" widget="state_selection" groups="base.group_user"
+                                               invisible="context.get('fsm_mode', False)"/>
+                                        <img t-att-src="kanban_image('res.users', 'image_128', record.user_id.raw_value)"
+                                             t-att-title="record.user_id.value" t-att-alt="record.user_id.value"
+                                             class="oe_kanban_avatar"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <record id="lims_sample_main_list" model="ir.ui.view">
+            <field name="name">lims.sample.main.list</field>
+            <field name="model">lims.sample.main</field>
+            <field name="arch" type="xml">
+                <list>
+                    <field name="name"/>
+                    <field name="date"/>
+                    <field name="partner_id" groups="lims.group_show_sample_information"/>
+                    <field name="sale_id"/>
+                    <field name="user_id"/>
+                    <field name="analysis_done"/>
+                    <field name="state" decoration-success="analysis_done=='True' and state=='sent'"
+                           decoration-info="analysis_done=='True' and state!='sent'" widget="badge" optional="show"/>
+                     <field name="company_id"/>
+                </list>
+            </field>
+        </record>
+
+
+        <record model="ir.ui.view" id="lims_sample_main_search">
+            <field name="name">Request folder</field>
+            <field name="model">lims.sample.main</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <filter string="Archived" name="archive" domain="[('active', '=', False)]"/>
+                    <filter string="Pending FOC approval" name="foc_approval" domain="[('invoicing_type', '=', 'foc'),('approved_foc','=',False)]"/>
+                    <filter string="FOC requests" name="foc_approval" domain="[('invoicing_type', '=', 'foc'),('approved_foc','=',True)]"/>
+                    <filter string="PT requests" name="pt_approval" domain="[('invoicing_type', '=', 'pt')]"/>
+                    <filter string="Draft" name="analysis_draft" domain="[('state', '=', 'draft')]"/>
+                     <filter string="Confirmed" name="analysis_confirmed" domain="[('state', '=', 'confirm')]"/>
+                    <filter string="Received" name="analysis_received" domain="[('state', '=', 'recieved')]"/>
+                    <filter string="Progress" name="analysis_progress" domain="[('state', '=', 'progress')]"/>
+                    <filter string="To-Send" name="analysis_tosend" domain="[('state', '=', 'tosend')]"/>
+                    <filter string="Done" name="analysis_done" domain="[('state', '=', 'done')]"/>
+                    <filter string="Reject" name="analysis_reject" domain="[('state', '=', 'reject')]"/>
+                    <field name="name"/>
+                    <field name="partner_id"/>
+                    <field name="sale_id"/>
+                    <field name="user_id"/>
+                    <field name="priority"/>
+                    <field name="state"/>
+                    <field name="tags"/>
+                    <field name="sample_line_prepared" string="Analyte/Parameter"  filter_domain="[('sample_line_prepared.product_ids.name', 'ilike', self)]"/>
+                    <group string="Group By">
+                        <filter name="state" string="State" context="{'group_by': 'state'}"/>
+                        <filter name="user" string="Responsible" context="{'group_by': 'user_id'}"/>
+                        <filter name="company" string="Company" context="{'group_by': 'company_id'}"/>
+                        <filter name="customer" string="Customer" context="{'group_by': 'partner_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="lims_add_parameters_view_form" model="ir.ui.view">
+            <field name="name">add.parameters.wizard.form</field>
+            <field name="model">add.parameters.wizard</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name='line_id'/>
+                        <field name="domain_products" invisible="True"/>
+                        <field name='product_ids' domain="domain_products" widget="many2many_tags" required="True"/>
+                    </group>
+                    <footer>
+                        <button name='generate_test' type='object' string='Create Analysis'
+                                class="oe_inline oe_highlight"
+                                confirm="Please don't forget to update the sale order if necessary !"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="lims_sample_type_view" model="ir.ui.view">
+            <field name="name">lims.sample.type.form</field>
+            <field name="model">lims.sample.type</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group name="sampe_type_info">
+                            <field name="name"/>
+                            <field name="available_on_portal"/>
+                        </group>
+                        <notebook>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

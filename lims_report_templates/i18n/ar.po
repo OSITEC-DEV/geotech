@@ -1,0 +1,872 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* lims_report_templates
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-20 23:33+0000\n"
+"PO-Revision-Date: 2025-10-20 23:33+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: lims_report_templates
+#: model:ir.actions.report,print_report_name:lims_report_templates.lims_portal_report_pb_pdf
+#: model:ir.actions.report,print_report_name:lims_report_templates.lims_portal_report_pdf
+msgid ""
+"'Report_%s_%s'% (object.partner_id.name or '',str(object.create_date))\n"
+"            "
+msgstr ""
+"'تقرير_%s_%s'% (object.partner_id.name أو '',str(object.create_date))\n"
+"            "
+
+#. module: lims_report_templates
+#: model:ir.actions.report,print_report_name:lims_report_templates.medical_lab_analysis_report
+msgid ""
+"'Report_%s_%s_%s'% (object.partner_id.name or\n"
+"                '',str(object.create_date),object.lang)\n"
+"            "
+msgstr ""
+"'تقرير_%s_%s_%s'% (object.partner_id.name أو\n"
+"                '',str(object.create_date),object.lang)\n"
+"            "
+
+#. module: lims_report_templates
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.lims_report_pb_pdf
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.lims_report_pdf
+msgid "- Sample specimen type :"
+msgstr "- نوع عينة العينة :"
+
+#. module: lims_report_templates
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.lims_report_pb_pdf
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.lims_report_pdf
+msgid "-High-"
+msgstr "-مرتفع-"
+
+#. module: lims_report_templates
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.lims_report_pb_pdf
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.lims_report_pdf
+msgid "-Low-"
+msgstr "-منخفض-"
+
+#. module: lims_report_templates
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.analysis_report_arabic
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.analysis_report_english
+msgid ""
+"<br/>\n"
+"                            <strong>Age/Sex:</strong>"
+msgstr ""
+"<br/>\n"
+"                            <strong>العمر/الجنس:</strong>"
+
+#. module: lims_report_templates
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.analysis_report_arabic
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.analysis_report_english
+msgid ""
+"<br/>\n"
+"                            <strong>Collection Date/Time:</strong>"
+msgstr ""
+"<br/>\n"
+"                            <strong>تاريخ/وقت الجمع:</strong>"
+
+#. module: lims_report_templates
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.analysis_report_arabic
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.analysis_report_english
+msgid ""
+"<br/>\n"
+"                            <strong>Customer Name:</strong>"
+msgstr ""
+"<br/>\n"
+"                            <strong>اسم العميل:</strong>"
+
+#. module: lims_report_templates
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.analysis_report_arabic
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.analysis_report_english
+msgid ""
+"<br/>\n"
+"                            <strong>Family Name:</strong>"
+msgstr ""
+"<br/>\n"
+"                            <strong>اسم العائلة:</strong>"
+
+#. module: lims_report_templates
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.analysis_report_arabic
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.analysis_report_english
+msgid ""
+"<br/>\n"
+"                            <strong>Issued from:</strong>"
+msgstr ""
+"<br/>\n"
+"                            <strong>صادر من:</strong>"
+
+#. module: lims_report_templates
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.analysis_report_arabic
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.analysis_report_english
+msgid ""
+"<br/>\n"
+"                            <strong>Order Date:</strong>"
+msgstr ""
+"<br/>\n"
+"                            <strong>تاريخ الطلب:</strong>"
+
+#. module: lims_report_templates
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.analysis_report_arabic
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.analysis_report_english
+msgid ""
+"<br/>\n"
+"                            <strong>Order Priority:</strong>"
+msgstr ""
+"<br/>\n"
+"                            <strong>أولوية الطلب:</strong>"
+
+#. module: lims_report_templates
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.analysis_report_arabic
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.analysis_report_english
+msgid ""
+"<br/>\n"
+"                            <strong>Specimen:</strong>"
+msgstr ""
+"<br/>\n"
+"                            <strong>العينة:</strong>"
+
+#. module: lims_report_templates
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.analysis_report_arabic
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.analysis_report_english
+msgid ""
+"<br/>\n"
+"                            <strong>Status:</strong>"
+msgstr ""
+"<br/>\n"
+"                            <strong>الحالة:</strong>"
+
+#. module: lims_report_templates
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.lims_report_pdf
+msgid ""
+"<span style=\"text-align:left;\">\n"
+"                                            <strong>Page:</strong>\n"
+"                                            <span class=\"page\"/>\n"
+"                                            of\n"
+"                                            <span class=\"topage\"/>\n"
+"                                        </span>"
+msgstr ""
+"<span style=\"text-align:left;\">\n"
+"                                            <strong>الصفحة:</strong>\n"
+"                                            <span class=\"page\"/>\n"
+"                                            من\n"
+"                                            <span class=\"topage\"/>\n"
+"                                        </span>"
+
+#. module: lims_report_templates
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.lims_report_pb_pdf
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.lims_report_pdf
+msgid "<strong class=\"text-left\">Reviewed by</strong>"
+msgstr "<strong class=\"text-left\">مراجعة من قبل</strong>"
+
+#. module: lims_report_templates
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.lims_report_pb_pdf
+msgid "<strong style=\"color:#084897;\">Collected:</strong>"
+msgstr "<strong style=\"color:#084897;\">تم الجمع:</strong>"
+
+#. module: lims_report_templates
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.lims_report_pb_pdf
+msgid "<strong style=\"color:#084897;\">Received:</strong>"
+msgstr "<strong style=\"color:#084897;\">مستلم:</strong>"
+
+#. module: lims_report_templates
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.lims_report_pb_pdf
+msgid "<strong style=\"color:#084897;\">Registered:</strong>"
+msgstr "<strong style=\"color:#084897;\">مسجل:</strong>"
+
+#. module: lims_report_templates
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.lims_report_pb_pdf
+msgid "<strong style=\"color:#084897;\">Report Number</strong>:"
+msgstr "<strong style=\"color:#084897;\">رقم التقرير</strong>:"
+
+#. module: lims_report_templates
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.lims_report_pb_pdf
+msgid "<strong style=\"color:#084897;\">Reported</strong>:"
+msgstr "<strong style=\"color:#084897;\">تم الإبلاغ</strong>:"
+
+#. module: lims_report_templates
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.lims_report_pb_pdf
+msgid ""
+"<strong>\n"
+"                                                            Full name:\n"
+"                                                        </strong>"
+msgstr ""
+"<strong>\n"
+"                                                            الاسم الكامل:\n"
+"                                                        </strong>"
+
+#. module: lims_report_templates
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.lims_report_pb_pdf
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.lims_report_pdf
+msgid "<strong>Address:</strong>"
+msgstr "<strong>العنوان:</strong>"
+
+#. module: lims_report_templates
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.lims_report_pb_pdf
+msgid "<strong>Age:</strong>"
+msgstr "<strong>العمر:</strong>"
+
+#. module: lims_report_templates
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.lims_report_pb_pdf
+msgid "<strong>Blood-Group:</strong>"
+msgstr "<strong>فصيلة الدم:</strong>"
+
+#. module: lims_report_templates
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.lims_report_pb_pdf
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.lims_report_pdf
+msgid "<strong>CR:</strong>"
+msgstr "<strong>السجل الطبي:</strong>"
+
+#. module: lims_report_templates
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.lims_report_pdf
+msgid "<strong>Collected:</strong>"
+msgstr "<strong>تم الجمع:</strong>"
+
+#. module: lims_report_templates
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.lims_report_pb_pdf
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.lims_report_pdf
+msgid "<strong>Email:</strong>"
+msgstr "<strong>البريد الإلكتروني:</strong>"
+
+#. module: lims_report_templates
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.lims_report_pb_pdf
+msgid "<strong>Gender:</strong>"
+msgstr "<strong>الجنس:</strong>"
+
+#. module: lims_report_templates
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.lims_analysis_report_template_view_form
+msgid ""
+"<strong>Help</strong>: Use the dictionary field to replace the keys by\n"
+"                                    <u>values</u>\n"
+"                                    <br/>\n"
+"                                    Use <strong>#result#</strong> to print the inputs results and <strong>#kr#</strong> to\n"
+"                                    get the Karyotype result."
+msgstr ""
+"<strong>مساعدة</strong>: استخدم حقل القاموس لاستبدال المفاتيح بـ\n"
+"                                    <u>القيم</u>\n"
+"                                    <br/>\n"
+"                                    استخدم <strong>#result#</strong> لطباعة نتائج المدخلات و <strong>#kr#</strong> \n"
+"                                    للحصول على نتيجة النمط النووي."
+
+#. module: lims_report_templates
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.lims_report_pb_pdf
+msgid "<strong>ID:</strong>"
+msgstr "<strong>الهوية:</strong>"
+
+#. module: lims_report_templates
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.analysis_report_arabic
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.analysis_report_english
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.lims_report_pb_pdf
+msgid "<strong>MRN:</strong>"
+msgstr "<strong>الرقم الطبي:</strong>"
+
+#. module: lims_report_templates
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.lims_analysis_view_form_inherit2
+msgid ""
+"<strong>Note:</strong>\n"
+"                            If you change either <strong>Test/parameter</strong> or the <strong>Report Template</strong> fields,\n"
+"                            both the arabic and english comments will be regenerated based on the\n"
+"                            <strong>\n"
+"                                <u>new</u>\n"
+"                            </strong>\n"
+"                            selected Report Template."
+msgstr ""
+"<strong>ملاحظة:</strong>\n"
+"                            إذا قمت بتغيير أي من حقول <strong>الاختبار/المعامل</strong> أو <strong>قالب التقرير</strong>،\n"
+"                            سيتم إعادة إنشاء كل من التعليقات العربية والإنجليزية بناءً على\n"
+"                            <strong>\n"
+"                                <u>قالب التقرير</u>\n"
+"                            </strong>\n"
+"                            الجديد المحدد."
+
+#. module: lims_report_templates
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.analysis_report_arabic
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.analysis_report_english
+msgid "<strong>Order Number:</strong>"
+msgstr "<strong>رقم الطلب:</strong>"
+
+#. module: lims_report_templates
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.lims_report_pb_pdf
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.lims_report_pdf
+msgid "<strong>Phone:</strong>"
+msgstr "<strong>الهاتف:</strong>"
+
+#. module: lims_report_templates
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.lims_report_pdf
+msgid "<strong>Received:</strong>"
+msgstr "<strong>مستلم:</strong>"
+
+#. module: lims_report_templates
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.lims_report_pdf
+msgid "<strong>Registered:</strong>"
+msgstr "<strong>مسجل:</strong>"
+
+#. module: lims_report_templates
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.lims_report_pdf
+msgid "<strong>Report Date:</strong>"
+msgstr "<strong>تاريخ التقرير</strong>:"
+
+#. module: lims_report_templates
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.lims_report_pdf
+msgid "<strong>Report No</strong>:"
+msgstr "<strong>رقم التقرير</strong>:"
+
+#. module: lims_report_templates
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.lims_analysis_report_template_view_form
+msgid ""
+"<strong>Warning</strong>: adding or deleting or editing these <u>sections</u> will\n"
+"                                    re-generate the arabic and the english templates from scratch."
+msgstr ""
+"<strong>تحذير</strong>: إضافة أو حذف أو تحرير هذه <u>الأقسام</u> سوف\n"
+"                                    يعيد إنشاء القوالب العربية والإنجليزية من الصفر."
+
+#. module: lims_report_templates
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.lims_report_pb_pdf
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.lims_report_pdf
+msgid "<strong>Website:</strong>"
+msgstr "<strong>الموقع الإلكتروني:</strong>"
+
+#. module: lims_report_templates
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.lims_report_pb_pdf
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.lims_report_pdf
+msgid "A draft report , not for official use"
+msgstr "تقرير مسودة، غير مخصص للاستخدام الرسمي"
+
+#. module: lims_report_templates
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.lims_report_pdf
+msgid "Accession N:"
+msgstr "رقم الانضمام:"
+
+#. module: lims_report_templates
+#: model:ir.model.fields,field_description:lims_report_templates.field_lims_analysis_report__message_needaction
+msgid "Action Needed"
+msgstr "إجراء مطلوب"
+
+#. module: lims_report_templates
+#: model:ir.model.fields,field_description:lims_report_templates.field_lims_analysis_report__activity_ids
+msgid "Activities"
+msgstr "الأنشطة"
+
+#. module: lims_report_templates
+#: model:ir.model.fields,field_description:lims_report_templates.field_lims_analysis_report__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "تزيين استثناء النشاط"
+
+#. module: lims_report_templates
+#: model:ir.model.fields,field_description:lims_report_templates.field_lims_analysis_report__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: lims_report_templates
+#: model:ir.model.fields,field_description:lims_report_templates.field_lims_analysis_report__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "أيقونة نوع النشاط"
+
+#. module: lims_report_templates
+#: model:ir.model.fields,help:lims_report_templates.field_lims_analysis__lang
+msgid ""
+"All the emails and documents sent to this contact will be translated in this"
+" language."
+msgstr ""
+"سيتم ترجمة جميع رسائل البريد الإلكتروني والمستندات المرسلة إلى هذا الجهة "
+"بهذه اللغة."
+
+#. module: lims_report_templates
+#: model:ir.actions.report,name:lims_report_templates.medical_lab_analysis_report
+msgid "Analysis Report"
+msgstr "تقرير التحليل"
+
+#. module: lims_report_templates
+#: model:ir.actions.report,name:lims_report_templates.lims_portal_report_pdf
+msgid "Analysis Report PDF"
+msgstr "تقرير التحليل PDF"
+
+#. module: lims_report_templates
+#: model:ir.actions.act_window,name:lims_report_templates.lims_analysis_report_template_action
+#: model:ir.ui.menu,name:lims_report_templates.menu_lims_analysis_report_template
+msgid "Analysis Report Templates"
+msgstr "قوالب تقرير التحليل"
+
+#. module: lims_report_templates
+#: model:ir.model.fields,field_description:lims_report_templates.field_lims_analysis__ar_text
+#: model:ir.model.fields,field_description:lims_report_templates.field_lims_analysis_report__ar_text
+msgid "Arabic Comments"
+msgstr "تعليقات عربية"
+
+#. module: lims_report_templates
+#: model:ir.model.fields,field_description:lims_report_templates.field_lims_report_section__name_ar
+msgid "Arabic Section Name"
+msgstr "اسم القسم بالعربية"
+
+#. module: lims_report_templates
+#: model:ir.model.fields,field_description:lims_report_templates.field_lims_analysis_report__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: lims_report_templates
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.lims_report_pb_pdf
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.lims_report_pdf
+msgid "Consultant Signature"
+msgstr "توقيع الاستشاري"
+
+#. module: lims_report_templates
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.analysis_report_english
+msgid "Consultant signature:"
+msgstr "توقيع الاستشاري:"
+
+#. module: lims_report_templates
+#: model:ir.model.fields,field_description:lims_report_templates.field_lims_analysis_report__create_uid
+#: model:ir.model.fields,field_description:lims_report_templates.field_lims_report_section__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: lims_report_templates
+#: model:ir.model.fields,field_description:lims_report_templates.field_lims_analysis_report__create_date
+#: model:ir.model.fields,field_description:lims_report_templates.field_lims_report_section__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: lims_report_templates
+#: model:ir.model.fields,field_description:lims_report_templates.field_product_product__default_template
+#: model:ir.model.fields,field_description:lims_report_templates.field_product_template__default_template
+msgid "Default Template"
+msgstr "القالب الافتراضي"
+
+#. module: lims_report_templates
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.analysis_report_arabic
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.analysis_report_english
+msgid "Department of"
+msgstr "قسم"
+
+#. module: lims_report_templates
+#: model:ir.model.fields,field_description:lims_report_templates.field_lims_analysis_report__dict_id
+msgid "Dictionary"
+msgstr "القاموس"
+
+#. module: lims_report_templates
+#: model:ir.model.fields,field_description:lims_report_templates.field_lims_report__disclaimer
+#: model:ir.model.fields,field_description:lims_report_templates.field_product_product__disclaimer
+#: model:ir.model.fields,field_description:lims_report_templates.field_product_template__disclaimer
+msgid "Disclaimer"
+msgstr "إخلاء المسؤولية"
+
+#. module: lims_report_templates
+#: model:ir.model.fields,field_description:lims_report_templates.field_lims_analysis_report__display_name
+#: model:ir.model.fields,field_description:lims_report_templates.field_lims_report_section__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: lims_report_templates
+#: model:ir.model.fields,field_description:lims_report_templates.field_lims_analysis__domain_test
+msgid "Domain Test"
+msgstr "اختبار النطاق"
+
+#. module: lims_report_templates
+#: model:ir.model.fields,field_description:lims_report_templates.field_lims_analysis_report__eng_text
+msgid "English Comments"
+msgstr "تعليقات إنجليزية"
+
+#. module: lims_report_templates
+#: model:ir.model.fields,field_description:lims_report_templates.field_lims_report_section__name
+msgid "English Section Name"
+msgstr "اسم القسم بالإنجليزية"
+
+#. module: lims_report_templates
+#: model:ir.model.fields,field_description:lims_report_templates.field_lims_analysis_report__message_follower_ids
+msgid "Followers"
+msgstr "المتابعون"
+
+#. module: lims_report_templates
+#: model:ir.model.fields,field_description:lims_report_templates.field_lims_analysis_report__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (شركاء)"
+
+#. module: lims_report_templates
+#: model:ir.model.fields,help:lims_report_templates.field_lims_analysis_report__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "أيقونة Font Awesome، مثال: fa-tasks"
+
+#. module: lims_report_templates
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.lims_analysis_report_template_search
+msgid "Group By"
+msgstr "تجميع حسب"
+
+#. module: lims_report_templates
+#: model:ir.model.fields,field_description:lims_report_templates.field_lims_analysis_report__has_message
+msgid "Has Message"
+msgstr "لديه رسالة"
+
+#. module: lims_report_templates
+#: model:ir.model.fields,field_description:lims_report_templates.field_lims_analysis_report__id
+#: model:ir.model.fields,field_description:lims_report_templates.field_lims_report_section__id
+msgid "ID"
+msgstr "المعرف"
+
+#. module: lims_report_templates
+#: model:ir.model.fields,field_description:lims_report_templates.field_lims_analysis_report__activity_exception_icon
+msgid "Icon"
+msgstr "الأيقونة"
+
+#. module: lims_report_templates
+#: model:ir.model.fields,help:lims_report_templates.field_lims_analysis_report__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "أيقونة للإشارة إلى نشاط استثنائي."
+
+#. module: lims_report_templates
+#: model:ir.model.fields,help:lims_report_templates.field_lims_analysis_report__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "إذا تم تحديده، فإن الرسائل الجديدة تتطلب انتباهك."
+
+#. module: lims_report_templates
+#: model:ir.model.fields,help:lims_report_templates.field_lims_analysis_report__message_has_error
+#: model:ir.model.fields,help:lims_report_templates.field_lims_analysis_report__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا تم تحديده، فإن بعض الرسائل بها خطأ في التسليم."
+
+#. module: lims_report_templates
+#: model:ir.model.fields,field_description:lims_report_templates.field_lims_analysis_report__message_is_follower
+msgid "Is Follower"
+msgstr "متابع"
+
+#. module: lims_report_templates
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.analysis_report_english
+msgid "Lab Manger Signature:"
+msgstr "توقيع مدير المختبر:"
+
+#. module: lims_report_templates
+#: model:ir.model.fields,field_description:lims_report_templates.field_lims_analysis__lang
+msgid "Language"
+msgstr "اللغة"
+
+#. module: lims_report_templates
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.lims_analysis_report_template_list
+msgid "Last Updated By"
+msgstr "آخر تحديث بواسطة"
+
+#. module: lims_report_templates
+#: model:ir.model.fields,field_description:lims_report_templates.field_lims_analysis_report__write_uid
+#: model:ir.model.fields,field_description:lims_report_templates.field_lims_report_section__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: lims_report_templates
+#: model:ir.model.fields,field_description:lims_report_templates.field_lims_analysis_report__write_date
+#: model:ir.model.fields,field_description:lims_report_templates.field_lims_report_section__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: lims_report_templates
+#: model:ir.model.fields,field_description:lims_report_templates.field_lims_report__limitations
+#: model:ir.model.fields,field_description:lims_report_templates.field_product_product__limitations
+#: model:ir.model.fields,field_description:lims_report_templates.field_product_template__limitations
+msgid "Limitations"
+msgstr "القيود"
+
+#. module: lims_report_templates
+#: model:ir.model,name:lims_report_templates.model_lims_analysis_report
+msgid "Lims report Template"
+msgstr "قالب تقرير نظام إدارة المختبرات"
+
+#. module: lims_report_templates
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.analysis_report_arabic
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.analysis_report_english
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.lims_report_pb_pdf
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.lims_report_pdf
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.my_own_layout_header
+msgid "Logo"
+msgstr "الشعار"
+
+#. module: lims_report_templates
+#: model:ir.model,name:lims_report_templates.model_lims_report
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.lims_report_pb_pdf
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.lims_report_pdf
+msgid "Medical Analysis Report"
+msgstr "تقرير التحليل الطبي"
+
+#. module: lims_report_templates
+#: model:ir.model.fields,field_description:lims_report_templates.field_lims_analysis_report__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسالة"
+
+#. module: lims_report_templates
+#: model:ir.model.fields,field_description:lims_report_templates.field_lims_analysis_report__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: lims_report_templates
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.lims_report_pb_pdf
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.lims_report_pdf
+msgid "Method"
+msgstr "الطريقة"
+
+#. module: lims_report_templates
+#: model:ir.model.fields,field_description:lims_report_templates.field_lims_analysis_report__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "الموعد النهائي لنشاطي"
+
+#. module: lims_report_templates
+#: model:ir.model.fields,field_description:lims_report_templates.field_lims_analysis_report__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط التالي"
+
+#. module: lims_report_templates
+#: model:ir.model.fields,field_description:lims_report_templates.field_lims_analysis_report__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط التالي"
+
+#. module: lims_report_templates
+#: model:ir.model.fields,field_description:lims_report_templates.field_lims_analysis_report__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: lims_report_templates
+#: model:ir.model.fields,field_description:lims_report_templates.field_lims_analysis_report__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: lims_report_templates
+#: model:ir.model.fields,field_description:lims_report_templates.field_lims_analysis_report__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: lims_report_templates
+#: model:ir.model.fields,help:lims_report_templates.field_lims_analysis_report__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "عدد الرسائل التي تتطلب إجراء"
+
+#. module: lims_report_templates
+#: model:ir.model.fields,help:lims_report_templates.field_lims_analysis_report__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل التي بها خطأ في التسليم"
+
+#. module: lims_report_templates
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.lims_report_pb_pdf
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.lims_report_pdf
+msgid ""
+"Old\n"
+"                                                                result:"
+msgstr ""
+"النتيجة\n"
+"                                                                السابقة:"
+
+#. module: lims_report_templates
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.lims_report_pb_pdf
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.lims_report_pdf
+msgid ""
+"Old\n"
+"                                                            result:"
+msgstr ""
+"النتيجة\n"
+"                                                            السابقة:"
+
+#. module: lims_report_templates
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.lims_analysis_report_template_search
+msgid "Parameter/Pack"
+msgstr "المعامل/الحزمة"
+
+#. module: lims_report_templates
+#: model:ir.model.fields,field_description:lims_report_templates.field_lims_analysis_report__product_ids
+msgid "Parameters"
+msgstr "المعاملات"
+
+#. module: lims_report_templates
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.lims_analysis_view_form_inherit2
+msgid "Print Options"
+msgstr "خيارات الطباعة"
+
+#. module: lims_report_templates
+#: model:ir.model,name:lims_report_templates.model_product_template
+msgid "Product"
+msgstr "المنتج"
+
+#. module: lims_report_templates
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.lims_report_pb_pdf
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.lims_report_pdf
+msgid "QR Code"
+msgstr "رمز QR"
+
+#. module: lims_report_templates
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.lims_report_pb_pdf
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.lims_report_pdf
+msgid "Range"
+msgstr "المدى"
+
+#. module: lims_report_templates
+#: model:ir.model.fields,field_description:lims_report_templates.field_lims_report_section__report_id
+msgid "Report"
+msgstr "التقرير"
+
+#. module: lims_report_templates
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.lims_analysis_view_form_inherit2
+msgid "Report Editor"
+msgstr "محرر التقرير"
+
+#. module: lims_report_templates
+#: model:ir.model.fields,field_description:lims_report_templates.field_lims_analysis__lim_ana_report
+msgid "Report Template"
+msgstr "قالب التقرير"
+
+#. module: lims_report_templates
+#: model:ir.model,name:lims_report_templates.model_lims_report_section
+msgid "Report sections"
+msgstr "أقسام التقرير"
+
+#. module: lims_report_templates
+#: model:ir.actions.report,name:lims_report_templates.lims_portal_report_pb_pdf
+msgid "Report,Graphic results PDF"
+msgstr "تقرير، نتائج بيانية PDF"
+
+#. module: lims_report_templates
+#: model:ir.model.fields,field_description:lims_report_templates.field_lims_analysis_report__activity_user_id
+msgid "Responsible User"
+msgstr "المستخدم المسؤول"
+
+#. module: lims_report_templates
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.lims_report_pb_pdf
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.lims_report_pdf
+msgid "Result"
+msgstr "النتيجة"
+
+#. module: lims_report_templates
+#: model:ir.model.fields,field_description:lims_report_templates.field_lims_analysis__eng_text
+msgid "Result & Interpretation"
+msgstr "النتيجة والتفسير"
+
+#. module: lims_report_templates
+#: model:ir.model.fields,field_description:lims_report_templates.field_lims_analysis_report__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ في تسليم الرسالة القصيرة"
+
+#. module: lims_report_templates
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.lims_analysis_report_template_search
+msgid "Search"
+msgstr "بحث"
+
+#. module: lims_report_templates
+#: model:ir.model.fields,field_description:lims_report_templates.field_lims_report_section__sequence
+msgid "Section Sequence"
+msgstr "تسلسل القسم"
+
+#. module: lims_report_templates
+#: model:ir.model.fields,field_description:lims_report_templates.field_lims_analysis_report__section_ids
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.lims_analysis_report_template_view_form
+msgid "Sections"
+msgstr "الأقسام"
+
+#. module: lims_report_templates
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.lims_report_pb_pdf
+msgid "Source:"
+msgstr "المصدر:"
+
+#. module: lims_report_templates
+#: model:ir.model.fields,help:lims_report_templates.field_lims_analysis_report__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"الحالة بناءً على الأنشطة\n"
+"متأخر: تاريخ الاستحقاق قد مضى\n"
+"اليوم: تاريخ النشاط هو اليوم\n"
+"مخطط: أنشطة مستقبلية."
+
+#. module: lims_report_templates
+#: model:ir.model.fields,field_description:lims_report_templates.field_lims_report__template_id
+msgid "Template"
+msgstr "القالب"
+
+#. module: lims_report_templates
+#: model:ir.model.fields,field_description:lims_report_templates.field_lims_analysis_report__name
+msgid "Template Name"
+msgstr "اسم القالب"
+
+#. module: lims_report_templates
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.lims_analysis_report_template_view_form
+msgid "Templates"
+msgstr "القوالب"
+
+#. module: lims_report_templates
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.lims_report_pb_pdf
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.lims_report_pdf
+msgid "Test"
+msgstr "الاختبار"
+
+#. module: lims_report_templates
+#: model:ir.model,name:lims_report_templates.model_lims_analysis
+msgid "Tests"
+msgstr "الاختبارات"
+
+#. module: lims_report_templates
+#: model:ir.model.fields,help:lims_report_templates.field_lims_analysis_report__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع النشاط الاستثنائي المسجل."
+
+#. module: lims_report_templates
+#: model:ir.model.fields,field_description:lims_report_templates.field_lims_analysis_report__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع"
+
+#. module: lims_report_templates
+#: model:ir.model.fields,help:lims_report_templates.field_lims_analysis_report__website_message_ids
+msgid "Website communication history"
+msgstr "سجل اتصالات الموقع"
+
+#. module: lims_report_templates
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.analysis_report_arabic
+msgid "توقيع الاستشاري"
+msgstr ""
+
+#. module: lims_report_templates
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.analysis_report_arabic
+msgid "توقيع مدير المختبر:"
+msgstr ""
+
+#. module: lims_report_templates
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.lims_report_pb_pdf
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.lims_report_pdf
+msgid "مسودة تقرير يمنع اعتمادها بصفة رسمية"
+msgstr ""
+
+#. module: lims_report_templates
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.lims_report_pdf
+msgid "Substance"
+msgstr "العنصر المتبقي"
+
+#. module: lims_report_templates
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.lims_report_pdf
+msgid "Result"
+msgstr "النتيجة"
+
+#. module: lims_report_templates
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.lims_report_pdf
+msgid "Unit"
+msgstr "وحدة القياس"
+
+#. module: lims_report_templates
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.lims_report_pdf
+msgid "LOQ"
+msgstr "حد التقدير الكمي"
+
+#. module: lims_report_templates
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.lims_report_pdf
+msgid "MRL"
+msgstr "الحد الأقصى للمتبقيات"
+
+#. module: lims_report_templates
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.lims_report_pdf
+msgid "Judgment"
+msgstr "الحكم"
+
+#. module: lims_report_templates
+#: model_terms:ir.ui.view,arch_db:lims_report_templates.lims_report_pdf
+msgid "Certificate of Analysis"
+msgstr "تقرير نتيجة تحليل عينة"

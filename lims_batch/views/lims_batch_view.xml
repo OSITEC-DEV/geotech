@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_lims_batch_tree" model="ir.ui.view">
+        <field name="name">lims.batch.tree</field>
+        <field name="model">lims.batch</field>
+        <field name="arch" type="xml">
+            <list string="LIMS Batches">
+                <field name="name"/>
+                <field name="date"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_lims_batch_form" model="ir.ui.view">
+        <field name="name">lims.batch.form</field>
+        <field name="model">lims.batch</field>
+        <field name="arch" type="xml">
+            <form string="LIMS Batch">
+              <header>
+                    <button name="action_set_to_draft" type="object" string="Set to Draft"
+                            invisible="state != 'cancel'" class="btn-secondary"/>
+                    <button name="action_set_to_progress" type="object" string="Start WIP"
+                            invisible="state != 'draft'" class="btn-primary"/>
+                    <button name="action_set_to_done" type="object" string="Mark as Done"
+                            invisible="state != 'progress'" class="btn-success"/>
+                    <button name="action_set_to_cancel" type="object" string="Cancel"
+                            invisible="state not in ['progress','draft']"  class="btn-danger"/>
+                   <button name="create_validated_picking" type="object" string="Create stock move"
+                            invisible="state != 'done'" class="btn-success"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,progress,done,cancel"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button type="object" name="action_open_analysis" class="oe_stat_button" icon="fa-flask">
+                            <field name="analysis_ids" widget="statinfo" string="Analyses"/>
+                        </button>
+                        <button type="object" name="action_open_samples" class="oe_stat_button" icon="fa-vial">
+                            <field name="sample_ids" widget="statinfo" string="Samples"/>
+                        </button>
+                    </div>
+                    <group>
+                        <field name="name"/>
+                        <field name="date" readonly="state == 'done'"/>
+                        <field name="department_id" readonly="state == 'done'"/>
+                    </group>
+                    <group>
+                        <field name="batch_kit_id" readonly="state == 'done' "/>
+                    </group>
+                    <notebook>
+                        <page string="KIT Components">
+                            <field name="batch_component_ids" context="{'default_batch_id': id}"
+                                   readonly="state == 'done'">
+                                <list editable="bottom" string="Batch Components"
+                                      view_id="view_lims_batch_kit_line_tree">
+                                    <field name="type"/>
+                                    <field name="product_id"/>
+                                    <field name="quantity"/>
+                                    <field name="uom_id"/>
+                                    <field name="cost_per_unit" readonly="1" sum="Total"/>
+                                </list>
+                            </field>
+                            </page>
+                        <page string="Samples">
+                            <field name="sample_ids" widget="many2many_tags" readonly="state == 'done'"/>
+                        </page>
+                        <page string="Analysis">
+                            <field name="analysis_ids" readonly="state == 'done'">
+                               <list edit="false" create="false">
+                                    <field name="name"/>
+                                    <field name="partner_id" groups="lims.group_show_sample_information"/>
+                                    <field name="method_id"/>
+                                    <field name="result_txt"/>
+                                    <field name="uom_id"/>
+                                    <field name="state"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Instruments" readonly="state == 'done'">
+                            <field name="instrument_ids">
+                               <list editable="top">
+                                    <field name="equipment_id"/>
+                                    <field name="date"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Operators" readonly="state == 'done'">
+                            <field name="operator_ids">
+                                 <list editable="top">
+                                    <field name="operator_id"/>
+                                    <field name="duration"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Reagents" readonly="state == 'done'">
+                            <field name="reagents" context="{'default_batch_id': id}">
+                                <list editable="top">
+
+                                    <field name="product_id" readonly="is_consumed == True"/>
+                                    <field name="lot_id" readonly="is_consumed == True"/>
+                                    <field name="date" readonly="is_consumed == True"/>
+                                    <field name="is_consumed" />
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Stock Moves" readonly="state == 'done'">
+                            <field name="picking_id" readonly="True"/>
+                            <field name="moves_ids">
+                                <list edit="false" create="false">
+                                    <field name="product_id"/>
+                                    <field name="quantity"/>
+                                    <field name="lot_id"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Batch Cost">
+                            <group>
+                                <field name="labor_cost" string="Labor Cost" widget="monetary"/>
+                                <field name="total_cost" string="Total Cost" widget="monetary"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>

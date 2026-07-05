@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="lims_batch_wizard_inherited_form" model="ir.ui.view">
+            <field name="name">lims.batch.analysis.form</field>
+            <field name="model">lims.batch.analysis</field>
+            <field name="inherit_id" ref="lims_result.lims_batch_wizard_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//footer" position="inside">
+                     <button name="create_batch" type="object" string="Create Batch"
+                             class="btn-success"
+                     help="Please ensure that all the selected analysis have the same department"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

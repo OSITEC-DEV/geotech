@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<odoo>
+    <!-- LIMS Batch Kit Form View -->
+    <record id="view_lims_batch_kit_form" model="ir.ui.view">
+        <field name="name">lims.batch.kit.form</field>
+        <field name="model">lims.batch.kit</field>
+        <field name="arch" type="xml">
+            <form string="Batch Kit">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="department_id"/>
+
+                    </group>
+                    <notebook>
+                        <page string="Operators">
+                            <field name="operators">
+                                <list editable="bottom">
+                                    <field name="operator_id"/>
+                                    <field name="duration"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Components">
+                            <field name="kit_line">
+                                <list editable="bottom">
+                                    <field name="type"/>
+                                    <field name="product_id"/>
+                                    <field name="quantity"/>
+                                    <field name="uom_id"/>
+                                    <field name="cost_per_unit" readonly="1" sum="Total"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- LIMS Batch Kit Tree View -->
+    <record id="view_lims_batch_kit_tree" model="ir.ui.view">
+        <field name="name">lims.batch.kit.tree</field>
+        <field name="model">lims.batch.kit</field>
+        <field name="arch" type="xml">
+            <list string="Batch Kits">
+                <field name="name"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- LIMS Batch Kit Line Form View -->
+    <record id="view_lims_batch_kit_line_form" model="ir.ui.view">
+        <field name="name">lims.batch.kit.line.form</field>
+        <field name="model">lims.batch.kit.line</field>
+        <field name="arch" type="xml">
+            <form string="Batch Kit Line">
+                <sheet>
+                    <group>
+                        <field name="kit_id" invisible="1"/> <!-- Keep BOM ID hidden -->
+                        <field name="type"/>
+                        <field name="product_id"/>
+                        <field name="quantity"/>
+                         <field name="uom_id"/>
+                        <field name="cost_per_unit" readonly="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- LIMS Batch Kit Line Tree View -->
+    <record id="view_lims_batch_kit_line_tree" model="ir.ui.view">
+        <field name="name">lims.batch.kit.line.tree</field>
+        <field name="model">lims.batch.kit.line</field>
+        <field name="arch" type="xml">
+            <list string="Batch Kit Lines">
+                <field name="type"/>
+                <field name="product_id"/>
+                <field name="quantity"/>
+                 <field name="uom_id"/>
+                <field name="cost_per_unit" readonly="1"/>
+            </list>
+        </field>
+    </record>
+</odoo>
+
+</odoo>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="lims_department_view_form" model="ir.ui.view">
+            <field name="name">lims.department.main.form</field>
+            <field name="model">lims.department</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group string='Basic information' col='4'>
+                        <field name="name"/>
+                        <field name="manager_id" invisible="is_subcontractor == True"/>
+                        <field name="active"/>
+                        <field name="laboratory_id"/>
+                        <field name="is_subcontractor"/>
+                        <field name="prefix_code"/>
+                        <field name="partner_id" invisible="is_subcontractor == False"
+                               groups="lims.group_show_sample_information"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

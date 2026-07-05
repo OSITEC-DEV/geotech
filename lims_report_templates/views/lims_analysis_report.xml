@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="lims_analysis_report_template_list" model="ir.ui.view">
+            <field name="name">lims.analysis.report.list</field>
+            <field name="model">lims.analysis.report</field>
+            <field name="arch" type="xml">
+                <list>
+                    <field name="name"/>
+                    <field name="product_ids"/>
+                    <field name="dict_id"/>
+                    <field name="write_uid" string="Last Updated By"/>
+                    <field name="section_ids" widget="many2many_tags" options="{'color_field': 'sequence'}"/>
+                </list>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="lims_analysis_report_template_search">
+            <field name="name">Analysis Report Templates</field>
+            <field name="model">lims.analysis.report</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="name"/>
+                    <field name="product_ids" string="Parameter/Pack"/>
+                    <field name="eng_text"/>
+                    <group string="Group By">
+                        <!--                        <filter name="product_ids" string="Parameter/Pack" context="{'group_by': 'product_ids'}"/>-->
+                    </group>
+                </search>
+            </field>
+        </record>
+        <record id="lims_analysis_report_template_view_form" model="ir.ui.view">
+            <field name="name">lims.analysis.report.template.form</field>
+            <field name="model">lims.analysis.report</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <h1>
+                            <field name='name'/>
+                        </h1>
+                        <group>
+                            <field name='product_ids' widget="many2many_tags"/>
+                            <field name="dict_id"/>
+                        </group>
+                        <notebook>
+                            <page string="Sections">
+                                <div class="alert alert-danger text-center" role="alert">
+                                    <a class="close" data-dismiss="alert" href="#">x</a>
+                                    <strong>Warning</strong>: adding or deleting or editing these <u>sections</u> will
+                                    re-generate the arabic and the english templates from scratch.
+                                </div>
+                                <field name='section_ids'>
+                                    <list editable="bottom">
+                                        <field name='sequence' widget='handle'/>
+                                        <field name='name'/>
+                                        <field name='name_ar' style="text-align:right;font-size:12pt;"/>
+                                    </list>
+                                </field>
+                            </page>
+                            <page string="Templates">
+                                <div class="alert alert-info text-center" role="alert">
+                                    <a class="close" data-dismiss="alert" href="#">x</a>
+                                    <strong>Help</strong>: Use the dictionary field to replace the keys by
+                                    <u>values</u>
+                                    <br/>
+                                    Use <strong>#result#</strong> to print the inputs results and <strong>#kr#</strong> to
+                                    get the Karyotype result.
+                                </div>
+                                <group>
+                                    <field name='eng_text'/>
+                                    <field name='ar_text'/>
+                                </group>
+
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <chatter>
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </chatter>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <template id="assets_backend" name="vertical_text_css" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <link rel="stylesheet" href="/lims/static/src/css/vertical_text.css"/>
+            </xpath>
+        </template>
+    </data>
+</odoo>

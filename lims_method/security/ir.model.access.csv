@@ -1,0 +1,13 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_lims_analysis_step_user,lims.analysis.step,model_lims_analysis_step,lims.group_lims_analysis,1,1,0,0
+access_lims_analysis_step_responsible,lims.analysis.step,model_lims_analysis_step,lims.group_lims_responsible,1,1,1,1
+access_lims_method_step_user,lims.method.step,model_lims_method_step,lims.group_lims_analysis,1,1,0,0
+access_lims_method_step_responsible,lims.method.step,model_lims_method_step,lims.group_lims_responsible,1,1,1,1
+access_lims_analysis_step_viewer,lims.analysis.step,model_lims_analysis_step,lims.group_lims_viewer,1,0,0,0
+access_lims_method_step_viewer,lims.method.step,model_lims_method_step,lims.group_lims_viewer,1,0,0,0
+access_lims_method_technique_responsible,lims.method.technique,model_lims_method_technique,lims.group_lims_responsible,1,1,1,0
+access_lims_method_technique_analyst,lims.method.technique,model_lims_method_technique,lims.group_lims_analysis,1,0,0,0
+access_lims_method_technique_sample,lims.method.technique,model_lims_method_technique,lims.group_lims_sample,1,0,0,0
+access_lims_method_technique_viewer,lims.method.technique,model_lims_method_technique,lims.group_lims_viewer,1,0,0,0
+access_lims_analysis_remarks_resp,lims.analysis.remarks,model_lims_analysis_remarks,lims.group_lims_responsible,1,1,1,0
+access_lims_analysis_remarks_analyst,lims.analysis.remarks,model_lims_analysis_remarks,lims.group_lims_analysis,1,0,0,0
