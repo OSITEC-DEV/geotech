@@ -5,7 +5,7 @@
            Site, borehole and geotechnical test management (SPT, Permeability, Packer, etc.) for LIMS.
                 """,
     'description': """Geotechnical Laboratory Module""",
-    'version': '18.0.1.0',
+    'version': '19.0.1.0',
     'sequence': 15,
     'website': "",
     'category': 'Extra Tools',

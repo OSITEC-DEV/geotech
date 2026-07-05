@@ -5,7 +5,7 @@
             This module allows you print analysis report related to tests parameters.
                 """,
     'description': """Analysis Report Templates LIMS""",
-    'version': '18.0.1.0',
+    'version': '19.0.1.0',
     'sequence': 15,
     'website': "",
     'category': 'Extra Tools',

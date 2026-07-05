@@ -5,7 +5,7 @@
            This module allows you to manage each analysis by steps before filling in the final result. .
                 """,
     'description': """Management of a medical laboratory """,
-    'version': '18.0.1.0',
+    'version': '19.0.1.0',
     'sequence': 15,
     'website': "",
     'category': 'Extra Tools',

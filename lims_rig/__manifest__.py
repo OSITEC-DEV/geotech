@@ -5,7 +5,7 @@
            Fleet, scheduling, and deployment management for soil testing rigs.
                 """,
     'description': """Rig Management for Geotechnical Laboratory""",
-    'version': '18.0.1.0',
+    'version': '19.0.1.0',
     'sequence': 15,
     'website': "",
     'category': 'Extra Tools',

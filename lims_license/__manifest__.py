@@ -15,7 +15,7 @@
         invalid or expires, followed by a hard block of non-administrator
         users once the grace period elapses.
     """,
-    'version': '18.0.1.0',
+    'version': '19.0.1.0',
     'sequence': 1,
     'website': "",
     'category': 'Extra Tools',
