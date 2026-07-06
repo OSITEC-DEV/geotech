@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+    <menuitem id="menu_lims_registration_dashboard"
+              name="Registration Dashboard"
+              parent="lims.menu_lims_root"
+              action="lims_registration_dashboard_action"
+              sequence="0"/>
+
+    <menuitem id="menu_lims_registration_dashboard_config"
+              name="Registration Dashboard Configuration"
+              parent="lims.menu_lims_config_2"
+              action="lims_registration_dashboard_config_action"
+              sequence="99"/>
+
+    <menuitem id="menu_lims_request_config_line"
+              name="Request Configuration Lines"
+              parent="lims.menu_lims_config_2"
+              action="action_lims_request_config_line"
+              sequence="98"/>
+
+    </data>
+</odoo>

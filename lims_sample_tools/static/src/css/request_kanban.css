@@ -1,0 +1,121 @@
+/* Dashboard Card */
+
+.o_lims_dashboard_card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* Generic tile */
+.o_lims_tile {
+    display: flex;
+    align-items: center;
+    padding: 10px 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    border-left: 4px solid transparent;
+}
+
+/* Hover */
+.o_lims_tile:hover {
+    transform: translateY(-2px);
+    background: #f9fafb;
+}
+
+/* Count badge */
+.o_lims_count {
+    min-width: 26px;
+    text-align: center;
+    border-radius: 6px;
+    padding: 2px 6px;
+    margin-right: 10px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* ===== COLORS ===== */
+
+/* Draft */
+.o_tile_draft {
+    border-left-color: #9ca3af;
+}
+.o_tile_draft .o_lims_count {
+    background: #e5e7eb;
+    color: #374151;
+}
+
+/* Confirmed */
+.o_tile_confirm {
+    border-left-color: #6366f1;
+}
+.o_tile_confirm .o_lims_count {
+    background: #e0e7ff;
+    color: #3730a3;
+}
+
+/* Received */
+.o_tile_received {
+    border-left-color: #06b6d4;
+}
+.o_tile_received .o_lims_count {
+    background: #cffafe;
+    color: #0e7490;
+}
+
+/* In Progress */
+.o_tile_progress {
+    border-left-color: #f59e0b;
+    background: #fffbeb;
+}
+.o_tile_progress .o_lims_count {
+    background: #fde68a;
+    color: #92400e;
+}
+
+/* To Send */
+.o_tile_tosend {
+    border-left-color: #6b7280;
+}
+.o_tile_tosend .o_lims_count {
+    background: #f3f4f6;
+    color: #374151;
+}
+
+/* Done */
+.o_tile_done {
+    border-left-color: #10b981;
+}
+.o_tile_done .o_lims_count {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+/* Rejected */
+.o_tile_reject {
+    border-left-color: #ef4444;
+    background: #fef2f2;
+}
+.o_tile_reject .o_lims_count {
+    background: #fecaca;
+    color: #7f1d1d;
+}
+
+/* ===== CATEGORY BACKGROUNDS ===== */
+
+.o_category_private {
+    background: linear-gradient(135deg, #f0f9ff, #ffffff);
+    border: 1px solid #e0f2fe;
+}
+
+.o_category_government {
+    background: linear-gradient(135deg, #f5f3ff, #ffffff);
+    border: 1px solid #e9d5ff;
+}
+
+.o_category_project {
+    background: linear-gradient(135deg, #ecfdf5, #ffffff);
+    border: 1px solid #d1fae5;
+}

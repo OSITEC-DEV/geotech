@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+<t t-name="lims_sample_tools.TestCatalogueWidget">
+    <div class="o_catalogue_trigger d-flex flex-wrap align-items-center gap-1 py-1">
+        <t t-foreach="currentProductIds" t-as="pid" t-key="pid">
+            <span class="badge rounded-pill bg-primary d-inline-flex align-items-center gap-1"
+                  style="cursor:default;font-size:12px"
+                  t-att-title="getProductTooltip(pid)">
+                <t t-esc="getProductName(pid)"/>
+                <t t-set="units" t-value="getUnit(pid)"/>
+                <t t-if="units gt 1">
+                    <span class="opacity-75"
+                          style="font-size:10px"
+                          t-esc="'x' + units"/>
+                </t>
+            </span>
+        </t>
+        <button class="btn btn-sm btn-outline-primary ms-1"
+                t-on-click="openCatalogue"
+                t-att-disabled="props.readonly or !state.loaded">
+            <t t-if="!state.loaded">
+                <i class="fa fa-spinner fa-spin me-1"/> Loading...
+            </t>
+            <t t-else="">
+                <i class="fa fa-th-list me-1"/> Edit
+            </t>
+        </button>
+    </div>
+</t>
+
+<t t-name="lims_sample_tools.TestCatalogueDialog">
+    <Dialog title="'Test Catalogue'" size="'xl'">
+
+        <div class="o_catalogue_shell" style="min-height:520px">
+
+            <div class="o_catalogue_topbar d-flex align-items-center gap-3 mb-3 pb-3 border-bottom">
+                <div class="input-group input-group-sm flex-grow-1" style="max-width:340px">
+                    <span class="input-group-text"><i class="fa fa-search"/></span>
+                    <input type="text"
+                           class="form-control"
+                           placeholder="Search tests or categories..."
+                           t-att-value="state.search"
+                           t-on-input="(ev) => { this.state.search = ev.target.value; }"/>
+                    <t t-if="state.search">
+                        <button class="btn btn-outline-secondary"
+                                t-on-click="() => { this.state.search = ''; }">
+                            <i class="fa fa-times"/>
+                        </button>
+                    </t>
+                </div>
+                <span class="ms-auto text-muted small">
+                    <strong t-esc="selectedCount"/> selected
+                </span>
+            </div>
+
+            <div class="o_catalogue_body row g-3">
+
+                <!-- LEFT: test browser -->
+                <div class="col-7 o_catalogue_browser"
+                     style="max-height:440px;overflow-y:auto;padding-right:8px">
+
+                    <!-- PACKAGES -->
+                    <t t-if="packs.length">
+                        <div class="o_cat_section_header d-flex align-items-center gap-2 mb-2">
+                            <i class="fa fa-cube text-warning"/>
+                            <span class="fw-semibold text-uppercase"
+                                  style="font-size:11px;letter-spacing:.07em">Packages</span>
+                            <span class="badge bg-warning text-dark rounded-pill ms-1"
+                                  t-esc="packs.length"/>
+                        </div>
+
+                        <t t-foreach="packs" t-as="pack" t-key="pack.id">
+                            <div class="o_pack_card mb-2 rounded border"
+                                 t-att-class="isPackAllSelected(pack) ? &quot;border-primary&quot; : &quot;border-secondary-subtle&quot;">
+                                <div class="o_pack_header d-flex align-items-center gap-2 px-3 py-2"
+                                     style="cursor:pointer">
+
+                                    <!-- Arrow: click to expand/collapse only -->
+                                    <i t-att-class="isPackExpanded(pack.id) ? &quot;fa fa-chevron-down text-muted&quot; : &quot;fa fa-chevron-right text-muted&quot;"
+                                       style="font-size:11px;width:12px;cursor:pointer"
+                                       t-on-click="() => this.togglePack(pack.id)"/>
+
+                                    <!-- Checkbox: click to select/deselect pack -->
+                                    <input type="checkbox"
+                                           class="form-check-input mt-0"
+                                           t-att-checked="isPackAllSelected(pack)"
+                                           t-on-click="() => this.selectPack(pack)"/>
+
+                                    <!-- Name: click to expand/collapse -->
+                                    <span class="fw-semibold small flex-grow-1"
+                                          style="cursor:pointer"
+                                          t-on-click="() => this.togglePack(pack.id)"
+                                          t-esc="pack.display_name"/>
+
+                                    <span class="badge bg-light text-muted border small">
+                                        <t t-esc="(pack.child_ids || []).length"/> tests
+                                    </span>
+                                </div>
+
+                                <t t-if="isPackExpanded(pack.id)">
+                                    <div class="o_pack_children border-top"
+                                         style="background:var(--color-background-secondary)">
+                                        <t t-foreach="pack.child_ids" t-as="child" t-key="child.id">
+                                            <div class="o_product_row d-flex align-items-center gap-2 px-4 py-2"
+                                                 t-att-class="isSelected(child.id) ? &quot;o_product_selected&quot; : &quot;&quot;">
+                                                <input type="checkbox"
+                                                       class="form-check-input mt-0"
+                                                       t-att-checked="isSelected(child.id)"
+                                                       t-on-change="() => this.toggleProduct(child.id)"/>
+                                                <span class="small flex-grow-1"
+                                                      t-esc="child.display_name"/>
+                                            </div>
+                                        </t>
+                                    </div>
+                                </t>
+                            </div>
+                        </t>
+                    </t>
+
+                    <!-- INDIVIDUAL TESTS -->
+                    <t t-if="individuals.length">
+                        <div class="o_cat_section_header d-flex align-items-center gap-2 mb-2 mt-3">
+                            <i class="fa fa-flask text-primary"/>
+                            <span class="fw-semibold text-uppercase"
+                                  style="font-size:11px;letter-spacing:.07em">Individual Tests</span>
+                            <span class="badge bg-primary rounded-pill ms-1"
+                                  t-esc="individuals.length"/>
+                        </div>
+
+                        <t t-foreach="categories" t-as="cat" t-key="cat.id">
+                            <div class="o_category_block mb-2 rounded border border-secondary-subtle">
+                                <div class="o_category_header d-flex align-items-center gap-2 px-3 py-2"
+                                     style="cursor:pointer;background:var(--color-background-secondary)"
+                                     t-on-click="() => this.toggleCategory(cat.id)">
+                                    <i t-att-class="isCategoryExpanded(cat.id) ? &quot;fa fa-chevron-down text-muted&quot; : &quot;fa fa-chevron-right text-muted&quot;"
+                                       style="font-size:11px;width:12px"/>
+                                    <span class="fw-semibold small flex-grow-1" t-esc="cat.name"/>
+                                    <span class="badge bg-secondary rounded-pill"
+                                          t-esc="cat.products.length"/>
+                                </div>
+
+                                <t t-if="isCategoryExpanded(cat.id)">
+                                    <t t-foreach="cat.products" t-as="product" t-key="product.id">
+                                        <div class="o_product_row d-flex align-items-center gap-2 px-3 py-2 border-top border-secondary-subtle"
+                                             t-att-class="isSelected(product.id) ? &quot;o_product_selected&quot; : &quot;&quot;">
+                                            <input type="checkbox"
+                                                   class="form-check-input mt-0"
+                                                   t-att-checked="isSelected(product.id)"
+                                                   t-on-change="() => this.toggleProduct(product.id)"/>
+                                            <span class="small flex-grow-1"
+                                                  t-esc="product.display_name"/>
+                                        </div>
+                                    </t>
+                                </t>
+                            </div>
+                        </t>
+                    </t>
+
+                    <!-- Empty state -->
+                    <t t-if="!packs.length and !individuals.length">
+                        <div class="text-center text-muted py-5">
+                            <i class="fa fa-search fa-2x mb-2 d-block"/>
+                            No tests found
+                        </div>
+                    </t>
+                </div>
+
+                <!-- RIGHT: config panel -->
+                <div class="col-5 o_catalogue_config"
+                     style="max-height:440px;overflow-y:auto;border-left:1px solid var(--color-border-tertiary);padding-left:16px">
+
+                    <t t-if="!selectedCount">
+                        <div class="text-center text-muted py-5">
+                            <i class="fa fa-hand-o-left fa-2x mb-2 d-block"/>
+                            <span class="small">Select tests on the left to configure them</span>
+                        </div>
+                    </t>
+                    <t t-else="">
+                        <div class="small fw-semibold text-muted text-uppercase mb-2"
+                             style="letter-spacing:.07em">Configuration</div>
+
+                        <!-- Individual products config (skip pack children — they appear below) -->
+                        <t t-foreach="props.allProducts" t-as="product" t-key="product.id">
+                            <t t-if="isSelected(product.id) and !product.isPack and !isPackChild(product.id)">
+                                <div class="o_config_card mb-2 p-3 rounded border">
+                                    <div class="fw-semibold small mb-2 d-flex align-items-center gap-2">
+                                        <i class="fa fa-flask text-primary" style="font-size:11px"/>
+                                        <span t-esc="product.display_name"/>
+                                        <button class="btn btn-sm btn-link text-danger ms-auto p-0"
+                                                title="Remove"
+                                                t-on-click="() => this.toggleProduct(product.id)">
+                                            <i class="fa fa-trash-o"/>
+                                        </button>
+                                    </div>
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <label class="text-muted small mb-0"
+                                               style="min-width:90px">Source</label>
+                                        <select class="form-select form-select-sm"
+                                                t-on-change="(ev) => this.setExternalFlag(product.id, ev)">
+                                            <option value="internal"
+                                                    t-att-selected="!isExternal(product.id)">Internal</option>
+                                            <option value="external"
+                                                    t-att-selected="isExternal(product.id)">External</option>
+                                        </select>
+                                    </div>
+                                    <t t-if="isExternal(product.id)">
+                                        <div class="d-flex align-items-center gap-2">
+                                            <label class="text-muted small mb-0"
+                                                   style="min-width:90px">Subcontractor</label>
+                                            <select class="form-select form-select-sm"
+                                                    t-on-change="(ev) => this.setDept(product.id, ev)">
+                                                <option value="">-- select --</option>
+                                                <t t-foreach="props.departments" t-as="dept" t-key="dept.id">
+                                                    <option t-att-value="dept.id"
+                                                            t-att-selected="getDeptId(product.id) == dept.id"
+                                                            t-esc="dept.display_name"/>
+                                                </t>
+                                            </select>
+                                        </div>
+                                    </t>
+                                </div>
+                            </t>
+                        </t>
+
+                        <!-- Pack children config -->
+                    <!-- Pack config — pack selected as a whole -->
+                    <!-- Selected pack children config -->
+                    <t t-foreach="props.allProducts" t-as="pack" t-key="'child_cfg_' + pack.id">
+                        <t t-if="pack.isPack">
+                            <t t-foreach="pack.child_ids" t-as="child" t-key="'child_' + child.id">
+                                <t t-if="isSelected(child.id)">
+                                    <div class="o_config_card mb-2 p-3 rounded border">
+                                        <div class="fw-semibold small mb-2 d-flex align-items-center gap-2">
+                                            <i class="fa fa-flask text-primary" style="font-size:11px"/>
+                                            <span t-esc="child.display_name"/>
+                                            <span class="badge bg-warning text-dark"
+                                                  style="font-size:9px"
+                                                  t-esc="pack.display_name"/>
+                                            <button class="btn btn-sm btn-link text-danger ms-auto p-0"
+                                                    title="Remove"
+                                                    t-on-click="() => this.toggleProduct(child.id)">
+                                                <i class="fa fa-trash-o"/>
+                                            </button>
+                                        </div>
+                                        <div class="d-flex align-items-center gap-2 mb-2">
+                                            <label class="text-muted small mb-0"
+                                                   style="min-width:90px">Source</label>
+                                            <select class="form-select form-select-sm"
+                                                    t-on-change="(ev) => this.setExternalFlag(child.id, ev)">
+                                                <option value="internal"
+                                                        t-att-selected="!isExternal(child.id)">Internal</option>
+                                                <option value="external"
+                                                        t-att-selected="isExternal(child.id)">External</option>
+                                            </select>
+                                        </div>
+                                        <t t-if="isExternal(child.id)">
+                                            <div class="d-flex align-items-center gap-2">
+                                                <label class="text-muted small mb-0"
+                                                       style="min-width:90px">Subcontractor</label>
+                                                <select class="form-select form-select-sm"
+                                                        t-on-change="(ev) => this.setDept(child.id, ev)">
+                                                    <option value="">-- select --</option>
+                                                    <t t-foreach="props.departments" t-as="dept" t-key="dept.id">
+                                                        <option t-att-value="dept.id"
+                                                                t-att-selected="getDeptId(child.id) == dept.id"
+                                                                t-esc="dept.display_name"/>
+                                                    </t>
+                                                </select>
+                                            </div>
+                                        </t>
+                                    </div>
+                                </t>
+                            </t>
+                        </t>
+                    </t>
+                    </t>
+                </div>
+            </div>
+        </div>
+
+        <t t-set-slot="footer">
+            <span class="me-auto text-muted small">
+                <strong t-esc="selectedCount"/> test(s) selected
+            </span>
+            <button class="btn btn-primary" t-on-click="save">
+                <i class="fa fa-check me-1"/> Apply selection
+            </button>
+            <button class="btn btn-secondary" t-on-click="props.close">Cancel</button>
+        </t>
+
+    </Dialog>
+</t>
+
+</templates>

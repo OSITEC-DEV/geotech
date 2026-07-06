@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_lims_request_dashboard_kanban_sample,lims.request.dashboard.kanban.sample,model_lims_request_dashboard_kanban,lims.group_lims_sample,1,0,0,0
+access_lims_request_dashboard_kanban_manager,lims.request.dashboard.kanban.manager,model_lims_request_dashboard_kanban,lims.group_lims_manager,1,1,1,1
+access_lims_request_config_line_sample,lims.request.config.line.sample,model_lims_request_config_line,lims.group_lims_sample,1,1,1,0
+access_lims_request_config_line_manager,lims.request.config.line.manager,model_lims_request_config_line,lims.group_lims_manager,1,1,1,1
+access_lims_sample_wizard,lims.sample.wizard,model_lims_sample_wizard,lims.group_lims_sample,1,1,1,1

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+    <record id="lims_request_dashboard_form" model="ir.ui.view">
+        <field name="name">lims.request.dashboard.form</field>
+        <field name="model">lims.request.dashboard.kanban</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="name"/>
+                    <field name="request_category"/>
+                    <field name="sequence"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="lims_request_dashboard_kanban" model="ir.ui.view">
+        <field name="name">lims.request.dashboard.kanban</field>
+        <field name="model">lims.request.dashboard.kanban</field>
+        <field name="arch" type="xml">
+            <kanban create="false" can_open="0" class="o_account_kanban">
+                <field name="name"/>
+                <field name="request_category"/>
+                <field name="draft_count"/>
+                <field name="confirm_count"/>
+                <field name="recieved_count"/>
+                <field name="progress_count"/>
+                <field name="tosend_count"/>
+                <field name="done_count"/>
+                <field name="reject_count"/>
+                <field name="total_count"/>
+
+                <templates>
+                    <t t-name="card">
+                        <div t-attf-class="o_lims_dashboard_card o_category_#{record.request_category.raw_value}">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="badge bg-light text-dark text-uppercase">
+                                    <field name="request_category"/>
+                                </span>
+                                <strong class="fs-5">
+                                    <a type="object" name="action_create_request"
+                                       class="btn btn-sm btn-primary" role="button">
+                                        + New Request
+                                    </a>
+                                </strong>
+                            </div>
+                            <div class="mb-3 text-muted">
+                                Total: <strong><field name="total_count"/></strong>
+                            </div>
+                            <div class="row g-2">
+                                <div class="col-6">
+                                    <a type="object" name="action_open_draft" class="o_lims_tile o_tile_draft">
+                                        <span class="o_lims_count"><field name="draft_count"/></span>
+                                        Draft
+                                    </a>
+                                </div>
+                                <div class="col-6">
+                                    <a type="object" name="action_open_confirm" class="o_lims_tile o_tile_confirm">
+                                        <span class="o_lims_count"><field name="confirm_count"/></span>
+                                        Confirmed
+                                    </a>
+                                </div>
+                                <div class="col-6">
+                                    <a type="object" name="action_open_recieved" class="o_lims_tile o_tile_received">
+                                        <span class="o_lims_count"><field name="recieved_count"/></span>
+                                        Received
+                                    </a>
+                                </div>
+                                <div class="col-6">
+                                    <a type="object" name="action_open_progress" class="o_lims_tile o_tile_progress">
+                                        <span class="o_lims_count"><field name="progress_count"/></span>
+                                        In Progress
+                                    </a>
+                                </div>
+                                <div class="col-6">
+                                    <a type="object" name="action_open_tosend" class="o_lims_tile o_tile_tosend">
+                                        <span class="o_lims_count"><field name="tosend_count"/></span>
+                                        To Send
+                                    </a>
+                                </div>
+                                <div class="col-6">
+                                    <a type="object" name="action_open_done" class="o_lims_tile o_tile_done">
+                                        <span class="o_lims_count"><field name="done_count"/></span>
+                                        Done
+                                    </a>
+                                </div>
+                                <div class="col-12">
+                                    <a type="object" name="action_open_reject" class="o_lims_tile o_tile_reject">
+                                        <span class="o_lims_count"><field name="reject_count"/></span>
+                                        Rejected
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="lims_registration_dashboard_action" model="ir.actions.act_window">
+        <field name="name">Request Dashboard</field>
+        <field name="res_model">lims.request.dashboard.kanban</field>
+        <field name="view_mode">kanban</field>
+    </record>
+
+    <record id="lims_registration_dashboard_config_action" model="ir.actions.act_window">
+        <field name="name">Request Dashboard Configuration</field>
+        <field name="res_model">lims.request.dashboard.kanban</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    </data>
+</odoo>

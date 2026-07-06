@@ -1,0 +1,23 @@
+/* Catalogue widget styles */
+.o_product_selected {
+    background: var(--color-background-info) !important;
+}
+.o_product_row:hover {
+    background: var(--color-background-secondary);
+    cursor: pointer;
+}
+.o_pack_header:hover {
+    background: var(--color-background-secondary);
+}
+.o_config_card {
+    transition: border-color 0.15s ease;
+}
+.o_catalogue_browser::-webkit-scrollbar,
+.o_catalogue_config::-webkit-scrollbar {
+    width: 4px;
+}
+.o_catalogue_browser::-webkit-scrollbar-thumb,
+.o_catalogue_config::-webkit-scrollbar-thumb {
+    background: var(--color-border-secondary);
+    border-radius: 2px;
+}

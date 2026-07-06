@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+    <record id="lims_view_form_inherit_sample_tools" model="ir.ui.view">
+        <field name="name">lims.sample.main.form.inherit.sample.tools</field>
+        <field name="model">lims.sample.main</field>
+        <field name="inherit_id" ref="lims.lims_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='invoicing_type']" position="after">
+                <field name="request_category" widget="radio"/>
+            </xpath>
+            <xpath expr="//field[@name='sample_line']//field[@name='product_ids']" position="attributes">
+                <attribute name="widget">lims_sample_tools_catalogue_widget</attribute>
+            </xpath>
+            <xpath expr="//field[@name='sample_line']//field[@name='product_ids']" position="after">
+                <field name="test_units" column_invisible="True"/>
+                <field name="subcontracting" column_invisible="True"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="lims_view_list_inherit_sample_tools" model="ir.ui.view">
+        <field name="name">lims.sample.main.list.inherit.sample.tools</field>
+        <field name="model">lims.sample.main</field>
+        <field name="inherit_id" ref="lims.lims_sample_main_list"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='state']" position="before">
+                <field name="request_category" optional="show"/>
+            </xpath>
+        </field>
+    </record>
+
+    </data>
+</odoo>
