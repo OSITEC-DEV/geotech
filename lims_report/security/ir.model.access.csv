@@ -14,8 +14,6 @@ access_lims_report2,lims.report,model_lims_report,lims.group_lims_sample,1,0,0,0
 access_lims_parameter_print,lims.parameter.print,model_lims_parameter_print,lims.group_lims_manager,1,1,1,1
 access_lims_parameter_print_group,lims.parameter.print.group,model_lims_parameter_print_group,lims.group_lims_analysis,1,1,1,1
 access_lims_report_keys_json,lims.report.keys.json,model_lims_report_keys_json,lims.group_lims_analysis,1,1,1,1
-access_lims_report_spec_fix_wizard_manager,lims.report.spec.fix.wizard,model_lims_report_spec_fix_wizard,lims.group_lims_manager,1,1,1,1
-access_lims_report_spec_fix_wizard_reporting,lims.report.spec.fix.wizard,model_lims_report_spec_fix_wizard,lims.group_lims_reporting,1,1,1,1
 access_lims_method_reference_wizard_reporting,lims.method.reference.wizard,model_lims_method_reference_wizard,lims.group_lims_reporting,1,1,1,1
 access_lims_method_reference_wizard_manager,lims.method.reference.wizard,model_lims_method_reference_wizard,lims.group_lims_manager,1,1,1,1
 access_lims_method_reference_wizard_responsible,lims.method.reference.wizard,model_lims_method_reference_wizard,lims.group_lims_responsible,1,1,1,1
