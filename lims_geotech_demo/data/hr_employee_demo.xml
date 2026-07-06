@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="demo_employee_khalid" model="hr.employee">
+            <field name="name">Khalid Al-Harbi</field>
+            <field name="job_title">Rig Operator</field>
+        </record>
+
+        <record id="demo_employee_ahmed" model="hr.employee">
+            <field name="name">Ahmed Al-Otaibi</field>
+            <field name="job_title">Site Technician</field>
+        </record>
+
+        <record id="demo_employee_faisal" model="hr.employee">
+            <field name="name">Faisal Al-Zahrani</field>
+            <field name="job_title">Technical Supervisor</field>
+        </record>
+
+    </data>
+</odoo>

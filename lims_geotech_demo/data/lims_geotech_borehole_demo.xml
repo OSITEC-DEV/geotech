@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="demo_bh_riyadh_1" model="lims.geotech.borehole">
+            <field name="site_id" ref="demo_site_riyadh_interchange"/>
+            <field name="rig_schedule_id" ref="lims_geotech_demo.demo_rig_schedule_1"/>
+            <field name="drilling_method">rotary_wash</field>
+            <field name="date_start">2026-06-20 07:30:00</field>
+            <field name="date_end">2026-06-21 16:00:00</field>
+            <field name="ground_level_elevation">612.4</field>
+            <field name="total_depth">30.0</field>
+            <field name="groundwater_depth">12.5</field>
+            <field name="latitude">24.774400</field>
+            <field name="longitude">46.738700</field>
+            <field name="technician_id" ref="demo_employee_ahmed"/>
+            <field name="state">completed</field>
+        </record>
+
+        <record id="demo_bh_riyadh_2" model="lims.geotech.borehole">
+            <field name="site_id" ref="demo_site_riyadh_interchange"/>
+            <field name="rig_schedule_id" ref="lims_geotech_demo.demo_rig_schedule_1"/>
+            <field name="drilling_method">rotary_wash</field>
+            <field name="date_start">2026-06-22 07:30:00</field>
+            <field name="date_end">2026-06-23 15:00:00</field>
+            <field name="ground_level_elevation">611.9</field>
+            <field name="total_depth">28.5</field>
+            <field name="groundwater_depth">11.8</field>
+            <field name="latitude">24.774100</field>
+            <field name="longitude">46.738900</field>
+            <field name="technician_id" ref="demo_employee_ahmed"/>
+            <field name="state">completed</field>
+        </record>
+
+        <record id="demo_bh_riyadh_3" model="lims.geotech.borehole">
+            <field name="site_id" ref="demo_site_riyadh_interchange"/>
+            <field name="drilling_method">auger</field>
+            <field name="date_start">2026-06-25 07:30:00</field>
+            <field name="ground_level_elevation">613.0</field>
+            <field name="total_depth">15.0</field>
+            <field name="technician_id" ref="demo_employee_ahmed"/>
+            <field name="state">drilling</field>
+        </record>
+
+        <record id="demo_bh_neom_1" model="lims.geotech.borehole">
+            <field name="site_id" ref="demo_site_neom_substation"/>
+            <field name="rig_schedule_id" ref="lims_geotech_demo.demo_rig_schedule_2"/>
+            <field name="drilling_method">percussion</field>
+            <field name="ground_level_elevation">874.2</field>
+            <field name="total_depth">25.0</field>
+            <field name="technician_id" ref="demo_employee_ahmed"/>
+            <field name="state">draft</field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <!-- SPT #1 on Riyadh borehole 1 - typical medium-dense sand -->
+        <record id="demo_spt_1" model="lims.geotech.test.spt">
+            <field name="borehole_id" ref="demo_bh_riyadh_1"/>
+            <field name="test_date">2026-06-20 09:00:00</field>
+            <field name="depth_from">3.00</field>
+            <field name="depth_to">3.45</field>
+            <field name="casing_depth">3.00</field>
+            <field name="groundwater_depth">12.5</field>
+            <field name="soil_description">Medium dense, light brown, silty SAND</field>
+            <field name="sampler_type">split_spoon</field>
+            <field name="technician_id" ref="demo_employee_ahmed"/>
+            <field name="state">validated</field>
+        </record>
+        <record id="demo_spt_1_line_1" model="lims.geotech.test.spt.line">
+            <field name="spt_id" ref="demo_spt_1"/>
+            <field name="sequence">1</field>
+            <field name="interval_label">0-15 cm</field>
+            <field name="is_seating" eval="True"/>
+            <field name="blows">6</field>
+        </record>
+        <record id="demo_spt_1_line_2" model="lims.geotech.test.spt.line">
+            <field name="spt_id" ref="demo_spt_1"/>
+            <field name="sequence">2</field>
+            <field name="interval_label">15-30 cm</field>
+            <field name="blows">8</field>
+        </record>
+        <record id="demo_spt_1_line_3" model="lims.geotech.test.spt.line">
+            <field name="spt_id" ref="demo_spt_1"/>
+            <field name="sequence">3</field>
+            <field name="interval_label">30-45 cm</field>
+            <field name="blows">11</field>
+        </record>
+
+        <!-- SPT #2 on Riyadh borehole 1 - denser sand at greater depth -->
+        <record id="demo_spt_2" model="lims.geotech.test.spt">
+            <field name="borehole_id" ref="demo_bh_riyadh_1"/>
+            <field name="test_date">2026-06-20 14:00:00</field>
+            <field name="depth_from">6.00</field>
+            <field name="depth_to">6.45</field>
+            <field name="casing_depth">6.00</field>
+            <field name="groundwater_depth">12.5</field>
+            <field name="soil_description">Dense, brown, gravelly SAND</field>
+            <field name="sampler_type">split_spoon</field>
+            <field name="technician_id" ref="demo_employee_ahmed"/>
+            <field name="state">validated</field>
+        </record>
+        <record id="demo_spt_2_line_1" model="lims.geotech.test.spt.line">
+            <field name="spt_id" ref="demo_spt_2"/>
+            <field name="sequence">1</field>
+            <field name="interval_label">0-15 cm</field>
+            <field name="is_seating" eval="True"/>
+            <field name="blows">9</field>
+        </record>
+        <record id="demo_spt_2_line_2" model="lims.geotech.test.spt.line">
+            <field name="spt_id" ref="demo_spt_2"/>
+            <field name="sequence">2</field>
+            <field name="interval_label">15-30 cm</field>
+            <field name="blows">14</field>
+        </record>
+        <record id="demo_spt_2_line_3" model="lims.geotech.test.spt.line">
+            <field name="spt_id" ref="demo_spt_2"/>
+            <field name="sequence">3</field>
+            <field name="interval_label">30-45 cm</field>
+            <field name="blows">18</field>
+        </record>
+
+        <!-- SPT #3 on Riyadh borehole 2 - refusal on very dense material -->
+        <record id="demo_spt_3" model="lims.geotech.test.spt">
+            <field name="borehole_id" ref="demo_bh_riyadh_2"/>
+            <field name="test_date">2026-06-22 10:30:00</field>
+            <field name="depth_from">4.50</field>
+            <field name="depth_to">4.95</field>
+            <field name="casing_depth">4.50</field>
+            <field name="groundwater_depth">11.8</field>
+            <field name="soil_description">Very dense, weathered ROCK fragments</field>
+            <field name="sampler_type">split_spoon</field>
+            <field name="technician_id" ref="demo_employee_ahmed"/>
+            <field name="state">done</field>
+        </record>
+        <record id="demo_spt_3_line_1" model="lims.geotech.test.spt.line">
+            <field name="spt_id" ref="demo_spt_3"/>
+            <field name="sequence">1</field>
+            <field name="interval_label">0-15 cm</field>
+            <field name="is_seating" eval="True"/>
+            <field name="blows">10</field>
+        </record>
+        <record id="demo_spt_3_line_2" model="lims.geotech.test.spt.line">
+            <field name="spt_id" ref="demo_spt_3"/>
+            <field name="sequence">2</field>
+            <field name="interval_label">15-30 cm</field>
+            <field name="blows">25</field>
+        </record>
+        <record id="demo_spt_3_line_3" model="lims.geotech.test.spt.line">
+            <field name="spt_id" ref="demo_spt_3"/>
+            <field name="sequence">3</field>
+            <field name="interval_label">30-45 cm</field>
+            <field name="blows">50</field>
+            <field name="remarks">Refusal - 50 blows without completing the full 15cm increment</field>
+        </record>
+
+    </data>
+</odoo>

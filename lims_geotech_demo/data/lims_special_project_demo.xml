@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="demo_permit_jeddah_asphalt" model="lims.special.project.permit">
+            <field name="partner_id" ref="demo_partner_momra"/>
+            <field name="laboratory_id" ref="demo_lab_almuhandis"/>
+            <field name="date">2026-06-15 08:00:00</field>
+            <field name="work_location">Jeddah Corniche Road Asphalt Works</field>
+            <field name="required_tests">Density of Asphalt, Depth Test, Evaluation of Unpaved Trench</field>
+            <field name="equipment_used">Nuclear density gauge, core drill</field>
+            <field name="environmental_conditions">Clear, 32C, dry pavement</field>
+            <field name="state">approved</field>
+            <field name="approved_by" ref="base.user_admin"/>
+            <field name="approved_on">2026-06-16 10:00:00</field>
+        </record>
+
+        <record id="demo_station_1" model="lims.special.project.station">
+            <field name="name">STA-0+000</field>
+            <field name="permit_id" ref="demo_permit_jeddah_asphalt"/>
+            <field name="location">Corniche Road, Station 0+000 to 0+500</field>
+        </record>
+        <record id="demo_station_1_layer_1" model="lims.special.project.layer">
+            <field name="name">Layer 1</field>
+            <field name="sequence">1</field>
+            <field name="station_id" ref="demo_station_1"/>
+            <field name="depth_from">0.00</field>
+            <field name="depth_to">0.05</field>
+            <field name="material_description">Asphalt Wearing Course</field>
+            <field name="state">tested</field>
+        </record>
+        <record id="demo_station_1_layer_2" model="lims.special.project.layer">
+            <field name="name">Layer 2</field>
+            <field name="sequence">2</field>
+            <field name="station_id" ref="demo_station_1"/>
+            <field name="depth_from">0.05</field>
+            <field name="depth_to">0.30</field>
+            <field name="material_description">Asphalt Base Course</field>
+            <field name="state">tested</field>
+        </record>
+
+        <record id="demo_station_2" model="lims.special.project.station">
+            <field name="name">STA-0+500</field>
+            <field name="permit_id" ref="demo_permit_jeddah_asphalt"/>
+            <field name="location">Corniche Road, Station 0+500 to 1+000</field>
+        </record>
+        <record id="demo_station_2_layer_1" model="lims.special.project.layer">
+            <field name="name">Layer 1</field>
+            <field name="sequence">1</field>
+            <field name="station_id" ref="demo_station_2"/>
+            <field name="depth_from">0.00</field>
+            <field name="depth_to">0.05</field>
+            <field name="material_description">Asphalt Wearing Course</field>
+            <field name="state">draft</field>
+        </record>
+
+    </data>
+</odoo>

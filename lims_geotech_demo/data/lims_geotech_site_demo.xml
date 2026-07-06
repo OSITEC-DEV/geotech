@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="demo_site_riyadh_interchange" model="lims.geotech.site">
+            <field name="site_name">Riyadh North Interchange Bridge Foundation</field>
+            <field name="partner_id" ref="demo_partner_saudi_diyar"/>
+            <field name="laboratory_id" ref="demo_lab_almuhandis"/>
+            <field name="location">King Fahd Road x Northern Ring Road, Riyadh</field>
+            <field name="latitude">24.774265</field>
+            <field name="longitude">46.738586</field>
+            <field name="date_start">2026-06-18</field>
+            <field name="date_end">2026-06-28</field>
+            <field name="state">active</field>
+            <field name="notes">Bridge pier foundation investigation - three boreholes across the interchange footprint.</field>
+        </record>
+
+        <record id="demo_site_neom_substation" model="lims.geotech.site">
+            <field name="site_name">NEOM Substation Geotechnical Investigation</field>
+            <field name="partner_id" ref="demo_partner_neom"/>
+            <field name="laboratory_id" ref="demo_lab_almuhandis"/>
+            <field name="location">NEOM Region, Tabuk Province</field>
+            <field name="latitude">27.994837</field>
+            <field name="longitude">35.559163</field>
+            <field name="date_start">2026-07-10</field>
+            <field name="state">active</field>
+            <field name="notes">Substation pad foundation investigation, urgent priority.</field>
+        </record>
+
+        <record id="demo_site_jeddah_wtp" model="lims.geotech.site">
+            <field name="site_name">Jeddah Water Treatment Plant Expansion</field>
+            <field name="partner_id" ref="demo_partner_momra"/>
+            <field name="laboratory_id" ref="demo_lab_almuhandis"/>
+            <field name="location">Jeddah Industrial City, Jeddah</field>
+            <field name="latitude">21.588562</field>
+            <field name="longitude">39.170006</field>
+            <field name="state">draft</field>
+            <field name="notes">Pending internal approval before mobilization.</field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="demo_rig_alpha" model="lims.rig">
+            <field name="rig_name">Rig Alpha</field>
+            <field name="rig_type">truck_mounted</field>
+            <field name="manufacturer">Failing</field>
+            <field name="model">F-10</field>
+            <field name="drilling_capacity">30 m depth, 150 mm diameter</field>
+            <field name="ownership_status">owned</field>
+            <field name="purchase_date">2022-03-15</field>
+            <field name="operator_id" ref="demo_employee_khalid"/>
+            <field name="supervisor_id" ref="demo_employee_faisal"/>
+            <field name="state">deployed</field>
+            <field name="current_location">Riyadh North Interchange, Zone A</field>
+            <field name="usage_hours">412.5</field>
+            <field name="maintenance_hours_interval">500</field>
+        </record>
+
+        <record id="demo_rig_beta" model="lims.rig">
+            <field name="rig_name">Rig Beta</field>
+            <field name="rig_type">hydraulic</field>
+            <field name="manufacturer">Comacchio</field>
+            <field name="model">MC 600</field>
+            <field name="drilling_capacity">20 m depth, 100 mm diameter</field>
+            <field name="ownership_status">leased</field>
+            <field name="purchase_date">2023-08-01</field>
+            <field name="operator_id" ref="demo_employee_khalid"/>
+            <field name="supervisor_id" ref="demo_employee_faisal"/>
+            <field name="state">available</field>
+            <field name="current_location">Almuhandis Yard, Riyadh</field>
+            <field name="usage_hours">96.0</field>
+            <field name="maintenance_hours_interval">500</field>
+        </record>
+
+        <record id="demo_rig_schedule_1" model="lims.rig.schedule">
+            <field name="rig_id" ref="demo_rig_alpha"/>
+            <field name="partner_id" ref="demo_partner_saudi_diyar"/>
+            <field name="job_location">Riyadh North Interchange, Zone A</field>
+            <field name="date_start">2026-06-20 07:00:00</field>
+            <field name="date_end">2026-06-27 17:00:00</field>
+            <field name="crew_size">3</field>
+            <field name="operator_id" ref="demo_employee_khalid"/>
+            <field name="priority">normal</field>
+            <field name="state">done</field>
+            <field name="mobilization_date">2026-06-20 06:00:00</field>
+            <field name="demobilization_date">2026-06-27 18:00:00</field>
+            <field name="origin_yard">Almuhandis Yard, Riyadh</field>
+            <field name="boreholes_completed">3</field>
+            <field name="depth_achieved">75.5</field>
+            <field name="samples_collected">18</field>
+            <field name="downtime_reason">none</field>
+            <field name="notes">Foundation investigation for the new interchange bridge piers.</field>
+        </record>
+
+        <record id="demo_rig_schedule_2" model="lims.rig.schedule">
+            <field name="rig_id" ref="demo_rig_beta"/>
+            <field name="partner_id" ref="demo_partner_neom"/>
+            <field name="job_location">NEOM Substation Site, Tabuk Province</field>
+            <field name="date_start">2026-07-10 07:00:00</field>
+            <field name="date_end">2026-07-15 17:00:00</field>
+            <field name="crew_size">2</field>
+            <field name="operator_id" ref="demo_employee_khalid"/>
+            <field name="priority">urgent</field>
+            <field name="state">scheduled</field>
+            <field name="origin_yard">Almuhandis Yard, Riyadh</field>
+        </record>
+
+    </data>
+</odoo>
