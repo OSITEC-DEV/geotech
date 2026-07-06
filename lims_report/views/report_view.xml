@@ -95,10 +95,6 @@
                                                 invisible="parent.state == 'valid'"/>
                                         <field name="result_txt"/>
                                         <field name="uom_id"/>
-                                        <field name="specification"
-                                               string="Limit &amp; Specification"
-                                               widget="report_spec_widget"
-                                               readonly="parent.state == 'valid'"/>
                                     </list>
                                 </field>
                             </page>

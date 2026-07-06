@@ -7,5 +7,4 @@ from . import lims_report
 from . import lims_department
 from . import sale_order
 from . import res_company
-from . import lims_report_spec_fix_wizard
 from . import lims_method_reference_wizard

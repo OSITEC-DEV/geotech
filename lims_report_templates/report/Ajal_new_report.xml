@@ -223,7 +223,6 @@
                                                         <th>Parameter</th>
                                                         <th>Method</th>
                                                         <th>Result</th>
-                                                        <th>Specification</th>
                                                         <th>LOQ</th>
                                                     </tr>
                                                 </thead>
@@ -257,7 +256,6 @@
                                                                               t-esc="'Not Detected' if comp.is_null else comp.result_txt"/>
                                                                         <span t-if="comp.result_num == 0.00">Not Detected</span>
                                                                     </td>
-                                                                    <td><span t-esc="comp.specification"/></td>
                                                                     <td><span t-esc="comp.loq"/></td>
                                                                 </tr>
                                                             </t>
@@ -280,7 +278,6 @@
                                                                           t-esc="parent.result_txt"/>
                                                                     <span t-if="parent.result_num == 0.00">Not Detected</span>
                                                                 </td>
-                                                                <td><span t-esc="parent.specification"/></td>
                                                                 <td><span t-esc="parent.loq"/></td>
                                                             </tr>
                                                         </t>
