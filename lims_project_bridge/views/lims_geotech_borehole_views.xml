@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+    <record id="view_lims_geotech_borehole_form_inherit_project_bridge" model="ir.ui.view">
+        <field name="name">lims.geotech.borehole.form.inherit.project.bridge</field>
+        <field name="model">lims.geotech.borehole</field>
+        <field name="inherit_id" ref="lims_geotech.view_lims_geotech_borehole_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='rig_schedule_id']" position="after">
+                <field name="task_id"/>
+                <field name="site_project_id" invisible="1"/>
+            </xpath>
+        </field>
+    </record>
+
+    </data>
+</odoo>

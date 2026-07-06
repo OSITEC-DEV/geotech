@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+    <record id="view_lims_special_project_permit_form_inherit_project_bridge" model="ir.ui.view">
+        <field name="name">lims.special.project.permit.form.inherit.project.bridge</field>
+        <field name="model">lims.special.project.permit</field>
+        <field name="inherit_id" ref="lims_special_project.view_lims_special_project_permit_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header" position="inside">
+                <button name="action_generate_project_tasks" string="Generate Project Tasks" type="object"
+                        class="oe_highlight"/>
+                <button name="action_view_project" string="View Project" type="object"
+                        invisible="not project_id"/>
+            </xpath>
+            <xpath expr="//group//field[@name='project_id']" position="after">
+                <field name="task_site_prep_id" readonly="1"/>
+                <field name="task_mobilization_id" readonly="1"/>
+                <field name="task_execution_id" readonly="1"/>
+                <field name="task_reporting_id" readonly="1"/>
+            </xpath>
+        </field>
+    </record>
+
+    </data>
+</odoo>

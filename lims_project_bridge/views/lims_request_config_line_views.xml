@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+    <record id="view_lims_request_config_line_form_inherit_project_bridge" model="ir.ui.view">
+        <field name="name">lims.request.config.line.form.inherit.project.bridge</field>
+        <field name="model">lims.request.config.line</field>
+        <field name="inherit_id" ref="lims_sample_tools.view_lims_request_config_line_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='income_account_id']" position="after">
+                <field name="analytic_distribution" widget="analytic_distribution"/>
+            </xpath>
+        </field>
+    </record>
+
+    </data>
+</odoo>
