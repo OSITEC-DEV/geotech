@@ -3,6 +3,7 @@
     <data>
 
     <menuitem id="menu_lims_special_project_root" name="Special Projects (QC)" sequence="22"
+              web_icon="lims_special_project,static/description/icon.png"
               groups="lims.group_lims_sample"/>
 
     <menuitem id="menu_lims_special_project_permit" name="QC Permits" action="action_lims_special_project_permit"

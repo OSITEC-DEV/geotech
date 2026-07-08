@@ -29,6 +29,7 @@
         'views/menus.xml',
     ],
     'demo': [],
+    'images': ['static/description/icon.png'],
     'auto_install': False,
     'application': True,
     'installable': True,

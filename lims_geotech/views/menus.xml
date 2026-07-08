@@ -3,6 +3,7 @@
     <data>
 
     <menuitem id="menu_lims_geotech_root" name="Geotechnical" sequence="21"
+              web_icon="lims_geotech,static/description/icon.png"
               groups="lims_geotech.group_lims_geotech_user"/>
 
     <menuitem id="menu_lims_geotech_operations" name="Operations" parent="menu_lims_geotech_root" sequence="1"/>

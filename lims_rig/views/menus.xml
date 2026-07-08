@@ -3,6 +3,7 @@
     <data>
 
     <menuitem id="menu_lims_rig_root" name="RIG Management" sequence="20"
+              web_icon="lims_rig,static/description/icon.png"
               groups="lims_rig.group_lims_rig_user"/>
 
     <menuitem id="menu_lims_rig_operations" name="Operations" parent="menu_lims_rig_root" sequence="1"/>
